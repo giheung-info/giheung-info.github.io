@@ -290,6 +290,7 @@ body.paused .mq div{animation-play-state:paused}
 /* 교통 지도 */
 .sect.wide{grid-template-columns:1fr}
 .zv{position:fixed;inset:0;z-index:500;background:#fff;display:flex;flex-direction:column}.zv-in{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain}.zv-c{display:flex;align-items:center;justify-content:center}.zv-in svg{display:block;flex:none;max-width:none;min-width:0!important}.zv-ctl{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:1px;border-radius:999px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.18)}.zv-ctl button{min-width:52px;height:44px;padding:0 14px;background:#000;color:#fff;font-size:20px;font-weight:600}.zv-ctl .zv-f{font-size:13px;font-weight:700;color:var(--yellow)}.zv-x{position:absolute;right:12px;top:12px;z-index:2;width:44px;height:44px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center}.zv-x svg{width:16px;height:16px}.zv-h{padding:20px 64px 12px 16px;font-size:13px;color:var(--g4);border-bottom:1px solid var(--g1)}html.zv-open,html.zv-open body{overflow:hidden}@media (max-width:1023px){ .tmap{cursor:zoom-in;position:relative} .tmap::after{content:"탭하여 크게 보기";position:absolute;right:8px;bottom:8px;padding:4px 10px;font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,.65);border-radius:999px;pointer-events:none} }
+.phv{position:fixed;inset:0;z-index:510;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}.phv img{max-width:min(1200px,100%);max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 8px 30px rgba(0,0,0,.4)}.phv button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:26px;line-height:1;cursor:pointer}
 @media (min-width:1024px){ .tlay{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:24px;align-items:stretch} .tlay .tmap{display:flex;align-items:center} .tlay .tmap svg{min-width:0} .tlay .tkeys{grid-template-columns:1fr;margin-top:0;align-content:stretch} .tlay .tkeys li{padding:13px 16px;gap:12px;align-items:center} .tlay .tkeys b{font-size:15px} .tlay .tkeys span{margin-top:2px;font-size:13px;line-height:1.45} .tlay .tkeys i{width:26px;height:26px} }
 .tmap{background:var(--g0);border-radius:6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tmap svg{display:block;width:100%;max-width:980px;min-width:700px;height:auto;margin:0 auto}
@@ -1058,9 +1059,19 @@ body.is-main #sft{display:none}
 
             <!-- GTX-F (수도권 순환 예정) -->
             <path d="M120 520Q330 390 520 360C590 300 640 180 650 60" stroke="#d14b8f" stroke-width="5" stroke-dasharray="12 7" fill="none"/>
-            <circle cx="650" cy="60" r="11" fill="#fff" stroke="#000" stroke-width="3"/>
-            <text class="b" x="670" y="60" style="font-size:16px">정자역</text>
-            <text class="s" x="670" y="77">신분당선 · GTX-F 예정</text>
+            <!-- 신분당선: 정자 · 판교 · 강남 -->
+            <path d="M650 60H930" stroke="#d6393a" stroke-width="7" fill="none"/>
+            <circle cx="650" cy="60" r="11" fill="#fff" stroke="#d6393a" stroke-width="3.5"/>
+            <circle cx="790" cy="60" r="9" fill="#fff" stroke="#d6393a" stroke-width="3.5"/>
+            <circle cx="930" cy="60" r="9" fill="#fff" stroke="#d6393a" stroke-width="3.5"/>
+            <text class="b" x="650" y="26" text-anchor="middle" style="font-size:16px">정자역</text>
+            <text class="s" x="650" y="42" text-anchor="middle">18분 · 급행 13분</text>
+            <text class="b" x="790" y="26" text-anchor="middle" style="font-size:16px">판교역</text>
+            <text class="s" x="790" y="42" text-anchor="middle">22분 · 급행 18분</text>
+            <text class="b" x="930" y="26" text-anchor="middle" style="font-size:16px">강남역</text>
+            <text class="s" x="930" y="42" text-anchor="middle">41분 · 급행 36분</text>
+            <text class="b" x="860" y="88" text-anchor="middle" style="fill:#d6393a">신분당선</text>
+            <text class="s" x="668" y="88">GTX-F 예정</text>
 
             <!-- 수원신갈IC 이동 -->
             <path d="M520 360Q430 330 312 345" stroke="#000" stroke-width="2.5" stroke-dasharray="2 6" stroke-linecap="round" fill="none"/>
@@ -1085,14 +1096,14 @@ body.is-main #sft{display:none}
             <text class="nh b" x="376" y="161" text-anchor="middle" style="fill:#7a3d76">용인 플랫폼시티</text>
 
             <!-- GTX-A -->
-            <path d="M395 22L470 215C500 292 405 350 430 440C450 510 530 548 610 560" stroke="#9b4f96" stroke-width="7" fill="none" stroke-linejoin="round"/>
+            <path d="M420 0L440 62C424 120 446 188 470 215C500 292 405 350 430 440C450 510 530 548 610 560" stroke="#9b4f96" stroke-width="7" fill="none" stroke-linejoin="round"/>
             <text class="b" x="490" y="192" style="fill:#9b4f96">GTX-A</text>
             <text class="s" x="490" y="208" style="fill:#9b4f96">삼성역 19분 · 서울역 24분</text>
 
             <!-- 분당선 -->
-            <path d="M430 30L470 215L505 290L520 360L470 410L330 470L120 520" stroke="#f2a900" stroke-width="7" fill="none" stroke-linejoin="round"/>
+            <path d="M456 0L440 62L470 215L505 290L520 360L470 410L330 470L120 520" stroke="#f2a900" stroke-width="7" fill="none" stroke-linejoin="round"/>
             <path d="M520 360L575 470L610 560L625 640" stroke="#f2a900" stroke-width="7" stroke-dasharray="14 8" fill="none"/>
-            <text class="b" x="442" y="44" style="fill:#c98c00">분당선 · 수서 · 강남 방면</text>
+            <text class="b" x="466" y="16" style="fill:#c98c00">분당선 · 강남 방면</text>
             <circle cx="120" cy="520" r="11" fill="#fff" stroke="#000" stroke-width="3"/>
             <text class="b" x="100" y="514" text-anchor="end" style="font-size:16px">수원역</text>
             <text class="s" x="100" y="531" text-anchor="end">KTX</text>
@@ -1103,9 +1114,15 @@ body.is-main #sft{display:none}
             <!-- 역 -->
             <circle cx="380" cy="448.6" r="9" fill="#fff" stroke="#000" stroke-width="3"/>
             <text class="b" x="372" y="478" text-anchor="middle" style="font-size:15px">영통역</text>
+            <circle cx="255" cy="487.9" r="9" fill="#fff" stroke="#000" stroke-width="3"/>
+            <text class="b" x="255" y="516" text-anchor="middle" style="font-size:15px">망포역</text>
+            <text class="s" x="255" y="532" text-anchor="middle">삼성전자</text>
             <circle cx="470" cy="215" r="11" fill="#fff" stroke="#000" stroke-width="3"/>
             <text class="b" x="452" y="210" text-anchor="end" style="font-size:16px">구성역</text>
             <text class="s" x="452" y="228" text-anchor="end">GTX-A · 2정거장(4분)</text>
+            <circle cx="440" cy="62" r="12" fill="#fff" stroke="#000" stroke-width="3.5"/>
+            <text class="b" x="460" y="62" style="font-size:16px">수서역 <tspan class="s" style="font-weight:700;fill:#000">14분</tspan></text>
+            <text class="s" x="460" y="79">SRT · GTX-A · 분당선</text>
             <circle cx="610" cy="560" r="11" fill="#fff" stroke="#000" stroke-width="3"/>
             <text class="b" x="630" y="562" style="font-size:16px">동탄역</text>
             <text class="s" x="630" y="579">SRT</text>
@@ -1161,6 +1178,9 @@ body.is-main #sft{display:none}
             <path d="M170 594H198" stroke="#4fa845" stroke-width="6" stroke-dasharray="8 4"/><text class="nh s" x="206" y="598">에버라인 연장 예정</text>
             <path d="M170 616H198" stroke="#c3c8cb" stroke-width="10"/><text class="nh s" x="206" y="620">고속도로</text>
             <path d="M170 638H198" stroke="#9aa1a5" stroke-width="7"/><path d="M170 638H198" stroke="#fff" stroke-width="1.2" stroke-dasharray="5 4"/><text class="nh s" x="206" y="642">42번 국도</text>
+            <!-- 기흥역 마우스: 미래교통망 -->
+            <g class="hph"><rect x="504" y="262" width="32" height="116" fill="transparent"/>
+            <g class="ph"><rect x="546" y="190" width="288" height="327" rx="6" fill="#fff" stroke="#d2d2d2" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))"/><image href="images/location/future-transit.jpg" x="550" y="194" width="280" height="319" preserveAspectRatio="xMidYMid meet"/></g></g>
           </svg>
         </div>
         <ul class="tkeys">
@@ -2559,6 +2579,18 @@ $("nbcGo").addEventListener("click",e=>{e.preventDefault();const b=$("nbc");b.hi
   const lb=mk("g",{});lb.innerHTML=`<rect x="${CX-48}" y="${CY-R-13}" width="96" height="26" rx="3" fill="#1d2b44"/><text x="${CX}" y="${CY-R+5}" text-anchor="middle" style="font-size:13.5px;font-weight:600;letter-spacing:.06em;fill:#fff;stroke:none">기흥역세권</text>`;
   g.appendChild(lb);
   map.insertBefore(g,map.querySelector(".hph")||map.querySelector("text.w0[text-anchor=end]")||null); // 마우스 사진(.hph)보다 아래
+})();
+
+/* 지도 마우스 사진: 누르면 크게 보기 */
+(()=>{
+  let box=null;const close=()=>{if(box){box.remove();box=null}};
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+  document.querySelectorAll(".tmap .hph").forEach(h=>{const im=h.querySelector(".ph image");if(!im)return;
+    h.style.cursor="zoom-in";
+    h.addEventListener("click",e=>{e.stopPropagation();close();
+      box=document.createElement("div");box.className="phv";box.setAttribute("role","dialog");box.setAttribute("aria-label","사진 크게 보기");
+      box.innerHTML=`<img src="${im.getAttribute("href")}" alt=""><button type="button" aria-label="닫기">×</button>`;
+      box.onclick=close;document.body.appendChild(box)})});
 })();
 
 /* 모바일: 지도 누르면 크게 보기 (두 손가락 · 버튼으로 확대/축소) */
