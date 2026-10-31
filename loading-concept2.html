@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로딩 컨셉 2 · 기흥역세권</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--yellow:#f5ff00}
+html,body{margin:0;height:100%;background:#000}
+.splash2{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#000;color:#fff;text-align:center}
+.splash2 svg{width:min(320px,64vw);height:auto;overflow:visible}
+.splash2 path,.splash2 line{fill:none;stroke-linecap:round;stroke-linejoin:round}
+/* 산 능선 */
+.s2-arch{stroke:#8a8f92;stroke-width:5;stroke-dasharray:820;stroke-dashoffset:820;animation:s2draw 1.2s .1s cubic-bezier(.6,0,.3,1) forwards}
+/* 노선 (노란 선) */
+.s2-rail{stroke:var(--yellow);stroke-width:8;stroke-linecap:butt;stroke-dasharray:640;stroke-dashoffset:640;animation:s2draw .8s .55s cubic-bezier(.6,0,.3,1) forwards}
+/* 빌딩 */
+.s2-b{stroke:#fff;stroke-width:7;transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);animation:s2grow .7s cubic-bezier(.2,.8,.2,1) forwards}
+.s2-b1{animation-delay:1.05s}.s2-b2{animation-delay:1.15s}.s2-b3{animation-delay:1.25s}
+/* 열차 */
+.s2-train{fill:#fff;opacity:0;transform:translateX(-420px);animation:s2train 1.1s 1.05s cubic-bezier(.25,.8,.25,1) forwards}
+/* 물결 · 선 */
+.s2-wave{stroke:#6c7174;stroke-width:4;stroke-dasharray:760;stroke-dashoffset:760;animation:s2draw 1s .9s ease forwards}
+.s2-l{stroke:#a7acaf;stroke-width:4;transform-box:fill-box;transform-origin:50% 50%;transform:scaleX(0);animation:s2wide .7s ease forwards}
+.s2-l1{animation-delay:1.25s}.s2-l2{animation-delay:1.38s}.s2-l3{animation-delay:1.5s}
+/* 글씨 */
+.s2-ko{margin:clamp(30px,4.4vw,48px) 0 0;font-family:"Song Myung",serif;font-size:clamp(40px,5.4vw,60px);letter-spacing:.14em;padding-left:.14em;line-height:1;opacity:0;animation:s2soft 1s 1.65s ease forwards}
+.s2-en{margin:clamp(14px,1.6vw,20px) 0 0;font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(12px,1.35vw,17px);letter-spacing:.62em;padding-left:.62em;color:#a7acaf;opacity:0;animation:s2soft 1s 1.85s ease forwards}
+@keyframes s2draw{to{stroke-dashoffset:0}}
+@keyframes s2grow{to{transform:scaleY(1)}}
+@keyframes s2wide{to{transform:scaleX(1)}}
+@keyframes s2train{0%{opacity:0;transform:translateX(-420px)}15%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes s2soft{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.replay{position:fixed;right:16px;bottom:16px;padding:10px 16px;font:600 12px/1 sans-serif;letter-spacing:.1em;color:#777;background:none;border:1px solid #333;border-radius:999px;cursor:pointer}
+.replay:hover{color:#fff;border-color:#777}
+@media (prefers-reduced-motion:reduce){.splash2 *{animation:none!important;opacity:1!important;transform:none!important;stroke-dashoffset:0!important}}
+</style>
+</head>
+<body>
+<div class="splash2" id="s2" aria-label="기흥역세권 The Station, Giheung">
+  <svg viewBox="660 370 680 410" aria-hidden="true">
+    <path class="s2-arch" d="M684 585C760 480 870 395 1000 395C1130 395 1240 480 1316 585"/>
+    <line class="s2-b s2-b1" x1="957" y1="487" x2="957" y2="582"/>
+    <line class="s2-b s2-b2" x1="1000" y1="443" x2="1000" y2="582"/>
+    <line class="s2-b s2-b3" x1="1043" y1="500" x2="1043" y2="582"/>
+    <rect class="s2-train" x="1100" y="558" width="107" height="24" rx="12"/>
+    <line class="s2-rail" x1="680" y1="586" x2="1320" y2="586"/>
+    <path class="s2-wave" d="M680 650Q733 595 787 650Q840 595 893 650Q947 595 1000 650Q1053 595 1107 650Q1160 595 1213 650Q1267 595 1320 650"/>
+    <line class="s2-l s2-l1" x1="722" y1="693" x2="1278" y2="693"/>
+    <line class="s2-l s2-l2" x1="800" y1="725" x2="1200" y2="725"/>
+    <line class="s2-l s2-l3" x1="893" y1="757" x2="1107" y2="757"/>
+  </svg>
+  <p class="s2-ko">기흥역세권</p>
+  <p class="s2-en">THE STATION, GIHEUNG</p>
+</div>
+<button class="replay" type="button" onclick="const s=document.getElementById('s2');const c=s.cloneNode(true);s.replaceWith(c)">REPLAY</button>
+</body>
+</html>
