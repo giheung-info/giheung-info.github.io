@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<title>기흥역세권 1·2지구 | The Station, Giheung</title>
+<title>기흥역세권 플랫폼 | Station-G</title>
 <meta name="description" content="역 앞의 삶, 산과 물 사이의 일상 — 기흥역세권 1·2지구 단지 · 시세 · 교통 · 생활 입지 · 임장 가이드">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="The Station, Giheung">
+<meta property="og:site_name" content="Station-G">
 <meta property="og:url" content="https://giheung-info.github.io/">
-<meta property="og:title" content="기흥역세권 1·2지구 | The Station, Giheung">
+<meta property="og:title" content="기흥역세권 플랫폼 | Station-G">
 <meta property="og:description" content="역 앞의 삶, 산과 물 사이의 일상 — 기흥역세권 1·2지구 단지 · 시세 · 교통 · 생활 입지 · 임장 가이드">
 <meta property="og:image" content="https://giheung-info.github.io/images/og.jpg">
 <meta property="og:image:width" content="456">
 <meta property="og:image:height" content="318">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="기흥역세권 1·2지구 | The Station, Giheung">
+<meta name="twitter:title" content="기흥역세권 플랫폼 | Station-G">
 <meta name="twitter:image" content="https://giheung-info.github.io/images/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -354,6 +354,24 @@ body.paused .mq div{animation-play-state:paused}
 /* 생활 입지: 메시지 → 지도 → 탭 */
 @media (min-width:1024px){ .loc-body{grid-template-columns:1fr!important} .loc-map{width:100%;max-width:920px;margin:0 auto} }
 .loc-side{order:-1}
+.loc-mapcol .map-cap{margin:12px 0 0}
+/* 지도 2번: 세로로 긴 지도 → PC 에서는 왼쪽 지도 · 오른쪽 탭 */
+@media (min-width:1024px){
+ .loc{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:clamp(40px,4vw,72px);align-items:start}
+ .loc .loc-body{display:contents}
+ .loc .loc-mapcol{grid-column:1;grid-row:1/3}
+ .loc .loc-map{max-width:none;border:1px solid var(--g1)}
+ .loc .loc-map.tmap svg{min-width:0;display:block}
+ .loc .map-cap{max-width:none}
+ .loc .loc-side{grid-column:2;grid-row:1}
+ .loc .loc-tabs{grid-column:2;grid-row:2;margin-top:clamp(32px,3vw,48px)}
+ .loc .lt-panel .loc-edu,.loc .lt-panel .loc-semi ul{grid-template-columns:1fr}
+ /* 오른쪽 목록 아래 끝을 지도 아래 끝에 맞춤 */
+ .loc .loc-tabs{align-self:stretch;display:flex;flex-direction:column;padding-bottom:34px}
+ .loc .lt-panel:not([hidden]){flex:1;display:flex;flex-direction:column}
+ .loc .lt-panel>.loc-shop:not(.loc-edu){flex:1;display:flex;flex-direction:column}
+ .loc .lt-panel .loc-shop:not(.loc-edu) ol{flex:1;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;column-gap:32px}
+}
 .loc-tabs{margin-top:clamp(40px,4vw,64px)}
 .lt-btns{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:18px;border-bottom:2px solid #2b2724}
 .lt-btns button{padding:10px 18px;font-size:14.5px;font-weight:700;letter-spacing:-.03em;color:#7a726a;border:1px solid #ddd6cd;border-radius:999px;background:#fff;transition:all .2s}
@@ -502,6 +520,34 @@ body.paused .mq div{animation-play-state:paused}
 .cmp-t td small{display:block;font-size:12px;color:var(--g4)}
 .cmp-t tr:hover td{background:#fafafa}
 .cmp-t tbody th,.cmp-t tbody td{height:72px;padding-top:0;padding-bottom:0;vertical-align:middle}.cmp-t tbody tr.tall th,.cmp-t tbody tr.tall td{height:124px}
+.cmp-pick{margin:18px 0}
+.cmp-pick p{margin-bottom:10px;font-size:13px;color:var(--g4)}
+.cmp-pick div{display:flex;flex-wrap:wrap;gap:8px}
+.cmp-pick button{padding:8px 16px;border:1px solid var(--g2,#ddd);border-radius:999px;font-size:13.5px;font-weight:600;color:var(--g4);background:#fff;transition:all .2s}
+.cmp-pick button:hover{border-color:#000;color:#000}
+.cmp-pick button[aria-pressed="true"]{border-color:#000;background:#000;color:#fff}
+.cmp-t.pick .off{display:none}
+.cmp-t.few{min-width:0;table-layout:fixed}
+.cmp-t.few thead th:first-child,.cmp-t.few tbody th{width:140px}
+.zv-in .cmp-t{flex:none;width:880px;background:#fff}
+@media (max-width:1023px){
+ .cmp-wrap{position:relative;cursor:zoom-in}
+ .cmp-wrap::after{content:"탭하여 크게 보기";position:absolute;right:8px;top:8px;z-index:2;padding:4px 10px;font-size:11px;font-weight:700;color:#000;background:var(--yellow);border-radius:999px;pointer-events:none}
+}
+@media (max-width:767px){
+ .cmp-pick{margin:14px 0}
+ .cmp-pick p{margin-bottom:8px;font-size:12px}
+ .cmp-pick div{gap:6px}
+ .cmp-pick button{padding:7px 12px;font-size:12.5px}
+ .cmp-wrap{overflow:visible}
+ .cmp-t.pick{min-width:0;table-layout:fixed;font-size:13px}
+ .cmp-t.pick thead th{padding:30px 10px 12px;font-size:14px}
+ .cmp-t.pick thead th:first-child,.cmp-t.pick tbody th{width:78px;padding-left:10px;padding-right:6px;font-size:12px;white-space:normal}
+ .cmp-t.pick td{padding-left:10px;padding-right:8px;word-break:keep-all}
+ .cmp-t.pick tbody th,.cmp-t.pick tbody td{height:64px;padding-top:10px;padding-bottom:10px}
+ .cmp-t.pick tbody tr.tall th,.cmp-t.pick tbody tr.tall td{height:auto}
+ .cmp-t.pick td b{font-size:16px}
+}
 /* ===== 임장 가이드 ===== */
 .gd{padding-top:clamp(56px,7vw,110px);padding-bottom:clamp(80px,8vw,140px)}
 .gd-lab{font-family:var(--en);font-size:13px;font-weight:700;color:var(--g3)}
@@ -1147,8 +1193,9 @@ body.is-main #sft{display:none}
       <div>
         <div class="loc">
           <div class="loc-body">
+          <div class="loc-mapcol">
           <div class="loc-map tmap">
-          <svg viewBox="330 0 870 1000" role="img" aria-labelledby="imapT">
+          <svg viewBox="334 28 640 834" role="img" aria-labelledby="imapT">
             <title id="imapT">기흥역세권 입지 지도: 교통 · 학교 · 병원 · 관공서 · 쇼핑 · 문화 · 상권</title>
             <style>.tmap .pl{font-size:16px;font-weight:400;fill:#333;letter-spacing:-.03em;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}.tmap .st{font-weight:500;fill:#111;letter-spacing:-.04em;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}.tmap .ar{font-size:17px;font-weight:700;letter-spacing:-.02em;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}.tmap .w0{stroke:none}</style>
             <defs><pattern id="sgk" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#f2f2f2"/><path d="M0 .5H6M.5 0V6" stroke="#dfdfdf" stroke-width="1"/></pattern><filter id="zglow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter><clipPath id="zclip"><circle cx="942" cy="262" r="238"/></clipPath><linearGradient id="cone" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#6b7480" stop-opacity=".05"/><stop offset="1" stop-color="#6b7480" stop-opacity=".28"/></linearGradient><pattern id="rdh" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#4f86c6" fill-opacity=".28"/><path d="M0 0V5" stroke="#2f5f9e" stroke-width="2.2"/></pattern><pattern id="rdh1" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="#e0605a" fill-opacity=".3"/><path d="M0 0V5" stroke="#c0433d" stroke-width="2.2"/></pattern></defs>
@@ -1175,56 +1222,48 @@ body.is-main #sft{display:none}
               <path d="M539.3 678.4L567.2 619.2L568.5 616.5L570 614L571.6 611.9L573.3 610L575.1 608.4L577.1 607.1L579.2 606.1L581.5 605.4L583.9 604.9L589.3 604.2L592.3 604L595.6 603.9L599 603.8L602.6 603.8L610.6 604L618.6 604.8L622.6 605.6L626.7 606.5L630.7 607.6L638.7 610.4L657.6 618.2L660.9 619.6L664.7 621.4L667.9 623.2L671.5 625.4L673.4 626.6L677.4 629.2L682.4 632.9L683.8 634L687.3 637.1L688.2 638L689 638.8L690.4 640.2L690.9 640.8L691.4 641.4L692.2 642.4L693.1 643.6L693.4 644L695.2 646.8L695.7 647.6L697.1 650.4L697.9 652.4L699.2 655.9L699.4 656.5L699.7 657.6L700.1 659.6L700.1 661.8L699.9 663.2L699.7 664.2L699.6 664.6L699.3 665.6L698.6 667.2L698.2 668.1L697.6 669.1L697.3 669.5L696.9 670L696.7 670.2L696.2 670.7L695.1 671.8L694.1 672.5L693.8 672.7L692.8 673.2L692.6 673.3L691.7 673.6L688.5 674.4L679.4 676.4L675.2 677.3L666.2 679.2L659.4 680.6L653 681.7L652 681.8L548.1 682.6L542.8 682.5L539.8 681.1Z" fill="#1f4f8a" fill-opacity=".1"/>
               
             </g>
-            <g class="w0 sgk"><rect x="512" y="482" width="78" height="40" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="551" y="495" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">기흥구청 상권</text><rect x="614" y="530" width="32" height="50" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="630" y="551" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">북측</text><text x="630" y="565" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">상권</text><rect x="748" y="645" width="78" height="22" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="787" y="660" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">강남대역 상권</text><rect x="494" y="640" width="56" height="16" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="522" y="651.5" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#5c6366;stroke:none">신갈 상권</text><text x="624" y="657" text-anchor="middle" style="font-size:13px;font-weight:600;letter-spacing:.14em;fill:#1f4f8a;stroke:none">기흥역세권</text></g>
+            <g class="w0 sgk"><rect x="512" y="482" width="78" height="40" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="551" y="495" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">기흥구청 상권</text><rect x="614" y="530" width="32" height="50" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="630" y="551" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">북측</text><text x="630" y="565" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">상권</text><rect x="748" y="645" width="78" height="22" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="787" y="660" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">강남대역 상권</text><rect x="494" y="640" width="56" height="16" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="522" y="651.5" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#5c6366;stroke:none">신갈 상권</text></g>
             <ellipse cx="400" cy="106" rx="62" ry="38" fill="#9b4f96" fill-opacity=".08" stroke="#9b4f96" stroke-width="1.4" stroke-dasharray="5 4"/>
-            <text class="ar" x="400" y="108" text-anchor="middle" style="font-size:14px;font-weight:500;fill:#7a3d76;">용인 플랫폼시티</text>
+            <text class="ar" x="400" y="108" text-anchor="middle" style="font-size:13px;font-weight:500;fill:#7a3d76;">용인 플랫폼시티</text>
             <text class="pl" x="400" y="126" text-anchor="middle" style="font-size:12px;fill:#7a3d76">(개발 예정)</text>
-            <text class="ar" x="700" y="470" text-anchor="middle" style="font-size:14px;font-weight:500;fill:#6b8f55">수원CC</text>
-            <text class="ar" x="935" y="802" text-anchor="middle" transform="rotate(27 935 802)" style="font-size:14px;font-weight:500;fill:#4a86b4;letter-spacing:.12em">신갈천</text>
-            <rect x="363" y="868" width="100" height="24" rx="4" fill="#6b5f57"/><text class="w0" x="413" y="884.5" text-anchor="middle" style="font-size:11.5px;font-weight:500;fill:#fff">경부고속도로</text>
+            <text class="ar" x="652" y="452" text-anchor="middle" style="font-size:13px;font-weight:500;fill:#6b8f55">수원CC</text>
+            <text class="ar" x="862" y="728" text-anchor="middle" transform="rotate(40 862 728)" style="font-size:13px;font-weight:500;fill:#4a86b4;letter-spacing:.12em">신갈천</text>
+            <rect x="342" y="418" width="100" height="24" rx="4" fill="#6b5f57"/><text class="w0" x="392" y="434.5" text-anchor="middle" style="font-size:11.5px;font-weight:500;fill:#fff">경부고속도로</text>
             <rect x="342" y="226" width="100" height="24" rx="4" fill="#6b5f57"/><text class="w0" x="392" y="242.5" text-anchor="middle" style="font-size:11.5px;font-weight:500;fill:#fff">영동고속도로</text>
             <rect x="342" y="749.5" width="100" height="24" rx="4" fill="#6b5f57"/><text class="w0" x="392" y="766" text-anchor="middle" style="font-size:11.5px;font-weight:500;fill:#fff">수원신갈IC</text>
-            <rect x="595.6" y="319.6" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(597 321) scale(0.3)"/><text class="pl" x="591.6" y="329.1" text-anchor="end" style="font-size:13.5px">신릉중학교</text>
-            <rect x="485.9" y="499.4" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(487.3 500.8) scale(0.3)"/><text class="pl" x="481.9" y="508.9" text-anchor="end" style="font-size:13.5px">신갈중학교</text>
-            <rect x="534.6" y="549.5" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(536 550.9) scale(0.3)"/><text class="pl" x="530.6" y="559" text-anchor="end" style="font-size:13.5px">구갈초등학교</text>
-            <rect x="686.5" y="674.8" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(687.9 676.2) scale(0.3)"/><text class="pl" x="700.5" y="684.3" style="font-size:13.5px">한얼초등학교</text>
-            <rect x="773.9" y="622.1" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(775.3 623.5) scale(0.3)"/><text class="pl" x="787.9" y="631.6" style="font-size:13.5px">성지중학교</text>
-            <rect x="542.1" y="683.3" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(543.5 684.7) scale(0.3)"/><text class="pl" x="538.1" y="692.8" text-anchor="end" style="font-size:13.5px">신갈고등학교</text>
-            <rect x="553.7" y="400" width="10" height="10" rx="1.6" fill="#8a6bbf"/><path d="M4 4h16v3H4zM5 9h3v9H5zm5.5 0h3v9h-3zM16 9h3v9h-3zM3 20h18v2.5H3z" fill="#fff" transform="translate(555.1 401.4) scale(0.3)"/><text class="pl" x="567.7" y="409.5" style="font-size:13.5px">기흥도서관</text>
-            <rect x="486.5" y="730.6" width="10" height="10" rx="1.6" fill="#8a6bbf"/><path d="M4 4h16v3H4zM5 9h3v9H5zm5.5 0h3v9h-3zM16 9h3v9h-3zM3 20h18v2.5H3z" fill="#fff" transform="translate(487.9 732) scale(0.3)"/><text class="pl" x="482.5" y="740.1" text-anchor="end" style="font-size:13.5px">경기도박물관</text>
-            <rect x="501.5" y="745.8" width="10" height="10" rx="1.6" fill="#8a6bbf"/><path d="M4 4h16v3H4zM5 9h3v9H5zm5.5 0h3v9h-3zM16 9h3v9h-3zM3 20h18v2.5H3z" fill="#fff" transform="translate(502.9 747.2) scale(0.3)"/><text class="pl" x="506.5" y="769.8" text-anchor="middle" style="font-size:13.5px">경기도어린이박물관</text>
-            <rect x="527.5" y="627.7" width="10" height="10" rx="1.6" fill="#d64545"/><path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" fill="#fff" transform="translate(528.9 629.1) scale(0.3)"/><text class="pl" x="523.5" y="637.2" text-anchor="end" style="font-size:13.5px">강남병원</text>
-            <rect x="505.4" y="196.6" width="10" height="10" rx="1.6" fill="#d64545"/><path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" fill="#fff" transform="translate(506.8 198) scale(0.3)"/><text class="pl" x="510.4" y="220.6" text-anchor="middle" style="font-size:13.5px">용인아이들병원</text>
-            <rect x="1070.2" y="682.8" width="10" height="10" rx="1.6" fill="#d64545"/><path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" fill="#fff" transform="translate(1071.6 684.2) scale(0.3)"/><text class="pl" x="1075.2" y="678.8" text-anchor="middle" style="font-size:13.5px">용인세브란스병원</text>
-            <rect x="576" y="503.9" width="10" height="10" rx="1.6" fill="#4a5a7a"/><path d="M12 2L2 7.5V10h20V7.5L12 2zM4 12h3v6H4zm6.5 0h3v6h-3zm6.5 0h3v6h-3zM2 20h20v2.5H2z" fill="#fff" transform="translate(577.4 505.3) scale(0.3)"/><text class="pl" x="572" y="513.4" text-anchor="end" style="font-size:13.5px">기흥구청</text>
-            <rect x="645" y="508.4" width="10" height="10" rx="1.6" fill="#4a5a7a"/><path d="M12 2L2 7.5V10h20V7.5L12 2zM4 12h3v6H4zm6.5 0h3v6h-3zm6.5 0h3v6h-3zM2 20h20v2.5H2z" fill="#fff" transform="translate(646.4 509.8) scale(0.3)"/><text class="pl" x="659" y="517.9" style="font-size:13.5px">기흥 ICT밸리<tspan style="font-size:13px;fill:#6b7076"> (상권 · 입주 기업 370여 개)</tspan></text>
-            <rect x="606.1" y="615.6" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(607.5 617) scale(0.3)"/><text class="pl" x="620.1" y="625.1" style="font-size:13.5px">AK몰</text>
-            <rect x="485.3" y="656.2" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(486.7 657.6) scale(0.3)"/><text class="pl" x="481.3" y="665.7" text-anchor="end" style="font-size:13.5px">롯데마트 신갈점</text>
-            <rect x="433.3" y="47" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(434.7 48.4) scale(0.3)"/><text class="pl" x="447.3" y="56.5" style="font-size:13.5px">이마트 트레이더스 구성</text>
-            <rect x="805.2" y="748.6" width="10" height="10" rx="1.6" fill="#5aa55a"/><path d="M12 1.5L4.5 12h4.2L5 17.5h6V23h2v-5.5h6L15.3 12h4.2z" fill="#fff" transform="translate(806.6 750) scale(0.3)"/><text class="pl" x="819.2" y="758.1" style="font-size:13.5px">구갈레스피아<tspan style="font-size:13px;fill:#6b7076"> (공원)</tspan></text>
+            <rect x="595.6" y="319.6" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(597 321) scale(0.3)"/><text class="pl" x="591.6" y="329.1" text-anchor="end" style="font-size:12.5px">신릉중학교</text>
+            <rect x="485.9" y="499.4" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(487.3 500.8) scale(0.3)"/><text class="pl" x="481.9" y="508.9" text-anchor="end" style="font-size:12.5px">신갈중학교</text>
+            <rect x="534.6" y="549.5" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(536 550.9) scale(0.3)"/><text class="pl" x="530.6" y="559" text-anchor="end" style="font-size:12.5px">구갈초등학교</text>
+            <rect x="686.5" y="674.8" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(687.9 676.2) scale(0.3)"/><text class="pl" x="700.5" y="684.3" style="font-size:12.5px">한얼초등학교</text>
+            <rect x="773.9" y="622.1" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(775.3 623.5) scale(0.3)"/><text class="pl" x="787.9" y="631.6" style="font-size:12.5px">성지중학교</text>
+            <rect x="542.1" y="683.3" width="10" height="10" rx="1.6" fill="#e2658a"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(543.5 684.7) scale(0.3)"/><text class="pl" x="538.1" y="692.8" text-anchor="end" style="font-size:12.5px">신갈고등학교</text>
+            <rect x="553.7" y="400" width="10" height="10" rx="1.6" fill="#8a6bbf"/><path d="M4 4h16v3H4zM5 9h3v9H5zm5.5 0h3v9h-3zM16 9h3v9h-3zM3 20h18v2.5H3z" fill="#fff" transform="translate(555.1 401.4) scale(0.3)"/><text class="pl" x="567.7" y="409.5" style="font-size:12.5px">기흥도서관</text>
+            <rect x="486.5" y="730.6" width="10" height="10" rx="1.6" fill="#8a6bbf"/><path d="M4 4h16v3H4zM5 9h3v9H5zm5.5 0h3v9h-3zM16 9h3v9h-3zM3 20h18v2.5H3z" fill="#fff" transform="translate(487.9 732) scale(0.3)"/><text class="pl" x="482.5" y="740.1" text-anchor="end" style="font-size:12.5px">경기도박물관</text>
+            <rect x="501.5" y="745.8" width="10" height="10" rx="1.6" fill="#8a6bbf"/><path d="M4 4h16v3H4zM5 9h3v9H5zm5.5 0h3v9h-3zM16 9h3v9h-3zM3 20h18v2.5H3z" fill="#fff" transform="translate(502.9 747.2) scale(0.3)"/><text class="pl" x="506.5" y="769.8" text-anchor="middle" style="font-size:12.5px">경기도어린이박물관</text>
+            <rect x="527.5" y="627.7" width="10" height="10" rx="1.6" fill="#d64545"/><path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" fill="#fff" transform="translate(528.9 629.1) scale(0.3)"/><text class="pl" x="523.5" y="637.2" text-anchor="end" style="font-size:12.5px">강남병원</text>
+            <rect x="505.4" y="196.6" width="10" height="10" rx="1.6" fill="#d64545"/><path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" fill="#fff" transform="translate(506.8 198) scale(0.3)"/><text class="pl" x="510.4" y="220.6" text-anchor="middle" style="font-size:12.5px">용인아이들병원</text>
+            <rect x="576" y="503.9" width="10" height="10" rx="1.6" fill="#4a5a7a"/><path d="M12 2L2 7.5V10h20V7.5L12 2zM4 12h3v6H4zm6.5 0h3v6h-3zm6.5 0h3v6h-3zM2 20h20v2.5H2z" fill="#fff" transform="translate(577.4 505.3) scale(0.3)"/><text class="pl" x="572" y="513.4" text-anchor="end" style="font-size:12.5px">기흥구청</text>
+            <rect x="645" y="508.4" width="10" height="10" rx="1.6" fill="#4a5a7a"/><path d="M12 2L2 7.5V10h20V7.5L12 2zM4 12h3v6H4zm6.5 0h3v6h-3zm6.5 0h3v6h-3zM2 20h20v2.5H2z" fill="#fff" transform="translate(646.4 509.8) scale(0.3)"/><text class="pl" x="659" y="517.9" style="font-size:12.5px">기흥 ICT밸리</text><text class="pl" x="659" y="533" style="font-size:11px;fill:#6b7076">상권 · 입주 기업 370여 개</text>
+            <rect x="606.1" y="615.6" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(607.5 617) scale(0.3)"/><text class="pl" x="620.1" y="625.1" style="font-size:12.5px">AK몰</text>
+            <rect x="485.3" y="656.2" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(486.7 657.6) scale(0.3)"/><text class="pl" x="481.3" y="665.7" text-anchor="end" style="font-size:12.5px">롯데마트 신갈점</text>
+            <rect x="433.3" y="47" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(434.7 48.4) scale(0.3)"/><text class="pl" x="447.3" y="56.5" style="font-size:12.5px">이마트 트레이더스 구성</text>
+            <rect x="805.2" y="748.6" width="10" height="10" rx="1.6" fill="#5aa55a"/><path d="M12 1.5L4.5 12h4.2L5 17.5h6V23h2v-5.5h6L15.3 12h4.2z" fill="#fff" transform="translate(806.6 750) scale(0.3)"/><text class="pl" x="810.2" y="776" text-anchor="middle" style="font-size:12.5px">구갈레스피아<tspan style="font-size:11.5px;fill:#6b7076"> (공원)</tspan></text>
+            <rect x="765" y="592" width="10" height="10" rx="1.6" fill="#d64545"/><path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" fill="#fff" transform="translate(766.4 593.4) scale(0.3)"/><text class="pl" x="779" y="601.5" style="font-size:12.5px">용인세브란스병원 →</text>
             <circle cx="530.3" cy="402.4" r="6" fill="#fff" stroke="#f0a030" stroke-width="3"/>
-            <text class="st" x="515.3" y="408" text-anchor="end" style="font-size:15px">신갈역</text>
-            <circle cx="492.8" cy="854" r="6" fill="#fff" stroke="#f0a030" stroke-width="3"/>
-            <text class="st" x="477.8" y="859.6" text-anchor="end" style="font-size:15px">상갈역</text>
+            <text class="st" x="515.3" y="408" text-anchor="end" style="font-size:14px">신갈역</text>
             <circle cx="748.7" cy="698.9" r="6" fill="#fff" stroke="#6fb35f" stroke-width="3"/>
-            <text class="st" x="762" y="705" style="font-size:15px">강남대역</text>
-            <circle cx="904.6" cy="706.9" r="6" fill="#fff" stroke="#6fb35f" stroke-width="3"/>
-            <text class="st" x="904.6" y="733.9" text-anchor="middle" style="font-size:15px">지석역</text>
+            <text class="st" x="762" y="705" style="font-size:14px">강남대역</text>
             <circle cx="447.9" cy="164.3" r="7.5" fill="#fff"/>
             <path d="M447.9 157.8A6.5 6.5 0 0 0 447.9 170.8" fill="none" stroke="#f0a030" stroke-width="3.2"/>
             <path d="M447.9 157.8A6.5 6.5 0 0 1 447.9 170.8" fill="none" stroke="#9b4f96" stroke-width="3.2"/>
-            <text class="st" x="460" y="169" style="font-size:15px">구성역</text>
+            <text class="st" x="460" y="169" style="font-size:14px">구성역</text>
             <text class="pl" x="460" y="183" style="font-size:11px;fill:#6b7076">수인분당선 · GTX-A</text>
             
             <circle cx="600" cy="600" r="15.5" fill="#fff"/><path d="M600 589A11 11 0 0 0 600 611" fill="none" stroke="#f0a030" stroke-width="5"/><path d="M600 589A11 11 0 0 1 600 611" fill="none" stroke="#6fb35f" stroke-width="5"/><path d="M8 3h8a3 3 0 013 3v8a3 3 0 01-2 2.8L18.5 20h-2l-1.4-3H8.9L7.5 20h-2l1.5-3.2A3 3 0 015 14V6a3 3 0 013-3zm-1 4v4h10V7zm1.5 6.5a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2z" fill="#2b2f33" transform="translate(593.18 593.4) scale(0.572)"/>
             
             <rect x="516" y="524" width="70" height="90" rx="8" fill="#4f86c6" fill-opacity=".14" stroke="#2f5f9e" stroke-width="1.8" stroke-dasharray="5 3.5"/><text class="pl" x="551" y="585" text-anchor="middle" style="font-size:11px;font-weight:700;fill:#1f4f8a">재건축 추진중</text><text class="pl" x="551" y="600" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1f4f8a">(6개 아파트)</text>
-            <circle cx="1140.7" cy="718.7" r="6" fill="#fff" stroke="#6fb35f" stroke-width="3"/><text class="st" x="1140.7" y="745.7" text-anchor="middle" style="font-size:15px">동백역</text><rect x="1119" y="544.5" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(1120.4 545.9) scale(0.3)"/><text class="pl" x="1115" y="554" text-anchor="end" style="font-size:13.5px">이마트 동백점</text>
-            <path d="M822 862.1l9 -14 9 14z" fill="#7aa66a"/>
-            <text class="ar" x="831" y="884.1" text-anchor="middle" style="font-size:14px;font-weight:500;fill:#4f7a43;">용뫼산</text>
-            <text class="ar" x="742" y="842" text-anchor="middle" style="font-size:14px;font-weight:500;fill:#6b8f55">남부CC</text>
             
-            <g transform="translate(300 -212)"><rect x="40" y="1124" width="840" height="84" rx="6" fill="#fff" stroke="#e1e4e6"/>
+            <g transform="translate(304.4 -76.7) scale(.78)"><rect x="38" y="1124" width="820.5" height="76" rx="0" fill="#fff" stroke="#e1e4e6"/>
             <circle cx="64" cy="1149" r="7" fill="#fff" stroke="#f0a030" stroke-width="4"/>
             <text class="w0" x="77" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">수인분당선</text>
             <circle cx="167" cy="1149" r="7" fill="#fff" stroke="#6fb35f" stroke-width="4"/>
@@ -1244,24 +1283,25 @@ body.is-main #sft{display:none}
             <g transform="translate(-562 34)"><rect x="628" y="1141" width="16" height="16" rx="3.52" fill="#ef8a2c" stroke="#fff" stroke-width="1.5"/>
             <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(631.04 1144.04) scale(0.413)"/>
             <text class="w0" x="649" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">쇼핑 · 마트</text>
-            <rect x="757" y="1141" width="16" height="16" rx="3.52" fill="#8a6bbf" stroke="#fff" stroke-width="1.5"/>
-            <path d="M4 4h16v3H4zM5 9h3v9H5zm5.5 0h3v9h-3zM16 9h3v9h-3zM3 20h18v2.5H3z" fill="#fff" transform="translate(760.04 1144.04) scale(0.413)"/>
-            <text class="w0" x="778" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">문화</text>
-            <rect x="819" y="1141" width="16" height="16" rx="3.52" fill="#5aa55a" stroke="#fff" stroke-width="1.5"/>
-            <path d="M12 1.5L4.5 12h4.2L5 17.5h6V23h2v-5.5h6L15.3 12h4.2z" fill="#fff" transform="translate(822.04 1144.04) scale(0.413)"/>
-            <text class="w0" x="840" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">공원</text>
-            <rect x="881" y="1142" width="16" height="14" rx="3" fill="#1f4f8a" fill-opacity=".14"/><text class="w0" x="902" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">기흥역세권</text>
-            <rect x="986" y="1142" width="16" height="14" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text class="w0" x="1007" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">상권</text>
-            <rect x="1049" y="1142" width="16" height="14" rx="3" fill="#4f86c6" fill-opacity=".14" stroke="#2f5f9e" stroke-width="1.2" stroke-dasharray="3 2"/><text class="w0" x="1070" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">재건축</text></g></g>
-            <text class="w0" x="1186" y="904" text-anchor="end" style="font-size:12px;fill:#9aa1a5">© OpenStreetMap contributors</text>
+            <rect x="725" y="1141" width="16" height="16" rx="3.52" fill="#8a6bbf" stroke="#fff" stroke-width="1.5"/>
+            <path d="M4 4h16v3H4zM5 9h3v9H5zm5.5 0h3v9h-3zM16 9h3v9h-3zM3 20h18v2.5H3z" fill="#fff" transform="translate(728.04 1144.04) scale(0.413)"/>
+            <text class="w0" x="746" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">문화</text>
+            <rect x="787" y="1141" width="16" height="16" rx="3.52" fill="#5aa55a" stroke="#fff" stroke-width="1.5"/>
+            <path d="M12 1.5L4.5 12h4.2L5 17.5h6V23h2v-5.5h6L15.3 12h4.2z" fill="#fff" transform="translate(790.04 1144.04) scale(0.413)"/>
+            <text class="w0" x="808" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">공원</text>
+            <rect x="849" y="1142" width="16" height="14" rx="3" fill="#1f4f8a" fill-opacity=".14"/><text class="w0" x="870" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">기흥역세권</text>
+            <rect x="954" y="1142" width="16" height="14" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text class="w0" x="975" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">상권</text>
+            <rect x="1017" y="1142" width="16" height="14" rx="3" fill="#4f86c6" fill-opacity=".14" stroke="#2f5f9e" stroke-width="1.2" stroke-dasharray="3 2"/><text class="w0" x="1038" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">재건축</text></g></g>
+            <text class="w0" x="970" y="795" text-anchor="end" style="font-size:9.5px;fill:#9aa1a5">© OpenStreetMap contributors</text>
           </svg>
           </div>
 <p class="map-cap">※ 본 지도의 위치도는 OpenStreetMap 지도 데이터를 참조하여 소비자의 이해를 돕기 위해 제작한 것으로, 실제와 다를 수 있습니다.</p>
+          </div>
           <aside class="loc-side">
             <div class="loc-msg">
               <i aria-hidden="true"></i>
               <p>완성된 중심 위에<br><b>기흥역세권</b>의 일상을 더하다</p>
-              <span>기흥역에서 걸어서 누리는 AK몰부터<br>차량 25분 판교까지, 쇼핑의 선택지가 넓어집니다</span>
+              <span>쇼핑 · 학원가 · 반도체 일자리,<br>일상에 필요한 모든 것이 가까이 있습니다</span>
             </div>
             </aside>
           </div>
@@ -1319,10 +1359,11 @@ body.is-main #sft{display:none}
 <div class="loc-semi">
 <p class="ls-h"><span>Industry</span>반도체 벨트 · 직주근접</p>
 <ul>
-<li><b>삼성전자 NanoCity 기흥캠퍼스</b><span>용인 기흥</span></li>
-<li><b>삼성전자 국가산단</b><span>용인 이동읍 · 남사읍</span></li>
-<li><b>SK하이닉스 반도체 클러스터</b><span>용인 원삼면</span></li>
-<li><b>SK하이닉스 본사 · 이천캠퍼스</b><span>경기 이천</span></li>
+<li><b>삼성전자 화성캠퍼스</b><span>경기 화성 · 차로 15분</span></li>
+<li><b>삼성전자 기흥캠퍼스</b><span>용인 기흥 · 차로 10분</span></li>
+<li><b>삼성전자 국가산단</b><span>용인 이동읍 · 남사읍 · 차로 30분</span></li>
+<li><b>SK하이닉스 반도체 클러스터</b><span>용인 원삼면 · 차로 30분</span></li>
+<li><b>SK하이닉스 본사 · 이천캠퍼스</b><span>경기 이천 · 차로 45분</span></li>
 </ul>
 </div>
 </div>
@@ -1444,7 +1485,6 @@ body.is-main #sft{display:none}
             </g>
             <!-- 생활시설 -->
             <path d="M340.6,221 L340.4,276.3 L366.3,276.9 L368.9,274.8 L371.9,271.3 L374.5,266.5 L376.4,258.7 L376.6,253.1 L376.1,249 L374.8,245.3 L373.4,242.6 L371.8,240.3 L370.6,238.7 L370,221.3 L340.6,221Z" fill="#ebebeb"/>
-            <path d="M608.7,432.8 L642.3,424.3 L644.2,436.1 L643.7,446.8 L655.1,464.7 L664.7,468.8 L668.7,486.8 L658.6,508.8 L644.5,512.3 L631.9,512.2 L625.7,522.1 L609.7,510.7 L576.6,447.9 L578.9,439 L608.7,432.8Z" fill="#ebebeb"/>
             <!-- 단지 (OSM 단지 경계) -->
             <path class="blk" data-i="0" d="M410.4,191.7 L397.6,191.3 L386.8,193.7 L379,210.4 L380.5,272.5 L383.6,283.4 L409.6,278.8 L425.4,272.5 L437.3,263.1 L461.3,236.7 L474.9,220.4 L471.4,210.1 L466.9,202.7 L450.2,198.7 L428.9,194.1 L410.4,191.7Z"/>
             <path class="blk" data-i="1" d="M479.1,358.7 L429.3,290.2 L440.5,282.5 L454,269.6 L466.4,256.9 L472.1,250.2 L491.1,258.2 L510.1,267.4 L533.9,280 L551.9,292 L575.1,307.3 L589.9,320 L598.1,326.4 L604.4,332.9 L606.7,336.2 L593,346.2 L559.3,354 L508.6,358.3 L479.1,358.7Z"/>
@@ -1481,8 +1521,6 @@ body.is-main #sft{display:none}
               <text x="232" y="452" transform="rotate(-3 232 452)">신중부대로</text>
               <text x="560" y="214" transform="rotate(38 560 214)">중부대로</text>
               <text x="358" y="248" text-anchor="middle" font-size="10.5" fill="#9aa0a3">AK&amp;</text><text x="358" y="262" text-anchor="middle" font-size="10.5" fill="#9aa0a3">기흥</text>
-              <text x="637" y="474" text-anchor="middle" fill="#9aa0a3">한얼초</text>
-              <circle cx="94.5" cy="292.2" r="3.5" fill="#b0453f"/><text x="104" y="296.5" fill="#5c6366">강남병원</text>
               <text x="300" y="40" text-anchor="end" fill="#8a9096" font-weight="500">수인분당선</text>
             </g>
             <circle cx="317" cy="191" r="9" fill="#fff"/><path d="M317 182A9 9 0 0 0 317 200" fill="none" stroke="#f0a030" stroke-width="4.5"/><path d="M317 182A9 9 0 0 1 317 200" fill="none" stroke="#6fb35f" stroke-width="4.5"/>
@@ -1523,7 +1561,8 @@ body.is-main #sft{display:none}
     </div>
 <div class="cmp" id="cmp" hidden>
 <div class="nbc-head"><p><small>COMPARE</small>단지별 비교표 한눈에 보기</p><span>기흥역세권 1지구 6개 단지</span></div>
-<div class="cmp-wrap"><table class="cmp-t" id="cmpT"></table></div>
+<div class="cmp-pick" id="cmpPick"><p>비교할 단지 2개를 골라 보세요</p><div></div></div>
+<div class="cmp-wrap" id="cmpWrap"><table class="cmp-t" id="cmpT"></table></div>
 <p class="nbc-src">세대수 · 주차 · 거리는 각 단지 분양 자료와 입주민 정보, 시세는 국토교통부 실거래가(호갱노노 확인, 2026.10) 기준입니다. 실제와 다를 수 있습니다.</p>
 </div>
 <div class="nbc" id="nbc" hidden>
@@ -1662,7 +1701,7 @@ body.is-main #sft{display:none}
 <div class="gd-hero">
 <p class="gd-lab">IMJANG GUIDE</p>
 <h3>걸어보면 보이는<br>기흥역세권</h3>
-<p class="gd-lead">기흥역 AK플라자에서 출발해 6개 단지와 2지구 부지, 신갈천 산책로, 용뫼산까지.<br>매수 전 꼭 한 번 걸어봐야 할 동선과 현장 체크리스트, 계산기를 한곳에 모았습니다.</p>
+<p class="gd-lead">기흥역 AK플라자에서 출발해 6개 단지와 2지구 부지, 신갈천 산책로까지.<br>매수 전 꼭 한 번 걸어봐야 할 동선과 현장 체크리스트, 계산기를 한곳에 모았습니다.</p>
 <ul class="gd-jump">
 <li><a href="#/guide" data-jump="gdCourse">01 추천 임장 코스</a></li>
 <li><a href="#/guide" data-jump="gdTime">02 시간대별 팁</a></li>
@@ -1673,7 +1712,7 @@ body.is-main #sft{display:none}
 </div>
 
 <div class="gd-sec" id="gdCourse">
-<div class="gd-h"><span>01</span><div><h4>추천 임장 코스</h4><p>약 3.5km · 도보 70 ~ 90분 · 평지 위주 (용뫼산 구간만 완만한 오르막)</p></div></div>
+<div class="gd-h"><span>01</span><div><h4>추천 임장 코스</h4><p>약 2.5km · 도보 50 ~ 70분 · 평지 위주</p></div></div>
 <div class="gd-course">
 <div class="gd-map" id="gdMap"></div>
 <ol class="gd-steps" id="gdSteps"></ol>
@@ -1810,15 +1849,15 @@ const C=[
    {cat:"단지 전경",cap:"폭포 정원",src:"images/central/b16.jpg"},
    {cat:"단지 전경",cap:"단지 앞 신갈천",src:"images/central/b17.jpg"},
    {cat:"단지 전경",cap:"신갈천 산책로",src:"images/central/b18.jpg"},
-   {cat:"조망",cap:"수원CC 골프장 조망",src:"images/central/03.jpg"},
-   {cat:"조망",cap:"골프장과 녹지 조망",src:"images/central/04.jpg"},
-   {cat:"조망",cap:"거실에서 바라본 수원CC 골프장 뷰",src:"images/central/v01.jpg"},
-   {cat:"조망",cap:"통창 너머 펼쳐지는 골프장 · 녹지 조망",src:"images/central/v02.jpg"},
+   {cat:"조망",cap:"고층에서 내려다본 수원CC와 녹지",src:"images/central/v09.jpg"},
+   {cat:"조망",cap:"단풍으로 물든 가을 골프장 조망",src:"images/central/v10.jpg"},
    {cat:"조망",cap:"노을 지는 서쪽 시티뷰",src:"images/central/v06.jpg"},
    {cat:"조망",cap:"신갈천 · 에버라인 · ICT밸리 조망",src:"images/central/v07.jpg"},
    {cat:"조망",cap:"고층에서 내려다본 가을 단지 정원",src:"images/central/v04.jpg"},
    {cat:"조망",cap:"위에서 본 연못 정원",src:"images/central/v05.jpg"},
    {cat:"조망",cap:"석가산 연못 정원",src:"images/central/v03.jpg"},
+   {cat:"조망",cap:"거실에서 바라본 수원CC 골프장 뷰",src:"images/central/v01.jpg"},
+   {cat:"조망",cap:"통창 너머 펼쳐지는 골프장 · 녹지 조망",src:"images/central/v02.jpg"},
    {cat:"커뮤니티",cap:"어린이 놀이터",src:"images/central/b05.jpg"},
    {cat:"커뮤니티",cap:"Share Stop 1316",src:"images/central/b06.jpg"},
    {cat:"커뮤니티",cap:"커뮤니티 Uz center",src:"images/central/b07.jpg"},
@@ -1888,9 +1927,7 @@ const C=[
    {k:"조망",t:"전 타입 조망권",d:"숲 · 골프장 · 용뫼산 뷰, 84타입 리조트뷰 · 무지개 맛집"},
    {k:"평면",t:"73㎡ 광폭 거실",d:"35평 거실과 차이 없는 체감 면적, 신혼부부 선호 · 매물 귀한 타입"},
    {k:"평면",t:"대형 평형 · 펜트하우스",d:"전용 114㎡ 69세대, 123 · 124 · 149㎡ 펜트하우스 8세대"},
-   {k:"평면",t:"84D 거실폭 4.8m",d:"40평대급 대형 거실, 안방보다 큰 북측 침실"},
    {k:"평면",t:"114㎡ 팔각형 거실창",d:"수원CC 파노라마 조망, 드레스룸 2곳 · 대형 주방 펜트리"},
-   {k:"생활",t:"AK몰 · 스타벅스 슬세권",d:"강남대 상권 · 농협 도보 10분"},
    {k:"녹지",t:"용뫼산 · 오산천 인접",d:"단지 앞 산책로, 구갈레스피아 도보 10분"},
    {k:"관리",t:"외관 새 도색 · 깔끔한 주차장",d:"최근 외관 도색으로 더 화사해진 단지"},
    {k:"일조",t:"햇살 맛집 · 난방비 절약",d:"남동향 뻥뷰로 주방까지 해가 들어 난방비가 거의 들지 않는다는 입주민 후기"},
@@ -1929,7 +1966,7 @@ const C=[
    {k:"교통",t:"기흥역 약 407m",d:"지하 3층 커뮤니티 출입구로 나가 공원을 지나면 AK& · 기흥역 4번 출구까지 약 3분"},
    {k:"조망",t:"남쪽이 트인 평생뷰",d:"앞을 가릴 부지가 없어 동탄 메타폴리스 · 신갈저수지까지, 남동향은 용뫼산 · 남부CC 조망"},
    {k:"설계",t:"낮춘 창틀 · 픽처레일",d:"거실 창틀 높이 27cm로 시야각 확대, 거실 전체 픽처레일 기본 설치"},
-   {k:"주차",t:"세대당 약 1.38대",d:"입주 후 100면 추가 확보, 역세권에서 가장 여유로운 주차"},
+   {k:"주차",t:"세대당 약 1.38대",d:"입주 후 100면 추가 확보, 여유로운 주차"},
    {k:"외관",t:"멘디니 디자인 · 실리콘페인트",d:"알렉산드로 멘디니 디자인 적용, 오염 · 변색에 강한 고급 외장 마감, 전 세대 LED 조명"},
    {k:"조경",t:"천연암폭포 · 더샵필드",d:"새싹가든, 오감가든, 산책로와 박은선 · 박선기 작가 미술작품"},
    {k:"생활",t:"역세권 유일 사우나 · 물놀이장",d:"여름 어린이 물놀이장(안전요원 운영)과 맘스카페, 단지 내 소아과 · 약국"}],
@@ -2309,8 +2346,7 @@ document.querySelectorAll(".rv").forEach(el=>io?io.observe(el):el.classList.add(
     {x:430,y:371,t:"더샵",m:"7분",d:"보행자 데크와 남쪽이 트인 조망, 석가산 조경과 커뮤니티 동선을 확인합니다."},
     {x:523,y:308,t:"센트럴 푸르지오",m:"5분",d:"역세권 최대 규모 단지, 단지 내 상가와 서울행 버스정류장까지 거리를 봅니다."},
     {x:597,y:381,t:"파크 푸르지오 · 한얼초",m:"5분",d:"한얼초 · 병설유치원 바로 앞 통학로와 연못정원, 대형 평형 동을 봅니다."},
-    {x:690,y:402,t:"신갈천 산책로",m:"8분",d:"단지 앞 신갈천 산책로 · 자전거길을 따라 걸으며 소음과 조망을 확인합니다."},
-    {x:470,y:560,t:"용뫼산 산책로",m:"20분",d:"신중부대로를 건너 단지 뒤 용뫼산으로. 배산임수 입지와 단지 전경을 내려다봅니다."}
+    {x:690,y:402,t:"신갈천 산책로",m:"8분",d:"단지 앞 신갈천 산책로 · 자전거길을 따라 걸으며 소음과 조망을 확인합니다."}
   ];
   const src=$("cmapSvg");
   if(src){
@@ -2320,8 +2356,7 @@ document.querySelectorAll(".rv").forEach(el=>io?io.observe(el):el.classList.add(
     const ns="http://www.w3.org/2000/svg",g=document.createElementNS(ns,"g");g.setAttribute("class","gd-route");
     const pts=STOPS.map(p=>p.x+","+p.y).join(" ");
     g.innerHTML=`<polyline points="${pts}" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/><polyline class="gd-line" points="${pts}" fill="none" stroke="#000" stroke-width="3.5" stroke-dasharray="2 7" stroke-linejoin="round" stroke-linecap="round"/>`+
-      STOPS.map((p,i)=>`<g class="gd-pin"><circle cx="${p.x}" cy="${p.y}" r="13" fill="${i===0?"#000":"#f5ff00"}" stroke="#000" stroke-width="2"/><text x="${p.x}" y="${p.y+4.5}" text-anchor="middle" style="font:700 12px var(--en);fill:${i===0?"#f5ff00":"#000"}">${i===0?"S":i}</text></g>`).join("")+
-      `<g class="gd-tag"><rect x="${STOPS[9].x+18}" y="${STOPS[9].y-12}" width="92" height="24" rx="12" fill="#000"/><text x="${STOPS[9].x+64}" y="${STOPS[9].y+4}" text-anchor="middle" style="font:700 11px var(--kr);fill:#f5ff00">용뫼산 방면 ↓</text></g>`;
+      STOPS.map((p,i)=>`<g class="gd-pin"><circle cx="${p.x}" cy="${p.y}" r="13" fill="${i===0?"#000":"#f5ff00"}" stroke="#000" stroke-width="2"/><text x="${p.x}" y="${p.y+4.5}" text-anchor="middle" style="font:700 12px var(--en);fill:${i===0?"#f5ff00":"#000"}">${i===0?"S":i}</text></g>`).join("");
     s.appendChild(g);
     const vb=s.getAttribute("viewBox").split(/\s+/).map(Number);if(vb[3]<600)s.setAttribute("viewBox",`${vb[0]} ${vb[1]} ${vb[2]} 600`);
     $("gdMap").appendChild(s);
@@ -2448,27 +2483,73 @@ const NEAR=[
 
 $("nbcGo").addEventListener("click",e=>{e.preventDefault();const b=$("nbc");b.hidden=false;b.scrollIntoView({behavior:"smooth",block:"start"})});
 
+/* 생활 입지 지도: 기흥역세권 확대 원 (단지 지도를 복제해 단지별로 구분) */
+(()=>{
+  const map=document.querySelector('[data-route="/infra"] .loc-map svg'),src=$("cmapSvg");if(!map||!src)return;
+  const ns="http://www.w3.org/2000/svg",mk=(t,a)=>{const e=document.createElementNS(ns,t);for(const k in a)e.setAttribute(k,a[k]);return e};
+  const CX=822,CY=392,R=120,Z=[626,652];           // 원 중심 · 반지름, 기흥역세권 중심점
+  const VB=[160,70,500,500];                         // 원 안에 보일 단지 지도 범위
+  const COL={0:"#9fbbe0",1:"#a9d1ae",2:"#ecc795",3:"#cdb0dd",4:"#eab0ac",5:"#a8d2d8"};
+  const NM={0:"힐스테이트",1:"센트럴 푸르지오",2:"파크 푸르지오",3:"더샵",4:"더 퍼스트 푸르지오",5:"롯데캐슬"};
+  // 점(기흥역세권 중심)에서 원의 접선까지 퍼지는 음영
+  const d=Math.hypot(Z[0]-CX,Z[1]-CY),a=Math.atan2(Z[1]-CY,Z[0]-CX),b=Math.acos(R/d);
+  const tp=s=>[CX+R*Math.cos(a+s*b),CY+R*Math.sin(a+s*b)];
+  const g=mk("g",{class:"mg"});
+  g.appendChild(mk("defs",{})).innerHTML=`<linearGradient id="mgCone" gradientUnits="userSpaceOnUse" x1="${Z[0]}" y1="${Z[1]}" x2="${CX}" y2="${CY}"><stop offset="0" stop-color="#1f4f8a" stop-opacity=".03"/><stop offset=".75" stop-color="#1f4f8a" stop-opacity=".15"/></linearGradient><clipPath id="mgClip"><circle cx="${CX}" cy="${CY}" r="${R}"/></clipPath>`;
+  const gc=mk("g",{class:"mg-cone"});gc.appendChild(mk("polygon",{points:[Z,tp(1),[CX,CY],tp(-1)].map(p=>p.map(v=>v.toFixed(1)).join(",")).join(" "),fill:"url(#mgCone)"}));
+  gc.appendChild(mk("circle",{cx:Z[0],cy:Z[1],r:3.5,fill:"#1f4f8a"}));
+  const mb=map.querySelector("#mbase");map.insertBefore(gc,mb?mb.nextSibling:map.firstChild);
+  g.appendChild(mk("circle",{cx:CX,cy:CY,r:R+4,fill:"#fff",filter:"drop-shadow(0 4px 10px rgba(0,0,0,.12))"}));
+  // 원 안: 단지 지도
+  const cl=mk("g",{"clip-path":"url(#mgClip)"}),sv=mk("svg",{x:CX-R,y:CY-R,width:2*R,height:2*R,viewBox:VB.join(" ")});
+  [...src.children].forEach(e=>{
+    if(e.classList.contains("hot")||(e.tagName==="g"&&/^translate/.test(e.getAttribute("transform")||"")))return;
+    const c=e.cloneNode(true);
+    if(c.tagName==="a"){const gg=mk("g",{});[...c.childNodes].forEach(n=>gg.appendChild(n));sv.appendChild(gg);return}
+    sv.appendChild(c);
+  });
+  sv.querySelectorAll("[id]").forEach(e=>e.removeAttribute("id"));
+  // 2지구 이름표는 원 안쪽으로
+  sv.querySelectorAll("text").forEach(t=>{if(/2지구/.test(t.textContent)){const p=t.parentNode;[...p.children].filter(e=>e.tagName==="rect"||e.tagName==="text").forEach(e=>e.setAttribute("transform","translate(22 -6)"))}});
+  sv.querySelectorAll(".blk").forEach(b=>{b.removeAttribute("class");b.setAttribute("fill",COL[b.dataset.i]||"#ddd");b.setAttribute("stroke","#fff");b.setAttribute("stroke-width","2.5")});
+  // 지도 공통 글씨 스타일(.tmap text)보다 원래 크기 · 색을 우선
+  sv.querySelectorAll("text").forEach(t=>{const fs=t.getAttribute("font-size")||t.closest("[font-size]")?.getAttribute("font-size")||"12";
+    t.style.fontSize=fs+"px";t.style.fill=t.getAttribute("fill")||t.closest("[fill]")?.getAttribute("fill")||"#a9aeb1";t.style.stroke="none"});
+  // 2지구 자이: 검정 상자 없이 글씨만
+  sv.querySelectorAll("text").forEach(t=>{if(!/2지구/.test(t.textContent))return;const p=t.parentNode;
+    p.querySelectorAll(":scope>rect").forEach(r=>r.remove());
+    p.querySelectorAll(":scope>text").forEach((e,k)=>(k&&e.setAttribute("transform","translate(22 4)"),e).setAttribute("style",`font-size:${k?14:19}px;font-weight:${k?500:700};letter-spacing:-.04em;fill:${k?"#6b7076":"#4a5056"};paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round`))});
+  src.querySelectorAll(".hot").forEach(h=>{const c=h.querySelector("circle"),i=h.dataset.i,x=+c.getAttribute("cx"),y=+c.getAttribute("cy")+6;
+    const t=mk("text",{x:x+(i==="2"?-14:0),y,"text-anchor":"middle"});t.textContent=NM[i];
+    t.setAttribute("style","font-size:19px;font-weight:700;letter-spacing:-.04em;fill:#1d2b44;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round");sv.appendChild(t)});
+  cl.appendChild(mk("rect",{x:CX-R,y:CY-R,width:2*R,height:2*R,fill:"#f4f4f4"}));cl.appendChild(sv);g.appendChild(cl);
+  g.appendChild(mk("circle",{cx:CX,cy:CY,r:R,fill:"none",stroke:"#1f4f8a","stroke-width":"1.6"}));
+  // 이름표
+  const lb=mk("g",{});lb.innerHTML=`<rect x="${CX-48}" y="${CY-R-13}" width="96" height="26" rx="3" fill="#1d2b44"/><text x="${CX}" y="${CY-R+5}" text-anchor="middle" style="font-size:13.5px;font-weight:600;letter-spacing:.06em;fill:#fff;stroke:none">기흥역세권</text>`;
+  g.appendChild(lb);
+  map.insertBefore(g,map.querySelector("text.w0[text-anchor=end]")||null);
+})();
+
 /* 모바일: 지도 누르면 크게 보기 (두 손가락 · 버튼으로 확대/축소) */
 (()=>{
   const mq=matchMedia("(max-width:1023px)");
   let box=null;
   const close=()=>{if(!box)return;box.remove();box=null;document.documentElement.classList.remove("zv-open")};
-  document.querySelectorAll(".tmap").forEach(m=>{
-    const svg=m.querySelector("svg");if(!svg)return;
-    m.addEventListener("click",()=>{
-      if(!mq.matches)return;
-      box=document.createElement("div");box.className="zv";box.setAttribute("role","dialog");box.setAttribute("aria-label","지도 크게 보기");
+  const open=(c,label)=>{ // c: 복제한 svg 또는 표
+      box=document.createElement("div");box.className="zv";box.setAttribute("role","dialog");box.setAttribute("aria-label",label);
       box.innerHTML=`<p class="zv-h">두 손가락으로 확대 · 축소하고, 밀어서 살펴보세요</p><div class="zv-in"><div class="zv-c"></div></div><div class="zv-ctl"><button type="button" class="zv-m" aria-label="축소">−</button><button type="button" class="zv-f" aria-label="화면에 맞추기">맞춤</button><button type="button" class="zv-p" aria-label="확대">+</button></div><button type="button" class="zv-x" aria-label="닫기"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3l10 10M13 3L3 13"/></svg></button>`;
-      const c=svg.cloneNode(true);c.removeAttribute("aria-labelledby");c.querySelectorAll("title[id]").forEach(e=>e.removeAttribute("id"));
       const inn=box.querySelector(".zv-in"),cv=box.querySelector(".zv-c");cv.appendChild(c);
       document.body.appendChild(box);document.documentElement.classList.add("zv-open");
-      const vb=c.viewBox.baseVal,ratio=vb.height/vb.width;
-      const fitW=()=>Math.min(inn.clientWidth,inn.clientHeight/ratio);
+      const isT=c.tagName==="TABLE";
+      // 표는 원래 크기를 재고 zoom 으로 키우고 줄임
+      const tw=isT?c.offsetWidth:0,ratio=isT?c.offsetHeight/tw:c.viewBox.baseVal.height/c.viewBox.baseVal.width;
+      if(isT)cv.style.alignItems="flex-start";
+      const fitW=()=>isT?inn.clientWidth:Math.min(inn.clientWidth,inn.clientHeight/ratio);
       let w=fitW();const minW=()=>fitW(),maxW=()=>Math.max(inn.clientWidth*5,2400);
       const setW=(nw,cx,cy)=>{ // cx,cy: 확대 기준점 (zv-in 기준 화면 좌표)
         nw=Math.max(minW(),Math.min(maxW(),nw));if(cx==null){cx=inn.clientWidth/2;cy=inn.clientHeight/2}
         const k=nw/w,sx=inn.scrollLeft+cx,sy=inn.scrollTop+cy;w=nw;
-        c.style.width=nw+"px";c.style.height=nw*ratio+"px";
+        if(isT)c.style.zoom=nw/tw;else{c.style.width=nw+"px";c.style.height=nw*ratio+"px"}
         cv.style.width=Math.max(nw,inn.clientWidth)+"px";cv.style.height=Math.max(nw*ratio,inn.clientHeight)+"px";
         inn.scrollLeft=sx*k-cx;inn.scrollTop=sy*k-cy;
       };
@@ -2485,7 +2566,20 @@ $("nbcGo").addEventListener("click",e=>{e.preventDefault();const b=$("nbc");b.hi
       inn.addEventListener("touchend",e=>{if(e.touches.length<2)p0=null});
       inn.addEventListener("wheel",e=>{if(e.ctrlKey){e.preventDefault();const r=inn.getBoundingClientRect();setW(w*(e.deltaY<0?1.1:1/1.1),e.clientX-r.left,e.clientY-r.top)}},{passive:false});
       let lastTap=0;inn.addEventListener("touchend",e=>{if(e.touches.length)return;const n=Date.now();if(n-lastTap<300){setW(w>fitW()*1.2?fitW():w*2)}lastTap=n});
+  };
+  document.querySelectorAll(".tmap").forEach(m=>{
+    const svg=m.querySelector("svg");if(!svg)return;
+    m.addEventListener("click",()=>{
+      if(!mq.matches)return;
+      const c=svg.cloneNode(true);c.removeAttribute("aria-labelledby");c.querySelectorAll("title[id]").forEach(e=>e.removeAttribute("id"));
+      open(c,"지도 크게 보기");
     });
+  });
+  const cw=$("cmpWrap");
+  if(cw)cw.addEventListener("click",()=>{
+    if(!mq.matches)return;
+    const c=$("cmpT").cloneNode(true);c.removeAttribute("id");c.classList.remove("pick","few");
+    open(c,"단지별 비교표 크게 보기");
   });
   addEventListener("keydown",e=>{if(e.key==="Escape")close()});
   addEventListener("hashchange",close);
@@ -2520,8 +2614,23 @@ const CMP={
   ["국평 신고가",c=>c.price?`<b>${c.price}억</b><small>${esc(c.priceLab||"국평 84㎡ 신고가")}</small>`:"-"],
   ["최근 실거래",c=>c.recent?`<b>${c.recent[1]}억</b><small>${esc(c.recent[0])} · ${esc(c.recent[2])}</small>`:"-"]
  ];
- T.innerHTML=`<thead><tr><th scope="col">구분</th>${cols.map(c=>`<th scope="col" data-slug="${c.slug}"><small>${String(C.indexOf(c)+1).padStart(2,"0")}</small>${esc(c.name)}</th>`).join("")}</tr></thead><tbody>${rows.map(([k,f])=>`<tr${k==="주요 특징"?' class="tall"':""}><th scope="row">${k}</th>${cols.map(c=>`<td>${f(c)}</td>`).join("")}</tr>`).join("")}</tbody>`;
-+
+ T.innerHTML=`<thead><tr><th scope="col">구분</th>${cols.map((c,i)=>`<th scope="col" data-slug="${c.slug}" data-c="${i}"><small>${String(C.indexOf(c)+1).padStart(2,"0")}</small>${esc(c.name)}</th>`).join("")}</tr></thead><tbody>${rows.map(([k,f])=>`<tr${k==="주요 특징"?' class="tall"':""}><th scope="row">${k}</th>${cols.map((c,i)=>`<td data-c="${i}">${f(c)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+ /* 원하는 단지만 골라 보기 (모바일은 2개씩 나란히) */
+ const pk=$("cmpPick").querySelector("div"),mo=matchMedia("(max-width:767px)"),all=cols.map((c,i)=>i);
+ let sel;const reset=()=>{sel=mo.matches?[0,1]:all.slice();$("cmpPick").querySelector("p").textContent=mo.matches?"비교할 단지 2개를 골라 보세요":"보고 싶은 단지만 골라 비교해 보세요";paint()};
+ pk.innerHTML=cols.map((c,i)=>`<button type="button" data-c="${i}">${esc(c.name)}</button>`).join("");
+ const paint=()=>{
+  pk.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",sel.includes(+b.dataset.c)));
+  T.querySelectorAll("[data-c]").forEach(e=>e.classList.toggle("off",!sel.includes(+e.dataset.c)));
+  T.classList.toggle("few",sel.length<5);
+ };
+ pk.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const i=+b.dataset.c;
+  if(mo.matches){if(sel.includes(i))return;sel=[sel[1],i]}
+  else if(sel.includes(i)){if(sel.length>1)sel=sel.filter(x=>x!==i)}
+  else sel=all.filter(x=>x===i||sel.includes(x));
+  paint()});
+ mo.addEventListener("change",reset);
+ T.classList.add("pick");reset();
 
  $("cmpGo").addEventListener("click",e=>{e.preventDefault();const b=$("cmp");b.hidden=false;b.scrollIntoView({behavior:"smooth",block:"start"})});
 })();
