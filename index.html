@@ -289,9 +289,9 @@ body.paused .mq div{animation-play-state:paused}
 
 /* 교통 지도 */
 .sect.wide{grid-template-columns:1fr}
-.zv{position:fixed;inset:0;z-index:500;background:#fff;display:flex;flex-direction:column}.zv-in{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain}.zv-c{display:flex;align-items:center;justify-content:center}.zv-in svg{display:block;flex:none;max-width:none;min-width:0!important}.zv-ctl{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:1px;border-radius:999px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.18)}.zv-ctl button{min-width:52px;height:44px;padding:0 14px;background:#000;color:#fff;font-size:20px;font-weight:600}.zv-ctl .zv-f{font-size:13px;font-weight:700;color:var(--yellow)}.zv-x{position:absolute;right:12px;top:12px;z-index:2;width:44px;height:44px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center}.zv-x svg{width:16px;height:16px}.zv-h{padding:20px 64px 12px 16px;font-size:13px;color:var(--g4);border-bottom:1px solid var(--g1)}html.zv-open,html.zv-open body{overflow:hidden}@media (max-width:1023px){ .tmap{cursor:zoom-in;position:relative;flex-wrap:wrap} .tmap::after{content:"탭하여 크게 보기";display:block;width:max-content;margin:8px 0 0 auto;padding:4px 10px;font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,.65);border-radius:999px;pointer-events:none} }
-.hph{cursor:zoom-in}.zv .hph .ph{display:none}@media (hover:none),(max-width:1023px){.tmap .hph .ph{display:none}}.phv p{color:#fff;font-size:14px;text-align:center}.phv{position:fixed;inset:0;z-index:510;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}.phv img{max-width:min(1200px,100%);max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 8px 30px rgba(0,0,0,.4)}.phv button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:26px;line-height:1;cursor:pointer}
-@media (min-width:1024px){ .tlay{display:grid;grid-template-columns:auto minmax(280px,1fr);gap:24px;align-items:stretch} .tlay .tmap{display:flex;align-items:center} .tlay .tmap svg{min-width:0;width:min(900px,calc((100vh - 180px) * 1.515),calc(100vw - 420px));height:auto} .tlay .tkeys{grid-template-columns:1fr;margin-top:0;align-content:stretch} .tlay .tkeys li{padding:13px 16px;gap:12px;align-items:center} .tlay .tkeys b{font-size:15px} .tlay .tkeys span{margin-top:2px;font-size:13px;line-height:1.45} .tlay .tkeys i{width:26px;height:26px} }
+.zv{position:fixed;inset:0;z-index:500;background:#fff;display:flex;flex-direction:column}.zv-in{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain}.zv-c{display:flex;align-items:center;justify-content:center}.zv-in svg{display:block;flex:none;max-width:none;min-width:0!important}.zv-ctl{position:absolute;left:50%;bottom:calc(6px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:1px;border-radius:999px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.18);opacity:.9}.zv-ctl button{min-width:38px;height:30px;padding:0 10px;background:#000;color:#fff;font-size:16px;font-weight:600}.zv-ctl .zv-f{font-size:11px;font-weight:700;color:var(--yellow)}.zv-x{position:absolute;right:12px;top:12px;z-index:2;width:44px;height:44px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center}.zv-x svg{width:16px;height:16px}.zv-h{padding:20px 64px 12px 16px;font-size:13px;color:var(--g4);border-bottom:1px solid var(--g1)}html.zv-open,html.zv-open body{overflow:hidden}@media (max-width:1023px){ .tmap{cursor:zoom-in;position:relative;flex-wrap:wrap} .tmap::after{content:"탭하여 크게 보기";display:block;width:max-content;margin:8px 0 0 auto;padding:4px 10px;font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,.65);border-radius:999px;pointer-events:none} }
+.tmap{position:relative}.zv-btn{position:absolute;top:10px;right:10px;z-index:3;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}.tmap .zv-btn svg{width:20px!important;height:20px!important;min-width:0!important;max-width:none;margin:0}@media (max-width:1023px){.zv-btn{display:none}}.zv .zv-c.tmap{background:none;border-radius:0;overflow:visible;cursor:grab}.zv .zv-c.tmap::after{display:none}.zv .zv-c.tmap>svg{max-width:none}.hph{cursor:zoom-in}.zv .hph .ph{display:none}@media (hover:none),(max-width:1023px){.tmap .hph .ph{display:none}}.phv p{color:#fff;font-size:14px;text-align:center}.phv{position:fixed;inset:0;z-index:510;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}.phv img{max-width:min(1200px,100%);max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 8px 30px rgba(0,0,0,.4)}.phv button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+@media (min-width:1024px){ .tlay{display:grid;grid-template-columns:auto minmax(280px,1fr);gap:24px;align-items:stretch} .tlay .tmap{display:flex;align-items:center} .tlay .tmap svg{min-width:0;width:min(960px,calc((100vh - 140px) * 1.515),calc(100vw - 480px));height:auto} .tlay .tkeys{grid-template-columns:1fr;margin-top:0;align-content:stretch} .tlay .tkeys li{padding:13px 16px;gap:12px;align-items:center} .tlay .tkeys b{font-size:15px} .tlay .tkeys span{margin-top:2px;font-size:13px;line-height:1.45} .tlay .tkeys i{width:26px;height:26px} }
 .tmap{background:var(--g0);border-radius:6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tmap svg{display:block;width:100%;max-width:980px;min-width:700px;height:auto;margin:0 auto}
 .tmap text{font-family:"Pretendard Variable",Pretendard,sans-serif;letter-spacing:-.03em}
@@ -1031,15 +1031,16 @@ body.is-main #sft{display:none}
       <div>
 <div class="tlay">
         <div class="tmap">
-          <svg viewBox="0 0 1000 660" role="img" aria-labelledby="tmapT">
+          <svg class="tsvg" viewBox="0 0 1000 660" role="img" aria-labelledby="tmapT">
             <title id="tmapT">기흥역세권 광역 교통 노선도: 기흥역 분당선 · 에버라인, 분당선 · 에버라인 연장 예정, GTX-F 예정, 수서 · 구성 · 동탄 GTX-A, 신분당선 정자 · 판교 · 강남, 수원신갈IC, 서울 직행버스 · 시외버스 터미널, 대기업 셔틀, 42번 국도와 용인 반도체 클러스터</title>
             <style>
-              .tmap text{font-size:13px;fill:#000;paint-order:stroke;stroke:#f4f4f4;stroke-width:4px;stroke-linejoin:round}
-              .tmap .nh{stroke:none}
-              .tmap .b{font-weight:700}
-              .tmap .s{font-size:12px;fill:#5c6366}
-              .tmap .y{fill:#f5ff00}
-              .tmap .w{fill:#fff}
+              /* .tsvg: 모바일 크게 보기(.zv)에 복제돼도 같은 모양이 되도록 */
+              .tmap text,.tsvg text{font-size:13.5px;fill:#000;paint-order:stroke;stroke:#f4f4f4;stroke-width:4px;stroke-linejoin:round}
+              .tmap .nh,.tsvg .nh{stroke:none}
+              .tmap .b,.tsvg .b{font-weight:700}
+              .tmap .s,.tsvg .s{font-size:12.5px;fill:#5c6366}
+              .tmap .y,.tsvg .y{fill:#f5ff00}
+              .tmap .w,.tsvg .w{fill:#fff}
             </style>
             <text class="b" x="20" y="40" style="font-size:22px">기흥역세권 광역 교통 노선도</text>
             <text class="s" x="20" y="60">실제 거리와 축척은 다릅니다</text>
@@ -1063,12 +1064,12 @@ body.is-main #sft{display:none}
             <path d="M448 322H300" stroke="#4fa845" stroke-width="6" stroke-dasharray="14 8" fill="none"/>
             <text class="b" x="800" y="306" text-anchor="middle" style="fill:#3a8a32">에버라인</text>
             <circle cx="700" cy="322" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="700" cy="322" r="4.5" fill="#4fa845"/>
-            <text class="b" x="700" y="350" text-anchor="middle" style="font-size:16px">동백역</text>
+            <text class="b" x="700" y="350" text-anchor="middle" style="font-size:17px">동백역</text>
             <text class="s" x="700" y="367" text-anchor="middle">용인세브란스병원</text>
             <circle cx="900" cy="322" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="900" cy="322" r="4.5" fill="#4fa845"/>
-            <text class="b" x="900" y="350" text-anchor="middle" style="font-size:16px">에버랜드역</text>
+            <text class="b" x="900" y="350" text-anchor="middle" style="font-size:17px">에버랜드역</text>
             <rect x="283" y="313" width="34" height="18" rx="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="292" cy="322" r="4.5" fill="#4fa845"/><circle cx="308" cy="322" r="4.5" fill="#d6393a"/>
-            <text class="b" x="300" y="302" text-anchor="middle" style="font-size:15px">광교중앙역</text>
+            <text class="b" x="300" y="302" text-anchor="middle" style="font-size:16px">광교중앙역</text>
 
             <!-- GTX-F 예정 -->
             <path d="M448 358H120V210M500 306V134" stroke="#d14b8f" stroke-width="5" stroke-dasharray="12 7" fill="none" stroke-linejoin="round"/>
@@ -1084,42 +1085,42 @@ body.is-main #sft{display:none}
             <!-- 신분당선: 미금 · 정자 · 판교 · 강남 (분당선 오른쪽 나란히) -->
             <path d="M516 134V58" stroke="#d6393a" stroke-width="7" fill="none"/>
             <circle cx="516" cy="58" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="516" cy="58" r="4.5" fill="#d6393a"/>
-            <text class="b" x="534" y="63" style="font-size:16px">강남역 <tspan class="s" style="font-weight:400">41분 · 급행 36분</tspan></text>
+            <text class="b" x="534" y="63" style="font-size:17px">강남역 <tspan class="s" style="font-weight:400">41분 · 급행 36분</tspan></text>
             <circle cx="516" cy="96" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="516" cy="96" r="4.5" fill="#d6393a"/>
-            <text class="b" x="534" y="101" style="font-size:16px">판교역 <tspan class="s" style="font-weight:400">22분 · 급행 18분</tspan></text>
+            <text class="b" x="534" y="101" style="font-size:17px">판교역 <tspan class="s" style="font-weight:400">22분 · 급행 18분</tspan></text>
             <rect x="474" y="124" width="52" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="484" cy="134" r="4.5" fill="#f2a900"/><circle cx="500" cy="134" r="4.5" fill="#d14b8f"/><circle cx="516" cy="134" r="4.5" fill="#d6393a"/>
-            <text class="b" x="534" y="139" style="font-size:16px">정자역 <tspan class="s" style="font-weight:400">18분 · 급행 13분</tspan></text>
+            <text class="b" x="534" y="139" style="font-size:17px">정자역 <tspan class="s" style="font-weight:400">18분 · 급행 13분</tspan></text>
             <!-- GTX-F: 기흥에서 정자 · 수원 각 1정거장 -->
             <text class="s" x="508" y="262" style="font-size:11px;fill:#b8547f">1정거장</text>
             <text class="s" x="405" y="376" text-anchor="middle" style="font-size:11px;fill:#b8547f">1정거장</text>
 
             <!-- 역 -->
             <circle cx="468" cy="20" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="20" r="4.5" fill="#9b4f96"/>
-            <text class="b" x="378" y="24" text-anchor="end" style="font-size:16px">서울역</text><text class="s" x="384" y="24">GTX-A · 24분</text>
+            <text class="b" x="376" y="24" text-anchor="end" style="font-size:17px">서울역</text><text class="s" x="381" y="24">GTX-A · 24분</text>
             <circle cx="468" cy="58" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="58" r="4.5" fill="#9b4f96"/>
-            <text class="b" x="378" y="63" text-anchor="end" style="font-size:16px">삼성역</text><text class="s" x="384" y="63">GTX-A · 19분</text>
+            <text class="b" x="376" y="63" text-anchor="end" style="font-size:17px">삼성역</text><text class="s" x="381" y="63">GTX-A · 19분</text>
             <rect x="456" y="86" width="40" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="96" r="4.5" fill="#9b4f96"/><circle cx="484" cy="96" r="4.5" fill="#f2a900"/>
-            <text class="b" x="378" y="101" text-anchor="end" style="font-size:16px">수서역</text><text class="s" x="384" y="101">GTX-A · 14분</text>
-            <text class="s" x="384" y="117">SRT</text>
+            <text class="b" x="376" y="101" text-anchor="end" style="font-size:17px">수서역</text><text class="s" x="381" y="101">GTX-A · 14분</text>
+            <text class="s" x="381" y="117">SRT</text>
             <rect x="456" y="200" width="40" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="210" r="4.5" fill="#9b4f96"/><circle cx="484" cy="210" r="4.5" fill="#f2a900"/>
-            <text class="b" x="378" y="215" text-anchor="end" style="font-size:16px">구성역</text><text class="s" x="384" y="215">GTX-A · 4분</text>
-            <text class="s" x="384" y="231">2정거장</text>
+            <text class="b" x="376" y="215" text-anchor="end" style="font-size:17px">구성역</text><text class="s" x="381" y="215">GTX-A · 4분</text>
+            <text class="s" x="381" y="231">2정거장</text>
 
             <rect x="456" y="490" width="40" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="500" r="4.5" fill="#9b4f96"/><circle cx="484" cy="500" r="4.5" fill="#f2a900"/>
-            <text class="b" x="508" y="504" style="font-size:16px">동탄역</text>
+            <text class="b" x="508" y="504" style="font-size:17px">동탄역</text>
             <text class="s" x="508" y="520">SRT · GTX-A</text>
             <circle cx="484" cy="600" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="484" cy="600" r="4.5" fill="#f2a900"/>
             <text class="s" x="500" y="605">오산</text>
             <circle cx="350" cy="340" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="350" cy="340" r="4.5" fill="#f2a900"/>
-            <text class="b" x="350" y="386" text-anchor="middle" style="font-size:15px">영통역</text>
+            <text class="b" x="350" y="386" text-anchor="middle" style="font-size:16px">영통역</text>
             <circle cx="240" cy="340" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="240" cy="340" r="4.5" fill="#f2a900"/>
-            <text class="b" x="240" y="386" text-anchor="middle" style="font-size:15px">망포역</text>
+            <text class="b" x="240" y="386" text-anchor="middle" style="font-size:16px">망포역</text>
             <text class="s" x="240" y="402" text-anchor="middle">삼성전자</text>
             <rect x="110" y="330" width="20" height="38" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="120" cy="340" r="4.5" fill="#f2a900"/><circle cx="120" cy="358" r="4.5" fill="#d14b8f"/>
-            <text class="b" x="120" y="392" text-anchor="middle" style="font-size:16px">수원역</text>
+            <text class="b" x="120" y="392" text-anchor="middle" style="font-size:17px">수원역</text>
             <text class="s" x="120" y="408" text-anchor="middle">KTX</text>
             <text class="s" x="120" y="423" text-anchor="middle">GTX-F 예정</text>            <circle cx="120" cy="210" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="120" cy="210" r="4.5" fill="#d14b8f"/>
-            <text class="b" x="136" y="215" style="font-size:16px">김포공항</text>
+            <text class="b" x="136" y="215" style="font-size:17px">김포공항</text>
             <text class="s" x="136" y="231">GTX-F 예정</text>
 
             <!-- 기흥역 -->
@@ -1146,13 +1147,13 @@ body.is-main #sft{display:none}
             <text class="nh s" x="836" y="269">등 대기업 10여 개</text>
 
             <!-- 반도체 클러스터 -->
-            <text class="b" x="845" y="526" text-anchor="middle" style="font-size:15px">용인 반도체 클러스터</text>
+            <text class="b" x="845" y="526" text-anchor="middle" style="font-size:16px">용인 반도체 클러스터</text>
             <circle cx="790" cy="575" r="34" fill="#000"/>
-            <text class="nh y b" x="790" y="580" text-anchor="middle" style="font-size:15px">삼성</text>
+            <text class="nh y b" x="790" y="580" text-anchor="middle" style="font-size:16px">삼성</text>
             <text class="b" x="790" y="630" text-anchor="middle">삼성전자</text>
             <text class="s" x="790" y="647" text-anchor="middle">이동읍 · 남사읍</text>
             <circle cx="900" cy="575" r="34" fill="#000"/>
-            <text class="nh y b" x="900" y="580" text-anchor="middle" style="font-size:15px">SK</text>
+            <text class="nh y b" x="900" y="580" text-anchor="middle" style="font-size:16px">SK</text>
             <text class="b" x="900" y="630" text-anchor="middle">SK하이닉스</text>
             <text class="s" x="900" y="647" text-anchor="middle">원삼면</text>
 
@@ -1230,7 +1231,7 @@ body.is-main #sft{display:none}
             
             <path d="M153.7 851L216.7 866.2L242.7 870.5L256.7 872.1L269.2 872.4L475.1 856.7M471.1 -194.5L470.9 -183.9L471.3 -178.5L473.5 -164.1L475.8 -150.2L478.2 -135.6L481.1 -119.6L486 -91.2L487.1 -83.9L489.1 -68.5L489.5 -51L489.6 -46L489.6 -44L489.5 -41.9L489 -38.8L488.6 -35.7L487.9 -33L487.2 -29.9L485.8 -26.1L484 -22.8L482.2 -19.6L479.6 -15.7L477.3 -12.7L475 -9.5L462.2 4.2L460.1 6.8L458.5 9.7L457.3 11.8L456.1 14.9L454.7 18L453.6 20.9L452.5 24.5L451.9 29.6L450.9 60.3L450.6 73.7L450.4 83.3L449.2 163.5L448.8 189.5L449.3 232.4L452.3 274.5L455.5 294.1L458.9 307.1L463.1 318.6L470.6 331.9L486.9 353.7L506.2 374.3L532.2 401.8L542.2 413L546.7 417.4L585.2 459.2L589.5 464L592.3 468.2L594.2 471.6L596.4 475.8L597.7 479.8L598.5 483.2L599.2 486.7L599.3 489.9L599.7 503.3L599.7 523.7L600 539.9L600.1 559.4L600.2 577.1L600.6 599.8L600.8 609.7L601.3 630.7L601.2 639.9L601.2 666.7L602 745.1L601.5 791.6L600 802.7L595.9 815.1L588.5 827.5L579.3 837.9L573.3 843L560.1 850.2L544.1 853.9L508.5 856.5L495.4 857L492.2 857.2L475.7 858.5M475.1 856.7L494.7 855L534.5 853.3L544.2 851.9L550.5 850.2L557.4 848.2L563.2 845.5L568.2 842.6L572.1 840.3L577.2 835.6L582 831.1L586.8 825.5L590.4 820.3L594.2 813.4L595.7 809.8L597 806.2L598.3 801.4L599.4 793.3L600 781.9L600.4 745L599.9 635.8L599.9 632.9L599.9 630.7L599.8 599.9L599.8 597.4L598.7 572.3L598.7 566.9L598.3 540L598.2 523.6L597.8 503L597.1 486.4L596.5 483.2L595.5 479.6L594.2 475.8L592.3 471.7L591.2 469.4L589.7 466.7L588.3 464.5L586.8 462.5L584.3 459.8L541.2 413.8L531.1 403L520 391.1L513.9 384.7L490.8 359.9L489 357.9L483.5 351.9L482.7 350.9L476.8 343.7L470.7 335.1L467 329.1L463.5 322.4L460.2 315L457.8 308.2L455.5 299.5L453.4 291.2L452.2 285L450.6 272.8L448.4 247L447.5 225.6L448.2 163.5L449.1 83.2L449.5 73.7L450.1 44.7L450.4 40.3L450.9 29.4L451.8 24.5L452.6 20.5L453.7 17.5L454.9 14.5L456.1 11.6L457.6 9.2L459.2 6.5M-271 1153.8L-235.9 1152.3L-221.4 1151.9L-160.8 1149.7L-153.6 1148.9L-146.8 1147.4L-141.6 1145.5L-136.8 1142.6L-132.7 1139.5L-127.7 1134.7L-123.1 1129.8L-117.2 1123.1L-60.8 1047.4L-58.4 1044.3L-40.5 1021.1L3.5 963.3L11.5 953.3L61 887.6L61.9 886.4L65.8 881L78.5 863.6L86.1 857.5L95.8 852.5L107.8 849.1L125.1 847.6L141.6 848.9L150.8 850.4L153.7 851M459.2 6.5L461.4 3.2L463.3 0.4L474 -10.4L476.7 -13.5L478.9 -16.6L480.8 -19.9L482.5 -23.2L484 -26.7L485 -29.8L485.9 -33.2L486.6 -35.9L487 -38.7L487.4 -42.2L487.4 -43.9L487.6 -48.8L487.6 -57.5L487.6 -68.3L487.6 -73.8L487.1 -79L486.3 -83.9L470.9 -175.5L470 -183.3L469.9 -186.9L469.8 -189.6L470 -192.3L470.1 -194.4M145.3 851.9L134.4 850.8L121.9 850.7L110.5 851.9L99.2 854.6L89.1 859L80.7 865L69.1 878.7L62.1 888.2L51.3 902L27.8 932.3L5.5 962.7L-44.7 1029.1L-50.4 1036.5L-59.6 1048.2L-116.5 1124.3L-120.7 1129.6L-125.6 1135L-130.2 1139.5L-134.9 1143L-140.5 1146.5L-146.1 1148.7L-153.2 1150.2L-160.9 1151L-228 1153.5L-236 1153.9L-271 1155L-291.3 1155.7M475.7 858.5L424.2 862.4L398.3 864.4L378.4 866.3L352.9 868.5L340.9 869.3L296 873.1L291.9 873.5L268.9 874.7L253.3 874.5L239.1 873.3L223.3 870.8L154.8 853.5L145.3 851.9" stroke="#b5b9bc" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M616.7 600.4L607.2 600M604.7 601.7L615.1 602.3M2144.6 571.3L2131.1 577.7L2125.9 580.1L2118.9 583.6L2114.4 586.4L2110.8 588.6L2104.8 592.8L2098.3 598L2082.7 613.4L2076.3 620L2071.5 624.9L2067.8 629.1L2063.7 633.8L2060 639L2057 643.9L2054.7 648.3L2053.1 651.8L2051.5 656.1L2049.6 664.5L2048.5 672.8L2046.8 693L2046 705.7L2044.9 717.2L2043.6 730.8L2042.6 743.3L2041.6 756.5L2040.9 766.4L2040.9 768.5L2041.1 771.6L2041.7 774.6L2043.3 778.5L2045.3 781.5L2054.8 792.1L2065.9 806.9L2070.8 815.1L2074.2 822.2L2078.7 831.7L2084.9 844.4L2093.1 861.4L2100.3 876.7L2107 890.2L2111.5 902.7L2113.9 911L2115.3 918L2119 939.3L2123.3 961.6L2127.2 982.4L2129.3 993.5L2129.9 999.7L2130.2 1005.6L2129.5 1011.6L2128 1017L2125.6 1023.7L2123.4 1027.8L2119.1 1034.2L2109.2 1045.2L2092.3 1060.9L2080.5 1072.7L2074.1 1081.2L2068 1092.5L2066 1097.4L2064.1 1106.6L2060 1129.3L2055.3 1154L2052.5 1165.8L2048.5 1176.6L2047 1180.1L2037.3 1198.7L2029.1 1216.4L2023.9 1233L2020 1247.2L2017.6 1255.1L2014 1263.7L2004.4 1280.6L1997.2 1291.3L1994.1 1294.8L1991.2 1296.4L1988.2 1297.8L1984.7 1298.5L1979.8 1298.7L1970.6 1298.9L1962.5 1298.8L1954.1 1298.8L1944.7 1299.4L1936.2 1301.2L1918.9 1305.4L1890.8 1315.2L1884.2 1317.1L1879.4 1318L1874.5 1318.2L1867.8 1317.7L1833.5 1310.9L1822.8 1309.2L1817.2 1308.7L1805.4 1308.3L1769.4 1310.1L1755.3 1310.4L1746.8 1309.6L1734.3 1307.2L1711.5 1301.1L1704.7 1298.7L1693.7 1294.1L1688.6 1292.1L1680.1 1288.6L1677.1 1287.8L1670.4 1286.9L1658 1285.6L1635.5 1283.8L1625.7 1282.5L1609.5 1279L1584.4 1272.1L1575.7 1269.7L1568.3 1268.7L1561.8 1268.3L1549.4 1269.4L1525.2 1270.7L1492.4 1273.3L1480.5 1274.3L1474.1 1274.4L1467.6 1273L1460.9 1270.7L1452.3 1266.6L1392.9 1234.6L1387.7 1231.5L1380.3 1226L1375.7 1222L1370 1216.3L1363.2 1209.3L1359.9 1205.6L1352.4 1197.1L1344.7 1188.7L1333.6 1175.6L1328.8 1170.6L1326.2 1167.9L1319.2 1159.9L1316.8 1155.7L1316.3 1153.3L1315.7 1149.4L1315.7 1144.8L1317 1139.7L1319.8 1135.1L1347.6 1101.3L1349.6 1098.7L1363.8 1080.9L1367.7 1074.5L1371.6 1066.2L1373.7 1053L1373.4 1044L1370.6 1032.8L1366.8 1025.5L1362.9 1019.7L1352.2 1006.3L1336.9 986.4L1325.3 969.8L1313.4 950.2L1301.8 933.3L1295.8 926.1L1286.4 916.1L1261.4 892.9L1255.5 887.1L1252.2 883.6L1246.2 876.4L1241.6 870.6L1238.9 867.2L1235 861.4L1231 855.1L1222.9 842.7L1215.3 832.8L1213.2 830.1L1201.3 815.9L1197 810.9L1193.1 806.7L1185.4 795.7L1182.1 790.6L1178.1 783.1L1175.7 778.8L1171.8 771.7L1168.3 764.6L1164.8 757.9L1162.1 752.8L1157.9 745.5L1152.7 736.2L1145.5 723.8L1141.7 717.7L1137.9 710.8L1134.5 704.9L1132.8 702L1128.3 695L1120.2 684L1113.8 676.4L1110.9 672.7L1107.2 667.3L1104.3 662.4L1102.8 659.3L1101.1 655.5L1092.5 634.3L1089.1 626.6L1085.1 620.6L1081.1 616.1L1074.7 610.4L1070.6 607.6L1066.1 605.2L1061.9 603.4L1057.9 602.1L1052.5 600.9L1047.4 600.2L1043.4 600.2L1039.2 600.3L1035.5 600.6L1031 601.4L1027.3 602.4L1020.7 604.9L1006.6 611.2L949.6 637.4L941.9 641.4L939.1 643.5L935.4 646.8L933.2 649.3L929.2 654.8L927 659.7L925.3 664.7L923.6 671.2L920.7 683.7L918.8 691.5L917.5 694.8L915.9 697.6L912.1 701.4L907.6 704.7L902.2 708.8L880.9 724.8L874.8 728.1L866.6 731.8L859.7 734.3L854.7 735.7L852.7 736.2L846 737.4L838.3 738.4L831.5 738.6L823.4 738.5L812.8 737L801.6 733.8L791.5 729.8L780.2 723.8L766.7 713.4L757.6 706L750.3 699.4L747.7 697L744.5 693.8L729.1 677L710.5 655.2L692.3 637.9L666.2 612.8L662.4 609.9L658.4 607.8L653.5 606.4L645.1 604.9L639.9 604L632.7 602.8L624.7 601.4L617.5 600.5M615.1 602.3L617.1 602.3M617.1 602.3L619.3 602.5L625.4 602.7L630.6 603.4L636.5 604.3L640.6 605.1L649.8 606.6L653.9 607.3L655.7 607.7L658 608.5L661.1 610.1L663.9 612.1L675.7 622.9L695.8 642.4L709.4 655.3L728.1 676.9L745.2 695.3L751.1 701.1L753.6 703.3L770.8 717.3L779.8 724.3L785.5 727.6L793.1 731.6L801.9 735L811.2 737.5L817.1 738.8L824.2 739.4L833 739.5L840.8 738.9L849.2 737.8L858.6 735.4L865.8 733L871.4 730.6L880.6 726L885.1 722.8L896.8 714.1L908.2 705.6L914 700.7L917.1 697.3L918.6 694.6L919.9 691.2L921.3 684.6L924 672.9L926 665.3L927.7 659.7L930.7 654.3L932.8 651.3L936.6 646.8L939.6 644L943.6 641.2L974.1 627.1L1005 612.9L1013.2 609.1L1021 605.5L1026.1 603.7L1030.9 602.3L1035.5 601.5L1038.6 601.1L1041.5 601L1044.8 601L1048.4 601.2L1052.6 601.9L1057.7 603L1061.5 604.3L1066.9 606.7L1070.5 608.8L1074.2 611.5L1077.6 614.1L1081.4 617.7L1084.5 621.5L1087 624.9L1088.9 628.1L1092.5 635.7L1101.4 657.3L1104.5 663.8L1110.3 673.3L1122.9 688.5L1130.7 700.1L1139.7 715.8L1144 723.1L1150.8 734.1L1164 757.2L1175.6 780.1L1183.5 794.4L1192.3 806.6L1197 812L1205.4 822L1218.9 838.7L1224.6 846.6L1237.5 866.3L1244.2 875.4L1245.3 876.7L1249.3 881.3L1270.6 902.7L1296.7 928.5L1307.8 944L1323.2 968.9L1341.8 994L1358.3 1015.3L1364.6 1023.6L1369.5 1032.5L1371.1 1036.8L1372.9 1045.2L1373 1052.9L1372 1060.2L1370.8 1066.1L1367.9 1073.2L1363.7 1079.8L1335.3 1115.4L1322.3 1130.7L1316.8 1137.9L1315.6 1141.8L1314.8 1145.9L1315 1150.1L1315.3 1153.6L1316.2 1156L1318.6 1160.2L1321.5 1163.6L1326.9 1169.9L1332.3 1175.4L1333.5 1176.8L1339.2 1183.5L1346.7 1192.1L1354.7 1200.8L1356.4 1202.6L1369.5 1217L1373.6 1221.1L1375.7 1223.2L1385.3 1230.5L1395.2 1236.5L1426.8 1253.5L1455.4 1269.1L1464.1 1272.5L1469.9 1274.1L1476 1275L1484.8 1274.6L1516.2 1272.1L1525.2 1271.5L1531.8 1271.1L1556.3 1269.5L1562.1 1269L1569.2 1269.6L1577 1270.7L1601.3 1277.8L1620.1 1282.1L1637.7 1284.9L1662.9 1286.7L1679.4 1289L1693.3 1294.9L1700.2 1297.6L1710.6 1301.7L1731.5 1307.4L1749.3 1310.7L1759.9 1311.3L1780.4 1310.5L1809.1 1309.2L1816.6 1309.6L1822.1 1310L1823.7 1310.1L1827 1310.6L1840.8 1313.2L1866.3 1318.2L1872.8 1319.2L1879.6 1319.1L1892.1 1316L1918.4 1306.9L1939.3 1301.5L1945.3 1300.4L1954.5 1299.5L1969.9 1299.7L1976.7 1299.6L1978.4 1299.6L1984.4 1299.1L1989.7 1298.1L1995 1295L2000.1 1288.9L2015.3 1263.5L2020 1250.3L2030 1216.6L2043.8 1188.8L2049.3 1177.5L2051.5 1171.5L2052 1170L2053.1 1166.3L2057.6 1148.7L2058.1 1146.1L2065 1109.9L2066.8 1098.2L2068.9 1092.4L2074.7 1082.1L2080.8 1073.5L2109.5 1045.7L2119.8 1034.8L2124.3 1028.5L2128.2 1020L2130.6 1010.9L2131.3 1003.9L2130.9 998.4L2116.9 921.9L2114.5 910.7L2112.9 904.5L2112.3 902.2L2106.4 887.2L2080.2 833.1L2071.4 814.7L2066.8 806.9L2051.8 787.9L2044.7 779.5L2042.4 775L2041.5 769.7L2041.5 764.7L2042.3 756.8L2042.8 751.3L2042.9 748.7L2050.7 664.1L2052.5 655.4L2055.9 647.1L2061.4 637.9L2068.9 628.9L2098.2 599.2L2107.8 591.4L2114.7 586.9L2125.9 580.7L2144.9 572.1L2149.7 569.9L2158.9 565.7L2163.6 563.4L2166.8 561.6L2170.1 559L2172.4 556.9L2174.7 554.5L2176.4 552L2178.2 548.6L2180.7 543.7L2182.9 539.1L2185.9 533.2L2197.5 509.6L2199 506.5L2201.3 501.4L2202.4 497.9L2203.2 494.4L2203.3 490.5L2203 487.1L2202.5 484.3L2201.8 482.1L2200.6 479.7L2199.3 477.6L2197.8 475.3L2196 473.5L2192.2 470.1L2187.6 466.4L2179.8 459.7L2164.7 446.6L2159.1 441.8L2142.5 428.1L2140.3 426.2L2134.4 421.2L2132.4 419.6M607.2 600L605 599.9" stroke="#b5b9bc" stroke-width="2.4" stroke-dasharray="1 0" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M539.3 678.4L567.2 619.2L568.5 616.5L570 614L571.6 611.9L573.3 610L575.1 608.4L577.1 607.1L579.2 606.1L581.5 605.4L583.9 604.9L589.3 604.2L592.3 604L595.6 603.9L599 603.8L602.6 603.8L610.6 604L618.6 604.8L622.6 605.6L626.7 606.5L630.7 607.6L638.7 610.4L657.6 618.2L660.9 619.6L664.7 621.4L667.9 623.2L671.5 625.4L673.4 626.6L677.4 629.2L682.4 632.9L683.8 634L687.3 637.1L688.2 638L689 638.8L690.4 640.2L690.9 640.8L691.4 641.4L692.2 642.4L693.1 643.6L693.4 644L695.2 646.8L695.7 647.6L697.1 650.4L697.9 652.4L699.2 655.9L699.4 656.5L699.7 657.6L700.1 659.6L700.1 661.8L699.9 663.2L699.7 664.2L699.6 664.6L699.3 665.6L698.6 667.2L698.2 668.1L697.6 669.1L697.3 669.5L696.9 670L696.7 670.2L696.2 670.7L695.1 671.8L694.1 672.5L693.8 672.7L692.8 673.2L692.6 673.3L691.7 673.6L688.5 674.4L679.4 676.4L675.2 677.3L666.2 679.2L659.4 680.6L653 681.7L652 681.8L548.1 682.6L542.8 682.5L539.8 681.1Z" fill="#1f4f8a" fill-opacity=".1"/>
+              <path d="M539.3 678.4L567.2 619.2L568.5 616.5L570 614L571.6 611.9L573.3 610L575.1 608.4L577.1 607.1L579.2 606.1L581.5 605.4L583.9 604.9L589.3 604.2L592.3 604L595.6 603.9L599 603.8L602.6 603.8L610.6 604L618.6 604.8L622.6 605.6L626.7 606.5L630.7 607.6L638.7 610.4L657.6 618.2L660.9 619.6L664.7 621.4L667.9 623.2L671.5 625.4L673.4 626.6L677.4 629.2L682.4 632.9L683.8 634L687.3 637.1L688.2 638L689 638.8L690.4 640.2L690.9 640.8L691.4 641.4L692.2 642.4L693.1 643.6L693.4 644L695.2 646.8L695.7 647.6L697.1 650.4L697.9 652.4L699.2 655.9L699.4 656.5L699.7 657.6L700.1 659.6L700.1 661.8L699.9 663.2L699.7 664.2L699.6 664.6L699.3 665.6L698.6 667.2L698.2 668.1L697.6 669.1L697.3 669.5L696.9 670L696.7 670.2L696.2 670.7L695.1 671.8L694.1 672.5L693.8 672.7L692.8 673.2L692.6 673.3L691.7 673.6L688.5 674.4L679.4 676.4L675.2 677.3L666.2 679.2L659.4 680.6L653 681.7L652 681.8L548.1 682.6L542.8 682.5L539.8 681.1Z" fill="none"/>
               
             </g>
             <g class="w0 sgk"><rect x="499" y="482" width="72" height="34" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="535" y="503" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">기흥구청 상권</text><rect x="614" y="530" width="32" height="50" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="630" y="551" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">북측</text><text x="630" y="565" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">상권</text><rect x="748" y="645" width="78" height="22" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="787" y="660" text-anchor="middle" style="font-size:10.5px;font-weight:600;fill:#5c6366;stroke:none">강남대역 상권</text><rect x="434" y="638.5" width="56" height="15" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text x="462" y="649.5" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#5c6366;stroke:none">신갈 상권</text></g>
@@ -1297,7 +1298,7 @@ body.is-main #sft{display:none}
             <rect x="787" y="1141" width="16" height="16" rx="3.52" fill="#5aa55a" stroke="#fff" stroke-width="1.5"/>
             <path d="M12 1.5L4.5 12h4.2L5 17.5h6V23h2v-5.5h6L15.3 12h4.2z" fill="#fff" transform="translate(790.04 1144.04) scale(0.413)"/>
             <text class="w0" x="808" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">공원</text>
-            <rect x="849" y="1142" width="16" height="14" rx="3" fill="#1f4f8a" fill-opacity=".14"/><text class="w0" x="870" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">기흥역세권</text>
+            <circle cx="857" cy="1149" r="4.5" fill="#1f4f8a"/><text class="w0" x="870" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">기흥역세권</text>
             <rect x="954" y="1142" width="16" height="14" rx="3" fill="url(#sgk)" stroke="#d2d2d2" stroke-width="1"/><text class="w0" x="975" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">상권</text>
             <rect x="1017" y="1142" width="16" height="14" rx="3" fill="#4f86c6" fill-opacity=".14" stroke="#2f5f9e" stroke-width="1.2" stroke-dasharray="3 2"/><text class="w0" x="1038" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">재건축</text></g></g>
             <style>.tmap .hph{cursor:pointer}.tmap .hph .ph{opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s;pointer-events:none}.tmap .hph:hover .ph{opacity:1;transform:none}</style>
@@ -1328,6 +1329,7 @@ body.is-main #sft{display:none}
             <g class="ph"><rect x="616" y="332" width="208" height="170" rx="4" fill="#fff" stroke="#d2d2d2" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))"/><image href="images/location/ictvalley.jpg" x="620" y="336" width="200" height="162" preserveAspectRatio="xMidYMid slice"/></g></g>
             <g class="hph"><path d="M1069.3 606.8L1059.9 604.4L1054.9 603.6L1043.4 602.9L1030.9 603.9L1014.5 607.4L1001.6 612.5L977.1 623L963 629.1L947.4 636.4L941.4 642.7L933 653.7L927.4 666.2L924.3 680.6L919.2 701L911.1 708.5L893.7 712.6L888 717.2L881.1 723.7L874.2 734.9L866.1 749.2L857 752.8L844.2 753.3L825.1 745.7L813.7 744.3L807.8 743.6L797.7 741.5L795.6 741L793.5 740.5L791.6 739.8L790.2 739.2L788.6 738.5L787.3 737.8L785.9 737.1L784.2 736.1L782.2 734.7L780.2 733.5L777.2 731.2L774.3 728.6L772.8 727.2L771.1 725.8L750.9 711.4L740.7 698.9L719.1 675L716.1 671.2L711.4 664.4L710.2 662.5L706.1 657.4L704.6 655.9L700.9 651.8L699.2 649.6L666.9 617.4L656.4 606.8L642.8 602.3L634 599.3L621.4 597.2L610.2 596.1L607.2 596L602.1 596.4L598.7 596.8L595.3 597.4L591.1 598.6L586.7 599.9L582.1 602.1L577.1 605.1L558.3 626.1L528.5 659.5L504.4 683.6L479.2 691.2L477.2 692L464.3 695.7L456 696.6L450.9 697.4L445 700L442 703.7L437.2 705.8L432.6 706.8L414.5 712.6L393.1 723.2L381.7 733.6L379.5 736.2L379.4 742.3L382.2 757.3L382.8 760.7L383.4 762.9L384.7 767.6L390.6 779.8L390 788.6L388.5 794.7L379.8 814.6L356.7 845.1L352.3 853.3L335.5 895.2L333.1 910.1L331.4 920.5L328.4 938.8L326 949.4L320.7 962.2L310.7 973.5L304.9 974.4L297.1 974.9L288.2 979L277.8 991.6L270.6 1008.6L265.2 1030.2L259.9 1045.6L256.3 1060.2L254.2 1074.1L253.5 1080.9L253.2 1085.3L253.2 1098.9L255.2 1109.7L258.6 1117.8L264 1139L284.1 1174L295.1 1198.8L307.3 1241.8L318 1290.4M1082.5 604.5L1069.3 606.8" fill="none" stroke="transparent" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" pointer-events="stroke" clip-path="url(#sgcHit)"/><clipPath id="sgcHit"><rect x="655" y="625" width="130" height="105"/></clipPath>
             <g class="ph"><rect x="786" y="530" width="178" height="180" rx="4" fill="#fff" stroke="#d2d2d2" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))"/><image href="images/location/singalcheon.jpg" x="790" y="534" width="170" height="172" preserveAspectRatio="xMidYMid slice"/></g></g>
+            <text x="626" y="670" text-anchor="middle" style="font-size:10.5px;font-weight:600;letter-spacing:.08em;fill:#2f5f9e;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;pointer-events:none">기흥역세권</text>
             <text class="w0" x="970" y="795" text-anchor="end" style="font-size:9.5px;fill:#9aa1a5">© OpenStreetMap contributors</text>
           </svg>
           </div>
@@ -2594,6 +2596,13 @@ $("nbcGo").addEventListener("click",e=>{e.preventDefault();const b=$("nbc");b.hi
       box=document.createElement("div");box.className="zv";box.setAttribute("role","dialog");box.setAttribute("aria-label",label);
       box.innerHTML=`<p class="zv-h">두 손가락으로 확대 · 축소하고, 밀어서 살펴보세요</p><div class="zv-in"><div class="zv-c"></div></div><div class="zv-ctl"><button type="button" class="zv-m" aria-label="축소">−</button><button type="button" class="zv-f" aria-label="화면에 맞추기">맞춤</button><button type="button" class="zv-p" aria-label="확대">+</button></div><button type="button" class="zv-x" aria-label="닫기"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3l10 10M13 3L3 13"/></svg></button>`;
       const inn=box.querySelector(".zv-in"),cv=box.querySelector(".zv-c");cv.appendChild(c);
+      if(c.tagName.toLowerCase()==="svg")cv.classList.add("tmap"); // 지도 글씨 스타일(.tmap ...)이 복제본에도 적용되도록
+      // PC: 마우스로 끌어서 이동
+      if(!mq.matches)box.querySelector(".zv-h").textContent="마우스로 끌어서 살펴보고, + · − 버튼이나 Ctrl + 휠로 확대 · 축소하세요";
+      let drag=null;
+      inn.addEventListener("mousedown",e=>{if(e.button)return;drag={x:e.clientX,y:e.clientY,l:inn.scrollLeft,t:inn.scrollTop};inn.style.cursor="grabbing";e.preventDefault()});
+      addEventListener("mousemove",e=>{if(drag){inn.scrollLeft=drag.l-(e.clientX-drag.x);inn.scrollTop=drag.t-(e.clientY-drag.y)}});
+      addEventListener("mouseup",()=>{drag=null;inn.style.cursor=""});
       document.body.appendChild(box);document.documentElement.classList.add("zv-open");
       const isT=c.tagName==="TABLE";
       // 표는 원래 크기를 재고 zoom 으로 키우고 줄임
@@ -2624,11 +2633,16 @@ $("nbcGo").addEventListener("click",e=>{e.preventDefault();const b=$("nbc");b.hi
   };
   document.querySelectorAll(".tmap").forEach(m=>{
     const svg=m.querySelector("svg");if(!svg)return;
-    m.addEventListener("click",()=>{
-      if(!mq.matches)return;
+    const openMap=()=>{
       const c=svg.cloneNode(true);c.removeAttribute("aria-labelledby");c.querySelectorAll("title[id]").forEach(e=>e.removeAttribute("id"));
       open(c,"지도 크게 보기");
-    });
+    };
+    m.addEventListener("click",()=>{if(mq.matches)openMap()});
+    // PC: 지도 위 돋보기 버튼
+    const zb=document.createElement("button");zb.type="button";zb.className="zv-btn";zb.setAttribute("aria-label","지도 크게 보기");
+    zb.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
+    zb.addEventListener("click",e=>{e.stopPropagation();openMap()});
+    m.appendChild(zb);
   });
   const cw=$("cmpWrap");
   if(cw)cw.addEventListener("click",()=>{
