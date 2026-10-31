@@ -291,7 +291,7 @@ body.paused .mq div{animation-play-state:paused}
 .sect.wide{grid-template-columns:1fr}
 .zv{position:fixed;inset:0;z-index:500;background:#fff;display:flex;flex-direction:column}.zv-in{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain}.zv-c{display:flex;align-items:center;justify-content:center}.zv-in svg{display:block;flex:none;max-width:none;min-width:0!important}.zv-ctl{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:1px;border-radius:999px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.18)}.zv-ctl button{min-width:52px;height:44px;padding:0 14px;background:#000;color:#fff;font-size:20px;font-weight:600}.zv-ctl .zv-f{font-size:13px;font-weight:700;color:var(--yellow)}.zv-x{position:absolute;right:12px;top:12px;z-index:2;width:44px;height:44px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center}.zv-x svg{width:16px;height:16px}.zv-h{padding:20px 64px 12px 16px;font-size:13px;color:var(--g4);border-bottom:1px solid var(--g1)}html.zv-open,html.zv-open body{overflow:hidden}@media (max-width:1023px){ .tmap{cursor:zoom-in;position:relative;flex-wrap:wrap} .tmap::after{content:"탭하여 크게 보기";display:block;width:max-content;margin:8px 0 0 auto;padding:4px 10px;font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,.65);border-radius:999px;pointer-events:none} }
 .hph{cursor:zoom-in}.zv .hph .ph{display:none}@media (hover:none),(max-width:1023px){.tmap .hph .ph{display:none}}.phv p{color:#fff;font-size:14px;text-align:center}.phv{position:fixed;inset:0;z-index:510;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}.phv img{max-width:min(1200px,100%);max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 8px 30px rgba(0,0,0,.4)}.phv button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:26px;line-height:1;cursor:pointer}
-@media (min-width:1024px){ .tlay{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:24px;align-items:stretch} .tlay .tmap{display:flex;align-items:center} .tlay .tmap svg{min-width:0} .tlay .tkeys{grid-template-columns:1fr;margin-top:0;align-content:stretch} .tlay .tkeys li{padding:13px 16px;gap:12px;align-items:center} .tlay .tkeys b{font-size:15px} .tlay .tkeys span{margin-top:2px;font-size:13px;line-height:1.45} .tlay .tkeys i{width:26px;height:26px} }
+@media (min-width:1024px){ .tlay{display:grid;grid-template-columns:auto minmax(280px,1fr);gap:24px;align-items:stretch} .tlay .tmap{display:flex;align-items:center} .tlay .tmap svg{min-width:0;width:min(900px,calc((100vh - 180px) * 1.515),calc(100vw - 420px));height:auto} .tlay .tkeys{grid-template-columns:1fr;margin-top:0;align-content:stretch} .tlay .tkeys li{padding:13px 16px;gap:12px;align-items:center} .tlay .tkeys b{font-size:15px} .tlay .tkeys span{margin-top:2px;font-size:13px;line-height:1.45} .tlay .tkeys i{width:26px;height:26px} }
 .tmap{background:var(--g0);border-radius:6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tmap svg{display:block;width:100%;max-width:980px;min-width:700px;height:auto;margin:0 auto}
 .tmap text{font-family:"Pretendard Variable",Pretendard,sans-serif;letter-spacing:-.03em}
@@ -1032,7 +1032,7 @@ body.is-main #sft{display:none}
 <div class="tlay">
         <div class="tmap">
           <svg viewBox="0 0 1000 660" role="img" aria-labelledby="tmapT">
-            <title id="tmapT">기흥역세권 광역 교통 개념도: 기흥역 분당선 · 에버라인, 분당선 · 에버라인 연장 예정, GTX-F 예정, 구성역 GTX-A, 수원신갈IC, 서울 직행버스 · 시외버스 터미널, 대기업 셔틀, 42번 국도와 용인 반도체 클러스터</title>
+            <title id="tmapT">기흥역세권 광역 교통 노선도: 기흥역 분당선 · 에버라인, 분당선 · 에버라인 연장 예정, GTX-F 예정, 수서 · 구성 · 동탄 GTX-A, 신분당선 정자 · 판교 · 강남, 수원신갈IC, 서울 직행버스 · 시외버스 터미널, 대기업 셔틀, 42번 국도와 용인 반도체 클러스터</title>
             <style>
               .tmap text{font-size:13px;fill:#000;paint-order:stroke;stroke:#f4f4f4;stroke-width:4px;stroke-linejoin:round}
               .tmap .nh{stroke:none}
@@ -1041,115 +1041,109 @@ body.is-main #sft{display:none}
               .tmap .y{fill:#f5ff00}
               .tmap .w{fill:#fff}
             </style>
-            <text class="b" x="24" y="40" style="font-size:18px">기흥역세권 광역 교통 개념도</text>
-            <text class="s" x="24" y="60">실제 거리와 축척은 다릅니다</text>
+            <text class="b" x="20" y="40" style="font-size:22px">기흥역세권 광역 교통 노선도</text>
+            <text class="s" x="20" y="60">실제 거리와 축척은 다릅니다</text>
 
             <!-- 고속도로 -->
-            <path d="M300 20V640M20 250H980" stroke="#c3c8cb" stroke-width="10" fill="none"/>
-            <path d="M300 20V640M20 250H980" stroke="#fff" stroke-width="1.5" stroke-dasharray="10 10" fill="none"/>
-            <text class="s" x="40" y="240">영동고속도로</text>
-            <text class="s" transform="translate(290 210) rotate(-90)">경부고속도로</text>
+            <!-- 수원신갈IC: 기흥역 왼쪽 위 대각선 -->
+            <path d="M421 262L448 306" stroke="#5c6366" stroke-width="1.5" stroke-dasharray="2 4" fill="none"/>
+            <rect x="399" y="246" width="22" height="16" rx="3" fill="#000"/>
+            <text class="nh y b" x="410" y="258" text-anchor="middle" style="font-size:10px">IC</text>
+            <text class="b" x="393" y="258" text-anchor="end" style="font-size:13px">수원신갈IC</text>
+            <text class="s" x="393" y="273" text-anchor="end">차로 10분</text>
 
             <!-- 42번 국도 -->
-            <path d="M520 360C600 470 700 530 756 568" stroke="#9aa1a5" stroke-width="8" fill="none"/>
-            <path d="M520 360C600 470 700 530 756 568" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 8" fill="none"/>
-            <rect x="628" y="452" width="30" height="20" rx="4" fill="#5c6366"/>
-            <text class="nh w b" x="643" y="466" text-anchor="middle" style="font-size:12px">42</text>
-            <text class="b" x="664" y="467" style="fill:#5c6366">42번 국도</text>
-
-            <!-- GTX-F (수도권 순환 예정) -->
-            <path d="M120 520Q330 390 520 360C590 300 640 180 650 60" stroke="#d14b8f" stroke-width="5" stroke-dasharray="12 7" fill="none"/>
-            <!-- 신분당선: 정자 · 판교 · 강남 -->
-            <path d="M650 60H930" stroke="#d6393a" stroke-width="7" fill="none"/>
-            <circle cx="650" cy="60" r="11" fill="#fff" stroke="#d6393a" stroke-width="3.5"/>
-            <circle cx="790" cy="60" r="9" fill="#fff" stroke="#d6393a" stroke-width="3.5"/>
-            <circle cx="930" cy="60" r="9" fill="#fff" stroke="#d6393a" stroke-width="3.5"/>
-            <text class="b" x="650" y="26" text-anchor="middle" style="font-size:16px">정자역</text>
-            <text class="s" x="650" y="42" text-anchor="middle">18분 · 급행 13분</text>
-            <text class="b" x="790" y="26" text-anchor="middle" style="font-size:16px">판교역</text>
-            <text class="s" x="790" y="42" text-anchor="middle">22분 · 급행 18분</text>
-            <text class="b" x="930" y="26" text-anchor="middle" style="font-size:16px">강남역</text>
-            <text class="s" x="930" y="42" text-anchor="middle">41분 · 급행 36분</text>
-            <text class="b" x="860" y="88" text-anchor="middle" style="fill:#d6393a">신분당선</text>
-            <text class="s" x="668" y="88">GTX-F 예정</text>
-
-            <!-- 수원신갈IC 이동 -->
-            <path d="M520 360Q430 330 312 345" stroke="#000" stroke-width="2.5" stroke-dasharray="2 6" stroke-linecap="round" fill="none"/>
-            <rect x="288" y="335" width="24" height="20" rx="4" fill="#000"/>
-            <text class="nh y b" x="300" y="349" text-anchor="middle" style="font-size:11px">IC</text>
-            <text class="b" x="278" y="349" text-anchor="end" style="font-size:16px">수원신갈IC</text>
-            <text class="s" x="278" y="366" text-anchor="end">경부 · 영동고속도로 <tspan class="b" style="fill:#000">(10분)</tspan></text>
+            <path d="M516 362L845 505" stroke="#9aa1a5" stroke-width="8" fill="none"/>
+            <path d="M516 362L845 505" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 8" fill="none"/>
+            <rect x="665" y="423" width="30" height="20" rx="4" fill="#5c6366"/>
+            <text class="nh w b" x="680" y="437" text-anchor="middle" style="font-size:12px">42</text>
 
             <!-- 에버라인 -->
-            <path d="M520 360L600 368L700 350L860 330L970 330" stroke="#4fa845" stroke-width="6" fill="none" stroke-linejoin="round"/>
-            <text class="b" x="970" y="304" text-anchor="end" style="fill:#3a8a32">에버라인 · 용인 방면</text>
-            <path d="M520 360C480 290 360 290 170 300" stroke="#4fa845" stroke-width="6" stroke-dasharray="14 8" fill="none"/>
-            <circle cx="170" cy="300" r="11" fill="#fff" stroke="#4fa845" stroke-width="3" stroke-dasharray="4 2"/>
-            <text class="b" x="152" y="300" text-anchor="end" style="font-size:16px">광교중앙역</text>
-            <text class="s" x="152" y="317" text-anchor="end" style="fill:#3a8a32">에버라인 연장 예정</text>
-            <circle cx="860" cy="330" r="11" fill="#fff" stroke="#000" stroke-width="3"/>
-            <text class="b" x="860" y="364" text-anchor="middle" style="font-size:16px">동백역</text>
-            <text class="s" x="860" y="381" text-anchor="middle">용인세브란스병원</text>
+            <path d="M516 322H900" stroke="#4fa845" stroke-width="6" fill="none"/>
+            <path d="M448 322H300" stroke="#4fa845" stroke-width="6" stroke-dasharray="14 8" fill="none"/>
+            <text class="b" x="800" y="306" text-anchor="middle" style="fill:#3a8a32">에버라인</text>
+            <circle cx="700" cy="322" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="700" cy="322" r="4.5" fill="#4fa845"/>
+            <text class="b" x="700" y="350" text-anchor="middle" style="font-size:16px">동백역</text>
+            <text class="s" x="700" y="367" text-anchor="middle">용인세브란스병원</text>
+            <circle cx="900" cy="322" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="900" cy="322" r="4.5" fill="#4fa845"/>
+            <text class="b" x="900" y="350" text-anchor="middle" style="font-size:16px">에버랜드역</text>
+            <rect x="283" y="313" width="34" height="18" rx="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="292" cy="322" r="4.5" fill="#4fa845"/><circle cx="308" cy="322" r="4.5" fill="#d6393a"/>
+            <text class="b" x="300" y="302" text-anchor="middle" style="font-size:15px">광교중앙역</text>
 
-            <!-- 플랫폼시티 -->
-            <rect x="318" y="140" width="116" height="32" rx="16" fill="#ece3f0"/>
-            <text class="nh b" x="376" y="161" text-anchor="middle" style="fill:#7a3d76">용인 플랫폼시티</text>
+            <!-- GTX-F 예정 -->
+            <path d="M448 358H120V210M500 306V134" stroke="#d14b8f" stroke-width="5" stroke-dasharray="12 7" fill="none" stroke-linejoin="round"/>
 
-            <!-- GTX-A -->
-            <path d="M420 0L440 62C424 120 446 188 470 215C500 292 405 350 430 440C450 510 530 548 610 560" stroke="#9b4f96" stroke-width="7" fill="none" stroke-linejoin="round"/>
-            <text class="b" x="490" y="192" style="fill:#9b4f96">GTX-A</text>
-            <text class="s" x="490" y="208" style="fill:#9b4f96">삼성역 19분 · 서울역 24분</text>
+            <!-- GTX-A (기흥 미정차, 기흥역 뒤로 통과) -->
+            <path d="M468 20V500" stroke="#9b4f96" stroke-width="7" fill="none" stroke-linejoin="round"/>
 
             <!-- 분당선 -->
-            <path d="M456 0L440 62L470 215L505 290L520 360L470 410L330 470L120 520" stroke="#f2a900" stroke-width="7" fill="none" stroke-linejoin="round"/>
-            <path d="M520 360L575 470L610 560L625 640" stroke="#f2a900" stroke-width="7" stroke-dasharray="14 8" fill="none"/>
-            <text class="b" x="466" y="16" style="fill:#c98c00">분당선 · 강남 방면</text>
-            <circle cx="120" cy="520" r="11" fill="#fff" stroke="#000" stroke-width="3"/>
-            <text class="b" x="100" y="514" text-anchor="end" style="font-size:16px">수원역</text>
-            <text class="s" x="100" y="531" text-anchor="end">KTX</text>
-            <text class="s" x="100" y="546" text-anchor="end">GTX-F 예정</text>
-            <text class="b" x="556" y="472" text-anchor="end" style="fill:#c98c00">분당선 연장 예정</text>
-            <text class="s" x="556" y="489" text-anchor="end">기흥 – 동탄 – 오산</text>
+            <path d="M484 0V306M448 340H120" stroke="#f2a900" stroke-width="7" fill="none"/>
+            <path d="M484 374V600" stroke="#f2a900" stroke-width="7" stroke-dasharray="14 8" fill="none"/>            <text class="b" x="498" y="562" style="fill:#c98c00">분당선 연장 예정</text>
+            <text class="s" x="498" y="578">기흥 – 동탄 – 오산</text>
+
+            <!-- 신분당선: 미금 · 정자 · 판교 · 강남 (분당선 오른쪽 나란히) -->
+            <path d="M516 134V58" stroke="#d6393a" stroke-width="7" fill="none"/>
+            <circle cx="516" cy="58" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="516" cy="58" r="4.5" fill="#d6393a"/>
+            <text class="b" x="534" y="63" style="font-size:16px">강남역 <tspan class="s" style="font-weight:400">41분 · 급행 36분</tspan></text>
+            <circle cx="516" cy="96" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="516" cy="96" r="4.5" fill="#d6393a"/>
+            <text class="b" x="534" y="101" style="font-size:16px">판교역 <tspan class="s" style="font-weight:400">22분 · 급행 18분</tspan></text>
+            <rect x="474" y="124" width="52" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="484" cy="134" r="4.5" fill="#f2a900"/><circle cx="500" cy="134" r="4.5" fill="#d14b8f"/><circle cx="516" cy="134" r="4.5" fill="#d6393a"/>
+            <text class="b" x="534" y="139" style="font-size:16px">정자역 <tspan class="s" style="font-weight:400">18분 · 급행 13분</tspan></text>
+            <!-- GTX-F: 기흥에서 정자 · 수원 각 1정거장 -->
+            <text class="s" x="508" y="262" style="font-size:11px;fill:#b8547f">1정거장</text>
+            <text class="s" x="405" y="376" text-anchor="middle" style="font-size:11px;fill:#b8547f">1정거장</text>
 
             <!-- 역 -->
-            <circle cx="380" cy="448.6" r="9" fill="#fff" stroke="#000" stroke-width="3"/>
-            <text class="b" x="372" y="478" text-anchor="middle" style="font-size:15px">영통역</text>
-            <circle cx="255" cy="487.9" r="9" fill="#fff" stroke="#000" stroke-width="3"/>
-            <text class="b" x="255" y="516" text-anchor="middle" style="font-size:15px">망포역</text>
-            <text class="s" x="255" y="532" text-anchor="middle">삼성전자</text>
-            <circle cx="470" cy="215" r="11" fill="#fff" stroke="#000" stroke-width="3"/>
-            <text class="b" x="452" y="210" text-anchor="end" style="font-size:16px">구성역</text>
-            <text class="s" x="452" y="228" text-anchor="end">GTX-A · 2정거장(4분)</text>
-            <circle cx="440" cy="62" r="12" fill="#fff" stroke="#000" stroke-width="3.5"/>
-            <text class="b" x="460" y="62" style="font-size:16px">수서역 <tspan class="s" style="font-weight:700;fill:#000">14분</tspan></text>
-            <text class="s" x="460" y="79">SRT · GTX-A · 분당선</text>
-            <circle cx="610" cy="560" r="11" fill="#fff" stroke="#000" stroke-width="3"/>
-            <text class="b" x="630" y="562" style="font-size:16px">동탄역</text>
-            <text class="s" x="630" y="579">SRT</text>
-            <circle cx="625" cy="640" r="6" fill="#fff" stroke="#f2a900" stroke-width="3" stroke-dasharray="3 2"/>
-            <text class="s" x="640" y="645">오산</text>
+            <circle cx="468" cy="20" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="20" r="4.5" fill="#9b4f96"/>
+            <text class="b" x="378" y="24" text-anchor="end" style="font-size:16px">서울역</text><text class="s" x="384" y="24">GTX-A · 24분</text>
+            <circle cx="468" cy="58" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="58" r="4.5" fill="#9b4f96"/>
+            <text class="b" x="378" y="63" text-anchor="end" style="font-size:16px">삼성역</text><text class="s" x="384" y="63">GTX-A · 19분</text>
+            <rect x="456" y="86" width="40" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="96" r="4.5" fill="#9b4f96"/><circle cx="484" cy="96" r="4.5" fill="#f2a900"/>
+            <text class="b" x="378" y="101" text-anchor="end" style="font-size:16px">수서역</text><text class="s" x="384" y="101">GTX-A · 14분</text>
+            <text class="s" x="384" y="117">SRT</text>
+            <rect x="456" y="200" width="40" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="210" r="4.5" fill="#9b4f96"/><circle cx="484" cy="210" r="4.5" fill="#f2a900"/>
+            <text class="b" x="378" y="215" text-anchor="end" style="font-size:16px">구성역</text><text class="s" x="384" y="215">GTX-A · 4분</text>
+            <text class="s" x="384" y="231">2정거장</text>
+
+            <rect x="456" y="490" width="40" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="500" r="4.5" fill="#9b4f96"/><circle cx="484" cy="500" r="4.5" fill="#f2a900"/>
+            <text class="b" x="508" y="504" style="font-size:16px">동탄역</text>
+            <text class="s" x="508" y="520">SRT · GTX-A</text>
+            <circle cx="484" cy="600" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="484" cy="600" r="4.5" fill="#f2a900"/>
+            <text class="s" x="500" y="605">오산</text>
+            <circle cx="350" cy="340" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="350" cy="340" r="4.5" fill="#f2a900"/>
+            <text class="b" x="350" y="386" text-anchor="middle" style="font-size:15px">영통역</text>
+            <circle cx="240" cy="340" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="240" cy="340" r="4.5" fill="#f2a900"/>
+            <text class="b" x="240" y="386" text-anchor="middle" style="font-size:15px">망포역</text>
+            <text class="s" x="240" y="402" text-anchor="middle">삼성전자</text>
+            <rect x="110" y="330" width="20" height="38" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="120" cy="340" r="4.5" fill="#f2a900"/><circle cx="120" cy="358" r="4.5" fill="#d14b8f"/>
+            <text class="b" x="120" y="392" text-anchor="middle" style="font-size:16px">수원역</text>
+            <text class="s" x="120" y="408" text-anchor="middle">KTX</text>
+            <text class="s" x="120" y="423" text-anchor="middle">GTX-F 예정</text>            <circle cx="120" cy="210" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="120" cy="210" r="4.5" fill="#d14b8f"/>
+            <text class="b" x="136" y="215" style="font-size:16px">김포공항</text>
+            <text class="s" x="136" y="231">GTX-F 예정</text>
 
             <!-- 기흥역 -->
-            <g class="w0"><rect x="509.55" y="264.05" width="20.9" height="87.6" rx="2.85" fill="#2b2f33"/><rect x="509.55" y="264.05" width="20.9" height="20.9" rx="2.85" fill="#f5c400"/><path d="M8 3h8a3 3 0 013 3v8a3 3 0 01-2 2.8L18.5 20h-2l-1.4-3H8.9L7.5 20h-2l1.5-3.2A3 3 0 015 14V6a3 3 0 013-3zm-1 4v4h10V7zm1.5 6.5a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2z" fill="#2b2f33" transform="translate(512.4 266.9) scale(0.646)"/><text x="520" y="298.25" text-anchor="middle" style="font-size:11.9px;font-weight:700;fill:#fff;stroke:none">기</text><text x="520" y="314.4" text-anchor="middle" style="font-size:11.9px;font-weight:700;fill:#fff;stroke:none">흥</text><text x="520" y="330.55" text-anchor="middle" style="font-size:11.9px;font-weight:700;fill:#fff;stroke:none">역</text></g>
-            <circle cx="520" cy="360" r="16" fill="#fff" stroke="#000" stroke-width="4"/><path d="M8 3h8a3 3 0 013 3v8a3 3 0 01-2 2.8L18.5 20h-2l-1.4-3H8.9L7.5 20h-2l1.5-3.2A3 3 0 015 14V6a3 3 0 013-3zm-1 4v4h10V7zm1.5 6.5a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2z" fill="#000" transform="translate(511.5 351.5) scale(.72)"/>
+            <rect x="448" y="306" width="68" height="68" rx="14" fill="#fff" stroke="#000" stroke-width="4"/>
+            <circle cx="466" cy="325" r="5" fill="#f2a900"/><circle cx="482" cy="325" r="5" fill="#4fa845"/><circle cx="498" cy="325" r="5" fill="#d14b8f"/>
+            <text class="nh b" x="482" y="356" text-anchor="middle" style="font-size:17px">기흥역</text>
 
             <!-- 버스 · 셔틀 -->
-            <path d="M704 240L536 346" stroke="#5c6366" stroke-width="1.5" stroke-dasharray="2 4" fill="none"/>
-            <rect x="690" y="106" width="300" height="134" rx="8" fill="#fff" stroke="#c9d2ce"/>
-            <text class="nh b" x="708" y="130" style="font-size:14px">기흥역 버스 · 셔틀</text>
-            <rect x="708" y="142" width="20" height="20" rx="4" fill="#d6393a"/>
-            <text class="nh w b" x="718" y="156" text-anchor="middle" style="font-size:11px">B</text>
-            <text class="nh b" x="736" y="157">서울 직행버스</text>
-            <text class="nh s" x="836" y="157">강남 · 서울역 방면</text>
-            <rect x="708" y="168" width="20" height="20" rx="4" fill="#1f6fd1"/>
-            <text class="nh w b" x="718" y="182" text-anchor="middle" style="font-size:11px">T</text>
-            <text class="nh b" x="736" y="183">시외버스 터미널</text>
-            <text class="nh s" x="836" y="183">대전 · 대구 · 부산 등</text>
-            <rect x="708" y="194" width="20" height="20" rx="4" fill="#000"/>
-            <text class="nh y b" x="718" y="208" text-anchor="middle" style="font-size:11px">S</text>
-            <text class="nh b" x="736" y="209">대기업 셔틀버스</text>
-            <text class="nh s" x="836" y="209">삼성전자 · SK하이닉스</text>
-            <text class="nh s" x="836" y="225">등 대기업 10여 개</text>
+            <path d="M690 230H570V340H516" stroke="#5c6366" stroke-width="1.5" stroke-dasharray="2 4" fill="none"/>
+            <rect x="690" y="150" width="300" height="134" rx="8" fill="#fff" stroke="#c9d2ce"/>
+            <text class="nh b" x="708" y="174" style="font-size:14px">기흥역 버스 · 셔틀</text>
+            <rect x="708" y="186" width="20" height="20" rx="4" fill="#d6393a"/>
+            <text class="nh w b" x="718" y="200" text-anchor="middle" style="font-size:11px">B</text>
+            <text class="nh b" x="736" y="201">서울 직행버스</text>
+            <text class="nh s" x="836" y="201">강남 · 서울역 방면</text>
+            <rect x="708" y="212" width="20" height="20" rx="4" fill="#1f6fd1"/>
+            <text class="nh w b" x="718" y="226" text-anchor="middle" style="font-size:11px">T</text>
+            <text class="nh b" x="736" y="227">시외버스 터미널</text>
+            <text class="nh s" x="836" y="227">대전 · 대구 · 부산 등</text>
+            <rect x="708" y="238" width="20" height="20" rx="4" fill="#000"/>
+            <text class="nh y b" x="718" y="252" text-anchor="middle" style="font-size:11px">S</text>
+            <text class="nh b" x="736" y="253">대기업 셔틀버스</text>
+            <text class="nh s" x="836" y="253">삼성전자 · SK하이닉스</text>
+            <text class="nh s" x="836" y="269">등 대기업 10여 개</text>
 
             <!-- 반도체 클러스터 -->
             <text class="b" x="845" y="526" text-anchor="middle" style="font-size:15px">용인 반도체 클러스터</text>
@@ -1163,11 +1157,11 @@ body.is-main #sft{display:none}
             <text class="s" x="900" y="647" text-anchor="middle">원삼면</text>
 
             <!-- 삼성전자 캠퍼스 -->
-            <rect x="322" y="586" width="232" height="68" rx="6" fill="#fff"/>
-            <circle cx="342" cy="606" r="9" fill="#000"/><text class="nh y b" x="342" y="609.5" text-anchor="middle" style="font-size:8.5px">삼성</text>
-            <text class="nh b" x="358" y="610" style="font-size:12.5px">삼성전자 수원캠퍼스</text><text class="nh s" x="540" y="610" text-anchor="end">차량 25분</text>
-            <circle cx="342" cy="634" r="9" fill="#000"/><text class="nh y b" x="342" y="637.5" text-anchor="middle" style="font-size:8.5px">삼성</text>
-            <text class="nh b" x="358" y="638" style="font-size:12.5px">삼성전자 용인캠퍼스</text><text class="nh s" x="540" y="638" text-anchor="end">차량 20분</text>
+            <rect x="20" y="462" width="232" height="68" rx="6" fill="#fff"/>
+            <circle cx="40" cy="482" r="9" fill="#000"/><text class="nh y b" x="40" y="485.5" text-anchor="middle" style="font-size:8.5px">삼성</text>
+            <text class="nh b" x="56" y="486" style="font-size:12.5px">삼성전자 수원캠퍼스</text><text class="nh s" x="238" y="486" text-anchor="end">차량 25분</text>
+            <circle cx="40" cy="510" r="9" fill="#000"/><text class="nh y b" x="40" y="513.5" text-anchor="middle" style="font-size:8.5px">삼성</text>
+            <text class="nh b" x="56" y="514" style="font-size:12.5px">삼성전자 용인캠퍼스</text><text class="nh s" x="238" y="514" text-anchor="end">차량 20분</text>
             <!-- 범례 -->
             <rect x="20" y="552" width="290" height="102" rx="6" fill="#fff"/>
             <path d="M36 572H64" stroke="#f2a900" stroke-width="6"/><text class="nh s" x="72" y="576">분당선</text>
@@ -1176,11 +1170,8 @@ body.is-main #sft{display:none}
             <path d="M36 638H64" stroke="#d14b8f" stroke-width="5" stroke-dasharray="8 4"/><text class="nh s" x="72" y="642">GTX-F 예정</text>
             <path d="M170 572H198" stroke="#4fa845" stroke-width="6"/><text class="nh s" x="206" y="576">에버라인</text>
             <path d="M170 594H198" stroke="#4fa845" stroke-width="6" stroke-dasharray="8 4"/><text class="nh s" x="206" y="598">에버라인 연장 예정</text>
-            <path d="M170 616H198" stroke="#c3c8cb" stroke-width="10"/><text class="nh s" x="206" y="620">고속도로</text>
+            <path d="M170 616H198" stroke="#d6393a" stroke-width="6"/><text class="nh s" x="206" y="620">신분당선</text>
             <path d="M170 638H198" stroke="#9aa1a5" stroke-width="7"/><path d="M170 638H198" stroke="#fff" stroke-width="1.2" stroke-dasharray="5 4"/><text class="nh s" x="206" y="642">42번 국도</text>
-            <!-- 기흥역 마우스: 미래교통망 -->
-            <g class="hph"><rect x="504" y="262" width="32" height="116" fill="transparent"/>
-            <g class="ph"><rect x="546" y="190" width="288" height="327" rx="6" fill="#fff" stroke="#d2d2d2" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))"/><image href="images/location/future-transit.jpg" x="550" y="194" width="280" height="319" preserveAspectRatio="xMidYMid meet"/></g></g>
           </svg>
         </div>
         <ul class="tkeys">
