@@ -4,8 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
-<title>기흥역세권 | The Station, Giheung</title>
-<meta name="description" content="역 앞의 삶, 산과 물 사이의 일상 — 기흥역세권에서 시작됩니다">
+<title>기흥역세권 1·2지구 | The Station, Giheung</title>
+<meta name="description" content="역 앞의 삶, 산과 물 사이의 일상 — 기흥역세권 1·2지구 단지 · 시세 · 교통 · 생활 입지 · 임장 가이드">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Station, Giheung">
+<meta property="og:url" content="https://giheung-info.github.io/">
+<meta property="og:title" content="기흥역세권 1·2지구 | The Station, Giheung">
+<meta property="og:description" content="역 앞의 삶, 산과 물 사이의 일상 — 기흥역세권 1·2지구 단지 · 시세 · 교통 · 생활 입지 · 임장 가이드">
+<meta property="og:image" content="https://giheung-info.github.io/images/og.jpg">
+<meta property="og:image:width" content="456">
+<meta property="og:image:height" content="318">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="기흥역세권 1·2지구 | The Station, Giheung">
+<meta name="twitter:image" content="https://giheung-info.github.io/images/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&display=swap" rel="stylesheet">
@@ -276,6 +288,7 @@ body.paused .mq div{animation-play-state:paused}
 
 /* 교통 지도 */
 .sect.wide{grid-template-columns:1fr}
+.zv{position:fixed;inset:0;z-index:500;background:#fff;display:flex;flex-direction:column}.zv-in{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain}.zv-c{display:flex;align-items:center;justify-content:center}.zv-in svg{display:block;flex:none;max-width:none;min-width:0!important}.zv-ctl{position:absolute;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:1px;border-radius:999px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.18)}.zv-ctl button{min-width:52px;height:44px;padding:0 14px;background:#000;color:#fff;font-size:20px;font-weight:600}.zv-ctl .zv-f{font-size:13px;font-weight:700;color:var(--yellow)}.zv-x{position:absolute;right:12px;top:12px;z-index:2;width:44px;height:44px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center}.zv-x svg{width:16px;height:16px}.zv-h{padding:20px 64px 12px 16px;font-size:13px;color:var(--g4);border-bottom:1px solid var(--g1)}html.zv-open,html.zv-open body{overflow:hidden}@media (max-width:1023px){ .tmap{cursor:zoom-in;position:relative} .tmap::after{content:"탭하여 크게 보기";position:absolute;right:8px;bottom:8px;padding:4px 10px;font-size:11px;font-weight:700;color:#fff;background:rgba(0,0,0,.65);border-radius:999px;pointer-events:none} }
 @media (min-width:1024px){ .tlay{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:24px;align-items:stretch} .tlay .tmap{display:flex;align-items:center} .tlay .tmap svg{min-width:0} .tlay .tkeys{grid-template-columns:1fr;margin-top:0;align-content:stretch} .tlay .tkeys li{padding:13px 16px;gap:12px;align-items:center} .tlay .tkeys b{font-size:15px} .tlay .tkeys span{margin-top:2px;font-size:13px;line-height:1.45} .tlay .tkeys i{width:26px;height:26px} }
 .tmap{background:var(--g0);border-radius:6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tmap svg{display:block;width:100%;max-width:980px;min-width:700px;height:auto;margin:0 auto}
@@ -336,6 +349,17 @@ body.paused .mq div{animation-play-state:paused}
 .loc-shop em.walk{font-family:var(--kr);font-size:15px;letter-spacing:-.03em;color:#c8781a}
 .loc-shop b{font-size:15px;font-weight:700;letter-spacing:-.03em;color:#2b2724;line-height:1.35}
 .loc-shop li span{font-size:12.5px;color:#9a9087}
+/* 생활 입지: 메시지 → 지도 → 탭 */
+@media (min-width:1024px){ .loc-body{grid-template-columns:1fr!important} .loc-map{width:100%;max-width:920px;margin:0 auto} }
+.loc-side{order:-1}
+.loc-tabs{margin-top:clamp(40px,4vw,64px)}
+.lt-btns{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:18px;border-bottom:2px solid #2b2724}
+.lt-btns button{padding:10px 18px;font-size:14.5px;font-weight:700;letter-spacing:-.03em;color:#7a726a;border:1px solid #ddd6cd;border-radius:999px;background:#fff;transition:all .2s}
+.lt-btns button:hover{color:#2b2724;border-color:#2b2724}
+.lt-btns button[aria-selected="true"]{background:#1d2b44;border-color:#1d2b44;color:#fff}
+.lt-panel .ls-h{display:none}
+.lt-panel .loc-shop,.lt-panel .loc-semi{margin-top:4px}
+@media (min-width:760px){ .lt-panel .loc-shop:not(.loc-edu) ol{grid-template-columns:1fr 1fr;column-gap:40px} .lt-panel .loc-edu{display:grid;grid-template-columns:1fr 1fr;column-gap:40px;align-items:start} .lt-panel .loc-semi ul{display:grid;grid-template-columns:1fr 1fr;column-gap:40px} }
 /* 학원가 아코디언 · 반도체 벨트 */
 .loc-edu .acc{border-bottom:1px solid #ddd6cd}
 .loc-edu summary{display:grid;grid-template-columns:54px 1fr 18px;column-gap:12px;align-items:center;padding:12px 0;cursor:pointer;list-style:none}
@@ -454,6 +478,105 @@ body.paused .mq div{animation-play-state:paused}
 .gc-svg text{font-family:var(--en);font-size:11px;fill:#8a9094}
 .gc-src{margin-top:4px;font-size:10.5px;color:var(--g3)}
 .gc-tip{pointer-events:none}
+/* 단지별 비교표 */
+.cmp{margin-top:clamp(56px,6vw,96px);scroll-margin-top:calc(var(--hh) + var(--ph) + 20px)}
+.cmp-go i{background:#1f6fd1;color:#fff}
+.cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cmp-t{width:100%;min-width:880px;border-collapse:collapse;font-size:13.5px;line-height:1.5}
+.cmp-t th,.cmp-t td{padding:13px 12px;border-bottom:1px solid var(--g1);text-align:left;vertical-align:top}
+.cmp-t thead th{padding:16px 12px;font-size:15px;font-weight:700;letter-spacing:-.03em;background:#000;color:#fff}
+.cmp-t thead th small{display:block;margin-bottom:2px;font-family:var(--en);font-size:11px;color:var(--yellow)}
+.cmp-t thead th:first-child{background:#000;cursor:default}
+.cmp-t tbody th{position:sticky;left:0;z-index:1;width:112px;background:var(--g0);font-size:12.5px;font-weight:700;color:var(--g5,#3a3f44);white-space:nowrap}
+.cmp-t td b{font-family:var(--en);font-size:17px;font-weight:700;letter-spacing:-.03em}
+.cmp-t td small{display:block;font-size:12px;color:var(--g4)}
+.cmp-t tr:hover td{background:#fafafa}
+.cmp-t tbody th,.cmp-t tbody td{height:72px;padding-top:0;padding-bottom:0;vertical-align:middle}.cmp-t tbody tr.tall th,.cmp-t tbody tr.tall td{height:124px}
+/* ===== 임장 가이드 ===== */
+.gd{padding-top:clamp(56px,7vw,110px);padding-bottom:clamp(80px,8vw,140px)}
+.gd-lab{font-family:var(--en);font-size:13px;font-weight:700;color:var(--g3)}
+.gd-hero h3{margin-top:16px;font-size:clamp(36px,4.6vw,72px);font-weight:700;letter-spacing:-.055em;line-height:1.12}
+.gd-lead{margin-top:20px;font-size:15.5px;line-height:1.8;color:var(--g4)}
+.gd-jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.gd-jump a{display:block;padding:10px 16px;font-size:13.5px;font-weight:700;letter-spacing:-.02em;color:#000;text-decoration:none;border:1px solid var(--g2);border-radius:999px;transition:all .2s}
+.gd-jump a:hover{background:#000;color:var(--yellow);border-color:#000}
+.gd-sec{margin-top:clamp(64px,7vw,110px);scroll-margin-top:calc(var(--hh) + var(--ph) + 20px)}
+.gd-h{display:flex;gap:18px;align-items:flex-end;padding-bottom:18px;border-bottom:2px solid #000}
+.gd-h>span{font-family:var(--en);font-size:clamp(40px,4vw,60px);font-weight:700;line-height:.8;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.2px #000}
+.gd-h h4{font-size:clamp(21px,1.9vw,28px);font-weight:700;letter-spacing:-.04em}
+.gd-h p{margin-top:6px;font-size:13.5px;color:var(--g4)}
+.gd-course{display:grid;grid-template-columns:1fr;gap:28px;margin-top:28px}
+@media (min-width:1024px){ .gd-course{grid-template-columns:minmax(0,1.35fr) minmax(320px,1fr);align-items:start} }
+.gd-map svg{display:block;width:100%;height:auto;background:#f4f4f4}.gd-map text{font-family:var(--kr)}.gd-map .blk{fill:#e1e2e2;stroke:#f4f4f4;stroke-width:2.5;stroke-linejoin:round}
+.gd-map .gd-line{animation:gdDash 18s linear infinite}
+@keyframes gdDash{to{stroke-dashoffset:-180}}
+.gd-steps li{display:grid;grid-template-columns:30px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--g1)}
+.gd-steps i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--yellow);border:1.5px solid #000;font-style:normal;font-family:var(--en);font-size:12px;font-weight:700}
+.gd-steps li:first-child i{background:#000;color:var(--yellow)}
+.gd-steps b{display:flex;align-items:baseline;gap:8px;font-size:15.5px;font-weight:700;letter-spacing:-.03em}
+.gd-steps b em{font-style:normal;font-size:11.5px;font-weight:600;color:var(--g4)}
+.gd-steps span{display:block;margin-top:3px;font-size:13px;line-height:1.6;color:var(--g4)}
+.gd-cards{display:grid;grid-template-columns:1fr;gap:1px;margin-top:28px;background:var(--g1);border:1px solid var(--g1)}
+@media (min-width:760px){ .gd-cards{grid-template-columns:1fr 1fr} }
+@media (min-width:1200px){ .gd-cards{grid-template-columns:repeat(4,1fr)} }
+.gd-cards li{background:#fff;padding:26px 24px}
+.gd-cards em{font-style:normal;font-family:var(--en);font-size:12px;font-weight:700;color:var(--g3)}
+.gd-cards b{display:block;margin-top:10px;font-size:18px;font-weight:700;letter-spacing:-.035em}
+.gd-cards p{margin-top:10px;font-size:13.5px;line-height:1.7;color:var(--g4)}
+.gd-ckbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:22px}
+.gd-prog{flex:1;min-width:140px;height:6px;background:var(--g1);border-radius:3px;overflow:hidden}
+.gd-prog i{display:block;height:100%;width:0;background:#000;transition:width .3s}
+#gdProgTxt{font-family:var(--en);font-size:13px;font-weight:700}
+.gd-ckbtns{display:flex;flex-wrap:wrap;gap:8px}
+.gd-ckbtns button{padding:10px 16px;font-size:13px;font-weight:700;background:#000;color:#fff;border-radius:4px}
+.gd-ckbtns #gdDl{background:var(--yellow);color:#000}
+.gd-ckbtns .ghost{background:#fff;color:var(--g4);border:1px solid var(--g2)}
+.gd-ck{display:grid;grid-template-columns:1fr;gap:18px 40px;margin-top:22px}
+@media (min-width:760px){ .gd-ck{grid-template-columns:1fr 1fr} }
+@media (min-width:1200px){ .gd-ck{grid-template-columns:repeat(3,1fr)} }
+.gd-ck fieldset{border:0;padding:0;margin:0}
+.gd-ck legend{padding:0 0 8px;font-size:15px;font-weight:700;letter-spacing:-.03em}
+.gd-ck label{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--g1);font-size:13.5px;line-height:1.5;cursor:pointer}
+.gd-ck input{flex:none;width:18px;height:18px;margin-top:1px;accent-color:#000}
+.gd-ck input:checked+span{color:var(--g3);text-decoration:line-through}
+.gd-calc{display:grid;grid-template-columns:1fr;gap:20px;margin-top:28px}
+@media (min-width:900px){ .gd-calc{grid-template-columns:1fr 1fr} }
+.gd-cbox{padding:26px;background:var(--g0)}
+.gd-ct{font-size:16px;font-weight:700;letter-spacing:-.03em;margin-bottom:14px}
+.gd-cbox label{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;font-size:13.5px;font-weight:600}
+.gd-cbox label span{display:flex;align-items:center;gap:6px;font-weight:500;color:var(--g4)}
+.gd-cbox input,.gd-cbox select{width:120px;padding:9px 10px;font:600 15px var(--en);text-align:right;border:1px solid var(--g2);border-radius:4px;background:#fff;color:#000}
+.gd-cbox select{width:auto;text-align:left;font-family:var(--kr)}
+.gd-res{margin-top:14px;border-top:1px solid var(--g2)}
+.gd-res div{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--g1);font-size:13.5px}
+.gd-res dt{color:var(--g4)}
+.gd-res dd{font-weight:700;text-align:right}
+.gd-res dd small{font-weight:500;color:var(--g4)}
+.gd-res .tot dt{color:#000;font-weight:700}
+.gd-res .tot dd{font-size:18px}
+.gd-note{margin-top:12px;font-size:11.5px;line-height:1.6;color:var(--g3)}
+.gd-two{display:grid;grid-template-columns:1fr;gap:28px;margin-top:28px}
+@media (min-width:1024px){ .gd-two{grid-template-columns:1fr 1fr} }
+.gd-links{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g1);border:1px solid var(--g1);align-content:start}
+.gd-links a{display:block;height:100%;padding:18px;background:#fff;text-decoration:none;color:#000;transition:background .2s}
+.gd-links a:hover{background:var(--g0)}
+.gd-links b{display:block;font-size:14px;font-weight:700;letter-spacing:-.03em}
+.gd-links b::after{content:" ↗";color:var(--g3)}
+.gd-links span{display:block;margin-top:4px;font-size:12px;color:var(--g4)}
+.gd-flow li{position:relative;padding:0 0 18px 26px;border-left:1px solid var(--g2);margin-left:6px}
+.gd-flow li::before{content:"";position:absolute;left:-6px;top:2px;width:11px;height:11px;border-radius:50%;background:#000}
+.gd-flow li:last-child{border-left-color:transparent}
+.gd-flow em{font-style:normal;font-size:11.5px;font-weight:700;color:var(--g3)}
+.gd-flow b{display:block;margin-top:2px;font-size:15px;font-weight:700;letter-spacing:-.03em}
+.gd-flow span{display:block;margin-top:2px;font-size:13px;color:var(--g4)}
+.gd-src{margin-top:28px;font-size:12px;color:var(--g3);line-height:1.6}
+@media print{
+  body.print-ck *{visibility:hidden}
+  body.print-ck #gdCheck,body.print-ck #gdCheck *{visibility:visible}
+  body.print-ck #gdCheck{position:absolute;left:0;top:0;width:100%}
+  body.print-ck .gd-ckbar{display:none}
+  body.print-ck .gd-ck{grid-template-columns:1fr 1fr}
+}
 /* 주변 입지 시세 비교 */
 .nbc{margin-top:clamp(56px,6vw,96px)}
 .nbc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;padding-bottom:16px;border-bottom:2px solid var(--black)}
@@ -638,7 +761,8 @@ body.hd-hide .gal{top:calc(var(--ph) + 20px)}
 .vgrid .c{font-family:var(--en);font-size:12px;font-weight:700;color:var(--g4)}
 .vgrid .n{display:block;margin:12px 0 26px;font-family:var(--en);font-weight:700;font-size:52px;line-height:1;letter-spacing:-.05em;color:var(--yellow)}
 .vgrid b{display:block;font-size:20px;font-weight:700;letter-spacing:-.035em}
-.vgrid span:last-child{display:block;margin-top:6px;color:var(--g4);font-size:15px}
+.vgrid span:last-of-type{display:block;margin-top:6px;color:var(--g4);font-size:15px}
+.vgrid .v-src{display:inline-block;margin-top:12px;font-size:11.5px;color:#6f7679;text-decoration:none;border-bottom:1px solid #333;transition:color .2s}.vgrid .v-src:hover{color:var(--yellow)}
 .band .note{color:var(--g5)}
 
 /* ===== SUB FOOTER ===== */
@@ -905,9 +1029,9 @@ body.is-main #sft{display:none}
             <text class="nh b" x="376" y="161" text-anchor="middle" style="fill:#7a3d76">용인 플랫폼시티</text>
 
             <!-- GTX-A -->
-            <path d="M395 22L470 215C820 250 800 480 610 560" stroke="#9b4f96" stroke-width="7" fill="none" stroke-linejoin="round"/>
+            <path d="M395 22L470 215C500 292 405 350 430 440C450 510 530 548 610 560" stroke="#9b4f96" stroke-width="7" fill="none" stroke-linejoin="round"/>
             <text class="b" x="490" y="192" style="fill:#9b4f96">GTX-A</text>
-            <text class="s" x="490" y="208" style="fill:#9b4f96">삼성 · 서울역 방면</text>
+            <text class="s" x="490" y="208" style="fill:#9b4f96">삼성역 19분 · 서울역 24분</text>
 
             <!-- 분당선 -->
             <path d="M430 30L470 215L505 290L520 360L470 410L330 470L120 520" stroke="#f2a900" stroke-width="7" fill="none" stroke-linejoin="round"/>
@@ -917,10 +1041,12 @@ body.is-main #sft{display:none}
             <text class="b" x="100" y="514" text-anchor="end" style="font-size:16px">수원역</text>
             <text class="s" x="100" y="531" text-anchor="end">KTX</text>
             <text class="s" x="100" y="546" text-anchor="end">GTX-F 예정</text>
-            <text class="b" x="580" y="516" text-anchor="end" style="fill:#c98c00">분당선 연장 예정</text>
-            <text class="s" x="580" y="533" text-anchor="end">기흥 – 동탄 – 오산</text>
+            <text class="b" x="556" y="472" text-anchor="end" style="fill:#c98c00">분당선 연장 예정</text>
+            <text class="s" x="556" y="489" text-anchor="end">기흥 – 동탄 – 오산</text>
 
             <!-- 역 -->
+            <circle cx="380" cy="448.6" r="9" fill="#fff" stroke="#000" stroke-width="3"/>
+            <text class="b" x="372" y="478" text-anchor="middle" style="font-size:15px">영통역</text>
             <circle cx="470" cy="215" r="11" fill="#fff" stroke="#000" stroke-width="3"/>
             <text class="b" x="452" y="210" text-anchor="end" style="font-size:16px">구성역</text>
             <text class="s" x="452" y="228" text-anchor="end">GTX-A · 2정거장(4분)</text>
@@ -935,14 +1061,14 @@ body.is-main #sft{display:none}
             <circle cx="520" cy="360" r="16" fill="#fff" stroke="#000" stroke-width="4"/><path d="M8 3h8a3 3 0 013 3v8a3 3 0 01-2 2.8L18.5 20h-2l-1.4-3H8.9L7.5 20h-2l1.5-3.2A3 3 0 015 14V6a3 3 0 013-3zm-1 4v4h10V7zm1.5 6.5a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2z" fill="#000" transform="translate(511.5 351.5) scale(.72)"/>
 
             <!-- 버스 · 셔틀 -->
-            <path d="M704 224L536 346" stroke="#5c6366" stroke-width="1.5" stroke-dasharray="2 4" fill="none"/>
-            <rect x="690" y="106" width="300" height="118" rx="8" fill="#fff" stroke="#c9d2ce"/>
+            <path d="M704 240L536 346" stroke="#5c6366" stroke-width="1.5" stroke-dasharray="2 4" fill="none"/>
+            <rect x="690" y="106" width="300" height="134" rx="8" fill="#fff" stroke="#c9d2ce"/>
             <text class="nh b" x="708" y="130" style="font-size:14px">기흥역 버스 · 셔틀</text>
-            <rect x="708" y="142" width="20" height="20" rx="4" fill="#1f6fd1"/>
+            <rect x="708" y="142" width="20" height="20" rx="4" fill="#d6393a"/>
             <text class="nh w b" x="718" y="156" text-anchor="middle" style="font-size:11px">B</text>
             <text class="nh b" x="736" y="157">서울 직행버스</text>
             <text class="nh s" x="836" y="157">강남 · 서울역 방면</text>
-            <rect x="708" y="168" width="20" height="20" rx="4" fill="#0e8a8a"/>
+            <rect x="708" y="168" width="20" height="20" rx="4" fill="#1f6fd1"/>
             <text class="nh w b" x="718" y="182" text-anchor="middle" style="font-size:11px">T</text>
             <text class="nh b" x="736" y="183">시외버스 터미널</text>
             <text class="nh s" x="836" y="183">대전 · 대구 · 부산 등</text>
@@ -950,6 +1076,7 @@ body.is-main #sft{display:none}
             <text class="nh y b" x="718" y="208" text-anchor="middle" style="font-size:11px">S</text>
             <text class="nh b" x="736" y="209">대기업 셔틀버스</text>
             <text class="nh s" x="836" y="209">삼성전자 · SK하이닉스</text>
+            <text class="nh s" x="836" y="225">등 대기업 10여 개</text>
 
             <!-- 반도체 클러스터 -->
             <text class="b" x="845" y="526" text-anchor="middle" style="font-size:15px">용인 반도체 클러스터</text>
@@ -962,6 +1089,12 @@ body.is-main #sft{display:none}
             <text class="b" x="900" y="630" text-anchor="middle">SK하이닉스</text>
             <text class="s" x="900" y="647" text-anchor="middle">원삼면</text>
 
+            <!-- 삼성전자 캠퍼스 -->
+            <rect x="322" y="586" width="232" height="68" rx="6" fill="#fff"/>
+            <circle cx="342" cy="606" r="9" fill="#000"/><text class="nh y b" x="342" y="609.5" text-anchor="middle" style="font-size:8.5px">삼성</text>
+            <text class="nh b" x="358" y="610" style="font-size:12.5px">삼성전자 수원캠퍼스</text><text class="nh s" x="540" y="610" text-anchor="end">차량 25분</text>
+            <circle cx="342" cy="634" r="9" fill="#000"/><text class="nh y b" x="342" y="637.5" text-anchor="middle" style="font-size:8.5px">삼성</text>
+            <text class="nh b" x="358" y="638" style="font-size:12.5px">삼성전자 용인캠퍼스</text><text class="nh s" x="540" y="638" text-anchor="end">차량 20분</text>
             <!-- 범례 -->
             <rect x="20" y="552" width="290" height="102" rx="6" fill="#fff"/>
             <path d="M36 572H64" stroke="#f2a900" stroke-width="6"/><text class="nh s" x="72" y="576">분당선</text>
@@ -976,12 +1109,12 @@ body.is-main #sft{display:none}
         </div>
         <ul class="tkeys">
           <li><span class="ics"><i style="background:#f2a900">B</i><i style="background:#4fa845">E</i></span><div><b>기흥역 더블역세권</b><span>분당선 · 에버라인 환승역. 분당선 기흥 – 동탄 – 오산, 에버라인 기흥 – 광교중앙 연장 예정</span></div></li>
-          <li><i style="background:#9b4f96">A</i><div><b>구성역 GTX-A 2정거장(4분)</b><span>기흥역에서 분당선으로 2정거장, GTX-A로 삼성역까지 20분대</span></div></li>
+          <li><i style="background:#9b4f96">A</i><div><b>구성역 GTX-A 2정거장(4분)</b><span>기흥역에서 분당선으로 2정거장, GTX-A로 삼성역 19분 · 서울역 24분</span></div></li>
           <li><i style="background:#d14b8f">F</i><div><b>GTX-F 수도권 순환선 예정</b><span><strong>정자역 1정거장</strong> · 수원역 1정거장, 김포공항 등 수도권을 순환</span></div></li>
           <li><i style="background:#5c6366">IC</i><div><b>수원신갈IC 약 10분</b><span>경부 · 영동고속도로 바로 진입</span></div></li>
-          <li><i style="background:#1f6fd1">B</i><div><b>서울 직행버스</b><span>기흥역 앞에서 강남 · 서울역 방면</span></div></li>
-          <li><i style="background:#0e8a8a">T</i><div><b>기흥역 시외버스 터미널</b><span>대전 · 세종 · 대구 · 부산 · 울산 · 전주 등 전국 주요 거점 도시</span></div></li>
-          <li><i style="background:#000;color:#f5ff00">S</i><div><b>대기업 셔틀버스</b><span>삼성전자 · SK하이닉스 등 대기업 통근 셔틀 정차</span></div></li>
+          <li><i style="background:#d6393a">B</i><div><b>서울 직행버스</b><span>기흥역 앞에서 강남 · 서울역 방면</span></div></li>
+          <li><i style="background:#1f6fd1">T</i><div><b>기흥역 시외버스 터미널</b><span>대전 · 세종 · 대구 · 부산 · 울산 · 전주 등 전국 주요 거점 도시</span></div></li>
+          <li><i style="background:#000;color:#f5ff00">S</i><div><b>대기업 셔틀버스</b><span>삼성전자 · SK하이닉스 등 대기업 10여 개 통근 셔틀 정차</span></div></li>
           <li><i style="background:#5c6366">42</i><div><b>42번 국도 · 반도체 클러스터</b><span>이동 · 남사 삼성전자 국가산단, 원삼 SK하이닉스 클러스터로 연결</span></div></li>
         </ul>
 </div>
@@ -1030,11 +1163,7 @@ body.is-main #sft{display:none}
             <path d="M153.7 851L216.7 866.2L242.7 870.5L256.7 872.1L269.2 872.4L475.1 856.7M471.1 -194.5L470.9 -183.9L471.3 -178.5L473.5 -164.1L475.8 -150.2L478.2 -135.6L481.1 -119.6L486 -91.2L487.1 -83.9L489.1 -68.5L489.5 -51L489.6 -46L489.6 -44L489.5 -41.9L489 -38.8L488.6 -35.7L487.9 -33L487.2 -29.9L485.8 -26.1L484 -22.8L482.2 -19.6L479.6 -15.7L477.3 -12.7L475 -9.5L462.2 4.2L460.1 6.8L458.5 9.7L457.3 11.8L456.1 14.9L454.7 18L453.6 20.9L452.5 24.5L451.9 29.6L450.9 60.3L450.6 73.7L450.4 83.3L449.2 163.5L448.8 189.5L449.3 232.4L452.3 274.5L455.5 294.1L458.9 307.1L463.1 318.6L470.6 331.9L486.9 353.7L506.2 374.3L532.2 401.8L542.2 413L546.7 417.4L585.2 459.2L589.5 464L592.3 468.2L594.2 471.6L596.4 475.8L597.7 479.8L598.5 483.2L599.2 486.7L599.3 489.9L599.7 503.3L599.7 523.7L600 539.9L600.1 559.4L600.2 577.1L600.6 599.8L600.8 609.7L601.3 630.7L601.2 639.9L601.2 666.7L602 745.1L601.5 791.6L600 802.7L595.9 815.1L588.5 827.5L579.3 837.9L573.3 843L560.1 850.2L544.1 853.9L508.5 856.5L495.4 857L492.2 857.2L475.7 858.5M475.1 856.7L494.7 855L534.5 853.3L544.2 851.9L550.5 850.2L557.4 848.2L563.2 845.5L568.2 842.6L572.1 840.3L577.2 835.6L582 831.1L586.8 825.5L590.4 820.3L594.2 813.4L595.7 809.8L597 806.2L598.3 801.4L599.4 793.3L600 781.9L600.4 745L599.9 635.8L599.9 632.9L599.9 630.7L599.8 599.9L599.8 597.4L598.7 572.3L598.7 566.9L598.3 540L598.2 523.6L597.8 503L597.1 486.4L596.5 483.2L595.5 479.6L594.2 475.8L592.3 471.7L591.2 469.4L589.7 466.7L588.3 464.5L586.8 462.5L584.3 459.8L541.2 413.8L531.1 403L520 391.1L513.9 384.7L490.8 359.9L489 357.9L483.5 351.9L482.7 350.9L476.8 343.7L470.7 335.1L467 329.1L463.5 322.4L460.2 315L457.8 308.2L455.5 299.5L453.4 291.2L452.2 285L450.6 272.8L448.4 247L447.5 225.6L448.2 163.5L449.1 83.2L449.5 73.7L450.1 44.7L450.4 40.3L450.9 29.4L451.8 24.5L452.6 20.5L453.7 17.5L454.9 14.5L456.1 11.6L457.6 9.2L459.2 6.5M-271 1153.8L-235.9 1152.3L-221.4 1151.9L-160.8 1149.7L-153.6 1148.9L-146.8 1147.4L-141.6 1145.5L-136.8 1142.6L-132.7 1139.5L-127.7 1134.7L-123.1 1129.8L-117.2 1123.1L-60.8 1047.4L-58.4 1044.3L-40.5 1021.1L3.5 963.3L11.5 953.3L61 887.6L61.9 886.4L65.8 881L78.5 863.6L86.1 857.5L95.8 852.5L107.8 849.1L125.1 847.6L141.6 848.9L150.8 850.4L153.7 851M459.2 6.5L461.4 3.2L463.3 0.4L474 -10.4L476.7 -13.5L478.9 -16.6L480.8 -19.9L482.5 -23.2L484 -26.7L485 -29.8L485.9 -33.2L486.6 -35.9L487 -38.7L487.4 -42.2L487.4 -43.9L487.6 -48.8L487.6 -57.5L487.6 -68.3L487.6 -73.8L487.1 -79L486.3 -83.9L470.9 -175.5L470 -183.3L469.9 -186.9L469.8 -189.6L470 -192.3L470.1 -194.4M145.3 851.9L134.4 850.8L121.9 850.7L110.5 851.9L99.2 854.6L89.1 859L80.7 865L69.1 878.7L62.1 888.2L51.3 902L27.8 932.3L5.5 962.7L-44.7 1029.1L-50.4 1036.5L-59.6 1048.2L-116.5 1124.3L-120.7 1129.6L-125.6 1135L-130.2 1139.5L-134.9 1143L-140.5 1146.5L-146.1 1148.7L-153.2 1150.2L-160.9 1151L-228 1153.5L-236 1153.9L-271 1155L-291.3 1155.7M475.7 858.5L424.2 862.4L398.3 864.4L378.4 866.3L352.9 868.5L340.9 869.3L296 873.1L291.9 873.5L268.9 874.7L253.3 874.5L239.1 873.3L223.3 870.8L154.8 853.5L145.3 851.9" stroke="#a6abb0" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M616.7 600.4L607.2 600M604.7 601.7L615.1 602.3M2144.6 571.3L2131.1 577.7L2125.9 580.1L2118.9 583.6L2114.4 586.4L2110.8 588.6L2104.8 592.8L2098.3 598L2082.7 613.4L2076.3 620L2071.5 624.9L2067.8 629.1L2063.7 633.8L2060 639L2057 643.9L2054.7 648.3L2053.1 651.8L2051.5 656.1L2049.6 664.5L2048.5 672.8L2046.8 693L2046 705.7L2044.9 717.2L2043.6 730.8L2042.6 743.3L2041.6 756.5L2040.9 766.4L2040.9 768.5L2041.1 771.6L2041.7 774.6L2043.3 778.5L2045.3 781.5L2054.8 792.1L2065.9 806.9L2070.8 815.1L2074.2 822.2L2078.7 831.7L2084.9 844.4L2093.1 861.4L2100.3 876.7L2107 890.2L2111.5 902.7L2113.9 911L2115.3 918L2119 939.3L2123.3 961.6L2127.2 982.4L2129.3 993.5L2129.9 999.7L2130.2 1005.6L2129.5 1011.6L2128 1017L2125.6 1023.7L2123.4 1027.8L2119.1 1034.2L2109.2 1045.2L2092.3 1060.9L2080.5 1072.7L2074.1 1081.2L2068 1092.5L2066 1097.4L2064.1 1106.6L2060 1129.3L2055.3 1154L2052.5 1165.8L2048.5 1176.6L2047 1180.1L2037.3 1198.7L2029.1 1216.4L2023.9 1233L2020 1247.2L2017.6 1255.1L2014 1263.7L2004.4 1280.6L1997.2 1291.3L1994.1 1294.8L1991.2 1296.4L1988.2 1297.8L1984.7 1298.5L1979.8 1298.7L1970.6 1298.9L1962.5 1298.8L1954.1 1298.8L1944.7 1299.4L1936.2 1301.2L1918.9 1305.4L1890.8 1315.2L1884.2 1317.1L1879.4 1318L1874.5 1318.2L1867.8 1317.7L1833.5 1310.9L1822.8 1309.2L1817.2 1308.7L1805.4 1308.3L1769.4 1310.1L1755.3 1310.4L1746.8 1309.6L1734.3 1307.2L1711.5 1301.1L1704.7 1298.7L1693.7 1294.1L1688.6 1292.1L1680.1 1288.6L1677.1 1287.8L1670.4 1286.9L1658 1285.6L1635.5 1283.8L1625.7 1282.5L1609.5 1279L1584.4 1272.1L1575.7 1269.7L1568.3 1268.7L1561.8 1268.3L1549.4 1269.4L1525.2 1270.7L1492.4 1273.3L1480.5 1274.3L1474.1 1274.4L1467.6 1273L1460.9 1270.7L1452.3 1266.6L1392.9 1234.6L1387.7 1231.5L1380.3 1226L1375.7 1222L1370 1216.3L1363.2 1209.3L1359.9 1205.6L1352.4 1197.1L1344.7 1188.7L1333.6 1175.6L1328.8 1170.6L1326.2 1167.9L1319.2 1159.9L1316.8 1155.7L1316.3 1153.3L1315.7 1149.4L1315.7 1144.8L1317 1139.7L1319.8 1135.1L1347.6 1101.3L1349.6 1098.7L1363.8 1080.9L1367.7 1074.5L1371.6 1066.2L1373.7 1053L1373.4 1044L1370.6 1032.8L1366.8 1025.5L1362.9 1019.7L1352.2 1006.3L1336.9 986.4L1325.3 969.8L1313.4 950.2L1301.8 933.3L1295.8 926.1L1286.4 916.1L1261.4 892.9L1255.5 887.1L1252.2 883.6L1246.2 876.4L1241.6 870.6L1238.9 867.2L1235 861.4L1231 855.1L1222.9 842.7L1215.3 832.8L1213.2 830.1L1201.3 815.9L1197 810.9L1193.1 806.7L1185.4 795.7L1182.1 790.6L1178.1 783.1L1175.7 778.8L1171.8 771.7L1168.3 764.6L1164.8 757.9L1162.1 752.8L1157.9 745.5L1152.7 736.2L1145.5 723.8L1141.7 717.7L1137.9 710.8L1134.5 704.9L1132.8 702L1128.3 695L1120.2 684L1113.8 676.4L1110.9 672.7L1107.2 667.3L1104.3 662.4L1102.8 659.3L1101.1 655.5L1092.5 634.3L1089.1 626.6L1085.1 620.6L1081.1 616.1L1074.7 610.4L1070.6 607.6L1066.1 605.2L1061.9 603.4L1057.9 602.1L1052.5 600.9L1047.4 600.2L1043.4 600.2L1039.2 600.3L1035.5 600.6L1031 601.4L1027.3 602.4L1020.7 604.9L1006.6 611.2L949.6 637.4L941.9 641.4L939.1 643.5L935.4 646.8L933.2 649.3L929.2 654.8L927 659.7L925.3 664.7L923.6 671.2L920.7 683.7L918.8 691.5L917.5 694.8L915.9 697.6L912.1 701.4L907.6 704.7L902.2 708.8L880.9 724.8L874.8 728.1L866.6 731.8L859.7 734.3L854.7 735.7L852.7 736.2L846 737.4L838.3 738.4L831.5 738.6L823.4 738.5L812.8 737L801.6 733.8L791.5 729.8L780.2 723.8L766.7 713.4L757.6 706L750.3 699.4L747.7 697L744.5 693.8L729.1 677L710.5 655.2L692.3 637.9L666.2 612.8L662.4 609.9L658.4 607.8L653.5 606.4L645.1 604.9L639.9 604L632.7 602.8L624.7 601.4L617.5 600.5M615.1 602.3L617.1 602.3M617.1 602.3L619.3 602.5L625.4 602.7L630.6 603.4L636.5 604.3L640.6 605.1L649.8 606.6L653.9 607.3L655.7 607.7L658 608.5L661.1 610.1L663.9 612.1L675.7 622.9L695.8 642.4L709.4 655.3L728.1 676.9L745.2 695.3L751.1 701.1L753.6 703.3L770.8 717.3L779.8 724.3L785.5 727.6L793.1 731.6L801.9 735L811.2 737.5L817.1 738.8L824.2 739.4L833 739.5L840.8 738.9L849.2 737.8L858.6 735.4L865.8 733L871.4 730.6L880.6 726L885.1 722.8L896.8 714.1L908.2 705.6L914 700.7L917.1 697.3L918.6 694.6L919.9 691.2L921.3 684.6L924 672.9L926 665.3L927.7 659.7L930.7 654.3L932.8 651.3L936.6 646.8L939.6 644L943.6 641.2L974.1 627.1L1005 612.9L1013.2 609.1L1021 605.5L1026.1 603.7L1030.9 602.3L1035.5 601.5L1038.6 601.1L1041.5 601L1044.8 601L1048.4 601.2L1052.6 601.9L1057.7 603L1061.5 604.3L1066.9 606.7L1070.5 608.8L1074.2 611.5L1077.6 614.1L1081.4 617.7L1084.5 621.5L1087 624.9L1088.9 628.1L1092.5 635.7L1101.4 657.3L1104.5 663.8L1110.3 673.3L1122.9 688.5L1130.7 700.1L1139.7 715.8L1144 723.1L1150.8 734.1L1164 757.2L1175.6 780.1L1183.5 794.4L1192.3 806.6L1197 812L1205.4 822L1218.9 838.7L1224.6 846.6L1237.5 866.3L1244.2 875.4L1245.3 876.7L1249.3 881.3L1270.6 902.7L1296.7 928.5L1307.8 944L1323.2 968.9L1341.8 994L1358.3 1015.3L1364.6 1023.6L1369.5 1032.5L1371.1 1036.8L1372.9 1045.2L1373 1052.9L1372 1060.2L1370.8 1066.1L1367.9 1073.2L1363.7 1079.8L1335.3 1115.4L1322.3 1130.7L1316.8 1137.9L1315.6 1141.8L1314.8 1145.9L1315 1150.1L1315.3 1153.6L1316.2 1156L1318.6 1160.2L1321.5 1163.6L1326.9 1169.9L1332.3 1175.4L1333.5 1176.8L1339.2 1183.5L1346.7 1192.1L1354.7 1200.8L1356.4 1202.6L1369.5 1217L1373.6 1221.1L1375.7 1223.2L1385.3 1230.5L1395.2 1236.5L1426.8 1253.5L1455.4 1269.1L1464.1 1272.5L1469.9 1274.1L1476 1275L1484.8 1274.6L1516.2 1272.1L1525.2 1271.5L1531.8 1271.1L1556.3 1269.5L1562.1 1269L1569.2 1269.6L1577 1270.7L1601.3 1277.8L1620.1 1282.1L1637.7 1284.9L1662.9 1286.7L1679.4 1289L1693.3 1294.9L1700.2 1297.6L1710.6 1301.7L1731.5 1307.4L1749.3 1310.7L1759.9 1311.3L1780.4 1310.5L1809.1 1309.2L1816.6 1309.6L1822.1 1310L1823.7 1310.1L1827 1310.6L1840.8 1313.2L1866.3 1318.2L1872.8 1319.2L1879.6 1319.1L1892.1 1316L1918.4 1306.9L1939.3 1301.5L1945.3 1300.4L1954.5 1299.5L1969.9 1299.7L1976.7 1299.6L1978.4 1299.6L1984.4 1299.1L1989.7 1298.1L1995 1295L2000.1 1288.9L2015.3 1263.5L2020 1250.3L2030 1216.6L2043.8 1188.8L2049.3 1177.5L2051.5 1171.5L2052 1170L2053.1 1166.3L2057.6 1148.7L2058.1 1146.1L2065 1109.9L2066.8 1098.2L2068.9 1092.4L2074.7 1082.1L2080.8 1073.5L2109.5 1045.7L2119.8 1034.8L2124.3 1028.5L2128.2 1020L2130.6 1010.9L2131.3 1003.9L2130.9 998.4L2116.9 921.9L2114.5 910.7L2112.9 904.5L2112.3 902.2L2106.4 887.2L2080.2 833.1L2071.4 814.7L2066.8 806.9L2051.8 787.9L2044.7 779.5L2042.4 775L2041.5 769.7L2041.5 764.7L2042.3 756.8L2042.8 751.3L2042.9 748.7L2050.7 664.1L2052.5 655.4L2055.9 647.1L2061.4 637.9L2068.9 628.9L2098.2 599.2L2107.8 591.4L2114.7 586.9L2125.9 580.7L2144.9 572.1L2149.7 569.9L2158.9 565.7L2163.6 563.4L2166.8 561.6L2170.1 559L2172.4 556.9L2174.7 554.5L2176.4 552L2178.2 548.6L2180.7 543.7L2182.9 539.1L2185.9 533.2L2197.5 509.6L2199 506.5L2201.3 501.4L2202.4 497.9L2203.2 494.4L2203.3 490.5L2203 487.1L2202.5 484.3L2201.8 482.1L2200.6 479.7L2199.3 477.6L2197.8 475.3L2196 473.5L2192.2 470.1L2187.6 466.4L2179.8 459.7L2164.7 446.6L2159.1 441.8L2142.5 428.1L2140.3 426.2L2134.4 421.2L2132.4 419.6M607.2 600L605 599.9" stroke="#a6abb0" stroke-width="3" stroke-dasharray="1 0" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M539.3 678.4L567.2 619.2L568.5 616.5L570 614L571.6 611.9L573.3 610L575.1 608.4L577.1 607.1L579.2 606.1L581.5 605.4L583.9 604.9L589.3 604.2L592.3 604L595.6 603.9L599 603.8L602.6 603.8L610.6 604L618.6 604.8L622.6 605.6L626.7 606.5L630.7 607.6L638.7 610.4L657.6 618.2L660.9 619.6L664.7 621.4L667.9 623.2L671.5 625.4L673.4 626.6L677.4 629.2L682.4 632.9L683.8 634L687.3 637.1L688.2 638L689 638.8L690.4 640.2L690.9 640.8L691.4 641.4L692.2 642.4L693.1 643.6L693.4 644L695.2 646.8L695.7 647.6L697.1 650.4L697.9 652.4L699.2 655.9L699.4 656.5L699.7 657.6L700.1 659.6L700.1 661.8L699.9 663.2L699.7 664.2L699.6 664.6L699.3 665.6L698.6 667.2L698.2 668.1L697.6 669.1L697.3 669.5L696.9 670L696.7 670.2L696.2 670.7L695.1 671.8L694.1 672.5L693.8 672.7L692.8 673.2L692.6 673.3L691.7 673.6L688.5 674.4L679.4 676.4L675.2 677.3L666.2 679.2L659.4 680.6L653 681.7L652 681.8L548.1 682.6L542.8 682.5L539.8 681.1Z" fill="none" stroke="#fff2a8" stroke-opacity=".85" stroke-width="16" stroke-linejoin="round" filter="url(#zglow)"/><path d="M539.3 678.4L567.2 619.2L568.5 616.5L570 614L571.6 611.9L573.3 610L575.1 608.4L577.1 607.1L579.2 606.1L581.5 605.4L583.9 604.9L589.3 604.2L592.3 604L595.6 603.9L599 603.8L602.6 603.8L610.6 604L618.6 604.8L622.6 605.6L626.7 606.5L630.7 607.6L638.7 610.4L657.6 618.2L660.9 619.6L664.7 621.4L667.9 623.2L671.5 625.4L673.4 626.6L677.4 629.2L682.4 632.9L683.8 634L687.3 637.1L688.2 638L689 638.8L690.4 640.2L690.9 640.8L691.4 641.4L692.2 642.4L693.1 643.6L693.4 644L695.2 646.8L695.7 647.6L697.1 650.4L697.9 652.4L699.2 655.9L699.4 656.5L699.7 657.6L700.1 659.6L700.1 661.8L699.9 663.2L699.7 664.2L699.6 664.6L699.3 665.6L698.6 667.2L698.2 668.1L697.6 669.1L697.3 669.5L696.9 670L696.7 670.2L696.2 670.7L695.1 671.8L694.1 672.5L693.8 672.7L692.8 673.2L692.6 673.3L691.7 673.6L688.5 674.4L679.4 676.4L675.2 677.3L666.2 679.2L659.4 680.6L653 681.7L652 681.8L548.1 682.6L542.8 682.5L539.8 681.1Z" fill="#34496e" fill-opacity=".88" stroke="#8fd0f0" stroke-width="3" stroke-linejoin="round"/>
-              <path d="M552.6 496.1L563.2 496.1L571.3 498L576.6 501.6L579.3 507.2L579.3 514.7L576.6 520.2L571.3 523.9L563.2 525.8L552.6 525.8L544.5 523.9L539.2 520.2L536.5 514.7L536.5 507.2L539.2 501.6L544.5 498ZM615.2 535.1L623.2 535.1L629.3 538.2L633.4 544.5L635.4 553.9L635.4 566.4L633.4 575.8L629.3 582.1L623.2 585.2L615.2 585.2L609.1 582.1L605 575.8L603 566.4L603 553.9L605 544.5L609.1 538.2Z" fill="#f5c08a" fill-opacity=".38"/>
-              <g stroke="#fff" stroke-width="1.2" stroke-linejoin="round">
-                <path d="M574 521H594Q596 521 596 523V559Q596 561 594 561H586Q584 561 584 559V545Q584 543 582 543H574Q572 543 572 541V523Q572 521 574 521Z" fill="url(#rdh1)" stroke="#c0433d" stroke-width="1.3"/>
-                <g fill="url(#rdh)" stroke="#2f5f9e" stroke-width="1.3"><rect x="530" y="519" width="40" height="29" rx="2.5"/><rect x="585" y="566" width="12" height="8" rx="1.5"/><rect x="566" y="577" width="24" height="18" rx="2.5"/><path d="M533 583L570 571L573 579L536 591Z"/><path d="M537 594L573 582L578 596L547 608Z"/></g>
-              </g>
+              <path d="M552.6 496.1L563.2 496.1L571.3 498L576.6 501.6L579.3 507.2L579.3 514.7L576.6 520.2L571.3 523.9L563.2 525.8L552.6 525.8L544.5 523.9L539.2 520.2L536.5 514.7L536.5 507.2L539.2 501.6L544.5 498ZM615.2 535.1L623.2 535.1L629.3 538.2L633.4 544.5L635.4 553.9L635.4 566.4L633.4 575.8L629.3 582.1L623.2 585.2L615.2 585.2L609.1 582.1L605 575.8L603 566.4L603 553.9L605 544.5L609.1 538.2Z" fill="#f5c08a" fill-opacity=".38"/><ellipse cx="800" cy="680" rx="30" ry="12" fill="#f5c08a" fill-opacity=".6"/><ellipse cx="500" cy="648" rx="30" ry="12" fill="#f5c08a" fill-opacity=".6"/>
             </g>
             <ellipse cx="400" cy="106" rx="62" ry="38" fill="#9b4f96" fill-opacity=".08" stroke="#9b4f96" stroke-width="1.4" stroke-dasharray="5 4"/>
             <text class="ar" x="400" y="108" text-anchor="middle" style="fill:#7a3d76;font-size:15px">용인 플랫폼시티</text>
@@ -1085,7 +1214,7 @@ body.is-main #sft{display:none}
             <text class="pl" x="567" y="514.34" text-anchor="end" style="font-size:16px">기흥구청</text>
             <rect x="641" y="504.4" width="18" height="18" rx="3.96" fill="#4a5a7a" stroke="#fff" stroke-width="1.5"/>
             <path d="M12 2L2 7.5V10h20V7.5L12 2zM4 12h3v6H4zm6.5 0h3v6h-3zm6.5 0h3v6h-3zM2 20h20v2.5H2z" fill="#fff" transform="translate(644.42 507.82) scale(0.465)"/>
-            <text class="pl" x="664" y="518.84" style="font-size:16px">기흥 ICT밸리</text>
+            <text class="pl" x="664" y="518.84" style="font-size:16px">기흥 ICT밸리<tspan style="font-size:13px;fill:#6b7076"> (상권 · 입주 기업 370여 개)</tspan></text>
             <rect x="602.1" y="611.6" width="18" height="18" rx="3.96" fill="#ef8a2c" stroke="#fff" stroke-width="1.5"/>
             <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(605.52 615.02) scale(0.465)"/>
             <text class="pl" x="625.1" y="626.04" style="font-size:16px">AK몰</text>
@@ -1097,13 +1226,13 @@ body.is-main #sft{display:none}
             <text class="pl" x="452.3" y="57.44" style="font-size:16px">이마트 트레이더스 구성</text>
             <rect x="801.2" y="744.6" width="18" height="18" rx="3.96" fill="#5aa55a" stroke="#fff" stroke-width="1.5"/>
             <path d="M12 1.5L4.5 12h4.2L5 17.5h6V23h2v-5.5h6L15.3 12h4.2z" fill="#fff" transform="translate(804.62 748.02) scale(0.465)"/>
-            <text class="pl" x="824.2" y="759.04" style="font-size:16px">구갈레스피아</text>
+            <text class="pl" x="824.2" y="759.04" style="font-size:16px">구갈레스피아<tspan style="font-size:13px;fill:#6b7076"> (공원)</tspan></text>
             <circle cx="530.3" cy="402.4" r="8" fill="#fff" stroke="#f0a030" stroke-width="4"/>
             <text class="st" x="515.3" y="408" text-anchor="end" style="font-size:16px">신갈역</text>
             <circle cx="492.8" cy="854" r="8" fill="#fff" stroke="#f0a030" stroke-width="4"/>
             <text class="st" x="477.8" y="859.6" text-anchor="end" style="font-size:16px">상갈역</text>
             <circle cx="748.7" cy="698.9" r="8" fill="#fff" stroke="#6fb35f" stroke-width="4"/>
-            <text class="st" x="748.7" y="725.9" text-anchor="middle" style="font-size:16px">강남대역</text>
+            <text class="st" x="762" y="705" style="font-size:16px">강남대역</text><text class="pl" x="812" y="685" style="font-size:14px;font-weight:700;fill:#b8662c">강남대역 상권</text><text class="pl" x="470" y="652.5" text-anchor="end" style="font-size:12.5px;font-weight:700;fill:#b8662c">신갈 상권</text>
             <circle cx="904.6" cy="706.9" r="8" fill="#fff" stroke="#6fb35f" stroke-width="4"/>
             <text class="st" x="904.6" y="733.9" text-anchor="middle" style="font-size:16px">지석역</text>
             <circle cx="447.9" cy="164.3" r="10" fill="#fff"/>
@@ -1114,7 +1243,8 @@ body.is-main #sft{display:none}
             <g class="w0"><rect x="590.65" y="514.15" width="18.7" height="78.8" rx="2.55" fill="#2b2f33"/><rect x="590.65" y="514.15" width="18.7" height="18.7" rx="2.55" fill="#f5c400"/><path d="M8 3h8a3 3 0 013 3v8a3 3 0 01-2 2.8L18.5 20h-2l-1.4-3H8.9L7.5 20h-2l1.5-3.2A3 3 0 015 14V6a3 3 0 013-3zm-1 4v4h10V7zm1.5 6.5a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2z" fill="#2b2f33" transform="translate(593.2 516.7) scale(0.578)"/><text x="600" y="544.75" text-anchor="middle" style="font-size:10.6px;font-weight:700;fill:#fff;stroke:none">기</text><text x="600" y="559.2" text-anchor="middle" style="font-size:10.6px;font-weight:700;fill:#fff;stroke:none">흥</text><text x="600" y="573.65" text-anchor="middle" style="font-size:10.6px;font-weight:700;fill:#fff;stroke:none">역</text></g>
             <circle cx="600" cy="600" r="15.5" fill="#fff"/><path d="M600 589A11 11 0 0 0 600 611" fill="none" stroke="#f0a030" stroke-width="5"/><path d="M600 589A11 11 0 0 1 600 611" fill="none" stroke="#6fb35f" stroke-width="5"/><path d="M8 3h8a3 3 0 013 3v8a3 3 0 01-2 2.8L18.5 20h-2l-1.4-3H8.9L7.5 20h-2l1.5-3.2A3 3 0 015 14V6a3 3 0 013-3zm-1 4v4h10V7zm1.5 6.5a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2z" fill="#2b2f33" transform="translate(593.18 593.4) scale(0.572)"/>
             
-            <text class="pl" x="527" y="602" text-anchor="end" style="font-size:14px;font-weight:700;fill:#2f5f9e">재건축 추진</text>
+            <rect x="516" y="524" width="70" height="90" rx="8" fill="#4f86c6" fill-opacity=".14" stroke="#2f5f9e" stroke-width="1.8" stroke-dasharray="5 3.5"/><text class="pl" x="551" y="585" text-anchor="middle" style="font-size:11px;font-weight:700;fill:#1f4f8a">재건축 추진중</text><text class="pl" x="551" y="600" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1f4f8a">(6개 아파트)</text>
+            <circle cx="1140.7" cy="718.7" r="8" fill="#fff" stroke="#6fb35f" stroke-width="4"/><text class="st" x="1140.7" y="745.7" text-anchor="middle" style="font-size:16px">동백역</text><rect x="1115" y="540.5" width="18" height="18" rx="3.96" fill="#ef8a2c" stroke="#fff" stroke-width="1.5"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(1118.4 543.9) scale(0.465)"/><text class="pl" x="1110" y="555" text-anchor="end" style="font-size:16px">이마트 동백점</text>
             <path d="M822 862.1l9 -14 9 14z" fill="#7aa66a"/>
             <text class="ar" x="831" y="884.1" text-anchor="middle" style="fill:#4f7a43;font-size:18px">용뫼산</text>
             <text class="ar" x="742" y="842" text-anchor="middle" style="fill:#6b8f55">남부CC</text>
@@ -1122,6 +1252,8 @@ body.is-main #sft{display:none}
             <circle cx="942" cy="262" r="238" fill="#fcfcfc"/>
             <g clip-path="url(#zclip)"><use href="#mbase" transform="translate(82.5 -547.2) scale(1.36)"/>
             <rect x="1131.8" y="295.7" width="20" height="20" rx="4.4" fill="#e2658a" stroke="#fff" stroke-width="1.5"/><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(1135.6 299.5) scale(0.517)"/><text class="pl" x="1126.8" y="311" text-anchor="end" style="font-size:15px">성지중학교</text>
+            <rect x="792" y="166" width="86" height="121" rx="10" fill="#4f86c6" fill-opacity=".14" stroke="#2f5f9e" stroke-width="2" stroke-dasharray="6 4"/><text class="pl" x="835" y="228" text-anchor="middle" style="font-size:13px;font-weight:700;fill:#1f4f8a">재건축 추진중</text><text class="pl" x="835" y="245" text-anchor="middle" style="font-size:12px;font-weight:600;fill:#1f4f8a">(6개 아파트)</text>
+            <circle cx="1100.7" cy="403.3" r="8" fill="#fff" stroke="#6fb35f" stroke-width="4"/><text class="st" x="1088" y="394" text-anchor="end" style="font-size:15px">강남대역</text><text class="pl" x="1110" y="368" text-anchor="middle" style="font-size:14px;font-weight:700;fill:#b8662c">강남대역 상권</text>
             <rect x="740.7" y="129.4" width="20" height="20" rx="4.4" fill="#e2658a" stroke="#fff" stroke-width="1.5"/>
             <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(744.3 133) scale(0.517)"/>
             <text class="pl" x="770" y="167" text-anchor="middle" style="font-size:15px">신갈중학교</text>
@@ -1142,7 +1274,7 @@ body.is-main #sft{display:none}
             <text class="pl" x="872.7" y="129" text-anchor="middle" style="font-size:15px">기흥구청</text>
             <rect x="957.1" y="141.6" width="20" height="20" rx="4.4" fill="#4a5a7a" stroke="#fff" stroke-width="1.5"/>
             <path d="M12 2L2 7.5V10h20V7.5L12 2zM4 12h3v6H4zm6.5 0h3v6h-3zm6.5 0h3v6h-3zM2 20h20v2.5H2z" fill="#fff" transform="translate(960.7 145.2) scale(0.517)"/>
-            <text class="pl" x="966.5" y="177.7" text-anchor="middle" style="font-size:15px">기흥 ICT밸리</text>
+            <text class="pl" x="966.5" y="177.7" text-anchor="middle" style="font-size:15px">기흥 ICT밸리</text><text class="pl" x="966.5" y="194" text-anchor="middle" style="font-size:12px;fill:#6b7076">(상권 · 입주 기업 370여 개)</text>
             <rect x="904.2" y="287.5" width="20" height="20" rx="4.4" fill="#ef8a2c" stroke="#fff" stroke-width="1.5"/>
             <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(907.8 291) scale(0.517)"/>
             <text class="pl" x="927.7" y="301.6" style="font-size:15px">AK몰</text>
@@ -1151,12 +1283,6 @@ body.is-main #sft{display:none}
             <text class="pl" x="763.3" y="356.8" style="font-size:15px">롯데마트 신갈점</text>
               <text class="pl" x="823.2" y="150.2" text-anchor="middle" style="font-size:13px;font-weight:700;fill:#b8662c">기흥구청 상권</text>
               <text class="pl" x="926.6" y="213.3" text-anchor="middle" style="font-size:13px;font-weight:700;fill:#b8662c">역 북측 상권</text>
-              <rect x="812.4" y="174.8" width="38" height="20" rx="10" fill="#3f78bd" stroke="#fff" stroke-width="1.5"/><text class="w0" x="830.2" y="188" text-anchor="middle" style="font-size:11.5px;font-weight:700;fill:#fff">한양</text>
-              <rect x="847.4" y="173.6" width="62" height="20" rx="10" fill="#d4544e" stroke="#fff" stroke-width="1.5"/><text class="w0" x="876.5" y="186.7" text-anchor="middle" style="font-size:11.5px;font-weight:700;fill:#fff">한성1차</text>
-              <rect x="805.3" y="231.7" width="62" height="20" rx="10" fill="#3f78bd" stroke="#fff" stroke-width="1.5"/><text class="w0" x="834.3" y="244.8" text-anchor="middle" style="font-size:11.5px;font-weight:700;fill:#fff">한성2차</text>
-              <rect x="801.4" y="267" width="38" height="20" rx="10" fill="#3f78bd" stroke="#fff" stroke-width="1.5"/><text class="w0" x="819.2" y="280.1" text-anchor="middle" style="font-size:11.5px;font-weight:700;fill:#fff">풍림</text>
-              <rect x="854.6" y="239.3" width="38" height="20" rx="10" fill="#3f78bd" stroke="#fff" stroke-width="1.5"/><text class="w0" x="872.4" y="252.4" text-anchor="middle" style="font-size:11.5px;font-weight:700;fill:#fff">동부</text>
-              <rect x="878.6" y="212.8" width="38" height="20" rx="10" fill="#3f78bd" stroke="#fff" stroke-width="1.5"/><text class="w0" x="896.4" y="225.9" text-anchor="middle" style="font-size:11.5px;font-weight:700;fill:#fff">신명</text>
             <circle cx="898.5" cy="268.8" r="19" fill="#fff"/><path d="M898.5 255.7A14 14 0 0 0 898.5 281.9" fill="none" stroke="#f0a030" stroke-width="6"/><path d="M898.5 255.7A14 14 0 0 1 898.5 281.9" fill="none" stroke="#6fb35f" stroke-width="6"/><path d="M8 3h8a3 3 0 013 3v8a3 3 0 01-2 2.8L18.5 20h-2l-1.4-3H8.9L7.5 20h-2l1.5-3.2A3 3 0 015 14V6a3 3 0 013-3zm-1 4v4h10V7zm1.5 6.5a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2z" fill="#2b2f33" transform="translate(890.4 260.9) scale(0.728)"/>
               
               <text class="w0" x="933.1" y="340.5" text-anchor="middle" style="font-size:20px;font-weight:700;fill:#fff;letter-spacing:-.04em">기흥역세권</text>
@@ -1190,7 +1316,7 @@ body.is-main #sft{display:none}
             <text class="w0" x="840" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">공원</text>
             <rect x="881" y="1142" width="16" height="14" rx="3" fill="#34496e" stroke="#8fd0f0" stroke-width="1.5"/><text class="w0" x="902" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">기흥역세권</text>
             <rect x="986" y="1142" width="16" height="14" rx="3" fill="#f5c08a" fill-opacity=".7"/><text class="w0" x="1007" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">상권</text>
-            <rect x="1049" y="1142" width="16" height="14" rx="3" fill="url(#rdh)" stroke="#2f5f9e" stroke-width="1.2"/><text class="w0" x="1070" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">재건축</text></g></g>
+            <rect x="1049" y="1142" width="16" height="14" rx="3" fill="#4f86c6" fill-opacity=".14" stroke="#2f5f9e" stroke-width="1.2" stroke-dasharray="3 2"/><text class="w0" x="1070" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">재건축</text></g></g>
             <text class="w0" x="1186" y="904" text-anchor="end" style="font-size:12px;fill:#9aa1a5">© OpenStreetMap contributors</text>
           </svg>
           </div>
@@ -1200,44 +1326,59 @@ body.is-main #sft{display:none}
               <p>완성된 중심 위에<br><b>기흥역세권</b>의 일상을 더하다</p>
               <span>기흥역에서 걸어서 누리는 AK몰부터<br>차량 25분 판교까지, 쇼핑의 선택지가 넓어집니다</span>
             </div>
-            <div class="loc-shop">
+            </aside>
+          </div>
+<div class="loc-tabs">
+<div class="lt-btns" role="tablist" aria-label="생활 입지 정보">
+<button type="button" role="tab" id="lt1" aria-controls="lp1" aria-selected="true">쇼핑 · 대형마트</button>
+<button type="button" role="tab" id="lt2" aria-controls="lp2" aria-selected="false">학원가 · 교육</button>
+<button type="button" role="tab" id="lt3" aria-controls="lp3" aria-selected="false">반도체 · 직주근접</button>
+</div>
+<div class="lt-panel" role="tabpanel" id="lp1" aria-labelledby="lt1">
+<div class="loc-shop">
               <p class="ls-h"><span>Shopping</span>쇼핑 · 대형마트<small>기흥역 기준 차량 이동</small></p>
               <ol>
                 <li><em class="walk">도보</em><b>AK몰</b><span>기흥역 직결</span></li>
                 <li><em>5<small>분</small></em><b>롯데마트 신갈점</b><span>기흥구 신갈동</span></li>
                 <li><em>10<small>분</small></em><b>이마트 트레이더스 구성</b><span>기흥구 보정동</span></li>
+<li><em>10<small>분</small></em><b>이마트 동백점</b><span>기흥구 동백동</span></li>
                 <li><em>15<small>분</small></em><b>신세계 사우스시티 (경기점)</b><span>수지구 죽전동</span></li>
                 <li><em>15<small>분</small></em><b>코스트코 공세점</b><span>기흥구 공세동</span></li>
                 <li><em>20<small>분</small></em><b>광교 갤러리아백화점</b><span>수원 광교</span></li>
+<li><em>20<small>분</small></em><b>롯데몰 광교</b><span>수원 광교</span></li>
                 <li><em>20<small>분</small></em><b>동탄역 롯데백화점</b><span>화성 동탄</span></li>
                 <li><em>20<small>분</small></em><b>기흥 롯데프리미엄아울렛</b><span>기흥구 고매동</span></li>
                 <li><em>20<small>분</small></em><b>이케아 기흥점</b><span>기흥구 고매동</span></li>
                 <li><em>25<small>분</small></em><b>판교 현대백화점</b><span>성남 판교</span></li>
               </ol>
             </div>
+</div>
+<div class="lt-panel" role="tabpanel" id="lp2" aria-labelledby="lt2" hidden>
 <div class="loc-shop loc-edu">
 <p class="ls-h"><span>Education</span>학원가 · 교육 인프라<small>기흥역 기준</small></p>
 <details class="acc" open>
-<summary><em class="walk">도보</em><b>구갈동 중심상가 학원가</b><span>기흥구청 · 기흥역 북측 상권</span></summary>
-<div class="acc-b"><p>기흥역세권에서 걸어서 닿는 생활권 학원가입니다. 초 · 중등 보습, 영어 · 수학 전문, 논술, 예체능 학원이 기흥구청 일대 상가 건물에 모여 있습니다.</p><ul><li>대상 · 초등 ~ 중등 중심</li><li>과목 · 영어 · 수학 · 국어 · 과학 · 예체능</li><li>이동 · 단지에서 도보 약 5 ~ 10분</li></ul></div>
+<summary><em class="walk">도보</em><b>기흥역세권 주변 학원가</b><span>기흥역세권 · 기흥구청 · 강남대역 상권</span></summary>
+<div class="acc-b"><p>기흥역세권에서 걸어서 닿는 생활권 학원가입니다. 초 · 중등 보습, 영어 · 수학 전문, 논술, 예체능 학원이 기흥역세권 · 기흥구청 · 강남대역 상권 일대 상가 건물에 모여 있습니다.</p><ul><li>대상 · 초등 ~ 중등 중심</li><li>과목 · 영어 · 수학 · 국어 · 과학 · 예체능</li><li>이동 · 단지에서 도보 약 5 ~ 15분</li></ul></div>
+</details>
+<details class="acc">
+<summary><em>10<small>분</small></em><b>영통 학원가</b><span>수원 영통구 영통역 · 망포역 일대</span></summary>
+<div class="acc-b"><p>영통역과 망포역 주변으로 형성된 수원 동남부 대표 학원가입니다. 망포동 일대에만 수학 · 영어 학원이 각각 수십 곳에 이를 만큼 초 · 중 · 고 보습과 입시 학원이 밀집해 있습니다.</p><ul><li>대상 · 초등 ~ 고등</li><li>이동 · 차량 약 10분 / 수인분당선 영통역 3정거장</li></ul></div>
 </details>
 <details class="acc">
 <summary><em>20<small>분</small></em><b>수지 학원가</b><span>용인 수지구 풍덕천동 일대</span></summary>
 <div class="acc-b"><p>수지구청역 주변으로 형성된 용인 대표 학원가로, 중 · 고등 입시 전문 학원과 대형 어학원이 밀집해 있습니다.</p><ul><li>대상 · 중등 ~ 고등 입시</li><li>이동 · 차량 약 20분 / 신분당선 연계</li></ul></div>
 </details>
 <details class="acc">
-<summary><em>20<small>분</small></em><b>동탄 학원가</b><span>화성 동탄2신도시 중심상업지</span></summary>
-<div class="acc-b"><p>동탄역 일대 신도시 상업지구를 중심으로 초 · 중 · 고 전 연령 대상 학원이 빠르게 늘고 있는 신흥 학원가입니다.</p><ul><li>대상 · 초등 ~ 고등</li><li>이동 · 차량 약 20분 / 분당선 연장 시 접근성 개선 기대</li></ul></div>
-</details>
-<details class="acc">
-<summary><em class="walk">셔틀</em><b>학원 셔틀버스</b><span>단지 정문 · 기흥역 인근 정차</span></summary>
-<div class="acc-b"><p>구갈동 · 수지 일대 상당수 학원이 기흥역세권 단지 앞과 기흥역 인근에 셔틀버스를 정차합니다. 노선과 시간표는 학원마다 다르므로 각 학원에 직접 확인하시기 바랍니다.</p><ul><li>주요 정차 · 단지 정문 · 기흥역 · 한얼초 · 구갈초 인근</li><li>운행 · 학기 중 평일 하원 시간대 중심</li></ul></div>
+<summary><em class="walk">셔틀</em><b>학원 셔틀버스</b><span>수지 · 영통 학원가에서 각 단지 정문까지</span></summary>
+<div class="acc-b"><p>수지구청 · 영통 학원가의 셔틀버스가 기흥역세권 각 단지 정문까지 오가, 멀리 있는 대형 학원가도 아이 혼자 안전하게 다닐 수 있습니다.</p><ul><li>주요 정차 · 각 단지 정문</li><li>수지구청 학원가 · 디와이비최선어학원, 대치 명인학원 수지캠퍼스 등</li><li>영통 · 망포 학원가 · 이투스수학 신영통, 정철어학원주니어 망포, 디와이비최선어학원 영통 등</li><li>운행 · 학기 중 평일 하원 시간대 중심</li></ul></div>
 </details>
 <details class="acc">
 <summary><em class="walk">학교</em><b>도보권 학교 · 도서관</b><span>초 · 중 · 고 및 공공도서관</span></summary>
 <div class="acc-b"><ul><li>초등 · 한얼초 · 구갈초</li><li>중등 · 성지중 · 신갈중 · 신릉중</li><li>고등 · 신갈고</li><li>도서관 · 기흥도서관 · 단지 내 작은도서관</li><li>예정 · 기존 학교 재배치와 초 · 중 통합학교 신설 추진</li></ul></div>
 </details>
 </div>
+</div>
+<div class="lt-panel" role="tabpanel" id="lp3" aria-labelledby="lt3" hidden>
 <div class="loc-semi">
 <p class="ls-h"><span>Industry</span>반도체 벨트 · 직주근접</p>
 <ul>
@@ -1247,13 +1388,13 @@ body.is-main #sft{display:none}
 <li><b>SK하이닉스 본사 · 이천캠퍼스</b><span>경기 이천</span></li>
 </ul>
 </div>
-          </aside>
-          </div>
+</div>
+</div>
         </div>
         <div class="mapnote">
           <p>※ 본 지도의 위치도는 OpenStreetMap 지도 데이터를 참조하여 소비자의 이해를 돕기 위해 제작한 것으로, 실제와 다를 수 있습니다.</p>
           <p>※ GTX-A 구성역, 용인 플랫폼시티 등 개발 계획은 관계 기관 자료를 참조하였으며, 추진 일정과 내용은 변경될 수 있습니다.</p>
-          <p>※ 쇼핑몰 · 대형마트 · 학원가의 차량 이동 시간은 교통 상황에 따라 달라질 수 있으며, 학원 분포와 셔틀 노선은 학원별로 상이하니 직접 확인하시기 바랍니다.</p>
+          <p>※ 쇼핑몰 · 대형마트 · 학원가의 차량 이동 시간은 교통 상황에 따라 달라질 수 있으며, 학원 분포와 셔틀 운행 여부 · 노선은 학원별로 다를 수 있습니다.</p>
           <p>• 지도 데이터 © OpenStreetMap contributors</p>
         </div>
       </div>
@@ -1268,7 +1409,7 @@ body.is-main #sft{display:none}
     <div class="cx-head">
       <p><small>COMPLEX MAP</small>기흥역세권 1지구 · 1군 브랜드 6개 단지</p>
       <div class="cx-links">
-        <a class="kchat nbc-go" id="nbcGo" href="#/complex"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 19h16v1.6H4zM5.5 11h3v6.5h-3zm5-4h3v10.5h-3zm5 2.5h3v8h-3z"/></svg></i>주변 입지 시세 비교</a>
+        <a class="kchat nbc-go cmp-go" id="cmpGo" href="#/complex"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 4h18v16H3zm2 2v3h4V6zm6 0v3h8V6zM5 11v3h4v-3zm6 0v3h8v-3zM5 16v2h4v-2zm6 0v2h8v-2z"/></svg></i>단지별 비교표</a><a class="kchat nbc-go" id="nbcGo" href="#/complex"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 19h16v1.6H4zM5.5 11h3v6.5h-3zm5-4h3v10.5h-3zm5 2.5h3v8h-3z"/></svg></i>주변 입지 시세 비교</a>
         <a class="kchat" id="residentChat" href="https://open.kakao.com/o/sz0BQepc" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 5.9l-.9 3.3c-.1.3.3.6.6.4l3.9-2.6c.4 0 .8.1 1.2.1 5 0 9-3.1 9-7S17 4 12 4z"/></svg></i>기흥역세권 소유주 정보 공유방</a>
       </div>
     </div>
@@ -1449,6 +1590,11 @@ body.is-main #sft{display:none}
         </div>
       </div>
     </div>
+<div class="cmp" id="cmp" hidden>
+<div class="nbc-head"><p><small>COMPARE</small>단지별 비교표 한눈에 보기</p><span>기흥역세권 1지구 6개 단지</span></div>
+<div class="cmp-wrap"><table class="cmp-t" id="cmpT"></table></div>
+<p class="nbc-src">세대수 · 주차 · 거리는 각 단지 분양 자료와 입주민 정보, 시세는 국토교통부 실거래가(호갱노노 확인, 2026.10) 기준입니다. 실제와 다를 수 있습니다.</p>
+</div>
 <div class="nbc" id="nbc" hidden>
 <div class="nbc-head"><p><small>NEARBY PRICE</small>주변 입지 시세 비교</p><span>국평 84㎡ · 최근 실거래 기준</span></div>
 <ol class="nbc-list" id="nbcList"></ol>
@@ -1553,13 +1699,13 @@ body.is-main #sft{display:none}
       </div>
       <ol class="vgrid">
         <li class="rv"><span class="c">URBAN</span><span class="n">01</span><b>기흥역세권 2지구</b><span>자이 2,000여 세대 분양 예정</span></li>
-        <li class="rv"><span class="c">RAILWAY</span><span class="n">02</span><b>분당선 연장</b><span>기흥역에서 동탄 · 오산 방면</span></li>
-        <li class="rv"><span class="c">RAILWAY</span><span class="n">03</span><b>용인 경전철 연장</b><span>기흥역에서 광교중앙역 방면</span></li>
-        <li class="rv"><span class="c">URBAN</span><span class="n">04</span><b>용인 플랫폼시티</b><span>판교 테크노밸리 약 4배 규모 복합개발</span></li>
-        <li class="rv"><span class="c">INDUSTRY</span><span class="n">05</span><b>용인 반도체 클러스터</b><span>SK하이닉스 · 삼성전자 300조 대규모 투자</span></li>
-        <li class="rv"><span class="c">RAILWAY</span><span class="n">06</span><b>GTX-F 기흥역</b><span>제5차 국가철도망 구축계획 대상</span></li>
-        <li class="rv"><span class="c">URBAN</span><span class="n">07</span><b>기흥역 북부 재건축</b><span>한성1차 조합설립인가 완료 · 한성2차 · 풍림 · 동부 · 신명 · 한양 추진 중</span></li>
-        <li class="rv"><span class="c">EDUCATION</span><span class="n">08</span><b>기흥역세권 중학교 설립</b><span>기존 학교 재배치와 초·중 통합학교 신설</span></li>
+        <li class="rv"><span class="c">RAILWAY</span><span class="n">02</span><b>분당선 연장</b><span>기흥역에서 동탄 · 오산 방면</span><a class="v-src" href="https://www.mk.co.kr/news/special-edition/12162758" target="_blank" rel="noopener">매일경제 ↗</a></li>
+        <li class="rv"><span class="c">RAILWAY</span><span class="n">03</span><b>용인 경전철 연장</b><span>기흥역에서 광교중앙역 방면</span><a class="v-src" href="https://www.sedaily.com/article/20083144" target="_blank" rel="noopener">서울경제 ↗</a></li>
+        <li class="rv"><span class="c">URBAN</span><span class="n">04</span><b>용인 플랫폼시티</b><span>판교 테크노밸리 약 4배 규모 복합개발</span><a class="v-src" href="https://www.hankyung.com/article/202604023390i" target="_blank" rel="noopener">한국경제 2026.04 ↗</a></li>
+        <li class="rv"><span class="c">INDUSTRY</span><span class="n">05</span><b>용인 반도체 클러스터</b><span>SK하이닉스 · 삼성전자 300조 대규모 투자</span><a class="v-src" href="https://v.daum.net/v/20260212060320429" target="_blank" rel="noopener">다음뉴스 2026.02 ↗</a></li>
+        <li class="rv"><span class="c">RAILWAY</span><span class="n">06</span><b>GTX-F 기흥역</b><span>제5차 국가철도망 구축계획 대상</span><a class="v-src" href="https://www.sisajournal-e.com/news/articleView.html?idxno=424013" target="_blank" rel="noopener">시사저널e ↗</a></li>
+        <li class="rv"><span class="c">URBAN</span><span class="n">07</span><b>기흥역 북부 재건축</b><span>한성1차 조합설립인가 완료 · 한성2차 · 풍림 · 동부 · 신명 · 한양 추진 중</span><a class="v-src" href="https://www.hankyung.com/article/2026040622821" target="_blank" rel="noopener">한국경제 2026.04 ↗</a></li>
+        <li class="rv"><span class="c">EDUCATION</span><span class="n">08</span><b>기흥역세권 중학교 설립</b><span>기존 학교 재배치와 초·중 통합학교 신설</span><a class="v-src" href="https://m.dailian.co.kr/news/view/1627799" target="_blank" rel="noopener">데일리안 2026.03 ↗</a></li>
       </ol>
       <div class="redev rv">
         <div class="rd-head">
@@ -1577,6 +1723,91 @@ body.is-main #sft{display:none}
       <p class="note">※ 개발계획은 국가 및 지자체, 관계기관이 추진하는 사업으로 일정, 노선, 사업 내용 등이 변경 · 지연 · 취소될 수 있습니다. 본 사이트의 내용은 실제와 다를 수 있으니 각 단지 및 관계기관을 통해 직접 확인하시기 바랍니다.</p>
     </div>
   </div>
+</section>
+<!-- ================= GUIDE > 임장 가이드 ================= -->
+<section class="page sub" data-route="/guide" data-group="guide" hidden>
+<div class="phd"><h2>Guide</h2><ul class="stabs" data-tabs="guide"></ul></div>
+<div class="wrap gd">
+<div class="gd-hero">
+<p class="gd-lab">IMJANG GUIDE</p>
+<h3>걸어보면 보이는<br>기흥역세권</h3>
+<p class="gd-lead">기흥역 AK플라자에서 출발해 6개 단지와 2지구 부지, 신갈천 산책로, 용뫼산까지.<br>매수 전 꼭 한 번 걸어봐야 할 동선과 현장 체크리스트, 계산기를 한곳에 모았습니다.</p>
+<ul class="gd-jump">
+<li><a href="#/guide" data-jump="gdCourse">01 추천 임장 코스</a></li>
+<li><a href="#/guide" data-jump="gdTime">02 시간대별 팁</a></li>
+<li><a href="#/guide" data-jump="gdCheck">03 현장 체크리스트</a></li>
+<li><a href="#/guide" data-jump="gdCalc">04 매수 비용 계산기</a></li>
+<li><a href="#/guide" data-jump="gdLinks">05 계약 전 확인</a></li>
+</ul>
+</div>
+
+<div class="gd-sec" id="gdCourse">
+<div class="gd-h"><span>01</span><div><h4>추천 임장 코스</h4><p>약 3.5km · 도보 70 ~ 90분 · 평지 위주 (용뫼산 구간만 완만한 오르막)</p></div></div>
+<div class="gd-course">
+<div class="gd-map" id="gdMap"></div>
+<ol class="gd-steps" id="gdSteps"></ol>
+</div>
+</div>
+
+<div class="gd-sec" id="gdTime">
+<div class="gd-h"><span>02</span><div><h4>시간대별 임장 팁</h4><p>같은 단지라도 시간대에 따라 보이는 것이 다릅니다</p></div></div>
+<ul class="gd-cards">
+<li><em>평일 오전 7:30 ~ 9:00</em><b>출근길 · 통학길</b><p>기흥역 개찰구 혼잡도, 서울 직행버스 대기 줄, 대기업 셔틀 정차 위치, 아이들 등굣길 동선과 횡단보도를 확인하세요.</p></li>
+<li><em>주말 낮 12:00 ~ 17:00</em><b>상권 · 생활 편의</b><p>AK플라자 · 단지 내 상가의 공실과 업종, 주차장 진입 대기, 신갈천 산책로와 놀이터의 실제 이용 분위기를 봅니다.</p></li>
+<li><em>평일 밤 20:00 이후</em><b>소음 · 조명 · 주차</b><p>역 주변 소음과 유흥 상권 여부, 귀갓길 조명, 지하주차장 만차 여부와 방문 차량 주차 난이도를 확인하세요.</p></li>
+<li><em>비 오는 날</em><b>우천 동선</b><p>역에서 단지까지 지붕 있는 동선(AK플라자 · 연결 통로)과 보행 데크 배수, 지하주차장 누수 흔적을 점검하기 좋은 날입니다.</p></li>
+</ul>
+</div>
+
+<div class="gd-sec" id="gdCheck">
+<div class="gd-h"><span>03</span><div><h4>현장 체크리스트</h4><p>체크한 항목은 이 기기에 자동 저장됩니다 · 다운로드해서 현장에서 바로 쓰세요</p></div></div>
+<div class="gd-ckbar"><div class="gd-prog"><i id="gdProgBar"></i></div><span id="gdProgTxt">0 / 0</span><div class="gd-ckbtns"><button type="button" id="gdDl">체크리스트 다운로드</button><button type="button" id="gdPrint">인쇄 · PDF 저장</button><button type="button" id="gdReset" class="ghost">초기화</button></div></div>
+<div class="gd-ck" id="gdCk"></div>
+</div>
+
+<div class="gd-sec" id="gdCalc">
+<div class="gd-h"><span>04</span><div><h4>매수 비용 계산기</h4><p>취득세 · 중개보수 · 대출 상환액을 간단히 미리 계산해 보세요</p></div></div>
+<div class="gd-calc">
+<div class="gd-cbox">
+<p class="gd-ct">취득세 · 중개보수</p>
+<label>매매가<span><input type="number" id="gcPrice" value="10" min="0" step="0.05" inputmode="decimal"> 억 원</span></label>
+<label>전용면적<span><select id="gcArea"><option value="0">85㎡ 이하</option><option value="1">85㎡ 초과</option></select></span></label>
+<dl class="gd-res" id="gcRes1"></dl>
+<p class="gd-note">1주택 취득 · 일반지역 기준이며 다주택 중과 · 생애최초 감면 등은 반영하지 않았습니다. 중개보수는 법정 상한 요율 기준입니다.</p>
+</div>
+<div class="gd-cbox">
+<p class="gd-ct">주택담보대출 월 상환액</p>
+<label>대출금<span><input type="number" id="glAmt" value="5" min="0" step="0.1" inputmode="decimal"> 억 원</span></label>
+<label>금리<span><input type="number" id="glRate" value="4.0" min="0" step="0.1" inputmode="decimal"> %</span></label>
+<label>기간<span><select id="glYear"><option>10</option><option>20</option><option selected>30</option><option>40</option></select> 년</span></label>
+<dl class="gd-res" id="gcRes2"></dl>
+<p class="gd-note">원리금균등 상환 기준 단순 계산입니다. 실제 한도 · 금리는 DSR, LTV, 금융기관 심사에 따라 달라집니다.</p>
+</div>
+</div>
+</div>
+
+<div class="gd-sec" id="gdLinks">
+<div class="gd-h"><span>05</span><div><h4>계약 전 확인</h4><p>공식 사이트에서 직접 확인하고, 일정은 미리 챙기세요</p></div></div>
+<div class="gd-two">
+<ul class="gd-links">
+<li><a href="https://rt.molit.go.kr/" target="_blank" rel="noopener"><b>국토교통부 실거래가 공개시스템</b><span>단지별 · 면적별 실거래가</span></a></li>
+<li><a href="https://www.iros.go.kr/" target="_blank" rel="noopener"><b>인터넷등기소</b><span>등기부등본 · 근저당 · 소유자 확인</span></a></li>
+<li><a href="https://www.gov.kr/" target="_blank" rel="noopener"><b>정부24</b><span>건축물대장 · 위반건축물 여부</span></a></li>
+<li><a href="https://www.eum.go.kr/" target="_blank" rel="noopener"><b>토지이음</b><span>용도지역 · 도시계획 확인</span></a></li>
+<li><a href="https://www.schoolinfo.go.kr/" target="_blank" rel="noopener"><b>학교알리미</b><span>배정 학교 학급 수 · 학생 수</span></a></li>
+<li><a href="https://www.applyhome.co.kr/" target="_blank" rel="noopener"><b>청약홈</b><span>2지구 등 신규 분양 일정</span></a></li>
+</ul>
+<ol class="gd-flow">
+<li><em>D-day</em><b>계약</b><span>등기부등본 당일 재확인 · 계약금 송금은 등기상 소유자 계좌로</span></li>
+<li><em>계약 후 30일 이내</em><b>실거래 신고</b><span>통상 중개사무소가 신고 · 신고필증 확인</span></li>
+<li><em>중도금 · 잔금</em><b>대출 실행 · 잔금</b><span>잔금 당일 등기부 재확인, 관리비 · 공과금 정산</span></li>
+<li><em>잔금일부터 60일 이내</em><b>취득세 신고 · 납부</b><span>소유권이전등기와 함께 진행</span></li>
+<li><em>전입 후</em><b>전입신고 · 확정일자</b><span>임대 시 임차인 전입 · 보증보험 확인</span></li>
+</ol>
+</div>
+<p class="gd-src">※ 세율 · 요율 · 신고 기한은 2026년 10월 기준 일반 사항이며 제도 변경 시 달라질 수 있습니다. 정확한 내용은 관할 시 · 구청, 세무사, 금융기관에 확인하시기 바랍니다.</p>
+</div>
+</div>
 </section>
 </main>
 
@@ -1963,9 +2194,10 @@ const TABS={
   giheung:[["/brand","브랜드 스토리"],["/outline","개요"]],
   location:[["/traffic","교통 입지"],["/infra","생활 입지"]],
   complex:[["/complex","단지 지도"],...C.map(c=>["/complex/"+c.slug,c.name]),["/zone2","자이(기흥역세권 2지구 예정)"]],
-  vision:[["/vision","미래가치"]]
+  vision:[["/vision","미래가치"]],
+  guide:[["/guide","임장 가이드"]]
 };
-const NAV=[["giheung","Giheung"],["location","Location"],["complex","Complex"],["vision","Vision"]];
+const NAV=[["giheung","Giheung"],["location","Location"],["complex","Complex"],["vision","Vision"],["guide","Guide"]];
 
 $("gnb").innerHTML=NAV.map(([g,en],i)=>`<li data-g="${g}">
   <div class="row"><a class="top" href="#${TABS[g][0][0]}" data-g="${g}">${en}</a>
@@ -2115,6 +2347,87 @@ its.forEach((t,i)=>{t.onclick=()=>selI(t);t.onkeydown=e=>{if(e.key==="ArrowRight
 const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target)}}),{rootMargin:"0px 0px -8% 0px"}):null;
 document.querySelectorAll(".rv").forEach(el=>io?io.observe(el):el.classList.add("in"));
 
+/* ===== 임장 가이드 ===== */
+(()=>{
+  if(!$("gdMap"))return;
+  /* 추천 임장 코스: 단지 지도 위에 동선 */
+  const STOPS=[
+    {x:345,y:252,t:"기흥역 · AK플라자",m:"출발",d:"수인분당선 · 에버라인 환승 동선, AK플라자 연결 통로와 버스 정류장 위치를 먼저 확인합니다."},
+    {x:423,y:226,t:"힐스테이트",m:"5분",d:"역 · AK플라자와 바로 이어지는 동선, 5층 공중정원과 지상 차 없는 단지를 봅니다."},
+    {x:281,y:241,t:"롯데캐슬",m:"5분",d:"기흥역 5번 출구와의 거리, 오피스텔 비중이 높은 단지 분위기를 확인합니다."},
+    {x:268,y:315,t:"더 퍼스트 푸르지오",m:"5분",d:"평지 · 정남향 배치와 저층부 상가, 구갈초 통학로와 육교를 걸어봅니다."},
+    {x:200,y:346,t:"2지구 부지",m:"5분",d:"자이 예정 부지 현황과 1지구와의 연결 동선, 공사 진행 상황을 봅니다."},
+    {x:430,y:371,t:"더샵",m:"7분",d:"보행자 데크와 남쪽이 트인 조망, 석가산 조경과 커뮤니티 동선을 확인합니다."},
+    {x:523,y:308,t:"센트럴 푸르지오",m:"5분",d:"역세권 최대 규모 단지, 단지 내 상가와 서울행 버스정류장까지 거리를 봅니다."},
+    {x:597,y:381,t:"파크 푸르지오 · 한얼초",m:"5분",d:"한얼초 · 병설유치원 바로 앞 통학로와 연못정원, 대형 평형 동을 봅니다."},
+    {x:690,y:402,t:"신갈천 산책로",m:"8분",d:"단지 앞 신갈천 산책로 · 자전거길을 따라 걸으며 소음과 조망을 확인합니다."},
+    {x:470,y:560,t:"용뫼산 산책로",m:"20분",d:"신중부대로를 건너 단지 뒤 용뫼산으로. 배산임수 입지와 단지 전경을 내려다봅니다."}
+  ];
+  const src=$("cmapSvg");
+  if(src){
+    const s=src.cloneNode(true);s.removeAttribute("id");s.setAttribute("role","img");s.setAttribute("aria-label","기흥역세권 추천 임장 코스 지도");
+    s.querySelectorAll(".hot,[id]").forEach(e=>{if(e.classList.contains("hot"))e.remove();else e.removeAttribute("id")});
+    s.querySelectorAll(".blk.on").forEach(e=>e.classList.remove("on"));
+    const ns="http://www.w3.org/2000/svg",g=document.createElementNS(ns,"g");g.setAttribute("class","gd-route");
+    const pts=STOPS.map(p=>p.x+","+p.y).join(" ");
+    g.innerHTML=`<polyline points="${pts}" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/><polyline class="gd-line" points="${pts}" fill="none" stroke="#000" stroke-width="3.5" stroke-dasharray="2 7" stroke-linejoin="round" stroke-linecap="round"/>`+
+      STOPS.map((p,i)=>`<g class="gd-pin"><circle cx="${p.x}" cy="${p.y}" r="13" fill="${i===0?"#000":"#f5ff00"}" stroke="#000" stroke-width="2"/><text x="${p.x}" y="${p.y+4.5}" text-anchor="middle" style="font:700 12px var(--en);fill:${i===0?"#f5ff00":"#000"}">${i===0?"S":i}</text></g>`).join("")+
+      `<g class="gd-tag"><rect x="${STOPS[9].x+18}" y="${STOPS[9].y-12}" width="92" height="24" rx="12" fill="#000"/><text x="${STOPS[9].x+64}" y="${STOPS[9].y+4}" text-anchor="middle" style="font:700 11px var(--kr);fill:#f5ff00">용뫼산 방면 ↓</text></g>`;
+    s.appendChild(g);
+    const vb=s.getAttribute("viewBox").split(/\s+/).map(Number);if(vb[3]<600)s.setAttribute("viewBox",`${vb[0]} ${vb[1]} ${vb[2]} 600`);
+    $("gdMap").appendChild(s);
+  }
+  $("gdSteps").innerHTML=STOPS.map((p,i)=>`<li><i>${i===0?"S":i}</i><div><b>${esc(p.t)}<em>${esc(p.m)}</em></b><span>${esc(p.d)}</span></div></li>`).join("");
+
+  /* 바로가기 */
+  document.querySelectorAll(".gd-jump a").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const el=$(a.dataset.jump);if(el)el.scrollIntoView({behavior:"smooth",block:"start"})}));
+
+  /* 현장 체크리스트 */
+  const CK=[
+    ["입지 · 교통",["기흥역까지 실제 도보 시간 (출구 기준)","출근 시간대 개찰구 · 버스 정류장 혼잡도","서울 직행버스 · 대기업 셔틀 정류장 위치","우천 시 지붕 있는 동선 (AK플라자 · 연결 통로)","수원신갈IC · 신중부대로 차량 진출입 동선"]],
+    ["단지 · 공용부",["동 간 거리 · 저층부 일조와 사생활 침해","지하주차장 세대당 대수 · 방문 차량 주차","커뮤니티 운영 시간 · 이용료 · 대기 인원","놀이터 · 산책로 · 조경 관리 상태","엘리베이터 대수와 대기 시간","단지 내 상가 공실 · 업종 구성"]],
+    ["세대 내부",["향 · 층 · 조망 (낮 · 밤 모두)","결로 · 곰팡이 · 누수 흔적 (창틀 · 천장 · 붙박이장 뒤)","확장 여부와 마감 상태, 시스템에어컨 등 옵션","수압 · 배수 · 보일러 연식","층간 · 도로 · 철도 소음","수납 · 팬트리 · 알파룸 활용도"]],
+    ["주변 환경",["배정 초등학교 통학로와 횡단보도","중학교 배정 · 학원가 접근성","병원 · 약국 · 마트 거리","유흥 상권 · 공사 현장 · 혐오시설 유무","신갈천 · 용뫼산 산책로 접근성"]],
+    ["서류 · 거래",["등기부등본 소유자 · 근저당 · 가압류","건축물대장 위반건축물 여부","관리비 수준 · 체납 여부 · 장기수선충당금","전세 · 월세 시세와 전세가율","최근 실거래가와 호가 차이","입주 가능 시기 · 잔금 일정 협의"]]
+  ];
+  const KEY="gd-ck-v1";let st={};try{st=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+  const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+  $("gdCk").innerHTML=CK.map(([h,items],g)=>`<fieldset><legend>${esc(h)}</legend>${items.map((it,i)=>{const id=`ck${g}_${i}`;return `<label><input type="checkbox" data-k="${id}"${st[id]?" checked":""}><span>${esc(it)}</span></label>`}).join("")}</fieldset>`).join("");
+  const total=CK.reduce((a,[,it])=>a+it.length,0);
+  const prog=()=>{const n=$("gdCk").querySelectorAll("input:checked").length;$("gdProgTxt").textContent=`${n} / ${total}`;$("gdProgBar").style.width=(n/total*100)+"%"};
+  $("gdCk").addEventListener("change",e=>{const c=e.target.closest("input");if(!c)return;st[c.dataset.k]=c.checked;save();prog()});
+  prog();
+  $("gdReset").onclick=()=>{st={};save();$("gdCk").querySelectorAll("input").forEach(c=>c.checked=false);prog()};
+  $("gdDl").onclick=()=>{
+    const lines=["기흥역세권 현장 임장 체크리스트","방문 단지: ____________   방문일: ____ . __ . __   동 / 호: ________","",
+      ...CK.flatMap(([h,items],g)=>[`■ ${h}`,...items.map((it,i)=>`  ${st[`ck${g}_${i}`]?"[v]":"[ ]"} ${it}`),""]),
+      "메모:","","","출처: 기흥역세권 정보 사이트 (The Station, Giheung)"];
+    const blob=new Blob(["﻿"+lines.join("\r\n")],{type:"text/plain;charset=utf-8"});
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="기흥역세권_임장_체크리스트.txt";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);
+  };
+  $("gdPrint").onclick=()=>{document.body.classList.add("print-ck");window.print();setTimeout(()=>document.body.classList.remove("print-ck"),500)};
+
+  /* 계산기 */
+  const won=v=>{v=Math.round(v);if(v>=1e8){const e=Math.floor(v/1e8),m=Math.round((v%1e8)/1e4);return `${e}억${m?" "+m.toLocaleString()+"만":""} 원`}return `${Math.round(v/1e4).toLocaleString()}만 원`};
+  const calc1=()=>{
+    const p=(+$("gcPrice").value||0)*1e8,big=$("gcArea").value==="1";
+    let r=p<=6e8?1:p<=9e8?(p/1e8*2/3-3):3;r=Math.round(r*100)/100;
+    const acq=p*r/100,edu=acq*.1,farm=big?p*.002:0;
+    let fr,cap=Infinity;if(p<5e7){fr=.6;cap=25e4}else if(p<2e8){fr=.5;cap=8e5}else if(p<9e8)fr=.4;else if(p<12e8)fr=.5;else if(p<15e8)fr=.6;else fr=.7;
+    const fee=Math.min(p*fr/100,cap),vat=fee*.1;
+    $("gcRes1").innerHTML=`<div><dt>취득세 (${r}%)</dt><dd>${won(acq)}</dd></div><div><dt>지방교육세</dt><dd>${won(edu)}</dd></div>${big?`<div><dt>농어촌특별세</dt><dd>${won(farm)}</dd></div>`:""}<div><dt>중개보수 상한 (${fr}%)</dt><dd>${won(fee)}<small> + 부가세 ${won(vat)}</small></dd></div><div class="tot"><dt>합계 (부가세 포함)</dt><dd>${won(acq+edu+farm+fee+vat)}</dd></div>`;
+  };
+  const calc2=()=>{
+    const P=(+$("glAmt").value||0)*1e8,y=+$("glYear").value,i=(+$("glRate").value||0)/100/12,n=y*12;
+    const m=i?P*i*Math.pow(1+i,n)/(Math.pow(1+i,n)-1):P/n;
+    $("gcRes2").innerHTML=`<div class="tot"><dt>월 상환액</dt><dd>${won(m)}</dd></div><div><dt>총 이자</dt><dd>${won(m*n-P)}</dd></div><div><dt>총 상환액</dt><dd>${won(m*n)}</dd></div>`;
+  };
+  ["gcPrice","gcArea"].forEach(id=>$(id).addEventListener("input",calc1));
+  ["glAmt","glRate","glYear"].forEach(id=>$(id).addEventListener("input",calc2));
+  $("gcArea").addEventListener("change",calc1);$("glYear").addEventListener("change",calc2);
+  calc1();calc2();
+})();
+
 /* ===== 라우팅 ===== */
 const hd=$("hd"),desk=matchMedia("(min-width:1024px)");
 const pages=[...document.querySelectorAll(".page")];
@@ -2186,6 +2499,83 @@ const NEAR=[
 
 $("nbcGo").addEventListener("click",e=>{e.preventDefault();const b=$("nbc");b.hidden=false;b.scrollIntoView({behavior:"smooth",block:"start"})});
 
+/* 모바일: 지도 누르면 크게 보기 (두 손가락 · 버튼으로 확대/축소) */
+(()=>{
+  const mq=matchMedia("(max-width:1023px)");
+  let box=null;
+  const close=()=>{if(!box)return;box.remove();box=null;document.documentElement.classList.remove("zv-open")};
+  document.querySelectorAll(".tmap").forEach(m=>{
+    const svg=m.querySelector("svg");if(!svg)return;
+    m.addEventListener("click",()=>{
+      if(!mq.matches)return;
+      box=document.createElement("div");box.className="zv";box.setAttribute("role","dialog");box.setAttribute("aria-label","지도 크게 보기");
+      box.innerHTML=`<p class="zv-h">두 손가락으로 확대 · 축소하고, 밀어서 살펴보세요</p><div class="zv-in"><div class="zv-c"></div></div><div class="zv-ctl"><button type="button" class="zv-m" aria-label="축소">−</button><button type="button" class="zv-f" aria-label="화면에 맞추기">맞춤</button><button type="button" class="zv-p" aria-label="확대">+</button></div><button type="button" class="zv-x" aria-label="닫기"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3l10 10M13 3L3 13"/></svg></button>`;
+      const c=svg.cloneNode(true);c.removeAttribute("aria-labelledby");c.querySelectorAll("title[id]").forEach(e=>e.removeAttribute("id"));
+      const inn=box.querySelector(".zv-in"),cv=box.querySelector(".zv-c");cv.appendChild(c);
+      document.body.appendChild(box);document.documentElement.classList.add("zv-open");
+      const vb=c.viewBox.baseVal,ratio=vb.height/vb.width;
+      const fitW=()=>Math.min(inn.clientWidth,inn.clientHeight/ratio);
+      let w=fitW();const minW=()=>fitW(),maxW=()=>Math.max(inn.clientWidth*5,2400);
+      const setW=(nw,cx,cy)=>{ // cx,cy: 확대 기준점 (zv-in 기준 화면 좌표)
+        nw=Math.max(minW(),Math.min(maxW(),nw));if(cx==null){cx=inn.clientWidth/2;cy=inn.clientHeight/2}
+        const k=nw/w,sx=inn.scrollLeft+cx,sy=inn.scrollTop+cy;w=nw;
+        c.style.width=nw+"px";c.style.height=nw*ratio+"px";
+        cv.style.width=Math.max(nw,inn.clientWidth)+"px";cv.style.height=Math.max(nw*ratio,inn.clientHeight)+"px";
+        inn.scrollLeft=sx*k-cx;inn.scrollTop=sy*k-cy;
+      };
+      setW(w);
+      box.querySelector(".zv-p").onclick=()=>setW(w*1.4);
+      box.querySelector(".zv-m").onclick=()=>setW(w/1.4);
+      box.querySelector(".zv-f").onclick=()=>setW(fitW());
+      box.querySelector(".zv-x").onclick=close;
+      let p0=null;
+      const dist=t=>Math.hypot(t[0].clientX-t[1].clientX,t[0].clientY-t[1].clientY);
+      const mid=t=>{const r=inn.getBoundingClientRect();return [(t[0].clientX+t[1].clientX)/2-r.left,(t[0].clientY+t[1].clientY)/2-r.top]};
+      inn.addEventListener("touchstart",e=>{if(e.touches.length===2){p0={d:dist(e.touches),w}}},{passive:true});
+      inn.addEventListener("touchmove",e=>{if(e.touches.length===2&&p0){e.preventDefault();const [mx,my]=mid(e.touches);setW(p0.w*dist(e.touches)/p0.d,mx,my)}},{passive:false});
+      inn.addEventListener("touchend",e=>{if(e.touches.length<2)p0=null});
+      inn.addEventListener("wheel",e=>{if(e.ctrlKey){e.preventDefault();const r=inn.getBoundingClientRect();setW(w*(e.deltaY<0?1.1:1/1.1),e.clientX-r.left,e.clientY-r.top)}},{passive:false});
+      let lastTap=0;inn.addEventListener("touchend",e=>{if(e.touches.length)return;const n=Date.now();if(n-lastTap<300){setW(w>fitW()*1.2?fitW():w*2)}lastTap=n});
+    });
+  });
+  addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+  addEventListener("hashchange",close);
+})();
+
+/* 생활 입지 탭 */
+(()=>{const bs=[1,2,3].map(n=>document.getElementById("lt"+n));if(!bs[0])return;
+ const sel=b=>bs.forEach(x=>{const on=x===b;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute("aria-controls")).hidden=!on});
+ bs.forEach((b,i)=>{b.onclick=()=>sel(b);b.onkeydown=e=>{if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();const nb=bs[(i+(e.key==="ArrowRight"?1:2))%3];sel(nb);nb.focus()}}});})();
+/* 단지별 비교표 */
+const CMP={
+ hillstate:{walk:"기흥역 지하 직결",sch:"한얼초",mall:"AK플라자 직결 (같은 블록)",pts:["기흥역 · AK몰 단지 연결","높은 층고","차 없는 5층 공중정원","역세권 내 가장 빠른 엘리베이터"]},
+ central:{walk:"도보 약 5분",sch:"한얼초",mall:"단지 내 상가 30~40여 개",pts:["역세권 최대 규모 1,316세대","역세권 내 유일한 거실 통창","역세권 최대 규모 커뮤니티","골프장(수원CC) 조망권"]},
+ park:{walk:"약 565m (도보 7~8분)",sch:"한얼초 바로 앞",mall:"단지 저층부 상가 10여 개",pts:["초품아 · 병설유치원","역세권 유일 실내체육관 · 게스트룸","뻥 뚫린 조망권 · 풍부한 일조권","리조트급 연못 조경"]},
+ thesharp:{walk:"도보 약 4분",sch:"한얼초",mall:"단지 저층부 상가 20여 개",pts:["특화된 커뮤니티(어린이 수영장)","골프장(남부CC) 조망권","남쪽이 트인 평생뷰","석가산 · 진경산수 조경"]},
+ first:{walk:"도보 약 3분",sch:"구갈초",mall:"단지 저층부 상가 20여 개",pts:["2지구 최대 수혜(공원 · 상권)","기흥역 근접","신갈천 접근성","전 세대 4베이 판상형"]},
+ lottecastle:{walk:"5번 출구 30초",sch:"구갈초",mall:"단지 저층부 상가 20여 개",pts:["역 출구 초근접","신갈천 접근성","84C 가족실 · 3면 발코니","단지 바로 앞 어린이집"]}
+};
+(()=>{const T=$("cmpT");if(!T)return;
+ const tag=(c,re)=>(c.tags||[]).find(x=>re.test(x))||"";
+ const cols=C.filter(c=>CMP[c.slug]);
+ const rows=[
+  ["세대수",c=>`<b>${esc(c.households||"")}</b><small>${esc(tag(c,/오피스텔/)||"아파트")}</small>`],
+  ["입주 · 시공",c=>`${esc(c.movein||"")}<small>${esc(c.builder||"")}</small>`],
+  ["규모",c=>`${esc(c.floors||"")}<small>${esc(tag(c,/개동/)||tag(c,/지하/))}</small>`],
+  ["평형",c=>esc(tag(c,/전용|㎡/))],
+  ["주차",c=>{const p=tag(c,/주차/),m=p.match(/세대당 ([\d.]+)대/);return `<b>${m?m[1]+"대":"-"}</b><small>${esc(p.replace(/\s*\(.*\)/,""))}</small>`}],
+  ["기흥역 거리",c=>esc(CMP[c.slug].walk)],
+  ["배정 초등학교",c=>esc(CMP[c.slug].sch)],
+  ["상권",c=>esc(CMP[c.slug].mall)],
+  ["주요 특징",c=>CMP[c.slug].pts.map(x=>"· "+esc(x)).join("<br>")],
+  ["국평 신고가",c=>c.price?`<b>${c.price}억</b><small>${esc(c.priceLab||"국평 84㎡ 신고가")}</small>`:"-"],
+  ["최근 실거래",c=>c.recent?`<b>${c.recent[1]}억</b><small>${esc(c.recent[0])} · ${esc(c.recent[2])}</small>`:"-"]
+ ];
+ T.innerHTML=`<thead><tr><th scope="col">구분</th>${cols.map(c=>`<th scope="col" data-slug="${c.slug}"><small>${String(C.indexOf(c)+1).padStart(2,"0")}</small>${esc(c.name)}</th>`).join("")}</tr></thead><tbody>${rows.map(([k,f])=>`<tr${k==="주요 특징"?' class="tall"':""}><th scope="row">${k}</th>${cols.map(c=>`<td>${f(c)}</td>`).join("")}</tr>`).join("")}</tbody>`;
++
+
+ $("cmpGo").addEventListener("click",e=>{e.preventDefault();const b=$("cmp");b.hidden=false;b.scrollIntoView({behavior:"smooth",block:"start"})});
+})();
 /* TOP */
 $("topbtn").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 
