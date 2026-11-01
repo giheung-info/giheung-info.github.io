@@ -701,14 +701,16 @@ body.hd-hide .gal{top:calc(var(--ph) + 20px)}
 .chips button[aria-pressed="true"]{background:var(--black);border-color:var(--black);color:var(--white)}
 /* 입주민 사진 올리기 · 관리자 승인 */
 .g-top{display:flex;gap:6px;flex-wrap:wrap}.g-top>.chips{display:contents}
-.g-up{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 14px;border:1px solid var(--black);border-radius:4px;background:var(--yellow);font-size:14px;font-weight:700;color:var(--black);transition:background .2s,color .2s}
-.g-up[hidden]{display:none}.g-up:hover{background:var(--black);color:var(--yellow)}.g-up svg{width:13px;height:13px}.gal.is-chart .g-up{display:none}
+.g-up{display:inline-flex;align-items:center;gap:6px;min-height:38px;margin-left:auto;padding:0 4px;border:0;background:none;font-size:15px;font-weight:600;color:var(--g5);transition:color .2s}
+.g-up[hidden]{display:none}.g-up:hover{color:var(--black)}.g-up svg{width:19px;height:19px}.gal.is-chart .g-up{display:none}
 .upd{width:min(460px,calc(100% - 32px));max-height:calc(100% - 32px);padding:0;border:0;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.25)}.upd::backdrop{background:rgba(0,0,0,.55)}
 .upd form{display:grid;gap:14px;padding:26px 24px 22px}.upd h3{font-size:20px;line-height:1.3}.upd-s{margin-top:-8px;font-size:13px;color:var(--g4)}
 .upd-f{position:relative;display:grid;place-items:center;min-height:180px;border:1px dashed var(--g3);border-radius:6px;background:var(--g0);font-size:14px;font-weight:700;color:var(--g4);cursor:pointer;overflow:hidden}
 .upd-f input{position:absolute;inset:0;opacity:0;cursor:pointer}.upd-f img{display:block;max-width:100%;max-height:260px;object-fit:contain}
-.upd label{font-size:13px;font-weight:700;color:var(--g5)}.upd-r{display:grid;grid-template-columns:120px 1fr;gap:8px}
+.upd label{font-size:13px;font-weight:700;color:var(--g5)}
 .upd select,.upd input[type=text],.adm input,.adm select{display:block;width:100%;height:40px;margin-top:4px;padding:0 10px;border:1px solid var(--g2);border-radius:4px;background:var(--white);font:inherit;font-size:14px;color:var(--black)}
+.upd textarea{display:block;width:100%;margin-top:4px;padding:10px;border:1px solid var(--g2);border-radius:4px;font:inherit;font-size:14px;font-weight:500;line-height:1.6;color:var(--black);resize:vertical}
+.adm-list li.fb{grid-column:1/-1}.adm-list .fbb{font-size:15px;line-height:1.7;white-space:pre-wrap;word-break:break-word}.adm-list li.fb .bt{justify-content:flex-end}.adm-list li.fb .bt button{flex:none}
 .upd-ck{display:flex;gap:8px;align-items:flex-start;font-weight:500!important;line-height:1.5}.upd-ck input{flex:none;width:16px;height:16px;margin-top:2px}
 .upd-msg,.adm-msg{min-height:1.4em;font-size:13px;color:#c0433d}.upd-msg.ok{color:#2f7d32}
 .upd-b{display:flex;gap:8px;justify-content:flex-end}.upd-b button,.adm button{min-height:40px;padding:0 18px;border:1px solid var(--g2);border-radius:4px;background:var(--white);font-size:14px;font-weight:700}
@@ -970,7 +972,7 @@ body.is-main #sft{display:none}
     </a>
   </nav>
   <footer class="mfoot">
-    <div class="meta"><a class="kchat" href="https://open.kakao.com/o/gsdT08zh" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 5.9l-.9 3.3c-.1.3.3.6.6.4l3.9-2.6c.4 0 .8.1 1.2.1 5 0 9-3.1 9-7S17 4 12 4z"/></svg></i>기흥역세권 1,2지구 정보 공유방</a><p class="visits" id="visits" aria-label="방문자 수">TODAY <b id="vToday">-</b> · TOTAL <b id="vTotal">-</b></p></div><a class="copy fb-link" href="https://open.kakao.com/o/gAcK7CUi" target="_blank" rel="noopener"><svg class="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="M4 6.5l8 6 8-6"/></svg>의견 접수</a>
+    <div class="meta"><a class="kchat" href="https://open.kakao.com/o/gsdT08zh" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 5.9l-.9 3.3c-.1.3.3.6.6.4l3.9-2.6c.4 0 .8.1 1.2.1 5 0 9-3.1 9-7S17 4 12 4z"/></svg></i>기흥역세권 1,2지구 정보 공유방</a><p class="visits" id="visits" aria-label="방문자 수">TODAY <b id="vToday">-</b> · TOTAL <b id="vTotal">-</b></p></div><a class="copy fb-link" href="#" data-fb><svg class="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="M4 6.5l8 6 8-6"/></svg>의견 접수</a>
   </footer>
 </section>
 
@@ -1642,7 +1644,7 @@ body.is-main #sft{display:none}
     </div>
     <div class="dt-body">
       <div class="gal">
-        <div class="g-top"><div class="chips" id="gCats" role="group" aria-label="사진 분류"></div><button type="button" class="g-up" id="gUp" hidden><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v12M2 8h12"/></svg>사진 올리기</button></div>
+        <div class="g-top"><div class="chips" id="gCats" role="group" aria-label="사진 분류"></div><button type="button" class="g-up" id="gUp" hidden><svg viewBox="0 0 16 16" fill="none" stroke="#000" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3.5l1-1.5h3l1 1.5" fill="#f5ff00"/><rect x="1.5" y="3.5" width="13" height="10" rx="1.5" fill="#f5ff00"/><circle cx="8" cy="8.5" r="2.4" fill="#fff"/></svg>사진 올리기</button></div>
         <figure class="g-main" id="gMain">
           <div class="g-ph" id="gPh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.6"/><path d="M8.5 6l1.4-2h4.2l1.4 2"/></svg><b>사진 준비 중</b><code id="gPath"></code></div>
           <img id="gImg" alt="" hidden>
@@ -1718,7 +1720,7 @@ body.is-main #sft{display:none}
     </form>
     <div id="admMain" hidden>
       <div class="adm-bar">
-        <div class="chips" id="admTabs" role="group" aria-label="사진 상태"><button type="button" data-s="pending" aria-pressed="true">승인 대기 <span id="admN"></span></button><button type="button" data-s="approved" aria-pressed="false">게시됨</button><button type="button" data-s="rejected" aria-pressed="false">거절됨</button></div>
+        <div class="chips" id="admTabs" role="group" aria-label="사진 상태"><button type="button" data-s="pending" aria-pressed="true">승인 대기 <span id="admN"></span></button><button type="button" data-s="approved" aria-pressed="false">게시됨</button><button type="button" data-s="rejected" aria-pressed="false">거절됨</button><button type="button" data-s="feedback" aria-pressed="false">의견 <span id="admFn"></span></button></div>
         <button type="button" id="admOut">로그아웃</button>
       </div>
       <ul class="adm-list" id="admList"></ul>
@@ -1862,7 +1864,7 @@ body.is-main #sft{display:none}
 <footer id="sft">
   <button class="topbtn" id="topbtn" type="button" aria-label="맨 위로">TOP</button>
   <div class="sft-in">
-    <div class="meta" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center"><a class="kchat" href="https://open.kakao.com/o/gsdT08zh" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 5.9l-.9 3.3c-.1.3.3.6.6.4l3.9-2.6c.4 0 .8.1 1.2.1 5 0 9-3.1 9-7S17 4 12 4z"/></svg></i>기흥역세권 1,2지구 정보 공유방</a></div><a class="copy fb-link" href="https://open.kakao.com/o/gAcK7CUi" target="_blank" rel="noopener"><svg class="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="M4 6.5l8 6 8-6"/></svg>의견 접수</a>
+    <div class="meta" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center"><a class="kchat" href="https://open.kakao.com/o/gsdT08zh" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 5.9l-.9 3.3c-.1.3.3.6.6.4l3.9-2.6c.4 0 .8.1 1.2.1 5 0 9-3.1 9-7S17 4 12 4z"/></svg></i>기흥역세권 1,2지구 정보 공유방</a></div><a class="copy fb-link" href="#" data-fb><svg class="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="M4 6.5l8 6 8-6"/></svg>의견 접수</a>
   </div>
 </footer>
 
@@ -1871,13 +1873,20 @@ body.is-main #sft{display:none}
     <h3 id="upT">사진 올리기</h3>
     <p class="upd-s"><b id="upCx"></b> · 관리자 확인 후 게시됩니다</p>
     <label class="upd-f"><input type="file" id="upFile" accept="image/*" aria-label="사진 선택"><span id="upPv">눌러서 사진 선택</span></label>
-    <div class="upd-r">
-      <label>분류<select id="upCat"><option>단지 전경</option><option>조망</option><option>커뮤니티</option></select></label>
-      <label>설명<input type="text" id="upCap" maxlength="40" placeholder="예: 거실에서 본 남측 조망"></label>
-    </div>
-    <label class="upd-ck"><input type="checkbox" id="upOk">직접 촬영한 사진이며 사이트 게시에 동의합니다. 다른 사람의 얼굴 · 차량번호는 알아볼 수 없습니다.</label>
+    <label>분류<select id="upCat"><option>단지 전경</option><option>조망</option><option>커뮤니티</option></select></label>
+    <label class="upd-ck"><input type="checkbox" id="upOk">직접 촬영한 사진이며, 사이트 게시에 동의합니다.</label>
     <p class="upd-msg" id="upMsg" aria-live="polite"></p>
     <div class="upd-b"><button type="button" id="upX">취소</button><button type="submit" id="upGo">올리기</button></div>
+  </form>
+</dialog>
+
+<dialog class="upd" id="fbDlg" aria-labelledby="fbT">
+  <form id="fbForm" novalidate>
+    <h3 id="fbT">의견 접수</h3>
+    <p class="upd-s">사이트에 바라는 점, 잘못된 정보, 제안을 자유롭게 남겨 주세요.</p>
+    <label>내용<textarea id="fbBody" maxlength="1000" rows="7" placeholder="내용을 입력해 주세요"></textarea></label>
+    <p class="upd-msg" id="fbMsg" aria-live="polite"></p>
+    <div class="upd-b"><button type="button" id="fbX">취소</button><button type="submit" id="fbGo">제출</button></div>
   </form>
 </dialog>
 
@@ -2823,11 +2832,36 @@ function shrink(file,max=1600){
       const slug=C[di].slug,path=`${slug}/${crypto.randomUUID()}.jpg`,sb=await sbc();
       let r=await sb.storage.from("pending").upload(path,blob,{contentType:"image/jpeg"});
       if(r.error)throw r.error;
-      r=await sb.from("photos").insert({complex_id:slug,path,cat:$("upCat").value,caption:$("upCap").value.trim()||null});
+      r=await sb.from("photos").insert({complex_id:slug,path,cat:$("upCat").value});
       if(r.error)throw r.error;
       say("올렸습니다. 관리자 확인 후 게시됩니다.",true);
       setTimeout(()=>dlg.close(),1600);
     }catch(err){go.disabled=false;say(err&&/형식/.test(err.message)?err.message:"올리지 못했습니다. 잠시 후 다시 시도해 주세요.")}
+  };
+})();
+
+/* 의견 접수: 내용만 받아 feedback 테이블에 저장, #/admin 의 "의견" 탭에서 확인 */
+(()=>{
+  const dlg=$("fbDlg"),body=$("fbBody"),msg=$("fbMsg"),go=$("fbGo");
+  const say=(t,ok)=>{msg.textContent=t;msg.classList.toggle("ok",!!ok)};
+  document.querySelectorAll("[data-fb]").forEach(a=>a.addEventListener("click",e=>{
+    e.preventDefault();
+    if(!UP_ON)return;
+    $("fbForm").reset();say("");go.disabled=false;dlg.showModal();body.focus();
+  }));
+  $("fbX").onclick=()=>dlg.close();
+  dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+  $("fbForm").onsubmit=async e=>{
+    e.preventDefault();
+    const t=body.value.trim();
+    if(t.length<2)return say("내용을 입력해 주세요.");
+    go.disabled=true;say("보내는 중…",true);
+    try{
+      const {error}=await (await sbc()).from("feedback").insert({body:t});
+      if(error)throw error;
+      say("접수되었습니다. 소중한 의견 감사합니다.",true);
+      setTimeout(()=>dlg.close(),1600);
+    }catch(_){go.disabled=false;say("보내지 못했습니다. 잠시 후 다시 시도해 주세요.")}
   };
 })();
 
@@ -2845,11 +2879,24 @@ async function admLoad(){
   const sb=await sbc(),list=$("admList");
   $("admTabs").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.s===admS?"true":"false"));
   list.innerHTML=`<li class="adm-empty" style="grid-column:1/-1;border:0">불러오는 중…</li>`;
-  const [{data,error},cnt]=await Promise.all([
-    sb.from("photos").select("*").eq("status",admS).order("created_at",{ascending:admS==="pending"}).limit(200),
-    sb.from("photos").select("id",{count:"exact",head:true}).eq("status","pending")]);
+  const fb=admS==="feedback";
+  const [{data,error},cnt,fcnt]=await Promise.all([
+    fb?sb.from("feedback").select("*").order("created_at",{ascending:false}).limit(300)
+      :sb.from("photos").select("*").eq("status",admS).order("created_at",{ascending:admS==="pending"}).limit(200),
+    sb.from("photos").select("id",{count:"exact",head:true}).eq("status","pending"),
+    sb.from("feedback").select("id",{count:"exact",head:true}).eq("status","new")]);
   $("admN").textContent=cnt.count?`(${cnt.count})`:"";
+  $("admFn").textContent=fcnt.count?`(${fcnt.count})`:"";
   if(error){list.innerHTML="";$("admMsg").textContent="목록을 불러오지 못했습니다: "+error.message;return}
+  if(fb){
+    const dt=s=>new Date(s).toLocaleString("ko-KR",{dateStyle:"short",timeStyle:"short"});
+    list.innerHTML=data.length?data.map(f=>`<li class="fb" data-id="${f.id}">
+      <p class="mt">${dt(f.created_at)} · <b>${f.status==="new"?"새 의견":"확인함"}</b></p>
+      <p class="fbb">${esc(f.body)}</p>
+      <div class="bt">${f.status==="new"?`<button type="button" class="pri" data-a="fdone">확인함</button>`:""}<button type="button" data-a="fdel">삭제</button></div>
+    </li>`).join(""):`<li class="adm-empty" style="grid-column:1/-1;border:0">접수된 의견이 없습니다.</li>`;
+    return;
+  }
   if(!data.length){list.innerHTML=`<li class="adm-empty" style="grid-column:1/-1;border:0">${admS==="pending"?"승인 대기 중인 사진이 없습니다.":"사진이 없습니다."}</li>`;return}
   let urls={};
   if(admS==="pending"){const r=await sb.storage.from("pending").createSignedUrls(data.map(p=>p.path),3600);(r.data||[]).forEach(u=>{if(u.signedUrl)urls[u.path]=u.signedUrl})}
@@ -2877,7 +2924,15 @@ async function admLoad(){
   $("admTabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b){admS=b.dataset.s;$("admMsg").textContent="";admLoad()}});
   $("admList").addEventListener("click",async e=>{
     const b=e.target.closest("button[data-a]");if(!b)return;
-    const li=b.closest("li"),p=$("admList")._rows[li.dataset.id],a=b.dataset.a,sb=await sbc();
+    const li=b.closest("li"),a=b.dataset.a,sb=await sbc();
+    if(a==="fdone"||a==="fdel"){
+      if(a==="fdel"&&!confirm("이 의견을 삭제할까요?"))return;
+      li.querySelectorAll("button").forEach(x=>x.disabled=true);
+      const r=a==="fdone"?await sb.from("feedback").update({status:"done"}).eq("id",li.dataset.id):await sb.from("feedback").delete().eq("id",li.dataset.id);
+      if(r.error){li.querySelectorAll("button").forEach(x=>x.disabled=false);$("admMsg").textContent="처리하지 못했습니다: "+r.error.message;return}
+      return admLoad();
+    }
+    const p=$("admList")._rows[li.dataset.id];
     const edit=()=>({cat:li.querySelector(".a-cat").value,caption:li.querySelector(".a-cap").value.trim()||null});
     if((a==="no"||a==="down"||a==="del")&&!confirm(a==="no"?"이 사진을 거절할까요? 파일이 삭제됩니다.":a==="down"?"게시를 내릴까요? 파일이 삭제됩니다.":"기록을 삭제할까요?"))return;
     li.querySelectorAll("button").forEach(x=>x.disabled=true);
