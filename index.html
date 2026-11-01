@@ -140,7 +140,8 @@ body.is-main .util,#hd.hovered .util{color:var(--g2)}
 @keyframes glow{to{transform:translateX(12%)}}
 body.paused .mv *{animation-play-state:paused}
 .hero{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 16px}
-.intro{color:var(--yellow);font-family:var(--en);font-weight:700;font-size:12.4vw;line-height:.8;letter-spacing:-.045em;text-transform:uppercase}
+.g-y{font-style:normal;color:var(--yellow)}
+.intro{color:#fff;font-family:var(--en);font-weight:700;font-size:12.4vw;line-height:.8;letter-spacing:-.045em;text-transform:uppercase}
 .intro span{display:block;opacity:0;transform:translateY(.25em);animation:up 1s cubic-bezier(.2,.7,.2,1) forwards}
 .intro span+span{animation-delay:.15s}
 .intro .w{font-style:normal;color:#fff}.intro .dash{font-style:normal;margin-left:.02em}
@@ -899,7 +900,7 @@ body.is-main #sft{display:none}
 <!-- 인트로 -->
 <div class="splash" id="splash" aria-hidden="true">
   <svg class="s-mark" viewBox="0 0 300 150"><path style="--l:150" d="M20 112 C 48 106 66 84 86 64 C 98 52 106 46 114 46 C 122 46 126 54 132 58 C 138 62 142 60 146 56"/><path style="--l:340" class="b" d="M136 105 V 80 H 146 V 104 M150 102 V 50 H 162 V 101 M156 50 V 32 M167 100 V 66 L 180 60 V 99 M185 99 V 84 H 193 V 98"/><path style="--l:110" d="M200 80 C 212 70 224 64 238 64 C 254 64 266 78 282 86"/><path style="--l:280" class="r" d="M20 132 C 90 120 150 104 200 100 C 230 98 260 98 282 98"/><path style="--l:250" class="r" d="M52 140 C 112 128 162 113 212 108 C 242 106 264 106 282 106"/><path class="p" pathLength="100" d="M20 132 C 90 120 150 104 200 100 C 230 98 260 98 282 98"/></svg>
-  <p class="s-t">STATION-G</p>
+  <p class="s-t">STATION-<span class="g-y">G</span></p>
   <p class="s-k">기흥역세권</p>
   <button class="skip" id="skip" type="button" tabindex="-1">SKIP</button>
 </div>
@@ -911,7 +912,7 @@ body.is-main #sft{display:none}
       <ul class="gnb" id="gnb"></ul>
       <p class="gnb-foot">The Station, Giheung</p>
     </nav>
-    <a class="logo" href="#/" aria-label="기흥역세권 메인으로">STATION-G</a>
+    <a class="logo" href="#/" aria-label="기흥역세권 메인으로">STATION-<span class="g-y">G</span></a>
     <button class="mbtn" id="mbtn" type="button" aria-label="메뉴 열기" aria-controls="gnbWrap" aria-expanded="false"><i></i></button>
   </div>
   <div class="hd-dim" aria-hidden="true"></div>
@@ -925,7 +926,7 @@ body.is-main #sft{display:none}
     <div class="glow"></div>
   </div>
   <div class="hero">
-    <h1 class="intro"><span><i class="w">The</i> <br class="mbr">Station<i class="dash" aria-hidden="true">-</i></span><span>G<i class="w">iheung</i></span></h1>
+    <h1 class="intro"><span><i class="w">The</i> <br class="mbr">Station<i class="dash" aria-hidden="true">-</i></span><span><i class="g-y">G</i><i class="w">iheung</i></span></h1>
     <p class="ko">역 앞의 삶, 산과 물 사이의 일상<br><span>기흥역세권에서 시작됩니다</span></p>
   </div>
   <nav class="entries" aria-label="바로가기">
