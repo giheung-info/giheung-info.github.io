@@ -291,7 +291,7 @@ body.paused .mq div{animation-play-state:paused}
 /* 교통 지도 */
 .sect.wide{grid-template-columns:1fr}
 .zv{position:fixed;inset:0;z-index:500;background:#fff;display:flex;flex-direction:column}.zv-in{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain}.zv-c{display:flex;align-items:center;justify-content:center}.zv-in svg{display:block;flex:none;max-width:none;min-width:0!important}.zv-ctl{position:absolute;left:50%;bottom:calc(6px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:1px;border-radius:999px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.18);opacity:.9}.zv-ctl button{min-width:38px;height:30px;padding:0 10px;background:#000;color:#fff;font-size:16px;font-weight:600}.zv-ctl .zv-f{font-size:11px;font-weight:700;color:var(--yellow)}.zv-x{position:absolute;right:12px;top:12px;z-index:2;width:44px;height:44px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center}.zv-x svg{width:16px;height:16px}.zv-h{padding:20px 64px 12px 16px;font-size:13px;color:var(--g4);border-bottom:1px solid var(--g1)}html.zv-open,html.zv-open body{overflow:hidden}@media (max-width:1023px){ .tmap{cursor:zoom-in;position:relative;flex-wrap:wrap} }
-.tmap{position:relative}.zv-btn{position:absolute;top:10px;right:10px;z-index:3;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}.tmap .zv-btn svg{width:20px!important;height:20px!important;min-width:0!important;max-width:none;margin:0}@media (max-width:1023px){.zv-btn{display:none}}.zv .zv-c.tmap{background:none;border-radius:0;overflow:visible;cursor:grab}.zv .zv-c.tmap::after{display:none}.zv .zv-c.tmap>svg{max-width:none}.hph{cursor:zoom-in}.zv .hph .ph{display:none}@media (hover:none),(max-width:1023px){.tmap .hph .ph{display:none}}.phv p{color:#fff;font-size:14px;text-align:center}.phv{position:fixed;inset:0;z-index:510;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}.phv img{max-width:min(1200px,100%);max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 8px 30px rgba(0,0,0,.4)}.phv button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.tmap{position:relative}.zv-btn{position:absolute;top:10px;right:10px;z-index:3;width:26px;height:26px;padding:0;border:0;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.18)}.tmap .zv-btn svg{width:13px!important;height:13px!important;min-width:0!important;max-width:none;margin:0}@media (max-width:1023px){.zv-btn{display:none}}.zv .zv-c.tmap{background:none;border-radius:0;overflow:visible;cursor:grab}.zv .zv-c.tmap::after{display:none}.zv .zv-c.tmap>svg{max-width:none}.hph{cursor:zoom-in}.zv .hph .ph{display:none}@media (hover:none),(max-width:1023px){.tmap .hph .ph{display:none}}.phv p{color:#fff;font-size:14px;text-align:center}.phv{position:fixed;inset:0;z-index:510;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}.phv img{max-width:min(1200px,100%);max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 8px 30px rgba(0,0,0,.4)}.phv button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:26px;line-height:1;cursor:pointer}
 @media (min-width:1024px){ .tlay{display:grid;grid-template-columns:auto minmax(280px,1fr);gap:24px;align-items:stretch} .tlay .tmap{display:flex;align-items:center} .tlay .tmap svg{min-width:0;width:min(960px,calc((100vh - 140px) * 1.515),calc(100vw - 480px));height:auto} .tlay .tkeys{grid-template-columns:1fr;margin-top:0;align-content:stretch} .tlay .tkeys li{padding:13px 16px;gap:12px;align-items:center} .tlay .tkeys b{font-size:15px} .tlay .tkeys span{margin-top:2px;font-size:13px;line-height:1.45} .tlay .tkeys i{width:26px;height:26px} }
 .tmap{background:var(--g0);border-radius:6px;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tmap svg{display:block;width:100%;max-width:980px;min-width:700px;height:auto;margin:0 auto}
@@ -1043,8 +1043,9 @@ body.is-main #sft{display:none}
               .tmap .y,.tsvg .y{fill:#f5ff00}
               .tmap .w,.tsvg .w{fill:#fff}
             </style>
-            <text class="b" x="20" y="40" style="font-size:22px">기흥역세권 광역 교통 노선도</text>
-            <text class="s" x="20" y="60">실제 거리와 축척은 다릅니다</text>
+            <text class="b" x="20" y="42" style="font-size:26px">기흥역세권</text>
+            <text class="b" x="20" y="74" style="font-size:26px">광역 교통 노선도</text>
+            <text class="s" x="20" y="98" style="font-size:12px;fill:#9aa1a5;font-family:'Inter Tight',Arial,sans-serif;letter-spacing:.5px">Metro Network Map</text>
 
             <!-- 고속도로 -->
             <!-- 수원신갈IC: 기흥역 왼쪽 위 대각선 -->
@@ -1052,33 +1053,35 @@ body.is-main #sft{display:none}
             <rect x="405" y="262" width="22" height="16" rx="3" fill="#000"/>
             <text class="nh y b" x="416" y="274" text-anchor="middle" style="font-size:10px">IC</text>
             <text class="b" x="399" y="274" text-anchor="end" style="font-size:13px">수원신갈IC</text>
-            <text class="s" x="399" y="289" text-anchor="end">차로 10분</text>
+            <text class="s" x="399" y="289" text-anchor="end">차량 5분</text>
 
             <!-- 42번 국도 -->
-            <path d="M516 362L845 505" stroke="#9aa1a5" stroke-width="8" fill="none"/>
-            <path d="M516 362L845 505" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 8" fill="none"/>
+            <path d="M516 362L845 505" stroke="#9aa1a5" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <path d="M516 362L837 501.5" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 8" fill="none"/>
+            <circle cx="845" cy="505" r="4.5" fill="#fff" stroke="#9aa1a5" stroke-width="2.5"/>
             <rect x="665" y="423" width="30" height="20" rx="4" fill="#5c6366"/>
             <text class="nh w b" x="680" y="437" text-anchor="middle" style="font-size:12px">42</text>
 
             <!-- 에버라인 -->
-            <path d="M516 322H900" stroke="#4fa845" stroke-width="6" fill="none"/>
-            <path d="M448 322H300" stroke="#4fa845" stroke-width="6" stroke-dasharray="14 8" fill="none"/>            <circle cx="700" cy="322" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="700" cy="322" r="4.5" fill="#4fa845"/>
-            <text class="b" x="700" y="350" text-anchor="middle" style="font-size:17px">동백역</text>
-            <text class="s" x="700" y="367" text-anchor="middle">용인세브란스병원</text>
-            <circle cx="900" cy="322" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="900" cy="322" r="4.5" fill="#4fa845"/>
-            <text class="b" x="900" y="350" text-anchor="middle" style="font-size:17px">에버랜드역</text>
+            <path d="M516 322H844" stroke="#4fa845" stroke-width="6" fill="none"/>
+            <path d="M448 322H300" stroke="#4fa845" stroke-width="6" stroke-dasharray="14 8" fill="none"/>            <circle cx="612" cy="322" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="612" cy="322" r="4.5" fill="#4fa845"/>
+            <text class="b" x="612" y="350" text-anchor="middle" style="font-size:17px">동백역</text>
+            <text class="s" x="612" y="367" text-anchor="middle">용인세브란스병원</text>
+            <circle cx="844" cy="322" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="844" cy="322" r="4.5" fill="#4fa845"/>
+            <text class="b" x="844" y="350" text-anchor="middle" style="font-size:17px">에버랜드역</text>
             <rect x="283" y="313" width="34" height="18" rx="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="292" cy="322" r="4.5" fill="#4fa845"/><circle cx="308" cy="322" r="4.5" fill="#d6393a"/>
             <text class="b" x="300" y="302" text-anchor="middle" style="font-size:16px">광교중앙역</text>
 
             <!-- GTX-F 예정 -->
             <path d="M448 358H120V210M500 306V134" stroke="#d14b8f" stroke-width="5" stroke-dasharray="12 7" fill="none" stroke-linejoin="round"/>
 
-            <!-- GTX-A (기흥 미정차, 기흥역 뒤로 통과) -->
-            <path d="M468 20V500" stroke="#9b4f96" stroke-width="7" fill="none" stroke-linejoin="round"/>
+            <!-- GTX-A (기흥 미정차, 구성 ↔ 동탄 직결: 기흥역 앞뒤로 살짝 끊어 통과만 표현) -->
+            <path d="M468 20V302M468 378V560" stroke="#9b4f96" stroke-width="7" fill="none" stroke-linejoin="round"/>
 
             <!-- 분당선 -->
-            <path d="M484 0V306M448 340H120" stroke="#f2a900" stroke-width="7" fill="none"/>
-            <path d="M484 374V600" stroke="#f2a900" stroke-width="7" stroke-dasharray="14 8" fill="none"/>
+            <path d="M484 20V306" stroke="#f2a900" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path d="M448 340H120" stroke="#f2a900" stroke-width="7" fill="none"/>
+            <path d="M484 374V640" stroke="#f2a900" stroke-width="7" stroke-dasharray="14 8" fill="none"/>
 
             <!-- 신분당선: 미금 · 정자 · 판교 · 강남 (분당선 오른쪽 나란히) -->
             <path d="M516 134V58" stroke="#d6393a" stroke-width="7" fill="none"/>
@@ -1104,13 +1107,13 @@ body.is-main #sft{display:none}
             <text class="b" x="376" y="215" text-anchor="end" style="font-size:17px">구성역</text><text class="s" x="381" y="215">GTX-A · 4분</text>
             <text class="s" x="381" y="231">2정거장</text>
 
-            <rect x="456" y="490" width="40" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="500" r="4.5" fill="#9b4f96"/><circle cx="484" cy="500" r="4.5" fill="#f2a900"/>
-            <text class="b" x="508" y="504" style="font-size:17px">동탄역</text>
-            <text class="s" x="508" y="520">SRT · GTX-A</text>
-            <circle cx="484" cy="600" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="484" cy="600" r="4.5" fill="#f2a900"/>
-            <text class="s" x="500" y="605">오산</text>
-            <circle cx="350" cy="340" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="350" cy="340" r="4.5" fill="#f2a900"/>
-            <text class="b" x="350" y="386" text-anchor="middle" style="font-size:16px">영통역</text>
+            <rect x="456" y="550" width="40" height="20" rx="10" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="468" cy="560" r="4.5" fill="#9b4f96"/><circle cx="484" cy="560" r="4.5" fill="#f2a900"/>
+            <text class="b" x="508" y="564" style="font-size:17px">동탄역</text>
+            <text class="s" x="508" y="580">SRT · GTX-A</text>
+            <circle cx="484" cy="640" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="484" cy="640" r="4.5" fill="#f2a900"/>
+            <text class="s" x="500" y="645">오산</text>
+            <circle cx="352" cy="340" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="352" cy="340" r="4.5" fill="#f2a900"/>
+            <text class="b" x="352" y="386" text-anchor="middle" style="font-size:16px">영통역</text>
             <circle cx="240" cy="340" r="9" fill="#fff" stroke="#000" stroke-width="3"/><circle cx="240" cy="340" r="4.5" fill="#f2a900"/>
             <text class="b" x="240" y="386" text-anchor="middle" style="font-size:16px">망포역</text>
             <text class="s" x="240" y="402" text-anchor="middle">삼성전자</text>
@@ -1128,7 +1131,7 @@ body.is-main #sft{display:none}
 
             <!-- 버스 · 셔틀 -->
             <path d="M690 217L516 314" stroke="#5c6366" stroke-width="1.5" stroke-dasharray="2 4" fill="none"/>
-            <rect x="690" y="150" width="300" height="134" rx="8" fill="#fff" stroke="#c9d2ce"/>
+            <rect x="690" y="150" width="276" height="134" rx="8" fill="#fff" stroke="#c9d2ce"/>
             <text class="nh b" x="708" y="174" style="font-size:14px">기흥역 버스 · 셔틀</text>
             <rect x="708" y="186" width="20" height="20" rx="4" fill="#d6393a"/>
             <text class="nh w b" x="718" y="200" text-anchor="middle" style="font-size:11px">B</text>
@@ -1177,7 +1180,7 @@ body.is-main #sft{display:none}
           <li><span class="ics"><i style="background:#f2a900">B</i><i style="background:#4fa845">E</i></span><div><b>기흥역 더블역세권</b><span>분당선 · 에버라인 환승역. 분당선 기흥 – 동탄 – 오산, 에버라인 기흥 – 광교중앙 연장 예정</span></div></li>
           <li><i style="background:#9b4f96">A</i><div><b>구성역 GTX-A 2정거장(4분)</b><span>기흥역에서 분당선으로 2정거장, GTX-A로 삼성역 19분 · 서울역 24분</span></div></li>
           <li><i style="background:#d14b8f">F</i><div><b>GTX-F 수도권 순환선 예정</b><span><strong>정자역 1정거장</strong> · 수원역 1정거장, 김포공항 등 수도권을 순환</span></div></li>
-          <li><i style="background:#5c6366">IC</i><div><b>수원신갈IC 약 10분</b><span>경부 · 영동고속도로 바로 진입</span></div></li>
+          <li><i style="background:#5c6366">IC</i><div><b>수원신갈IC 약 5분</b><span>경부 · 영동고속도로 바로 진입</span></div></li>
           <li><i style="background:#d6393a">B</i><div><b>서울 직행버스</b><span>기흥역 앞에서 강남 · 서울역 방면</span></div></li>
           <li><i style="background:#1f6fd1">T</i><div><b>기흥역 시외버스 터미널</b><span>대전 · 세종 · 대구 · 부산 · 울산 · 전주 등 전국 주요 거점 도시</span></div></li>
           <li><i style="background:#000;color:#f5ff00">S</i><div><b>대기업 셔틀버스</b><span>삼성전자 · SK하이닉스 등 대기업 10여 개 통근 셔틀 정차</span></div></li>
@@ -1255,7 +1258,7 @@ body.is-main #sft{display:none}
             <rect x="606.1" y="615.6" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(607.5 617) scale(0.3)"/><text class="pl" x="620.1" y="625.1" style="font-size:12.5px">AK몰</text>
             <rect x="485.3" y="656.2" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(486.7 657.6) scale(0.3)"/><text class="pl" x="481.3" y="665.7" text-anchor="end" style="font-size:12.5px">롯데마트 신갈점</text>
             <rect x="433.3" y="47" width="10" height="10" rx="1.6" fill="#ef8a2c"/><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(434.7 48.4) scale(0.3)"/><text class="pl" x="447.3" y="56.5" style="font-size:12.5px">이마트 트레이더스 구성</text>
-            <rect x="765" y="592" width="10" height="10" rx="1.6" fill="#d64545"/><path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" fill="#fff" transform="translate(766.4 593.4) scale(0.3)"/><text class="pl" x="779" y="601.5" style="font-size:12.5px">용인세브란스병원 →</text>
+            <rect x="815" y="592" width="10" height="10" rx="1.6" fill="#d64545"/><path d="M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z" fill="#fff" transform="translate(816.4 593.4) scale(0.3)"/><text class="pl" x="829" y="601.5" style="font-size:12.5px">용인세브란스병원 →</text>
             <circle cx="530.3" cy="402.4" r="6" fill="#fff" stroke="#f0a030" stroke-width="3"/>
             <text class="st" x="515.3" y="408" text-anchor="end" style="font-size:14px">신갈역</text>
             <circle cx="748.7" cy="698.9" r="6" fill="#fff" stroke="#6fb35f" stroke-width="3"/>
@@ -1268,17 +1271,10 @@ body.is-main #sft{display:none}
             
             <circle cx="600" cy="600" r="15.5" fill="#fff"/><path d="M600 589A11 11 0 0 0 600 611" fill="none" stroke="#f0a030" stroke-width="5"/><path d="M600 589A11 11 0 0 1 600 611" fill="none" stroke="#6fb35f" stroke-width="5"/><path d="M8 3h8a3 3 0 013 3v8a3 3 0 01-2 2.8L18.5 20h-2l-1.4-3H8.9L7.5 20h-2l1.5-3.2A3 3 0 015 14V6a3 3 0 013-3zm-1 4v4h10V7zm1.5 6.5a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2z" fill="#2b2f33" transform="translate(593.18 593.4) scale(0.572)"/>
             
-            <rect x="516" y="524" width="70" height="90" rx="8" fill="#4f86c6" fill-opacity=".14" stroke="#2f5f9e" stroke-width="1.8" stroke-dasharray="5 3.5"/><text class="pl" x="551" y="585" text-anchor="middle" style="font-size:11px;font-weight:700;fill:#1f4f8a">재건축 추진중</text><text class="pl" x="551" y="600" text-anchor="middle" style="font-size:10px;font-weight:600;fill:#1f4f8a">(6개 아파트)</text>
+            <rect x="524" y="521" width="60" height="66" rx="8" fill="#4f86c6" fill-opacity=".14" stroke="#2f5f9e" stroke-width="1.8" stroke-dasharray="5 3.5"/><text class="pl" x="554" y="552" text-anchor="middle" style="font-size:10px;font-weight:700;fill:#1f4f8a">재건축 추진중</text><text class="pl" x="554" y="566" text-anchor="middle" style="font-size:9.5px;font-weight:600;fill:#1f4f8a">(6개 아파트)</text>
             
-            <g transform="translate(304.4 -76.7) scale(.78)"><rect x="38" y="1124" width="820.5" height="76" rx="0" fill="#fff" stroke="#e1e4e6"/>
-            <circle cx="64" cy="1149" r="7" fill="#fff" stroke="#f0a030" stroke-width="4"/>
-            <text class="w0" x="77" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">수인분당선</text>
-            <circle cx="167" cy="1149" r="7" fill="#fff" stroke="#6fb35f" stroke-width="4"/>
-            <text class="w0" x="180" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">에버라인</text>
-            <circle cx="256" cy="1149" r="7" fill="#fff" stroke="#9b4f96" stroke-width="4"/>
-            <text class="w0" x="269" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">GTX-A</text>
-            <path d="M351 1137V1161" stroke="#e1e4e6" stroke-width="1.5"/>
-            <rect x="361" y="1141" width="16" height="16" rx="3.52" fill="#e2658a" stroke="#fff" stroke-width="1.5"/>
+            <g transform="translate(304.4 -76.7) scale(.78)"><rect x="38" y="1124" width="740" height="50" rx="0" fill="#fff" stroke="#e1e4e6"/>
+            <g transform="translate(-301 0)"><rect x="361" y="1141" width="16" height="16" rx="3.52" fill="#e2658a" stroke="#fff" stroke-width="1.5"/>
             <path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2v4c0 1.9 3.1 3.4 7 3.4s7-1.5 7-3.4v-4l-7 3.8-7-3.8z" fill="#fff" transform="translate(364.04 1144.04) scale(0.413)"/>
             <text class="w0" x="382" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">학교</text>
             <rect x="423" y="1141" width="16" height="16" rx="3.52" fill="#d64545" stroke="#fff" stroke-width="1.5"/>
@@ -1286,8 +1282,8 @@ body.is-main #sft{display:none}
             <text class="w0" x="444" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">병원</text>
             <rect x="485" y="1141" width="16" height="16" rx="3.52" fill="#4a5a7a" stroke="#fff" stroke-width="1.5"/>
             <path d="M12 2L2 7.5V10h20V7.5L12 2zM4 12h3v6H4zm6.5 0h3v6h-3zm6.5 0h3v6h-3zM2 20h20v2.5H2z" fill="#fff" transform="translate(488.04 1144.04) scale(0.413)"/>
-            <text class="w0" x="506" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">관공서 · 업무</text>
-            <g transform="translate(-562 34)"><rect x="628" y="1141" width="16" height="16" rx="3.52" fill="#ef8a2c" stroke="#fff" stroke-width="1.5"/>
+            <text class="w0" x="506" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">관공서 · 업무</text></g>
+            <g transform="translate(-325 0)"><rect x="628" y="1141" width="16" height="16" rx="3.52" fill="#ef8a2c" stroke="#fff" stroke-width="1.5"/>
             <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.4c.8 0 1.4-.4 1.8-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1zm16 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#fff" transform="translate(631.04 1144.04) scale(0.413)"/>
             <text class="w0" x="649" y="1154" style="font-size:14px;font-weight:600;fill:#4a5056">쇼핑 · 마트</text>
             <rect x="725" y="1141" width="16" height="16" rx="3.52" fill="#8a6bbf" stroke="#fff" stroke-width="1.5"/>
@@ -1309,7 +1305,7 @@ body.is-main #sft{display:none}
             <g class="hph"><rect x="551" y="397" width="80" height="17" fill="transparent"/>
             <rect x="553.7" y="400" width="10" height="10" rx="1.6" fill="#8a6bbf"/><path d="M4 4h16v3H4zM5 9h3v9H5zm5.5 0h3v9h-3zM16 9h3v9h-3zM3 20h18v2.5H3z" fill="#fff" transform="translate(555.1 401.4) scale(0.3)"/><text class="pl" x="567.7" y="409.5" style="font-size:12.5px">기흥도서관</text>
             <g class="ph"><rect x="456" y="271" width="268" height="125" rx="4" fill="#fff" stroke="#d2d2d2" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))"/><image href="images/location/library.jpg" x="460" y="275" width="260" height="117" preserveAspectRatio="xMidYMid slice"/></g></g>
-            <g class="hph"><rect x="516" y="524" width="70" height="90" rx="8" fill="transparent"/>
+            <g class="hph"><rect x="524" y="521" width="60" height="66" rx="8" fill="transparent"/>
             <g class="ph"><rect x="417" y="400" width="268" height="120" rx="4" fill="#fff" stroke="#d2d2d2" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))"/><image href="images/location/rebuild.jpg" x="421" y="404" width="260" height="112" preserveAspectRatio="xMidYMid slice"/></g></g>
             <g class="hph"><rect x="748" y="645" width="78" height="22" rx="3" fill="transparent"/>
             <g class="ph"><rect x="663" y="498" width="248" height="143" rx="4" fill="#fff" stroke="#d2d2d2" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))"/><image href="images/location/gangnamdae.jpg" x="667" y="502" width="240" height="135" preserveAspectRatio="xMidYMid slice"/></g></g>
@@ -1328,7 +1324,6 @@ body.is-main #sft{display:none}
             <g class="hph"><path d="M1069.3 606.8L1059.9 604.4L1054.9 603.6L1043.4 602.9L1030.9 603.9L1014.5 607.4L1001.6 612.5L977.1 623L963 629.1L947.4 636.4L941.4 642.7L933 653.7L927.4 666.2L924.3 680.6L919.2 701L911.1 708.5L893.7 712.6L888 717.2L881.1 723.7L874.2 734.9L866.1 749.2L857 752.8L844.2 753.3L825.1 745.7L813.7 744.3L807.8 743.6L797.7 741.5L795.6 741L793.5 740.5L791.6 739.8L790.2 739.2L788.6 738.5L787.3 737.8L785.9 737.1L784.2 736.1L782.2 734.7L780.2 733.5L777.2 731.2L774.3 728.6L772.8 727.2L771.1 725.8L750.9 711.4L740.7 698.9L719.1 675L716.1 671.2L711.4 664.4L710.2 662.5L706.1 657.4L704.6 655.9L700.9 651.8L699.2 649.6L666.9 617.4L656.4 606.8L642.8 602.3L634 599.3L621.4 597.2L610.2 596.1L607.2 596L602.1 596.4L598.7 596.8L595.3 597.4L591.1 598.6L586.7 599.9L582.1 602.1L577.1 605.1L558.3 626.1L528.5 659.5L504.4 683.6L479.2 691.2L477.2 692L464.3 695.7L456 696.6L450.9 697.4L445 700L442 703.7L437.2 705.8L432.6 706.8L414.5 712.6L393.1 723.2L381.7 733.6L379.5 736.2L379.4 742.3L382.2 757.3L382.8 760.7L383.4 762.9L384.7 767.6L390.6 779.8L390 788.6L388.5 794.7L379.8 814.6L356.7 845.1L352.3 853.3L335.5 895.2L333.1 910.1L331.4 920.5L328.4 938.8L326 949.4L320.7 962.2L310.7 973.5L304.9 974.4L297.1 974.9L288.2 979L277.8 991.6L270.6 1008.6L265.2 1030.2L259.9 1045.6L256.3 1060.2L254.2 1074.1L253.5 1080.9L253.2 1085.3L253.2 1098.9L255.2 1109.7L258.6 1117.8L264 1139L284.1 1174L295.1 1198.8L307.3 1241.8L318 1290.4M1082.5 604.5L1069.3 606.8" fill="none" stroke="transparent" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" pointer-events="stroke" clip-path="url(#sgcHit)"/><clipPath id="sgcHit"><rect x="655" y="625" width="130" height="105"/></clipPath>
             <g class="ph"><rect x="786" y="530" width="178" height="180" rx="4" fill="#fff" stroke="#d2d2d2" style="filter:drop-shadow(0 4px 10px rgba(0,0,0,.18))"/><image href="images/location/singalcheon.jpg" x="790" y="534" width="170" height="172" preserveAspectRatio="xMidYMid slice"/></g></g>
             <text x="626" y="670" text-anchor="middle" style="font-size:10.5px;font-weight:600;letter-spacing:.08em;fill:#2f5f9e;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;pointer-events:none">기흥역세권</text>
-            <text class="w0" x="970" y="795" text-anchor="end" style="font-size:9.5px;fill:#9aa1a5">© OpenStreetMap contributors</text>
           </svg>
           </div>
 <p class="map-cap">※ 본 지도의 위치도는 OpenStreetMap 지도 데이터를 참조하여 소비자의 이해를 돕기 위해 제작한 것으로, 실제와 다를 수 있습니다.</p>
@@ -1521,6 +1516,9 @@ body.is-main #sft{display:none}
             </g>
             <!-- 생활시설 -->
             <path d="M340.6,221 L340.4,276.3 L366.3,276.9 L368.9,274.8 L371.9,271.3 L374.5,266.5 L376.4,258.7 L376.6,253.1 L376.1,249 L374.8,245.3 L373.4,242.6 L371.8,240.3 L370.6,238.7 L370,221.3 L340.6,221Z" fill="#ebebeb"/>
+            <!-- 어린이공원 (AK& 기흥 남측 맞은편) -->
+            <path d="M327,297.5 L390.5,296 L392.5,323 L372,319 L352,311.5 L333,315.5 L329.5,333 L327,333Z" fill="#d9e8d2"/>
+            <text x="359" y="306.5" text-anchor="middle" font-size="9.5" fill="#5f8a55" font-weight="600" letter-spacing="-.3">어린이공원</text>
             <!-- 단지 (OSM 단지 경계) -->
             <path class="blk" data-i="0" d="M410.4,191.7 L397.6,191.3 L386.8,193.7 L379,210.4 L380.5,272.5 L383.6,283.4 L409.6,278.8 L425.4,272.5 L437.3,263.1 L461.3,236.7 L474.9,220.4 L471.4,210.1 L466.9,202.7 L450.2,198.7 L428.9,194.1 L410.4,191.7Z"/>
             <path class="blk" data-i="1" d="M479.1,358.7 L429.3,290.2 L440.5,282.5 L454,269.6 L466.4,256.9 L472.1,250.2 L491.1,258.2 L510.1,267.4 L533.9,280 L551.9,292 L575.1,307.3 L589.9,320 L598.1,326.4 L604.4,332.9 L606.7,336.2 L593,346.2 L559.3,354 L508.6,358.3 L479.1,358.7Z"/>
