@@ -725,11 +725,12 @@ body.hd-hide .gal{top:calc(var(--ph) + 20px)}
 .g-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .g-main.tall img{object-fit:contain}
 .g-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--g4);text-align:center;padding:20px}
-.g-ph svg{width:40px;height:40px}
+.g-ph[hidden]{display:none}.g-ph svg{width:40px;height:40px}
 .g-ph b{color:var(--g2)}
 .g-ph code{font-size:12px;color:var(--g5)}
 .g-cap{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:var(--white);font-weight:700;font-size:15px}
 .g-cnt{font-family:var(--en);font-size:13px;color:var(--g2);white-space:nowrap}
+.g-by{margin-left:8px;font-family:var(--kr);font-size:11px;font-weight:500;color:var(--g3)}
 .g-arr{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--black);display:grid;place-items:center;transition:background-color .2s}
 .g-arr:hover{background:var(--yellow)}
 .g-arr svg{width:18px;height:18px}
@@ -2369,7 +2370,7 @@ function showPhoto(k){
   if(!gList.length)return;
   gK=(k+gList.length)%gList.length;const p=gList[gK],img=$("gImg"),gm=$("gMain");
   $("gCnt").textContent=`${gK+1} / ${gList.length}`;
-  $("gCap").textContent=p.cap;
+  $("gCap").innerHTML=esc(p.cap)+(p.up?`<span class="g-by">입주민 제공</span>`:"");
   $("gPath").textContent=p.src;
   img.hidden=true;$("gPh").hidden=false;gm.classList.remove("tall");gm.style.removeProperty("--gbg");
   img.onload=()=>{img.hidden=false;$("gPh").hidden=true;const tall=img.naturalHeight>img.naturalWidth;gm.classList.toggle("tall",tall);if(tall)gm.style.setProperty("--gbg",`url("${p.src}")`)};
@@ -2781,7 +2782,7 @@ function loadUp(slug){
   sbc().then(async sb=>{
     const {data,error}=await sb.from("photos").select("path,cat,caption").eq("complex_id",slug).eq("status","approved").order("created_at");
     if(error||!data||!data.length){if(error)delete UPX[slug];return}
-    UPX[slug]=data.map(p=>({cat:p.cat,cap:`${p.caption||"입주민 사진"} · 입주민 제공`,src:pubUrl(sb,p.path)}));
+    UPX[slug]=data.map(p=>({cat:p.cat,cap:p.caption||"입주민 사진",up:true,src:pubUrl(sb,p.path)}));
     if(C[di].slug!==slug||document.querySelector(".gal").classList.contains("is-chart"))return;
     const on=$("gCats").querySelector('[aria-pressed="true"]'),k=gK;
     renderCats(on?on.dataset.c:"전체");showPhoto(k);
