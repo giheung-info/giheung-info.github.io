@@ -688,6 +688,86 @@ body.paused .mq div{animation-play-state:paused}
 .nbc-list .v small{font-family:var(--kr);font-size:13px;margin-left:2px}
 .nbc-src{margin-top:14px;font-size:12px;color:var(--g4)}
 @media (max-width:760px){ .nbc-list li{grid-template-columns:1fr 78px;gap:6px 12px} .nbc-list .bar{grid-column:1 / -1;grid-row:2} .nbc-list .v{font-size:19px} }
+/* 북부 재건축 */
+.rdv-go i{background:var(--yellow);color:#000}
+.rzone .rz-area{cursor:pointer}
+.rzone .rz-area path{transition:fill-opacity .3s}
+.rzp{cursor:pointer}
+.rzp:focus{outline:none}
+.rzp rect{fill:#fff;stroke:#000;stroke-width:1;transition:fill .2s}
+.rzp text{font-size:10px;font-weight:600;fill:#000;letter-spacing:-.3px;pointer-events:none}
+.rzp tspan{font-family:var(--en);font-weight:700}
+.rzp:hover rect,.rzp:focus-visible rect,.rzp.on rect{fill:#000}
+.rzp:hover text,.rzp:focus-visible text,.rzp.on text{fill:var(--yellow)}
+.rzp text.pt{font-size:8.5px;font-weight:500;fill:#858c8f;letter-spacing:-.1px}
+.rzp text.pt tspan{fill:#000}
+.rzp:hover text.pt,.rzp:focus-visible text.pt,.rzp.on text.pt{fill:#aab4b5}
+.rzp:hover text.pt tspan,.rzp:focus-visible text.pt tspan,.rzp.on text.pt tspan{fill:#fff}
+.rdv{margin-top:clamp(56px,6vw,96px);scroll-margin-top:calc(var(--hh) + var(--ph) + 20px)}
+.rdv-sum{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--g1)}
+.rdv-sum div{padding:22px 20px 22px 0}
+.rdv-sum div+div{padding-left:20px;border-left:1px solid var(--g1)}
+.rdv-sum b{display:block;font-family:var(--en);font-size:clamp(28px,2.6vw,38px);font-weight:700;letter-spacing:-.05em;line-height:1.1}
+.rdv-sum b small{margin-left:3px;font-family:var(--kr);font-size:14px;font-weight:700;letter-spacing:-.03em}
+.rdv-sum span{display:block;margin-top:8px;font-size:12.5px;line-height:1.55;color:var(--g4)}
+.rdv-steps{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0;margin:26px 0 14px;font-size:12.5px;font-weight:700;color:var(--g5);counter-reset:st}
+.rdv-steps li{counter-increment:st;display:flex;align-items:center}
+.rdv-steps li::before{content:counter(st,decimal-leading-zero);margin-right:5px;font-family:var(--en);font-size:11px;color:var(--g3)}
+.rdv-steps li+li::after{order:-1;content:"";width:18px;height:1px;margin:0 10px;background:var(--g2)}
+.rdv-steps .lg{margin-left:auto;gap:14px;font-weight:600;color:var(--g4)}
+.rdv-steps .lg::before,.rdv-steps .lg::after{display:none}
+.rdv-steps .lg span{display:flex;align-items:center;gap:6px}
+.rdv-steps .lg i{width:16px;height:6px;background:#000}
+.rdv-steps .lg i.c{background:var(--yellow);box-shadow:inset 0 0 0 1px #000}
+.rdv-steps .lg i.n{background:var(--g1)}
+.rdv-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:12px}
+.rdv-c{display:flex;flex-direction:column;gap:16px;padding:22px;border:1px solid var(--g1);background:#fff;transition:border-color .25s,box-shadow .25s}
+.rdv-c:hover{border-color:#000}
+.rdv-c.on{border-color:#000;box-shadow:0 0 0 2px #000,0 0 0 6px var(--yellow)}
+.rc-hd{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.rc-hd .z{padding:2px 7px;font-size:11px;font-weight:700;background:#000;color:var(--yellow)}
+.rc-hd b{font-size:20px;font-weight:800;letter-spacing:-.04em}
+.rc-hd .pt{display:flex;flex-wrap:wrap;gap:4px;align-self:center}
+.rc-hd .pt i{padding:1px 7px;font-style:normal;font-family:var(--en);font-size:12px;font-weight:700;border:1px solid var(--g2);border-radius:999px;color:var(--g5)}
+.rc-hd .pt i.on{border-color:#000;background:#000;color:#fff}
+.rc-hd .ex{flex-basis:100%;margin-top:-2px;font-size:12px;color:var(--g4)}
+.rc-hd em{margin-left:auto;font-style:normal;font-size:12px;font-weight:700;color:var(--g5)}
+.rc-bar{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.rc-bar i{height:6px;background:var(--g1)}
+.rc-bar i.d{background:#000}
+.rc-bar i.c{background:var(--yellow);box-shadow:inset 0 0 0 1px #000;animation:rcPulse 1.6s ease-in-out infinite}
+@keyframes rcPulse{50%{opacity:.45}}
+@media (prefers-reduced-motion:reduce){.rc-bar i.c{animation:none}}
+.rc-px{display:grid;grid-template-columns:1fr auto 1.25fr;align-items:center;gap:12px;padding:16px;background:var(--g0)}
+.rc-px small{display:block;font-size:11.5px;font-weight:700;color:var(--g4)}
+.rc-px b{display:block;margin:2px 0;font-family:var(--en);font-size:26px;font-weight:700;letter-spacing:-.05em;line-height:1.15}
+.rc-px b small{display:inline;margin-left:2px;font-family:var(--kr);font-size:13px;color:inherit}
+.rc-px span{font-size:12px;color:var(--g4)}
+.rc-px .ar{width:22px;height:22px;color:var(--g3)}
+.rc-px .fut{padding:10px 12px;background:#000;color:#fff}
+.rc-px .fut small,.rc-px .fut span{color:#9aa3a6}
+.rc-px .fut b{color:var(--yellow)}
+.rc-px .fut.na b{font-size:16px;color:#fff}
+.rc-meta{display:grid;gap:8px;margin:0;font-size:13px;line-height:1.5}
+.rc-meta div{display:grid;grid-template-columns:52px 1fr;gap:8px}
+.rc-meta dt{font-weight:700;color:var(--g4)}
+.rc-meta dd{margin:0;font-weight:600}
+.rc-meta dd i{display:inline-block;margin-left:6px;padding:0 6px;font-style:normal;font-size:11px;font-weight:700;background:var(--yellow);color:#000;vertical-align:1px}
+.rc-meta dd small{display:block;font-size:12px;font-weight:500;color:var(--g4)}
+.rc-meta dd.tbd{color:var(--g4)}
+.rc-x{margin-top:auto;padding-top:12px;border-top:1px dashed var(--g2);font-size:12px;line-height:1.55;color:var(--g5)}
+.rdv-note{margin-top:14px;font-size:12.5px;line-height:1.6;color:var(--g5)}
+.rdv-note b{color:#000}
+@media (max-width:760px){
+  .rdv-sum{grid-template-columns:repeat(2,1fr)}
+  .rdv-sum div,.rdv-sum div+div{padding:16px 12px;border-left:0}
+  .rdv-sum div:nth-child(even){border-left:1px solid var(--g1)}
+  .rdv-sum div:nth-child(-n+2){border-bottom:1px solid var(--g1)}
+  .rdv-steps{font-size:10.5px;letter-spacing:-.06em}
+  .rdv-c{padding:18px}
+  .rc-px{padding:12px;gap:8px}
+  .rc-px b{font-size:22px}
+}
 .pr-rc{margin-top:10px;font-size:12.5px;font-weight:500;color:var(--g4);text-align:right}.pr-rc:empty{display:none}.pr-rc b{font-weight:700;color:#3a3f44}
 .inf-pr .pr-rc{margin-top:4px;font-weight:500}
 .inf-pr .pr-rc b{font-family:inherit;font-size:inherit;font-weight:700;letter-spacing:0;line-height:inherit}
@@ -1485,7 +1565,7 @@ body.is-main #sft{display:none}
     <div class="cx-head">
       <p><small>COMPLEX MAP</small>기흥역세권 1 · 2지구 1군 브랜드 7개 단지</p>
       <div class="cx-links">
-        <a class="kchat nbc-go cmp-go" id="cmpGo" href="#/complex"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 4h18v16H3zm2 2v3h4V6zm6 0v3h8V6zM5 11v3h4v-3zm6 0v3h8v-3zM5 16v2h4v-2zm6 0v2h8v-2z"/></svg></i>단지별 비교표</a><a class="kchat nbc-go" id="nbcGo" href="#/complex"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 19h16v1.6H4zM5.5 11h3v6.5h-3zm5-4h3v10.5h-3zm5 2.5h3v8h-3z"/></svg></i>주변 입지 시세 비교</a>
+        <a class="kchat nbc-go cmp-go" id="cmpGo" href="#/complex"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 4h18v16H3zm2 2v3h4V6zm6 0v3h8V6zM5 11v3h4v-3zm6 0v3h8v-3zM5 16v2h4v-2zm6 0v2h8v-2z"/></svg></i>단지별 비교표</a><a class="kchat nbc-go" id="nbcGo" href="#/complex"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 19h16v1.6H4zM5.5 11h3v6.5h-3zm5-4h3v10.5h-3zm5 2.5h3v8h-3z"/></svg></i>주변 입지 시세 비교</a><a class="kchat nbc-go rdv-go" id="rdvGo" href="#rdv"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 20h18v1.6H3zM5 10l4-3v12H5zm6-6 4 3v12h-4zm6 6 2 1.5V19h-2z"/></svg></i>북부 재건축</a>
         <a class="kchat" id="residentChat" href="https://open.kakao.com/o/sz0BQepc" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 5.9l-.9 3.3c-.1.3.3.6.6.4l3.9-2.6c.4 0 .8.1 1.2.1 5 0 9-3.1 9-7S17 4 12 4z"/></svg></i>기흥역세권 소유주 정보 공유방</a>
       </div>
     </div>
@@ -1631,6 +1711,20 @@ body.is-main #sft{display:none}
               <text x="358" y="248" text-anchor="middle" font-size="10.5" fill="#9aa0a3">AK&amp;</text><text x="358" y="262" text-anchor="middle" font-size="10.5" fill="#9aa0a3">기흥</text>
               <text x="300" y="40" text-anchor="end" fill="#8a9096" font-weight="500">수인분당선</text>
             </g>
+            <!-- 기흥역 북부 재건축 (구갈동 노후 단지, 위치 개략) -->
+            <g class="rzone">
+              <defs><pattern id="rzdot" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".9" fill="#000" fill-opacity=".22"/></pattern></defs>
+              <a class="rz-area" href="#rdv" aria-label="기흥역 북부 재건축 정보로 이동"><path d="M90,6 L308,6 L309,140 L270,150 L246,164 L226,182 L196,212 L134,150 L90,100Z" fill="url(#rzdot)" stroke="#000" stroke-opacity=".55" stroke-width="1" stroke-dasharray="5 3"/>
+              <rect x="98" y="12" width="122" height="36" fill="#000"/>
+              <text x="108" y="28" font-size="12" font-weight="700" fill="#f5ff00" letter-spacing="-.3">북부 재건축</text>
+              <text x="108" y="41" font-size="9" fill="#c9d2ce" letter-spacing=".2">구갈동 7개 단지 · 정비 추진</text></a>
+              <g class="rzp" data-r="4" tabindex="0" role="button" aria-label="구갈한양 28·30·31·35평, 30평 7.2억"><rect x="86" y="52" width="88" height="28" rx="6"/><text x="130" y="64" text-anchor="middle">구갈한양 <tspan>7.2억</tspan></text><text class="pt" x="130" y="75" text-anchor="middle">28 · <tspan>30</tspan> · 31 · 35평</text></g>
+              <g class="rzp" data-r="0" tabindex="0" role="button" aria-label="한성1차 16평 6.6억"><rect x="220" y="52" width="80" height="28" rx="6"/><text x="260" y="64" text-anchor="middle">한성1차 <tspan>6.6억</tspan></text><text class="pt" x="260" y="75" text-anchor="middle"><tspan>16평</tspan> 단일</text></g>
+              <g class="rzp" data-r="5" tabindex="0" role="button" aria-label="두원 24·32평, 24평 5.3억"><rect x="130" y="86" width="70" height="28" rx="6"/><text x="165" y="98" text-anchor="middle">두원 <tspan>5.3억</tspan></text><text class="pt" x="165" y="109" text-anchor="middle"><tspan>24</tspan> · 32평</text></g>
+              <g class="rzp" data-r="3" tabindex="0" role="button" aria-label="기흥동부 24평 7.5억"><rect x="216" y="86" width="86" height="28" rx="6"/><text x="259" y="98" text-anchor="middle">기흥동부 <tspan>7.5억</tspan></text><text class="pt" x="259" y="109" text-anchor="middle"><tspan>24평</tspan></text></g>
+              <g class="rzp" data-r="2" tabindex="0" role="button" aria-label="풍림 19평 4.8억"><rect x="124" y="120" width="70" height="28" rx="6"/><text x="159" y="132" text-anchor="middle">풍림 <tspan>4.8억</tspan></text><text class="pt" x="159" y="143" text-anchor="middle"><tspan>19평</tspan></text></g>
+              <g class="rzp" data-r="1" tabindex="0" role="button" aria-label="한성2차 17평 6억"><rect x="202" y="120" width="76" height="28" rx="6"/><text x="240" y="132" text-anchor="middle">한성2차 <tspan>6억</tspan></text><text class="pt" x="240" y="143" text-anchor="middle"><tspan>17평</tspan> 단일</text></g>
+            </g>
             <circle cx="317" cy="191" r="9" fill="#fff"/><path d="M317 182A9 9 0 0 0 317 200" fill="none" stroke="#f0a030" stroke-width="4.5"/><path d="M317 182A9 9 0 0 1 317 200" fill="none" stroke="#6fb35f" stroke-width="4.5"/>
             <text x="302" y="176" text-anchor="end" font-size="16" fill="#000" font-weight="700" letter-spacing="-.4" paint-order="stroke" stroke="#f4f4f4" stroke-width="4" stroke-linejoin="round">기흥역</text><text x="302" y="160" text-anchor="end" font-size="9.5" fill="#8c9093" paint-order="stroke" stroke="#f4f4f4" stroke-width="3">수인분당선 · 에버라인</text>
             <!-- 핫스팟 -->
@@ -1642,7 +1736,7 @@ body.is-main #sft{display:none}
             <g class="hot" data-i="5" tabindex="0" role="button" aria-label="6번 롯데캐슬"><circle cx="281.3" cy="240.9" r="15"/><text x="281.3" y="246.4" text-anchor="middle">6</text><text class="nm" x="281.3" y="273.9" text-anchor="middle">롯데캐슬</text></g>
             <!-- 방위 · 축척 · 범례 -->
             <g transform="translate(724 34)" fill="#000"><path d="M0 -14 L6 6 L0 2 L-6 6Z"/><text y="22" text-anchor="middle" font-size="11" font-family="Inter Tight,Arial,sans-serif" font-weight="700">N</text></g>
-            <g transform="translate(22 450)" font-size="10.5" fill="#5c6366" letter-spacing="-.2"><rect x="-10" y="-16" width="136" height="108" fill="#f4f4f4" fill-opacity=".92"/><circle cx="7" cy="0" r="6" fill="#fff"/><path d="M7 -6A6 6 0 0 0 7 6" fill="none" stroke="#f0a030" stroke-width="3"/><path d="M7 -6A6 6 0 0 1 7 6" fill="none" stroke="#6fb35f" stroke-width="3"/><text x="22" y="4">기흥역 (환승)</text><path d="M0 20 H14" stroke="#b5b8bb" stroke-width="2.4"/><text x="22" y="24">수인분당선 · 에버라인</text><path d="M0 40 H14" stroke="#d4dfe4" stroke-width="7" stroke-linecap="round"/><text x="22" y="44">신갈천</text><rect x="0" y="53" width="14" height="12" fill="url(#z2hatch)" stroke="#8c9093" stroke-dasharray="2 2"/><text x="22" y="63">2지구 (예정)</text><path d="M0 80 H55.3" stroke="#5c6366" stroke-width="1"/><path d="M0 76 V80 M55.3 76 V80" stroke="#5c6366"/><text x="62" y="84">100m</text></g>
+            <g transform="translate(22 450)" font-size="10.5" fill="#5c6366" letter-spacing="-.2"><rect x="-10" y="-16" width="136" height="128" fill="#f4f4f4" fill-opacity=".92"/><circle cx="7" cy="0" r="6" fill="#fff"/><path d="M7 -6A6 6 0 0 0 7 6" fill="none" stroke="#f0a030" stroke-width="3"/><path d="M7 -6A6 6 0 0 1 7 6" fill="none" stroke="#6fb35f" stroke-width="3"/><text x="22" y="4">기흥역 (환승)</text><path d="M0 20 H14" stroke="#b5b8bb" stroke-width="2.4"/><text x="22" y="24">수인분당선 · 에버라인</text><path d="M0 40 H14" stroke="#d4dfe4" stroke-width="7" stroke-linecap="round"/><text x="22" y="44">신갈천</text><rect x="0" y="53" width="14" height="12" fill="url(#z2hatch)" stroke="#8c9093" stroke-dasharray="2 2"/><text x="22" y="63">2지구 (예정)</text><rect x="0" y="73" width="14" height="12" fill="url(#rzdot)" stroke="#000" stroke-opacity=".55" stroke-dasharray="2 2"/><text x="22" y="83">북부 재건축 (추진)</text><path d="M0 100 H55.3" stroke="#5c6366" stroke-width="1"/><path d="M0 96 V100 M55.3 96 V100" stroke="#5c6366"/><text x="62" y="104">100m</text></g>
           </svg>
       </div>
       <div class="cmap-info">
@@ -1666,6 +1760,20 @@ body.is-main #sft{display:none}
         </div>
       </div>
     </div>
+<div class="rdv" id="rdv">
+<div class="nbc-head"><p><small>NORTH REDEVELOPMENT</small>기흥역 북부 재건축</p><span>구갈동 노후 단지 · 2026.11 기준</span></div>
+<div class="rdv-sum">
+  <div><b>7<small>개 단지</small></b><span>역 북측 1990년대 준공 단지<br>재건축 · 소규모재건축 추진</span></div>
+  <div><b>39<small>층</small></b><span>기흥1 · 2구역 계획 최고층<br>저층 노후 단지 → 고층 신축</span></div>
+  <div><b>대우<small>건설</small></b><span>기흥1구역 시공사 선정 (2026.04)<br>공사비 약 2,553억 원</span></div>
+  <div><b>2034<small>년~</small></b><span>선두 구역 준공 전망<br>나머지 구역은 순차 진행</span></div>
+</div>
+<ol class="rdv-steps" aria-label="재건축 진행 단계"><li>안전진단</li><li>추진위</li><li>구역지정</li><li>조합설립</li><li>시공사</li><li>착공 · 입주</li><li class="lg" aria-hidden="true"><span><i></i>완료</span><span><i class="c"></i>다음 단계</span><span><i class="n"></i>예정</span></li></ol>
+<ul class="rdv-list" id="rdvList"></ul>
+<p class="rdv-note"><b>시세 예측은 추정치입니다.</b> 1지구 2018년 입주 단지의 국평 84㎡ 최근 실거래(10.2 ~ 13.1억)에 신축 연식 프리미엄과 역 거리를 반영한 Station-G 자체 추정이며, 물가 · 공사비 변동과 분담금은 반영하지 않았습니다. 투자 권유가 아닙니다.</p>
+<p class="rdv-note">기흥구는 투기과열지구 · 조정대상지역(2026.07.01~)과 토지거래허가구역(2026.07.05 ~ 2027.12.31)으로 지정되어 조합설립 이후 조합원 지위 양도가 제한될 수 있습니다. 매수 전 단계별 요건을 꼭 확인하세요.</p>
+<p class="nbc-src">출처 · 용인시 정비구역 고시 · 글로벌이코노믹(2026.04) · 한국주택경제신문 · 하우징헤럴드 · 리얼캐스트 · 국토교통부 실거래가(호갱노노 확인, 2026.10). 위치는 개략 표시이며 사업 단계는 조합 공지에 따라 달라질 수 있습니다.</p>
+</div>
 <div class="cmp" id="cmp" hidden>
 <div class="nbc-head"><p><small>COMPARE</small>단지별 비교표 한눈에 보기</p><span>기흥역세권 1지구 6개 단지</span></div>
 <div class="cmp-pick" id="cmpPick"><p>비교할 단지 2개를 골라 보세요</p><div></div></div>
@@ -2067,7 +2175,7 @@ const C=[
    {k:"주차",t:"광폭 주차장 · 여유로운 주차 대수",d:"넓은 주차면에 총 1,647대 (세대당 약 1.25대)"},
    {k:"평면",t:"84㎡ 8개 타입 · 알파룸",d:"A1 ~ A3 4베이 판상형에 방 크기 알파룸, D타입은 현관 · 주방 · 복도 펜트리 특화"},
    {k:"육아",t:"놀이터 · 시립센트럴어린이집",d:"대형 · 소형 놀이터와 야외운동시설, 단지 생활권 안 어린이집"}],
-  community:["피트니스클럽","GX클럽","골프클럽","푸른도서관","독서실","탁구장","입주민 카페 (1316 cafe)","패밀리룸","시니어클럽","어린이집","놀이터 · 야외운동시설","세대 창고"],
+  community:["피트니스클럽","GX클럽","골프클럽","푸른도서관","독서실","탁구장","입주민 카페 (1316 cafe)","패밀리룸","시니어클럽","시립센트럴어린이집","놀이터 · 야외운동시설","세대 창고"],
   views:[{dir:"북동",t:"수원CC",d:"수원CC와 맞닿아 시야가 트여 있음"},{dir:"수변",t:"오산천",d:"일부 세대에서 수변 조망"}],
   src:"경기일보(2015.06) · 비즈한국 · KB부동산 · 리치고 · 네이버 블로그 리치아파트(2025.05 · 2026.10) · 커뮤니티는 분양 당시 계획 기준"},
  {name:"파크 푸르지오",slug:"park",photos:[
@@ -2111,7 +2219,7 @@ const C=[
    {k:"관리",t:"외관 새 도색 · 깔끔한 주차장",d:"최근 외관 도색으로 더 화사해진 단지"},
    {k:"일조",t:"햇살 맛집 · 난방비 절약",d:"남동향 뻥뷰로 주방까지 해가 들어 난방비가 거의 들지 않는다는 입주민 후기"},
    {k:"커뮤니티",t:"골프장 뷰 도서관 · 무료 커피",d:"신간이 자주 들어오는 도서관, 아이들 공간도 마련, 드라마 촬영지로 섭외된 실내체육관"}],
-  community:["실내체육관","게스트룸","헬스장","스크린골프","필라테스","도서관","독서실","어린이집","놀이터","연못형 조경 · 산책로"],
+  community:["실내체육관","게스트룸","헬스장","스크린골프","필라테스","도서관","독서실","시립파크한얼어린이집","놀이터","연못형 조경 · 산책로"],
   views:[{dir:"남측",t:"남부CC",d:"일부 층에서 골프장 조망"},{dir:"동북",t:"수원CC",d:"일부 층에서 골프장 조망"},{dir:"녹지",t:"용뫼산 · 오산천",d:"주민 후기에서 일조와 조망 모두 좋다는 평가"}],
   src:"서울신문(2015.09) · KB부동산 · 리치고 · 네이버 블로그 리치아파트(2025.05) 평면도 분석 · 네이버 카페 입주민 실거주 후기 · 호갱노노 입주민 이야기(2026.10)"},
  {name:"더샵",slug:"thesharp",photos:[
@@ -2143,13 +2251,13 @@ const C=[
    {cat:"커뮤니티",src:"images/thesharp/b18.jpg"},
    {cat:"커뮤니티",src:"images/thesharp/b19.jpg"},
    {cat:"커뮤니티",src:"images/thesharp/b20.jpg"}],price:11.8,recent:["26.10.28",11.05,"17층"],priceX:[["72㎡ 신고가",10.65]],full:"기흥역 더샵",builder:"포스코이앤씨",households:"1,219세대",floors:"최고 47층",movein:"2018.11",
-  desc:"4베이 판상형 위주로 설계되었고, 3,215㎡ 규모의 커뮤니티를 갖추었습니다. 피트니스, 골프연습장, 사우나부터 독서실과 도서관, 어린이집, 시니어 공간까지 아이부터 부모님 세대까지 단지 안에서 생활할 수 있습니다. 단지 상가에는 베이커리와 카페가 있고, 밖으로 나가면 기흥역과 AK플라자, 한얼초등학교를 가까이 이용할 수 있습니다. 남쪽에 높은 건물이 들어설 부지가 없어 지금의 탁 트인 조망이 그대로 유지되는 평생뷰 단지이고, 입주 후 주차면을 100면 더 늘려 세대당 약 1.38대로 주차가 여유롭습니다.",
+  desc:"4베이 판상형 위주로 설계되었고, 3,215㎡ 규모의 커뮤니티를 갖추었습니다. 피트니스, 골프연습장, 사우나부터 독서실과 도서관, 시립기흥더샵어린이집, 시니어 공간까지 아이부터 부모님 세대까지 단지 안에서 생활할 수 있습니다. 단지 상가에는 베이커리와 카페가 있고, 밖으로 나가면 기흥역과 AK플라자, 한얼초등학교를 가까이 이용할 수 있습니다. 남쪽에 높은 건물이 들어설 부지가 없어 지금의 탁 트인 조망이 그대로 유지되는 평생뷰 단지이고, 입주 후 주차면을 100면 더 늘려 세대당 약 1.38대로 주차가 여유롭습니다.",
   tags:["3-1블록","아파트 1,219 + 오피스텔 175실","7개동","지하 3층 ~ 지상 47층","전용 72 ~ 172㎡ (7개 타입)","주차 1,585대 (세대당 1.3대)","한얼초등학교 배치"],
   points:[
    {k:"커뮤니티",t:"3,215㎡ 대형 커뮤니티",d:"운동, 학습, 육아, 시니어 시설을 한곳에"},
    {k:"생활",t:"AK플라자 슬리퍼 상권",d:"단지 안에는 베이커리 · 카페 · 상가"},
    {k:"조경",t:"석가산 · 진경산수 조경",d:"석가산과 소나무가 어우러진 정원, 단지 안 산책로"},
-   {k:"교육",t:"한얼초 가까운 초품아급",d:"단지 안 독서실 · 도서관 · 어린이집"},
+   {k:"교육",t:"한얼초 가까운 초품아급",d:"단지 안 독서실 · 도서관 · 시립기흥더샵어린이집"},
    {k:"교통",t:"기흥역 약 407m",d:"지하 3층 커뮤니티 출입구로 나가 공원을 지나면 AK& · 기흥역 4번 출구까지 약 3분"},
    {k:"조망",t:"남쪽이 트인 평생뷰",d:"앞을 가릴 부지가 없어 동탄 메타폴리스 · 신갈저수지까지, 남동향은 용뫼산 · 남부CC 조망"},
    {k:"설계",t:"낮춘 창틀 · 픽처레일",d:"거실 창틀 높이 27cm로 시야각 확대, 거실 전체 픽처레일 기본 설치"},
@@ -2157,7 +2265,7 @@ const C=[
    {k:"외관",t:"멘디니 디자인 · 실리콘페인트",d:"알렉산드로 멘디니 디자인 적용, 오염 · 변색에 강한 고급 외장 마감, 전 세대 LED 조명"},
    {k:"조경",t:"천연암폭포 · 더샵필드",d:"새싹가든, 오감가든, 산책로와 박은선 · 박선기 작가 미술작품"},
    {k:"생활",t:"역세권 유일 사우나 · 물놀이장",d:"여름 어린이 물놀이장(안전요원 운영)과 맘스카페, 단지 내 소아과 · 약국"}],
-  community:["피트니스센터","골프연습장","탁구장","사우나","독서실","작은도서관","시립어린이집","맘스카페","키즈카페","어린이 물놀이장","시니어 공간","텃밭","단지 내 상가 · 카페"],
+  community:["피트니스센터","골프연습장","탁구장","사우나","독서실","작은도서관","시립기흥더샵어린이집","맘스카페","키즈카페","어린이 물놀이장","시니어 공간","텃밭","단지 내 상가 · 카페"],
   views:[{dir:"남측",t:"용뫼산",d:"단지 남쪽 산 조망"},{dir:"수변",t:"오산천",d:"수변 조망"},{dir:"근린",t:"어린이공원",d:"단지 인접 공원"}],
   src:"뉴데일리(2015.08) · 메트로신문 · 이투데이 · KB부동산 · 네이버 블로그 리치아파트(2026.10) 방문 후기 · 호갱노노 입주민 이야기(2026.10) · 네이버 카페 입주민 소개글"},
  {name:"더 퍼스트 푸르지오",slug:"first",photos:[
@@ -2306,9 +2414,9 @@ const EXTRA={
          {t:"경기남부 최대 요충지 기흥역세권 (생활인프라편)",d:"네이버 카페 게시글",u:"https://cafe.naver.com/rainup/2388327"},
          {t:"경기남부 최대 요충지 기흥역세권 (교육편)",d:"네이버 카페 게시글",u:"https://cafe.naver.com/rainup/2393563"},
          {t:"구갈동 기흥역파크푸르지오 살아본 이야기",d:"호갱노노 · 입주민 이야기",u:"https://hogangnono.com/apt/aIR4d"}],
-  faq:[["커뮤니티에는 어떤 시설이 있나요?","기흥역세권에서 유일하게 실내체육관과 게스트룸이 있습니다. 게스트룸은 1박 3만 원 내외로 지인 숙소나 인테리어 공사 중 임시 거처로 쓸 수 있습니다. 그 밖에 헬스장, 스크린골프, 필라테스, 도서관, 독서실, 어린이집이 있습니다."],
+  faq:[["커뮤니티에는 어떤 시설이 있나요?","기흥역세권에서 유일하게 실내체육관과 게스트룸이 있습니다. 게스트룸은 1박 3만 원 내외로 지인 숙소나 인테리어 공사 중 임시 거처로 쓸 수 있습니다. 그 밖에 헬스장, 스크린골프, 필라테스, 도서관, 독서실, 시립파크한얼어린이집이 있습니다."],
        ["삼성 출퇴근이 편한가요?","단지 앞 CU 인근 정류장에서 삼성 기흥 · 화성캠퍼스행 셔틀버스가 매시간 1대씩 운행하며, 이동 시간은 약 20 ~ 30분입니다."],
-       ["아이 키우기에 좋은가요?","단지 바로 앞에 용인한얼초와 병설유치원이 있는 초품아 단지입니다. 단지 안에 놀이터와 녹지, 실내체육관, 독서실, 어린이집이 있어 아이들이 안전하게 지낼 수 있습니다."],
+       ["아이 키우기에 좋은가요?","단지 바로 앞에 용인한얼초와 병설유치원이 있는 초품아 단지입니다. 단지 안에 놀이터와 녹지, 실내체육관, 독서실, 시립파크한얼어린이집이 있어 아이들이 안전하게 지낼 수 있습니다."],
 ["평면 타입은 어떻게 다른가요?","73A · 84A · 84C는 4베이 판상형, 73B · 84B는 타워형이지만 판상형처럼 짜인 구조, 73C · 84D는 타워형입니다. 84D는 거실폭이 4.8m로 넓고, 114㎡는 팔각형 거실창으로 수원CC를 파노라마로 조망할 수 있습니다."],["초등학교와 가까운가요?","용인한얼초 정문까지 약 1분 거리로, 역세권 단지 중 학교와 가장 가깝습니다."],
        ["세대수와 평형 구성은 어떻게 되나요?","아파트 768세대와 오피스텔 226실입니다. 아파트는 전용 73 ~ 149㎡이며 펜트하우스 8세대가 있습니다."],
        ["기흥역까지 얼마나 걸리나요?","역까지 약 565m입니다. 유즈센터 쪽문이나 더샵 방향으로 걸으면 도보 7 ~ 8분이며, 에버라인도 도보 약 7분입니다."],
@@ -2337,8 +2445,8 @@ const EXTRA={
          {t:"경기남부 최대 요충지 기흥역세권 (생활인프라편)",d:"네이버 카페 게시글",u:"https://cafe.naver.com/rainup/2388327"},
          {t:"경기남부 최대 요충지 기흥역세권 (교육편)",d:"네이버 카페 게시글",u:"https://cafe.naver.com/rainup/2393563"},
          {t:"구갈동 기흥역더샵 살아본 이야기",d:"호갱노노 · 입주민 이야기",u:"https://hogangnono.com/apt/aQm81"}],
-  faq:[["커뮤니티 규모는 어느 정도인가요?","총 3,215㎡ 규모로 피트니스, 골프연습장, 탁구장, 사우나, 독서실, 작은도서관이 있고 맘스라운지와 키즈카페는 물놀이장과 이어진 별도 동에 있습니다. 어린이집과 시니어 공간도 갖추고 있습니다."],
-       ["아이 키우기에 좋은가요?","용인한얼초등학교가 가까워 통학이 편하고, 단지 안에 어린이집, 독서실, 도서관이 있어 학습과 등하원 동선을 줄일 수 있습니다."],
+  faq:[["커뮤니티 규모는 어느 정도인가요?","총 3,215㎡ 규모로 피트니스, 골프연습장, 탁구장, 사우나, 독서실, 작은도서관이 있고 맘스라운지와 키즈카페는 물놀이장과 이어진 별도 동에 있습니다. 시립기흥더샵어린이집과 시니어 공간도 갖추고 있습니다."],
+       ["아이 키우기에 좋은가요?","용인한얼초등학교가 가까워 통학이 편하고, 단지 안에 시립기흥더샵어린이집, 독서실, 도서관이 있어 학습과 등하원 동선을 줄일 수 있습니다."],
        ["주변 생활 편의시설은 어떤가요?","기흥역 바로 옆 AK플라자를 걸어서 이용할 수 있고, 단지 상가에 베이커리와 카페 등이 있어 일상적인 장보기와 식사를 가까이에서 해결할 수 있습니다."],
        ["세대수와 평형 구성은 어떻게 되나요?","아파트 1,219세대와 오피스텔 175실입니다. 아파트는 전용 72 ~ 172㎡, 7개 타입입니다."],
        ["기흥역까지 얼마나 걸리나요?","역까지 약 407m입니다."],
@@ -2405,6 +2513,43 @@ document.querySelectorAll(".hot,.cmap .blk").forEach(h=>{
 });
 pick(0);
 $("cMore").onclick=()=>location.hash="#/complex/"+C[ci].slug;
+
+/* ===== 북부 재건축 ===== */
+// st: 완료된 마지막 단계(0 안전진단 ~ 5 착공 · 입주), -1 은 구역 지정 전
+const RDV=[
+  {z:"기흥1구역",n:"한성1차",pt:["16평"],ex:"전용 47㎡ 단일",st:4,now:"사업시행인가 진행",px:6.6,py:"16평",fut:[11.5,13],plan:"지하 3층 ~ 지상 39층 · 6개동 783세대",was:"기존 570세대 (최고 6층)",bd:"대우건설",bdx:"현장설명회 참여 · 삼성물산 · 현대건설 · 포스코이앤씨 · DL이앤씨 · GS건설 등",x:"선두 구역으로 2034년 준공 전망. 조합원 84㎡ 분양가 약 8.7억(초기 추정)."},
+  {z:"기흥2구역",n:"한성2차",pt:["17평"],ex:"전용 47㎡ 단일",st:2,now:"조합설립 준비",px:6,py:"17평",fut:[11.5,13],plan:"최고 39층 · 아파트 7개동 · 약 580세대",was:"정비구역 지정 고시 완료",x:"57형 조합원의 84㎡ 분담금 약 3.3억(초기 추정). 상가 협의가 변수."},
+  {z:"기흥3구역",n:"풍림",pt:["19평"],ex:"전용 48㎡ · 205세대",st:1,now:"조합설립 준비",px:4.8,py:"19평",fut:[10.5,12],plan:"약 300세대 내외 목표",was:"추진위 동의율 94.02%",x:"추진위 승인 후 정비계획 · 조합 설립을 준비하고 있습니다."},
+  {z:"기흥5구역",n:"기흥동부",pt:["24평"],ex:"전용 62㎡ · 약 200세대",st:0,now:"정비계획 수립",px:7.5,py:"24평",fut:[11,12.5],plan:"정비계획 수립 용역 진행",was:"안전진단 통과로 재건축 확정",x:"역과 가장 가까운 축의 중규모 단지로, 정비계획 확정이 다음 관문입니다."},
+  {z:"기흥7구역",n:"구갈한양",pt:["28평","30평","31평","35평"],ex:"전용 83 ~ 102㎡ · 30평이 주력",st:0,now:"정비계획 수립",px:7.2,py:"30평",fut:[10.5,12],plan:"정비계획 수립 용역 진행",was:"기존 624세대 · 1993년 준공",x:"북부 단지 중 세대수가 많은 편이라 사업성이 좋은 축으로 꼽힙니다."},
+  {z:"소규모재건축",n:"신명",pt:["23평"],ex:"전용 62㎡",st:3,now:"사업시행 준비",px:null,py:"",fut:null,plan:"사업시행구역 4,291㎡ · 소규모재건축",was:"기존 약 60세대 · 조합설립 인가(2025.04)",x:"기흥역 초역세권 소규모 단지로, 단지 규모가 작아 시세 추정은 보류했습니다."},
+  {z:"주민 협의",n:"두원",pt:["24평","32평"],ex:"전용 64 · 85㎡",st:-1,now:"구역 지정 전",px:5.3,py:"24평",fut:[10.5,12],plan:"구갈 7개 단지 재건축 간담회 참여",was:"두원 1 · 2차",x:"공식 정비 절차 진입 전 단계로, 일정 변동 폭이 가장 큽니다."}
+];
+const RARR='<svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h15M14 6l6 6-6 6"/></svg>';
+$("rdvList").innerHTML=RDV.map((r,i)=>({r,i})).sort((a,b)=>b.r.st-a.r.st).map(({r,i})=>`<li class="rdv-c" data-r="${i}">
+  <div class="rc-hd"><span class="z">${esc(r.z)}</span><b>${esc(r.n)}</b><span class="pt">${r.pt.map(p=>`<i${p===r.py?' class="on"':""}>${esc(p)}</i>`).join("")}</span><em>${esc(r.now)}</em><small class="ex">${esc(r.ex)}</small></div>
+  <div class="rc-bar" role="img" aria-label="진행 ${r.st+1} / 6 단계">${[0,1,2,3,4,5].map(k=>`<i class="${k<=r.st?"d":k===r.st+1?"c":""}"></i>`).join("")}</div>
+  <div class="rc-px">
+    <div><small>현재 시세</small>${r.px?`<b>${r.px}<small>억</small></b><span>${esc(r.py)} · 구축</span>`:`<b>–</b><span>실거래 확인 중</span>`}</div>${RARR}
+    <div class="fut${r.fut?"":" na"}"><small>입주 후 예측</small>${r.fut?`<b>${r.fut[0]}~${r.fut[1]}<small>억</small></b><span>신축 84㎡ 추정</span>`:`<b>추정 보류</b><span>소규모 단지</span>`}</div>
+  </div>
+  <dl class="rc-meta">
+    <div><dt>계획</dt><dd>${esc(r.plan)}<small>${esc(r.was)}</small></dd></div>
+    <div><dt>시공사</dt>${r.bd?`<dd>${esc(r.bd)}<i>선정</i><small>${esc(r.bdx)}</small></dd>`:`<dd class="tbd">미정 · 조합 설립 후 선정</dd>`}</div>
+  </dl>
+  <p class="rc-x">${esc(r.x)}</p>
+</li>`).join("");
+function rdvPick(i,scroll){
+  document.querySelectorAll(".rzp").forEach(p=>p.classList.toggle("on",+p.dataset.r===i));
+  document.querySelectorAll(".rdv-c").forEach(c=>c.classList.toggle("on",+c.dataset.r===i));
+  if(scroll)document.querySelector(`.rdv-c[data-r="${i}"]`).scrollIntoView({behavior:"smooth",block:"center"});
+}
+document.querySelectorAll(".rzp").forEach(p=>{
+  p.addEventListener("click",()=>rdvPick(+p.dataset.r,true));
+  p.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();rdvPick(+p.dataset.r,true)}});
+});
+document.querySelectorAll(".rdv-c").forEach(c=>c.addEventListener("mouseenter",()=>rdvPick(+c.dataset.r)));
+document.querySelectorAll('#rdvGo,.rz-area').forEach(a=>a.addEventListener("click",e=>{e.preventDefault();$("rdv").scrollIntoView({behavior:"smooth",block:"start"})}));
 
 
 /* ===== 단지 상세 ===== */
@@ -2547,6 +2692,7 @@ document.querySelectorAll(".rv").forEach(el=>io?io.observe(el):el.classList.add(
   const src=$("cmapSvg");
   if(src){
     const s=src.cloneNode(true);s.removeAttribute("id");s.setAttribute("role","img");s.setAttribute("aria-label","기흥역세권 추천 임장 코스 지도");
+    s.querySelectorAll(".rzone").forEach(e=>e.remove());
     s.querySelectorAll(".hot,[id]").forEach(e=>{if(e.classList.contains("hot"))e.remove();else e.removeAttribute("id")});
     s.querySelectorAll(".blk.on").forEach(e=>e.classList.remove("on"));
     const ns="http://www.w3.org/2000/svg",g=document.createElementNS(ns,"g");g.setAttribute("class","gd-route");
@@ -2700,7 +2846,7 @@ $("nbcGo").addEventListener("click",e=>{e.preventDefault();const b=$("nbc");b.hi
   // 원 안: 단지 지도
   const cl=mk("g",{"clip-path":"url(#mgClip)"}),sv=mk("svg",{x:CX-R,y:CY-R,width:2*R,height:2*R,viewBox:VB.join(" ")});
   [...src.children].forEach(e=>{
-    if(e.classList.contains("hot")||(e.tagName==="g"&&/^translate/.test(e.getAttribute("transform")||"")))return;
+    if(e.classList.contains("hot")||e.classList.contains("rzone")||(e.tagName==="g"&&/^translate/.test(e.getAttribute("transform")||"")))return;
     const c=e.cloneNode(true);
     if(c.tagName==="a"){const gg=mk("g",{});[...c.childNodes].forEach(n=>gg.appendChild(n));sv.appendChild(gg);return}
     sv.appendChild(c);
