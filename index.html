@@ -69,7 +69,26 @@ img{max-width:100%}
 @keyframes railpulse{0%{opacity:0;stroke-dashoffset:14}10%{opacity:1}85%{opacity:1}100%{opacity:0;stroke-dashoffset:-100}}
 .splash .s-t{margin-top:clamp(44px,5vw,64px);font-family:var(--en);font-weight:800;font-size:clamp(28px,2.8vw,38px);letter-spacing:-.045em;line-height:.9;color:#fff;opacity:0;animation:soft .9s 1.2s ease forwards}
 .splash .s-k{margin-top:14px;font-family:var(--kr);font-weight:700;font-size:14px;letter-spacing:.32em;padding-left:.32em;color:#aab4b5;opacity:0;animation:soft .9s 1.35s ease forwards}
-@keyframes soft{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.splash .skip{position:absolute;right:var(--side);top:12px;min-height:44px;font-family:var(--en);font-size:11px;font-weight:600;color:#4a4f53;letter-spacing:.2em}
+@keyframes soft{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.splash .skip{position:absolute;right:var(--side);top:12px;min-height:44px;font-family:var(--en);font-size:11px;font-weight:600;color:rgba(255,255,255,.55);letter-spacing:.2em;z-index:3;transition:color .3s}
+.splash .skip:hover{color:#fff}
+/* 인트로 배경 사진 */
+.splash{overflow:hidden;isolation:isolate}
+.splash>*{position:relative;z-index:2}
+.splash .s-bg,.splash .s-veil,.splash .s-grain{position:absolute;inset:0;z-index:0;pointer-events:none}
+.splash .s-bg{background:#000 url(images/intro/sunset-2400.jpg) center 58%/cover no-repeat;opacity:0;transform:scale(1.16);animation:bgin 6.5s cubic-bezier(.22,.61,.36,1) forwards;transition:transform 1.4s cubic-bezier(.4,0,.2,1),filter 1.2s ease;will-change:transform,opacity}
+@media (max-width:1023px){ .splash .s-bg{background-image:url(images/intro/sunset-1200.jpg);background-position:center 52%} }
+@keyframes bgin{0%{opacity:0;transform:scale(1.16);filter:brightness(.6) saturate(.7)}35%{opacity:1}100%{opacity:1;transform:scale(1.04);filter:brightness(1) saturate(1)}}
+.splash .s-veil{z-index:1;background:radial-gradient(ellipse 60% 48% at 50% 50%,rgba(0,0,0,.5),rgba(0,0,0,0) 72%),linear-gradient(180deg,rgba(6,8,12,.6) 0%,rgba(6,8,12,.12) 34%,rgba(6,8,12,.28) 62%,rgba(4,5,8,.9) 100%)}
+.splash .s-grain{z-index:1;opacity:.09;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.splash .s-mark,.splash .s-t,.splash .s-k{filter:drop-shadow(0 2px 18px rgba(0,0,0,.45))}
+.splash .s-mark path{stroke:#c9cfd1}
+.splash .s-k{color:rgba(255,255,255,.78)}
+.splash .s-cap{position:absolute;left:var(--side);right:var(--side);bottom:clamp(22px,4vh,40px);display:flex;justify-content:space-between;align-items:flex-end;gap:16px;font-family:var(--en);font-size:10.5px;font-weight:600;letter-spacing:.24em;color:rgba(255,255,255,.62);text-transform:uppercase;opacity:0;animation:soft 1.1s 1.5s ease forwards}
+.splash .s-bar{position:absolute;left:0;bottom:0;height:2px;width:100%;background:rgba(255,255,255,.12);z-index:3}
+.splash .s-bar::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,255,0,.2),var(--yellow));transform:scaleX(0);transform-origin:left;animation:barfill 3s cubic-bezier(.6,0,.2,1) .2s forwards}
+@keyframes barfill{to{transform:scaleX(1)}}
+.splash.done .s-bg{transform:scale(1.1);filter:brightness(1.15) blur(2px)}
+@media (max-width:640px){ .splash .s-cap .c-r{display:none} }
 /* ===== HEADER ===== */
 #hd{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--hh);transition:background-color .3s ease,transform .35s ease}
 body.is-main #hd{background:var(--black)}
@@ -443,6 +462,24 @@ body.paused .mq div{animation-play-state:paused}
 .cmap-fig{position:relative;background:var(--g0)}
 .cmap-fig svg{display:block;width:100%;height:auto}
 .cmap-fig text{font-family:var(--kr)}
+.dr-go{position:absolute;top:3.2%;right:8.6%;display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px 0 10px;border-radius:999px;background:#000;color:#fff;font-size:12px;font-weight:700;letter-spacing:-.02em;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:background .2s,color .2s}
+.dr-go svg{width:14px;height:14px}
+.dr-go:hover,.dr-go:focus-visible{background:var(--yellow);color:#000}
+.drv{width:min(1080px,calc(100% - 24px));max-height:calc(100% - 24px);padding:0;border:0;border-radius:10px;background:#0b0c0e;color:#fff;box-shadow:0 20px 60px rgba(0,0,0,.45);overflow:hidden}.drv::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}
+.drv-hd{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+.drv-hd h3{font-size:16px;font-weight:700;margin-right:auto}
+.drv-hd h3 small{margin-left:8px;font-family:var(--en);font-size:11px;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.45)}
+.drv-tab{display:flex;gap:4px;padding:3px;border-radius:999px;background:rgba(255,255,255,.08)}
+.drv-tab button{min-height:30px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:700;color:rgba(255,255,255,.6)}
+.drv-tab button[aria-pressed="true"]{background:#fff;color:#000}
+.drv-x{display:grid;place-items:center;width:40px;height:40px;color:#fff}.drv-x svg{width:18px;height:18px}
+.drv-bd{display:grid;place-items:center;background:#000}
+.drv-bd video,.drv-bd img{display:block;max-width:100%;max-height:calc(100vh - 110px);width:auto;height:auto;object-fit:contain}
+.drv-bd [hidden]{display:none}
+.drv-bd{position:relative}
+.drv-cr{position:absolute;right:12px;bottom:10px;font-family:var(--en);font-size:10px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.7);text-shadow:0 1px 3px rgba(0,0,0,.6);pointer-events:none;transition:bottom .2s}
+.drv-bd.is-v .drv-cr{bottom:56px}
+@media (max-width:640px){ .dr-go{top:2.4%;right:12%;height:28px;padding:0 10px 0 8px;font-size:11.5px} .drv-hd{flex-wrap:wrap;padding-left:16px} .drv-hd h3 small{display:none} .drv-tab{order:3;width:100%;justify-content:space-between;margin-top:-2px}.drv-tab button{flex:1;padding:0 8px} }
 .cmap-cap{position:absolute;left:10px;bottom:8px;font-size:11px;color:var(--g4);background:rgba(244,244,244,.9);padding:2px 8px}
 .cmap .blk{fill:#e1e2e2;stroke:#f4f4f4;stroke-width:2.5;stroke-linejoin:round;cursor:pointer;transition:fill .3s}
 .cmap .blk:hover{fill:#d2d4d4}
@@ -739,7 +776,7 @@ body.hd-hide .gal{top:calc(var(--ph) + 20px)}
 .g-ph code{font-size:12px;color:var(--g5)}
 .g-cap{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:var(--white);font-weight:700;font-size:15px}
 .g-cnt{font-family:var(--en);font-size:13px;color:var(--g2);white-space:nowrap}
-.g-by{margin-left:8px;font-family:var(--kr);font-size:11px;font-weight:500;color:var(--g3)}
+.g-by{font-family:var(--kr);font-size:11px;font-weight:500;color:var(--g3)}
 .g-arr{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--black);display:grid;place-items:center;transition:background-color .2s}
 .g-arr:hover{background:var(--yellow)}
 .g-arr svg{width:18px;height:18px}
@@ -919,9 +956,12 @@ body.is-main #sft{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   .mv *,.scr i::after,.intro span,.hero .ko,.mq div,.splash *{animation:none!important;opacity:1!important;transform:none!important}
+  .splash .s-grain{opacity:.09!important}.splash .s-bar{display:none}
   .js .rv{opacity:1;transform:none;transition:none}
 }
 </style>
+<link rel="preload" as="image" href="images/intro/sunset-2400.jpg" media="(min-width:1024px)">
+<link rel="preload" as="image" href="images/intro/sunset-1200.jpg" media="(max-width:1023px)">
 </head>
 <body class="is-main">
 <script>document.documentElement.classList.add("js")</script>
@@ -930,10 +970,13 @@ body.is-main #sft{display:none}
 
 <!-- 인트로 -->
 <div class="splash" id="splash" aria-hidden="true">
+  <div class="s-bg"></div><div class="s-veil"></div><div class="s-grain"></div>
   <svg class="s-mark" viewBox="0 0 300 150"><path style="--l:150" d="M20 112 C 48 106 66 84 86 64 C 98 52 106 46 114 46 C 122 46 126 54 132 58 C 138 62 142 60 146 56"/><path style="--l:340" class="b" d="M136 105 V 80 H 146 V 104 M150 102 V 50 H 162 V 101 M156 50 V 32 M167 100 V 66 L 180 60 V 99 M185 99 V 84 H 193 V 98"/><path style="--l:110" d="M200 80 C 212 70 224 64 238 64 C 254 64 266 78 282 86"/><path style="--l:280" class="r" d="M20 132 C 90 120 150 104 200 100 C 230 98 260 98 282 98"/><path style="--l:250" class="r" d="M52 140 C 112 128 162 113 212 108 C 242 106 264 106 282 106"/><path class="p" pathLength="100" d="M20 132 C 90 120 150 104 200 100 C 230 98 260 98 282 98"/></svg>
   <p class="s-t">STATION-<span class="g-y">G</span></p>
   <p class="s-k">기흥역세권</p>
   <button class="skip" id="skip" type="button" tabindex="-1">SKIP</button>
+  <div class="s-cap"><span>Yongin · Giheung Station Area</span><span class="c-r">37°16′N&nbsp;&nbsp;127°06′E</span></div>
+  <div class="s-bar"></div>
 </div>
 
 <!-- 헤더 -->
@@ -1449,6 +1492,7 @@ body.is-main #sft{display:none}
     </div>
     <div class="cmap">
       <div class="cmap-fig">
+          <button class="dr-go" id="drGo" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="5" r="2.6"/><circle cx="19" cy="5" r="2.6"/><circle cx="5" cy="19" r="2.6"/><circle cx="19" cy="19" r="2.6"/><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3"/><rect x="9.5" y="9.5" width="5" height="5" rx="1.2"/></svg>드론 영상</button>
           <svg viewBox="0 0 760 585" preserveAspectRatio="xMidYMid meet" id="cmapSvg" role="group" aria-label="1지구 단지 지도 (OpenStreetMap 기반)">
             <rect width="760" height="585" fill="#f4f4f4"/>
             <!-- 골프장 -->
@@ -1601,7 +1645,6 @@ body.is-main #sft{display:none}
             <g transform="translate(724 34)" fill="#000"><path d="M0 -14 L6 6 L0 2 L-6 6Z"/><text y="22" text-anchor="middle" font-size="11" font-family="Inter Tight,Arial,sans-serif" font-weight="700">N</text></g>
             <g transform="translate(22 450)" font-size="10.5" fill="#5c6366" letter-spacing="-.2"><rect x="-10" y="-16" width="136" height="108" fill="#f4f4f4" fill-opacity=".92"/><circle cx="7" cy="0" r="6" fill="#fff"/><path d="M7 -6A6 6 0 0 0 7 6" fill="none" stroke="#f0a030" stroke-width="3"/><path d="M7 -6A6 6 0 0 1 7 6" fill="none" stroke="#6fb35f" stroke-width="3"/><text x="22" y="4">기흥역 (환승)</text><path d="M0 20 H14" stroke="#b5b8bb" stroke-width="2.4"/><text x="22" y="24">수인분당선 · 에버라인</text><path d="M0 40 H14" stroke="#d4dfe4" stroke-width="7" stroke-linecap="round"/><text x="22" y="44">신갈천</text><rect x="0" y="53" width="14" height="12" fill="url(#z2hatch)" stroke="#8c9093" stroke-dasharray="2 2"/><text x="22" y="63">2지구 (예정)</text><path d="M0 80 H55.3" stroke="#5c6366" stroke-width="1"/><path d="M0 76 V80 M55.3 76 V80" stroke="#5c6366"/><text x="62" y="84">100m</text></g>
           </svg>
-        <span class="cmap-cap">지도 데이터 © OpenStreetMap contributors · 단지 경계는 실제와 다를 수 있습니다</span>
       </div>
       <div class="cmap-info">
         <ol class="clist" id="clist" aria-label="단지 선택"></ol>
@@ -1707,9 +1750,9 @@ body.is-main #sft{display:none}
       </ol>
     </div>
     <div class="xgal rv" id="xgal">
-      <figure><img src="images/zone2/01.jpg" alt="용인 기흥역세권2 도시개발사업 공동주택지구 설계공모 당선 조감도" loading="lazy" onerror="this.parentNode.remove()"><figcaption>용인 기흥역세권2 도시개발사업 공동주택지구 설계공모 당선 조감도</figcaption></figure>
-      <figure><img src="images/zone2/02.jpg" alt="기흥역세권 2지구 자이 야간 투시도" loading="lazy" onerror="this.parentNode.remove()"><figcaption>단지 야간 투시도</figcaption></figure>
-      <figure><img src="images/zone2/03.jpg" alt="기흥역세권 2지구 자이 상업시설 투시도" loading="lazy" onerror="this.parentNode.remove()"><figcaption>수변 상업시설 투시도</figcaption></figure>
+      <figure><img src="images/zone2/01.jpg" alt="용인 기흥역세권2 도시개발사업 공동주택지구 설계공모 당선 조감도" loading="lazy" onerror="this.parentNode.remove()"></figure>
+      <figure><img src="images/zone2/02.jpg" alt="기흥역세권 2지구 자이 야간 투시도" loading="lazy" onerror="this.parentNode.remove()"></figure>
+      <figure><img src="images/zone2/03.jpg" alt="기흥역세권 2지구 자이 상업시설 투시도" loading="lazy" onerror="this.parentNode.remove()"></figure>
     </div>
     <p class="note endgap">※ 분양 일정과 세대수는 사업 추진 과정에서 변경될 수 있습니다. 조감도 · 투시도는 소비자의 이해를 돕기 위한 이미지로 실제와 다를 수 있습니다.</p>
   </div>
@@ -1900,32 +1943,59 @@ body.is-main #sft{display:none}
   </form>
 </dialog>
 
+<dialog class="drv" id="drDlg" aria-labelledby="drT">
+  <div class="drv-hd">
+    <h3 id="drT">기흥역세권 드론<small>AERIAL VIEW</small></h3>
+    <div class="drv-tab" id="drTab"><button type="button" data-v="v" aria-pressed="true">영상</button><button type="button" data-v="p0" aria-pressed="false">사진 1</button><button type="button" data-v="p1" aria-pressed="false">사진 2</button><button type="button" data-v="p2" aria-pressed="false">사진 3</button></div>
+    <button type="button" class="drv-x" id="drX" aria-label="닫기"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg></button>
+  </div>
+  <div class="drv-bd">
+    <video id="drVid" data-v="v" src="images/drone/drone.mp4" poster="images/drone/photo-1.jpg" controls muted loop playsinline preload="none"></video>
+    <img data-v="p0" src="images/drone/drone.jpg" alt="기흥역세권 드론 항공 사진 1" loading="lazy" hidden>
+    <img data-v="p1" src="images/drone/photo-1.jpg" alt="기흥역세권 드론 항공 사진 2" loading="lazy" hidden>
+    <img data-v="p2" src="images/drone/photo-2.jpg" alt="기흥역세권 드론 항공 사진 3" loading="lazy" hidden>
+    <span class="drv-cr">by 초지일관</span>
+  </div>
+</dialog>
+
 <script>
-/* 최근 실거래 (국토교통부 실거래 · 호갱노노 확인, 전용 84㎡) */
-const recentTxt=c=>c.recent?`최근 실거래 ${c.recent[0]} · <b>${c.recent[1]}억</b> (${c.recent[2]})`:"";
+(()=>{
+  const dlg=document.getElementById("drDlg"),vid=document.getElementById("drVid"),items=dlg.querySelectorAll(".drv-bd [data-v]"),tabs=document.querySelectorAll("#drTab button");
+  const show=v=>{tabs.forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===v));items.forEach(el=>el.hidden=el.dataset.v!==v);vid.parentNode.classList.toggle("is-v",v==="v");if(v==="v")vid.play().catch(()=>{});else vid.pause()};
+  document.getElementById("drGo").onclick=()=>{dlg.showModal();show("v")};
+  tabs.forEach(b=>b.onclick=()=>show(b.dataset.v));
+  document.getElementById("drX").onclick=()=>dlg.close();
+  dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+  dlg.addEventListener("close",()=>vid.pause());
+})();
+</script>
+
+<script>
+/* 최근 최고 실거래 (최근 2개월 중 최고가 · 국토교통부 실거래 · 호갱노노 확인, 전용 84㎡) */
+const recentTxt=c=>c.recent?`최근 최고 실거래 ${c.recent[0]} · <b>${c.recent[1]}억</b> (${c.recent[2]})`:"";
 /* ===== 단지 데이터 (null → '정보 입력 예정') ===== */
 const C=[
  {name:"힐스테이트",slug:"hillstate",photos:[
-   {cat:"단지 전경",cap:"정원 속 유리 파빌리온과 석가산",src:"images/hillstate/01.jpg"},
-   {cat:"단지 전경",cap:"나무 그늘 아래 숲길 산책로",src:"images/hillstate/02.jpg"},
-   {cat:"단지 전경",cap:"기흥역 · AK플라자와 이어진 단지",src:"images/hillstate/03.jpg"},
-   {cat:"단지 전경",cap:"신갈천에서 바라본 야경",src:"images/hillstate/04.jpg"},
-   {cat:"단지 전경",cap:"고층에서 내려다본 중앙 광장",src:"images/hillstate/05.jpg"},
-   {cat:"조망",cap:"골프장과 녹지가 펼쳐지는 주간 조망",src:"images/hillstate/06.jpg"},
-   {cat:"조망",cap:"도심 너머로 지는 노을",src:"images/hillstate/07.jpg"},
-   {cat:"조망",cap:"녹지 너머 탁 트인 시티뷰",src:"images/hillstate/08.jpg"},
-   {cat:"조망",cap:"산 능선 위로 물드는 저녁 하늘",src:"images/hillstate/09.jpg"},
-   {cat:"단지 전경",cap:"AK플라자와 맞닿은 단지 외관",src:"images/hillstate/b01.jpg"},
-   {cat:"단지 전경",cap:"기흥역에서 단지로 이어지는 연결통로",src:"images/hillstate/b02.jpg"},
-   {cat:"단지 전경",cap:"AK플라자 · 기흥역으로 바로 이어지는 연결 광장",src:"images/hillstate/b16.jpg"},
-   {cat:"단지 전경",cap:"AK플라자와 단지 야경",src:"images/hillstate/b03.jpg"},
-   {cat:"단지 전경",cap:"해 질 녘 단지 외관",src:"images/hillstate/b04.jpg"},
-   {cat:"단지 전경",cap:"단지 앞 광장과 상가",src:"images/hillstate/b05.jpg"},
-   {cat:"단지 전경",cap:"기흥역 앞 단지 전경",src:"images/hillstate/b06.jpg"},
-   {cat:"단지 전경",cap:"49층 타워 외관",src:"images/hillstate/b07.jpg"},
-   {cat:"단지 전경",cap:"기흥역세권 조감도",src:"images/hillstate/b08.jpg"},
-   {cat:"단지 전경",cap:"숲속 휴게 공간 Cabin of Hillstate",src:"images/hillstate/b13.jpg"},
-   {cat:"조망",cap:"고층에서 내려다본 시티뷰",src:"images/hillstate/b09.jpg"}],price:13.1,recent:["26.10.18",12.9,"24층"],full:"힐스테이트 기흥",builder:"현대엔지니어링",households:"976세대",floors:"최고 49층",movein:"2018.08",
+   {cat:"단지 전경",src:"images/hillstate/01.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/02.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/03.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/04.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/05.jpg"},
+   {cat:"조망",src:"images/hillstate/06.jpg"},
+   {cat:"조망",src:"images/hillstate/07.jpg"},
+   {cat:"조망",src:"images/hillstate/08.jpg"},
+   {cat:"조망",src:"images/hillstate/09.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b01.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b02.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b16.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b03.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b04.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b05.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b06.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b07.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b08.jpg"},
+   {cat:"단지 전경",src:"images/hillstate/b13.jpg"},
+   {cat:"조망",src:"images/hillstate/b09.jpg"}],price:13.1,recent:["26.10.18",12.9,"24층"],full:"힐스테이트 기흥",builder:"현대엔지니어링",households:"976세대",floors:"최고 49층",movein:"2018.08",
   desc:"기흥역과 지하로 바로 이어지는 역 앞 단지. AK플라자와 같은 블록에 있고, 지상 주차장과 5층에 공중정원이 조성되어 있는 단지입니다. 기흥역 9번 출구는 2층으로, 3 · 4번 출구는 AK플라자를 통해 단지와 연결되며, 서울 · 경기 방면 광역버스와 고속 · 시외버스 간이정류장도 가까이 있습니다. 입주민들은 역과 쇼핑몰을 품은 「역품아 · 몰품아」 아파트라 비 오는 날에도 우산 없이 출퇴근과 쇼핑을 할 수 있다는 점을 가장 큰 장점으로 꼽습니다.",
   tags:["M2블록","5개동","지하 2층 ~ 지상 49층","전용 72 · 84 · 95㎡","주차 1,270대 (세대당 1.3대)","84㎡ 이하 90% 이상","한얼초등학교 배치"],
   points:[
@@ -1945,37 +2015,38 @@ const C=[
   views:[{dir:"북측",t:"수원CC",d:"골프장 녹지 조망 (일부 세대)"},{dir:"남측",t:"남부CC",d:"골프장 녹지 조망 (일부 세대)"}],
   src:"아주경제(2015.03) · 경기일보(2015.03) · KB부동산 · 리치고 · 네이버 블로그 리치아파트(2025.05) 평면도 분석 · 호갱노노 입주민 이야기(2026.10)"},
  {name:"센트럴 푸르지오",slug:"central",photos:[
-   {cat:"단지 전경",cap:"49층 단지 외관과 단지 내 상가",src:"images/central/00.jpg"},
-   {cat:"단지 전경",cap:"단지 전경",src:"images/central/01.jpg"},
-   {cat:"단지 전경",cap:"녹지 사이로 보이는 49층 단지",src:"images/central/b01.jpg"},
-   {cat:"단지 전경",cap:"단지 안 계단 광장",src:"images/central/b02.jpg"},
-   {cat:"단지 전경",cap:"진경산수 조경",src:"images/central/b03.jpg"},
-   {cat:"단지 전경",cap:"단지 내 상가",src:"images/central/b04.jpg"},
-   {cat:"단지 전경",cap:"녹지와 어우러진 단지",src:"images/central/b11.jpg"},
-   {cat:"단지 전경",cap:"단지 내 보행로",src:"images/central/b12.jpg"},
-   {cat:"단지 전경",cap:"고층 단지 외관",src:"images/central/b13.jpg"},
-   {cat:"단지 전경",cap:"위에서 본 중앙 정원과 놀이터",src:"images/central/b14.jpg"},
-   {cat:"단지 전경",cap:"폭포 정원",src:"images/central/b16.jpg"},
-   {cat:"단지 전경",cap:"단지 앞 신갈천",src:"images/central/b17.jpg"},
-   {cat:"단지 전경",cap:"신갈천 산책로",src:"images/central/b18.jpg"},
-   {cat:"조망",cap:"고층에서 내려다본 수원CC와 녹지",src:"images/central/v09.jpg"},
-   {cat:"조망",cap:"단풍으로 물든 가을 골프장 조망",src:"images/central/v10.jpg"},
-   {cat:"조망",cap:"노을 지는 서쪽 시티뷰",src:"images/central/v06.jpg"},
-   {cat:"조망",cap:"신갈천 · 에버라인 · ICT밸리 조망",src:"images/central/v07.jpg"},
-   {cat:"조망",cap:"고층에서 내려다본 가을 단지 정원",src:"images/central/v04.jpg"},
-   {cat:"조망",cap:"위에서 본 연못 정원",src:"images/central/v05.jpg"},
-   {cat:"조망",cap:"석가산 연못 정원",src:"images/central/v03.jpg"},
-   {cat:"조망",cap:"거실에서 바라본 수원CC 골프장 뷰",src:"images/central/v01.jpg"},
-   {cat:"조망",cap:"통창 너머 펼쳐지는 골프장 · 녹지 조망",src:"images/central/v02.jpg"},
-   {cat:"커뮤니티",cap:"어린이 놀이터",src:"images/central/b05.jpg"},
-   {cat:"커뮤니티",cap:"Share Stop 1316",src:"images/central/b06.jpg"},
-   {cat:"커뮤니티",cap:"커뮤니티 Uz center",src:"images/central/b07.jpg"},
-   {cat:"커뮤니티",cap:"통창 너머 신갈천 뷰 피트니스",src:"images/central/v08.jpg"},
-   {cat:"커뮤니티",cap:"골프연습장",src:"images/central/b08.jpg"},
-   {cat:"커뮤니티",cap:"필라테스룸",src:"images/central/b09.jpg"},
-   {cat:"커뮤니티",cap:"푸른도서관",src:"images/central/b10.jpg"},
-   {cat:"커뮤니티",cap:"Uz center 안내데스크",src:"images/central/b19.jpg"},
-   {cat:"커뮤니티",cap:"패밀리룸 · 시니어클럽",src:"images/central/b20.jpg"}],price:11.9,recent:["26.10.26",10.45,"10층"],full:"기흥역 센트럴 푸르지오",builder:"대우건설",households:"1,316세대",floors:"최고 49층",movein:"2018.06",
+   {cat:"단지 전경",src:"images/central/aerial.jpg"},
+   {cat:"단지 전경",src:"images/central/00.jpg"},
+   {cat:"단지 전경",src:"images/central/01.jpg"},
+   {cat:"단지 전경",src:"images/central/b01.jpg"},
+   {cat:"단지 전경",src:"images/central/b02.jpg"},
+   {cat:"단지 전경",src:"images/central/b03.jpg"},
+   {cat:"단지 전경",src:"images/central/b04.jpg"},
+   {cat:"단지 전경",src:"images/central/b11.jpg"},
+   {cat:"단지 전경",src:"images/central/b12.jpg"},
+   {cat:"단지 전경",src:"images/central/b13.jpg"},
+   {cat:"단지 전경",src:"images/central/b14.jpg"},
+   {cat:"단지 전경",src:"images/central/b16.jpg"},
+   {cat:"단지 전경",src:"images/central/b17.jpg"},
+   {cat:"단지 전경",src:"images/central/b18.jpg"},
+   {cat:"조망",src:"images/central/v09.jpg"},
+   {cat:"조망",src:"images/central/v10.jpg"},
+   {cat:"조망",src:"images/central/v06.jpg"},
+   {cat:"조망",src:"images/central/v07.jpg"},
+   {cat:"조망",src:"images/central/v04.jpg"},
+   {cat:"조망",src:"images/central/v05.jpg"},
+   {cat:"조망",src:"images/central/v03.jpg"},
+   {cat:"조망",src:"images/central/v01.jpg"},
+   {cat:"조망",src:"images/central/v02.jpg"},
+   {cat:"커뮤니티",src:"images/central/b05.jpg"},
+   {cat:"커뮤니티",src:"images/central/b06.jpg"},
+   {cat:"커뮤니티",src:"images/central/b07.jpg"},
+   {cat:"커뮤니티",src:"images/central/v08.jpg"},
+   {cat:"커뮤니티",src:"images/central/b08.jpg"},
+   {cat:"커뮤니티",src:"images/central/b09.jpg"},
+   {cat:"커뮤니티",src:"images/central/b10.jpg"},
+   {cat:"커뮤니티",src:"images/central/b19.jpg"},
+   {cat:"커뮤니티",src:"images/central/b20.jpg"}],price:11.9,recent:["26.09.06",11,"28층"],full:"기흥역 센트럴 푸르지오",builder:"대우건설",households:"1,316세대",floors:"최고 49층",movein:"2018.06",
   desc:"기흥역세권에서 가장 큰 세대수의 대단지로 설계되었습니다. 기흥역과 한얼초등학교 중간(센트럴)에 위치하였으며, 도심 속 골프장 조망을 갖춘 특화된 단지입니다.\n아파트 전 세대가 전용 84㎡입니다. 단지 곳곳에 놀이터와 녹지, 보행공간이 있고 시립센트럴어린이집과 패밀리룸, 시니어클럽까지 갖춰 가족 단위 실거주자를 고려한 단지입니다.",
   tags:["3-2블록","아파트 1,316 + 오피스텔 182실","7개동","지하 3층 ~ 지상 49층","전 세대 전용 84㎡ (8개 타입)","주차 1,647대 (세대당 1.25대)","한얼초등학교 배치"],
   points:[
@@ -2001,30 +2072,30 @@ const C=[
   views:[{dir:"북동",t:"수원CC",d:"수원CC와 맞닿아 시야가 트여 있음"},{dir:"수변",t:"오산천",d:"일부 세대에서 수변 조망"}],
   src:"경기일보(2015.06) · 비즈한국 · KB부동산 · 리치고 · 네이버 블로그 리치아파트(2025.05 · 2026.10) · 커뮤니티는 분양 당시 계획 기준"},
  {name:"파크 푸르지오",slug:"park",photos:[
-   {cat:"단지 전경",cap:"단지 외관",src:"images/park/b01.jpg"},
-   {cat:"단지 전경",cap:"한얼초와 맞닿은 단지와 골프장",src:"images/park/b02.jpg"},
-   {cat:"단지 전경",cap:"단지 야경",src:"images/park/b03.jpg"},
-   {cat:"단지 전경",cap:"분수가 있는 연못형 조경",src:"images/park/b04.jpg"},
-   {cat:"단지 전경",cap:"리조트급 연못 정원과 분수",src:"images/park/b24.jpg"},
-   {cat:"단지 전경",cap:"어린이 놀이터",src:"images/park/b05.jpg"},
-   {cat:"단지 전경",cap:"위에서 본 정원과 놀이터",src:"images/park/b14.jpg"},
-   {cat:"단지 전경",cap:"위에서 본 연못 정원",src:"images/park/b15.jpg"},
-   {cat:"단지 전경",cap:"단지 외관과 진입로",src:"images/park/b16.jpg"},
-   {cat:"단지 전경",cap:"한얼초와 맞닿은 단지",src:"images/park/b17.jpg"},
-   {cat:"단지 전경",cap:"정원 휴게 공간",src:"images/park/b18.jpg"},
-   {cat:"단지 전경",cap:"조합 놀이대",src:"images/park/b19.jpg"},
-   {cat:"조망",cap:"골프장 조망",src:"images/park/b06.jpg"},
-   {cat:"조망",cap:"용뫼산 위로 뜬 무지개",src:"images/park/b07.jpg"},
-   {cat:"조망",cap:"눈 덮인 골프장 조망",src:"images/park/b08.jpg"},
-   {cat:"조망",cap:"가을 골프장 조망",src:"images/park/b20.jpg"},
-   {cat:"조망",cap:"노을 진 용뫼산 조망",src:"images/park/b21.jpg"},
-   {cat:"커뮤니티",cap:"실내체육관",src:"images/park/b09.jpg"},
-   {cat:"커뮤니티",cap:"헬스장",src:"images/park/b10.jpg"},
-   {cat:"커뮤니티",cap:"골프장 뷰 러닝머신",src:"images/park/b11.jpg"},
-   {cat:"커뮤니티",cap:"스크린골프",src:"images/park/b12.jpg"},
-   {cat:"커뮤니티",cap:"도서관",src:"images/park/b13.jpg"},
-   {cat:"커뮤니티",cap:"GX룸",src:"images/park/b22.jpg"},
-   {cat:"커뮤니티",cap:"단지 내 어린이집",src:"images/park/b23.jpg"}],price:10.3,recent:["26.10.17",10.2,"18층"],full:"기흥역 파크 푸르지오",builder:"대우건설",households:"768세대",floors:"최고 40층",movein:"2018.07",
+   {cat:"단지 전경",src:"images/park/b01.jpg"},
+   {cat:"단지 전경",src:"images/park/b02.jpg"},
+   {cat:"단지 전경",src:"images/park/b03.jpg"},
+   {cat:"단지 전경",src:"images/park/b04.jpg"},
+   {cat:"단지 전경",src:"images/park/b24.jpg"},
+   {cat:"단지 전경",src:"images/park/b05.jpg"},
+   {cat:"단지 전경",src:"images/park/b14.jpg"},
+   {cat:"단지 전경",src:"images/park/b15.jpg"},
+   {cat:"단지 전경",src:"images/park/b16.jpg"},
+   {cat:"단지 전경",src:"images/park/b17.jpg"},
+   {cat:"단지 전경",src:"images/park/b18.jpg"},
+   {cat:"단지 전경",src:"images/park/b19.jpg"},
+   {cat:"조망",src:"images/park/b06.jpg"},
+   {cat:"조망",src:"images/park/b07.jpg"},
+   {cat:"조망",src:"images/park/b08.jpg"},
+   {cat:"조망",src:"images/park/b20.jpg"},
+   {cat:"조망",src:"images/park/b21.jpg"},
+   {cat:"커뮤니티",src:"images/park/b09.jpg"},
+   {cat:"커뮤니티",src:"images/park/b10.jpg"},
+   {cat:"커뮤니티",src:"images/park/b11.jpg"},
+   {cat:"커뮤니티",src:"images/park/b12.jpg"},
+   {cat:"커뮤니티",src:"images/park/b13.jpg"},
+   {cat:"커뮤니티",src:"images/park/b22.jpg"},
+   {cat:"커뮤니티",src:"images/park/b23.jpg"}],price:10.3,recent:["26.10.17",10.2,"18층"],full:"기흥역 파크 푸르지오",builder:"대우건설",households:"768세대",floors:"최고 40층",movein:"2018.07",
   desc:"대형 평형과 펜트하우스, 35평, 30평을 두루 갖추었고, 용인한얼초 정문 바로 앞에 있습니다. 뻥 뚫린 용뫼산 조망과 풍부한 일조권을 갖춘 자연친화적인 단지입니다. 모든 타입에서 숲 · 골프장 · 용뫼산 조망을 누릴 수 있고, 기흥역세권에서 유일하게 실내체육관과 게스트룸을 갖추었습니다. 단지 앞 정류장에서 삼성 기흥 · 화성캠퍼스 셔틀버스가 운행하고, 연못형 조경과 놀이터, 산책 동선이 단지 곳곳에 이어집니다. 입주민들은 남동향 뻥뷰로 햇살이 깊게 들어 난방비가 적게 들고, 아이가 창문으로 보일 만큼 초등학교가 가까워 등하교 걱정이 없다는 점을 장점으로 꼽습니다.",
   tags:["3-3블록","아파트 768 + 오피스텔 226실","지하 2층 ~ 지상 40층","전용 73 ~ 149㎡","펜트하우스 8세대","주차 926대 (세대당 1.2대)","한얼초등학교 배치"],
   points:[
@@ -2045,34 +2116,34 @@ const C=[
   views:[{dir:"남측",t:"남부CC",d:"일부 층에서 골프장 조망"},{dir:"동북",t:"수원CC",d:"일부 층에서 골프장 조망"},{dir:"녹지",t:"용뫼산 · 오산천",d:"주민 후기에서 일조와 조망 모두 좋다는 평가"}],
   src:"서울신문(2015.09) · KB부동산 · 리치고 · 네이버 블로그 리치아파트(2025.05) 평면도 분석 · 네이버 카페 입주민 실거주 후기 · 호갱노노 입주민 이야기(2026.10)"},
  {name:"더샵",slug:"thesharp",photos:[
-   {cat:"단지 전경",cap:"THE SHARP 단지 입구",src:"images/thesharp/b01.jpg"},
-   {cat:"단지 전경",cap:"녹지 사이 단지 전경",src:"images/thesharp/b02.jpg"},
-   {cat:"단지 전경",cap:"단지 외관",src:"images/thesharp/b03.jpg"},
-   {cat:"단지 전경",cap:"단지 안 산책로",src:"images/thesharp/b04.jpg"},
-   {cat:"단지 전경",cap:"단지 상가 베이커리",src:"images/thesharp/b05.jpg"},
-   {cat:"단지 전경",cap:"단지 연결 데크와 조경",src:"images/thesharp/b13.jpg"},
-   {cat:"단지 전경",cap:"단지 상가 거리",src:"images/thesharp/b14.jpg"},
-   {cat:"단지 전경",cap:"상가 앞 녹지",src:"images/thesharp/b15.jpg"},
-   {cat:"조망",cap:"구름 아래 펼쳐진 녹지 · 도심 파노라마",src:"images/thesharp/v01.jpg"},
-   {cat:"조망",cap:"고층에서 내려다본 역세권 야경",src:"images/thesharp/v02.jpg"},
-   {cat:"조망",cap:"겹겹이 이어진 산 능선 위 아침 해",src:"images/thesharp/v03.jpg"},
-   {cat:"조망",cap:"운무가 내려앉은 산 능선 조망",src:"images/thesharp/v04.jpg"},
-   {cat:"조망",cap:"거실 창 너머 녹지 조망",src:"images/thesharp/v05.jpg"},
-   {cat:"조망",cap:"창가에서 바라본 숲과 도심",src:"images/thesharp/v06.jpg"},
-   {cat:"조망",cap:"창 너머로 지는 노을",src:"images/thesharp/v07.jpg"},
-   {cat:"조망",cap:"방 창 너머 숲 조망",src:"images/thesharp/v08.jpg"},
-   {cat:"커뮤니티",cap:"커뮤니티 The Sharp Square",src:"images/thesharp/b06.jpg"},
-   {cat:"커뮤니티",cap:"피트니스",src:"images/thesharp/b07.jpg"},
-   {cat:"커뮤니티",cap:"골프연습장",src:"images/thesharp/b08.jpg"},
-   {cat:"커뮤니티",cap:"작은도서관",src:"images/thesharp/b09.jpg"},
-   {cat:"커뮤니티",cap:"어린이 놀이터",src:"images/thesharp/b10.jpg"},
-   {cat:"커뮤니티",cap:"맘스카페와 물놀이장",src:"images/thesharp/b11.jpg"},
-   {cat:"커뮤니티",cap:"시니어하우스",src:"images/thesharp/b12.jpg"},
-   {cat:"커뮤니티",cap:"사우나",src:"images/thesharp/b16.jpg"},
-   {cat:"커뮤니티",cap:"탁구장",src:"images/thesharp/b17.jpg"},
-   {cat:"커뮤니티",cap:"작은도서관 열람 공간",src:"images/thesharp/b18.jpg"},
-   {cat:"커뮤니티",cap:"놀이터 미니하우스",src:"images/thesharp/b19.jpg"},
-   {cat:"커뮤니티",cap:"단지 내 어린이집",src:"images/thesharp/b20.jpg"}],price:11.8,recent:["26.10.28",11.05,"17층"],priceX:[["72㎡ 신고가",10.65]],full:"기흥역 더샵",builder:"포스코이앤씨",households:"1,219세대",floors:"최고 47층",movein:"2018.11",
+   {cat:"단지 전경",src:"images/thesharp/b01.jpg"},
+   {cat:"단지 전경",src:"images/thesharp/b02.jpg"},
+   {cat:"단지 전경",src:"images/thesharp/b03.jpg"},
+   {cat:"단지 전경",src:"images/thesharp/b04.jpg"},
+   {cat:"단지 전경",src:"images/thesharp/b05.jpg"},
+   {cat:"단지 전경",src:"images/thesharp/b13.jpg"},
+   {cat:"단지 전경",src:"images/thesharp/b14.jpg"},
+   {cat:"단지 전경",src:"images/thesharp/b15.jpg"},
+   {cat:"조망",src:"images/thesharp/v01.jpg"},
+   {cat:"조망",src:"images/thesharp/v02.jpg"},
+   {cat:"조망",src:"images/thesharp/v03.jpg"},
+   {cat:"조망",src:"images/thesharp/v04.jpg"},
+   {cat:"조망",src:"images/thesharp/v05.jpg"},
+   {cat:"조망",src:"images/thesharp/v06.jpg"},
+   {cat:"조망",src:"images/thesharp/v07.jpg"},
+   {cat:"조망",src:"images/thesharp/v08.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b06.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b07.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b08.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b09.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b10.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b11.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b12.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b16.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b17.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b18.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b19.jpg"},
+   {cat:"커뮤니티",src:"images/thesharp/b20.jpg"}],price:11.8,recent:["26.10.28",11.05,"17층"],priceX:[["72㎡ 신고가",10.65]],full:"기흥역 더샵",builder:"포스코이앤씨",households:"1,219세대",floors:"최고 47층",movein:"2018.11",
   desc:"4베이 판상형 위주로 설계되었고, 3,215㎡ 규모의 커뮤니티를 갖추었습니다. 피트니스, 골프연습장, 사우나부터 독서실과 도서관, 어린이집, 시니어 공간까지 아이부터 부모님 세대까지 단지 안에서 생활할 수 있습니다. 단지 상가에는 베이커리와 카페가 있고, 밖으로 나가면 기흥역과 AK플라자, 한얼초등학교를 가까이 이용할 수 있습니다. 남쪽에 높은 건물이 들어설 부지가 없어 지금의 탁 트인 조망이 그대로 유지되는 평생뷰 단지이고, 입주 후 주차면을 100면 더 늘려 세대당 약 1.38대로 주차가 여유롭습니다.",
   tags:["3-1블록","아파트 1,219 + 오피스텔 175실","7개동","지하 3층 ~ 지상 47층","전용 72 ~ 172㎡ (7개 타입)","주차 1,585대 (세대당 1.3대)","한얼초등학교 배치"],
   points:[
@@ -2091,29 +2162,29 @@ const C=[
   views:[{dir:"남측",t:"용뫼산",d:"단지 남쪽 산 조망"},{dir:"수변",t:"오산천",d:"수변 조망"},{dir:"근린",t:"어린이공원",d:"단지 인접 공원"}],
   src:"뉴데일리(2015.08) · 메트로신문 · 이투데이 · KB부동산 · 네이버 블로그 리치아파트(2026.10) 방문 후기 · 호갱노노 입주민 이야기(2026.10) · 네이버 카페 입주민 소개글"},
  {name:"더 퍼스트 푸르지오",slug:"first",photos:[
-   {cat:"단지 전경",cap:"단지 외관과 저층부 상가",src:"images/first/b01.jpg"},
-   {cat:"단지 전경",cap:"고층 주상복합 단지",src:"images/first/b02.jpg"},
-   {cat:"단지 전경",cap:"단지 안 조경",src:"images/first/b03.jpg"},
-   {cat:"단지 전경",cap:"단지 정원",src:"images/first/b04.jpg"},
-   {cat:"단지 전경",cap:"멀리서 본 단지 전경",src:"images/first/b05.jpg"},
-   {cat:"단지 전경",cap:"더 퍼스트 푸르지오 사인월",src:"images/first/b10.jpg"},
-   {cat:"단지 전경",cap:"도로변 단지 외관",src:"images/first/b11.jpg"},
-   {cat:"단지 전경",cap:"소나무 정원과 단지",src:"images/first/b12.jpg"},
-   {cat:"단지 전경",cap:"단지 안 쉼터",src:"images/first/b13.jpg"},
-   {cat:"단지 전경",cap:"단지 출입구",src:"images/first/b14.jpg"},
-   {cat:"단지 전경",cap:"단지 동 입구",src:"images/first/b16.jpg"},
-   {cat:"단지 전경",cap:"단지 안 보행로와 조경",src:"images/first/b17.jpg"},
-   {cat:"단지 전경",cap:"노을 진 단지 외관과 기흥역 앞 거리",src:"images/first/b24.jpg"},
-   {cat:"단지 전경",cap:"공원에서 바라본 단지와 AK플라자",src:"images/first/b21.jpg"},
-   {cat:"단지 전경",cap:"단지 안 폭포 연못 정원",src:"images/first/b23.jpg"},
-   {cat:"조망",cap:"고층에서 바라본 신갈천 · 도심 야경",src:"images/first/b22.jpg"},
-   {cat:"커뮤니티",cap:"북카페",src:"images/first/b06.jpg"},
-   {cat:"커뮤니티",cap:"어린이 놀이터",src:"images/first/b07.jpg"},
-   {cat:"커뮤니티",cap:"KIDS STATION",src:"images/first/b08.jpg"},
-   {cat:"커뮤니티",cap:"독서실 STUDY ROOM",src:"images/first/b09.jpg"},
-   {cat:"커뮤니티",cap:"단지 내 어린이집",src:"images/first/b18.jpg"},
-   {cat:"커뮤니티",cap:"커뮤니티 라커룸",src:"images/first/b19.jpg"},
-   {cat:"커뮤니티",cap:"경로당",src:"images/first/b20.jpg"}],price:10.45,recent:["26.10.06",10.28,"23층"],full:"기흥역 더퍼스트 푸르지오 (분양명 지웰 푸르지오)",builder:"대우건설",households:"561세대",floors:"최고 38층",movein:"2017.11",
+   {cat:"단지 전경",src:"images/first/b01.jpg"},
+   {cat:"단지 전경",src:"images/first/b02.jpg"},
+   {cat:"단지 전경",src:"images/first/b03.jpg"},
+   {cat:"단지 전경",src:"images/first/b04.jpg"},
+   {cat:"단지 전경",src:"images/first/b05.jpg"},
+   {cat:"단지 전경",src:"images/first/b10.jpg"},
+   {cat:"단지 전경",src:"images/first/b11.jpg"},
+   {cat:"단지 전경",src:"images/first/b12.jpg"},
+   {cat:"단지 전경",src:"images/first/b13.jpg"},
+   {cat:"단지 전경",src:"images/first/b14.jpg"},
+   {cat:"단지 전경",src:"images/first/b16.jpg"},
+   {cat:"단지 전경",src:"images/first/b17.jpg"},
+   {cat:"단지 전경",src:"images/first/b24.jpg"},
+   {cat:"단지 전경",src:"images/first/b21.jpg"},
+   {cat:"단지 전경",src:"images/first/b23.jpg"},
+   {cat:"조망",src:"images/first/b22.jpg"},
+   {cat:"커뮤니티",src:"images/first/b06.jpg"},
+   {cat:"커뮤니티",src:"images/first/b07.jpg"},
+   {cat:"커뮤니티",src:"images/first/b08.jpg"},
+   {cat:"커뮤니티",src:"images/first/b09.jpg"},
+   {cat:"커뮤니티",src:"images/first/b18.jpg"},
+   {cat:"커뮤니티",src:"images/first/b19.jpg"},
+   {cat:"커뮤니티",src:"images/first/b20.jpg"}],price:10.45,recent:["26.10.06",10.28,"23층"],full:"기흥역 더퍼스트 푸르지오 (분양명 지웰 푸르지오)",builder:"대우건설",households:"561세대",floors:"최고 38층",movein:"2017.11",
   desc:"아파트 전 세대가 4베이 판상형인 주상복합입니다. 동을 V자로 배치해 3면이 열려 있고 맞통풍이 잘 되며, 일부 타입에는 팬트리와 현관 대형창고가 있습니다. 단지 저층부 상가에서 편의점, 카페, 베이커리 등을 바로 이용할 수 있고, 단지 안에는 조경과 산책로, 놀이터와 KIDS STATION, 어린이집, 독서실이 있어 가족 단위로 생활하기 좋습니다. 기흥역세권 2지구가 완성되면 확장된 생활권의 중심부에 자리하게 됩니다. 입주민들은 40평처럼 넓게 빠진 5베이 평면과 넉넉한 수납, 언덕 없는 평지 입지를 가장 큰 장점으로 꼽습니다.",
   tags:["M4블록","아파트 561 + 오피스텔 162실","6개동","지하 2층 ~ 지상 38층","전 세대 전용 84㎡ (A · B · C)","주차 640대 (세대당 1.14대)","구갈초등학교 배치"],
   points:[
@@ -2129,29 +2200,29 @@ const C=[
   views:[],
   src:"이투데이(2015) · 아주경제(2015.02) · KB부동산 · 네이버 블로그 리치아파트(2026.10) 방문 후기 · 호갱노노 입주민 이야기(2026.10) · 네이버 카페 입주민 소개글"},
  {name:"롯데캐슬",slug:"lottecastle",photos:[
-   {cat:"단지 전경",cap:"단지 외관",src:"images/lottecastle/b01.jpg"},
-   {cat:"단지 전경",cap:"단지 야경",src:"images/lottecastle/b02.jpg"},
-   {cat:"단지 전경",cap:"LOTTE CASTLE 저층부 상가",src:"images/lottecastle/b07.jpg"},
-   {cat:"단지 전경",cap:"단지 앞 보행로",src:"images/lottecastle/b08.jpg"},
-   {cat:"단지 전경",cap:"AK플라자 방면 단지 외관",src:"images/lottecastle/b09.jpg"},
-   {cat:"단지 전경",cap:"사거리에서 본 단지",src:"images/lottecastle/b10.jpg"},
-   {cat:"단지 전경",cap:"38층 타워 외관",src:"images/lottecastle/b11.jpg"},
-   {cat:"단지 전경",cap:"소나무 조경과 단지",src:"images/lottecastle/b12.jpg"},
-   {cat:"단지 전경",cap:"동 사이 통로",src:"images/lottecastle/b13.jpg"},
-   {cat:"단지 전경",cap:"단지 앞 오산천",src:"images/lottecastle/b14.jpg"},
-   {cat:"단지 전경",cap:"단지 정원",src:"images/lottecastle/b15.jpg"},
-   {cat:"단지 전경",cap:"필로티 휴게 공간",src:"images/lottecastle/b16.jpg"},
-   {cat:"단지 전경",cap:"단지 출입구",src:"images/lottecastle/b17.jpg"},
-   {cat:"조망",cap:"골프장과 산 조망",src:"images/lottecastle/b03.jpg"},
-   {cat:"조망",cap:"노을 진 시티뷰",src:"images/lottecastle/b04.jpg"},
-   {cat:"조망",cap:"눈 내린 날의 조망",src:"images/lottecastle/b05.jpg"},
-   {cat:"조망",cap:"고층에서 내려다본 설경과 AK플라자",src:"images/lottecastle/b23.jpg"},
-   {cat:"커뮤니티",cap:"피트니스",src:"images/lottecastle/b06.jpg"},
-   {cat:"커뮤니티",cap:"BOOK CAFE 입구",src:"images/lottecastle/b18.jpg"},
-   {cat:"커뮤니티",cap:"북카페 열람 공간",src:"images/lottecastle/b19.jpg"},
-   {cat:"커뮤니티",cap:"탁구대",src:"images/lottecastle/b20.jpg"},
-   {cat:"커뮤니티",cap:"GOLF CLUB",src:"images/lottecastle/b21.jpg"},
-   {cat:"커뮤니티",cap:"FITNESS CLUB",src:"images/lottecastle/b22.jpg"}],price:9.6,recent:["26.10.03",9.6,"28층"],priceLab:"국평 84㎡ 최근 실거래",priceTag:"실거래 등록",full:"기흥역 롯데캐슬 레이시티",builder:"롯데건설",households:"260세대",floors:"최고 38층",movein:"2017.11",
+   {cat:"단지 전경",src:"images/lottecastle/b01.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b02.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b07.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b08.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b09.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b10.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b11.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b12.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b13.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b14.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b15.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b16.jpg"},
+   {cat:"단지 전경",src:"images/lottecastle/b17.jpg"},
+   {cat:"조망",src:"images/lottecastle/b03.jpg"},
+   {cat:"조망",src:"images/lottecastle/b04.jpg"},
+   {cat:"조망",src:"images/lottecastle/b05.jpg"},
+   {cat:"조망",src:"images/lottecastle/b23.jpg"},
+   {cat:"커뮤니티",src:"images/lottecastle/b06.jpg"},
+   {cat:"커뮤니티",src:"images/lottecastle/b18.jpg"},
+   {cat:"커뮤니티",src:"images/lottecastle/b19.jpg"},
+   {cat:"커뮤니티",src:"images/lottecastle/b20.jpg"},
+   {cat:"커뮤니티",src:"images/lottecastle/b21.jpg"},
+   {cat:"커뮤니티",src:"images/lottecastle/b22.jpg"}],price:9.6,recent:["26.10.03",9.6,"28층"],priceLab:"국평 84㎡ 최근 실거래",priceTag:"실거래 등록",full:"기흥역 롯데캐슬 레이시티",builder:"롯데건설",households:"260세대",floors:"최고 38층",movein:"2017.11",
   desc:"기흥역세권에서 가장 먼저 분양한 단지로, 기흥역 5번 출구에서 30초 거리입니다. 단지 앞에 고속 · 시외버스 간이정류장이 있어 서울과 지방 이동이 편하고, 1 · 2층에는 병원, 음식점, 카페 등 상가가 들어선 단지형 주상복합입니다. 84㎡ 단일 면적이지만 판상형(A · D)과 타워형(B · C) 4개 타입으로 구성되어 있습니다. 입주민들은 역에서 올라오면 바로 집이라 눈 · 비 오는 날에도 편하고, 개발단지 초입이라 저층까지 시야가 탁 트여 있으며, 늦은 시간에도 주차가 여유롭다는 점을 장점으로 꼽습니다.",
   tags:["M1블록","아파트 260 + 오피스텔 403실","지하 4층 ~ 지상 38층","아파트 전 세대 전용 84㎡ (A · B · C · D)","남향 위주 배치","주차 310대 (세대당 1.19대)","구갈초등학교 배치"],
   points:[
@@ -2382,19 +2453,19 @@ function setCat(k){
   const ps=photosOf(C[di]);
   gList=k==="전체"?ps:ps.filter(p=>p.cat===k);
   $("gCats").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.c===k?"true":"false"));
-  $("gThumbs").innerHTML=gList.map((p,n)=>`<li><button type="button" data-k="${n}" aria-label="${esc(p.cap)}"><span class="t-ph">${esc(p.cap)}</span><img src="${esc(p.src)}" alt="" loading="lazy" onerror="this.remove()"></button></li>`).join("");
+  $("gThumbs").innerHTML=gList.map((p,n)=>`<li><button type="button" data-k="${n}" aria-label="${esc(p.cat)} 사진 ${n+1}"><span class="t-ph"></span><img src="${esc(p.src)}" alt="" loading="lazy" onerror="this.remove()"></button></li>`).join("");
   showPhoto(0);
 }
 function showPhoto(k){
   if(!gList.length)return;
   gK=(k+gList.length)%gList.length;const p=gList[gK],img=$("gImg"),gm=$("gMain");
   $("gCnt").textContent=`${gK+1} / ${gList.length}`;
-  $("gCap").innerHTML=esc(p.cap)+(p.up?`<span class="g-by">입주민 제공</span>`:"");
+  $("gCap").innerHTML=p.up?`<span class="g-by">입주민 제공</span>`:""; // 사진 설명 없음, 입주민 사진에만 표시
   $("gPath").textContent=p.src;
   img.hidden=true;$("gPh").hidden=false;gm.classList.remove("tall");gm.style.removeProperty("--gbg");
   img.onload=()=>{img.hidden=false;$("gPh").hidden=true;const tall=img.naturalHeight>img.naturalWidth;gm.classList.toggle("tall",tall);if(tall)gm.style.setProperty("--gbg",`url("${p.src}")`)};
   img.onerror=()=>{img.hidden=true;$("gPh").hidden=false};
-  img.alt=`${C[di].name} ${p.cap}`;img.src=p.src;
+  img.alt=`${C[di].name} ${p.cat} 사진`;img.src=p.src;
   $("gThumbs").querySelectorAll("button").forEach(b=>{const on=+b.dataset.k===gK;b.setAttribute("aria-current",on?"true":"false");if(on)b.scrollIntoView({block:"nearest",inline:"nearest"})});
 }
 $("gCats").addEventListener("click",e=>{const b=e.target.closest("button");if(b)setCat(b.dataset.c)});
@@ -2764,7 +2835,7 @@ const CMP={
   ["상권",c=>esc(CMP[c.slug].mall)],
   ["주요 특징",c=>CMP[c.slug].pts.map(x=>"· "+esc(x)).join("<br>")],
   ["국평 신고가",c=>c.price?`<b>${c.price}억</b><small>${esc(c.priceLab||"국평 84㎡ 신고가")}</small>`:"-"],
-  ["최근 실거래",c=>c.recent?`<b>${c.recent[1]}억</b><small>${esc(c.recent[0])} · ${esc(c.recent[2])}</small>`:"-"]
+  ["최근 최고 실거래",c=>c.recent?`<b>${c.recent[1]}억</b><small>${esc(c.recent[0])} · ${esc(c.recent[2])}</small>`:"-"]
  ];
  T.innerHTML=`<thead><tr><th scope="col">구분</th>${cols.map((c,i)=>`<th scope="col" data-slug="${c.slug}" data-c="${i}"><small>${String(C.indexOf(c)+1).padStart(2,"0")}</small>${esc(c.name)}</th>`).join("")}</tr></thead><tbody>${rows.map(([k,f])=>`<tr${k==="주요 특징"?' class="tall"':""}><th scope="row">${k}</th>${cols.map((c,i)=>`<td data-c="${i}">${f(c)}</td>`).join("")}</tr>`).join("")}</tbody>`;
  /* 원하는 단지만 골라 보기 (모바일은 2개씩 나란히) */
@@ -2801,7 +2872,7 @@ function loadUp(slug){
   sbc().then(async sb=>{
     const {data,error}=await sb.from("photos").select("path,cat,caption").eq("complex_id",slug).eq("status","approved").order("created_at");
     if(error||!data||!data.length){if(error)delete UPX[slug];return}
-    UPX[slug]=data.map(p=>({cat:p.cat,cap:p.caption||"입주민 사진",up:true,src:pubUrl(sb,p.path)}));
+    UPX[slug]=data.map(p=>({cat:p.cat,up:true,src:pubUrl(sb,p.path)}));
     if(C[di].slug!==slug||document.querySelector(".gal").classList.contains("is-chart"))return;
     const on=$("gCats").querySelector('[aria-pressed="true"]'),k=gK;
     renderCats(on?on.dataset.c:"전체");showPhoto(k);
@@ -2973,7 +3044,7 @@ $("topbtn").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 const splash=$("splash");
 function endIntro(){splash.classList.add("done")}
 if(location.hash&&location.hash!=="#/")endIntro();
-else{$("skip").onclick=endIntro;setTimeout(endIntro,reduce?300:2800)}
+else{$("skip").onclick=endIntro;setTimeout(endIntro,reduce?300:3400)}
 
 route();
 
