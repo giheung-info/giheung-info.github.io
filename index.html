@@ -477,9 +477,8 @@ body.paused .mq div{animation-play-state:paused}
 .drv-bd video,.drv-bd img{display:block;max-width:100%;max-height:calc(100vh - 110px);width:auto;height:auto;object-fit:contain}
 .drv-bd [hidden]{display:none}
 .drv-bd{position:relative}
-.drv-cr{position:absolute;right:12px;bottom:10px;font-family:var(--en);font-size:10px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.7);text-shadow:0 1px 3px rgba(0,0,0,.6);pointer-events:none;transition:bottom .2s}
-.drv-bd.is-v .drv-cr{bottom:56px}
-@media (max-width:640px){ .dr-go{top:2.4%;right:12%;height:28px;padding:0 10px 0 8px;font-size:11.5px} .drv-hd{flex-wrap:wrap;padding-left:16px} .drv-hd h3 small{display:none} .drv-tab{order:3;width:100%;justify-content:space-between;margin-top:-2px}.drv-tab button{flex:1;padding:0 8px} .drv-cr,.drv-bd.is-v .drv-cr{right:7px;bottom:4px;font-size:8px;font-weight:300;letter-spacing:.03em;color:rgba(255,255,255,.4);text-shadow:none} }
+.drv-cr{position:absolute;right:10px;bottom:6px;font-family:var(--en);font-size:9px;font-weight:300;letter-spacing:.03em;color:rgba(255,255,255,.4);pointer-events:none}
+@media (max-width:640px){ .dr-go{top:2.4%;right:12%;height:28px;padding:0 10px 0 8px;font-size:11.5px} .drv-hd{flex-wrap:wrap;padding-left:16px} .drv-hd h3 small{display:none} .drv-tab{order:3;width:100%;justify-content:space-between;margin-top:-2px}.drv-tab button{flex:1;padding:0 8px} .drv-cr{right:7px;bottom:4px;font-size:8px} }
 .cmap-cap{position:absolute;left:10px;bottom:8px;font-size:11px;color:var(--g4);background:rgba(244,244,244,.9);padding:2px 8px}
 .cmap .blk{fill:#e1e2e2;stroke:#f4f4f4;stroke-width:2.5;stroke-linejoin:round;cursor:pointer;transition:fill .3s}
 .cmap .blk:hover{fill:#d2d4d4}
@@ -1205,12 +1204,12 @@ body.is-main #sft{display:none}
 
             <!-- 버스 · 셔틀 -->
             <path d="M690 217L516 314" stroke="#5c6366" stroke-width="1.5" stroke-dasharray="2 4" fill="none"/>
-            <rect x="690" y="150" width="276" height="134" rx="8" fill="#fff" stroke="#c9d2ce"/>
+            <rect x="690" y="150" width="298" height="134" rx="8" fill="#fff" stroke="#c9d2ce"/>
             <text class="nh b" x="708" y="174" style="font-size:14px">기흥역 버스 · 셔틀</text>
             <rect x="708" y="186" width="20" height="20" rx="4" fill="#d6393a"/>
             <text class="nh w b" x="718" y="200" text-anchor="middle" style="font-size:11px">B</text>
             <text class="nh b" x="736" y="201">서울 직행버스</text>
-            <text class="nh s" x="836" y="201">강남 · 서울역 방면</text>
+            <text class="nh s" x="836" y="201">강남 · 판교 · 서울역 방면</text>
             <rect x="708" y="212" width="20" height="20" rx="4" fill="#1f6fd1"/>
             <text class="nh w b" x="718" y="226" text-anchor="middle" style="font-size:11px">T</text>
             <text class="nh b" x="736" y="227">시외버스 터미널</text>
@@ -1255,7 +1254,7 @@ body.is-main #sft{display:none}
           <li><i style="background:#9b4f96">A</i><div><b>구성역 GTX-A 2정거장(4분)</b><span>기흥역에서 분당선으로 2정거장, GTX-A로 삼성역 19분 · 서울역 24분</span></div></li>
           <li><i style="background:#d14b8f">F</i><div><b>GTX-F 수도권 순환선 예정</b><span><strong>정자역 1정거장</strong> · 수원역 1정거장, 김포공항 등 수도권을 순환</span></div></li>
           <li><i style="background:#5c6366">IC</i><div><b>수원신갈IC 약 5분</b><span>경부 · 영동고속도로 바로 진입</span></div></li>
-          <li><i style="background:#d6393a">B</i><div><b>서울 직행버스</b><span>기흥역 앞에서 강남 · 서울역 방면</span></div></li>
+          <li><i style="background:#d6393a">B</i><div><b>서울 직행버스</b><span>기흥역 앞에서 강남 · 판교 · 서울역 방면</span></div></li>
           <li><i style="background:#1f6fd1">T</i><div><b>기흥역 시외버스 터미널</b><span>대전 · 세종 · 대구 · 부산 · 울산 · 전주 등 전국 주요 거점 도시</span></div></li>
           <li><i style="background:#000;color:#f5ff00">S</i><div><b>대기업 셔틀버스</b><span>삼성전자 · SK하이닉스 등 대기업 10여 개 통근 셔틀 정차</span></div></li>
           <li><i style="background:#5c6366">42</i><div><b>42번 국도 · 반도체 클러스터</b><span>이동 · 남사 삼성전자 국가산단, 원삼 SK하이닉스 클러스터로 연결</span></div></li>
@@ -1954,14 +1953,14 @@ body.is-main #sft{display:none}
     <img data-v="p0" src="images/drone/drone.jpg" alt="기흥역세권 드론 항공 사진 1" loading="lazy" hidden>
     <img data-v="p1" src="images/drone/photo-1.jpg" alt="기흥역세권 드론 항공 사진 2" loading="lazy" hidden>
     <img data-v="p2" src="images/drone/photo-2.jpg" alt="기흥역세권 드론 항공 사진 3" loading="lazy" hidden>
-    <span class="drv-cr">by 초지일관</span>
+    <span class="drv-cr">by 문경새재</span>
   </div>
 </dialog>
 
 <script>
 (()=>{
   const dlg=document.getElementById("drDlg"),vid=document.getElementById("drVid"),items=dlg.querySelectorAll(".drv-bd [data-v]"),tabs=document.querySelectorAll("#drTab button");
-  const show=v=>{tabs.forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===v));items.forEach(el=>el.hidden=el.dataset.v!==v);vid.parentNode.classList.toggle("is-v",v==="v");if(v==="v")vid.play().catch(()=>{});else vid.pause()};
+  const show=v=>{tabs.forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===v));items.forEach(el=>el.hidden=el.dataset.v!==v);if(v==="v")vid.play().catch(()=>{});else vid.pause()};
   document.getElementById("drGo").onclick=()=>{dlg.showModal();show("v")};
   tabs.forEach(b=>b.onclick=()=>show(b.dataset.v));
   document.getElementById("drX").onclick=()=>dlg.close();
